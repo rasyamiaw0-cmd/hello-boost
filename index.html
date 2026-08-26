@@ -25,7 +25,14 @@ header{position:sticky;top:0;z-index:50;background:#ffffffde;backdrop-filter:blu
 .cart{position:sticky;bottom:10px;z-index:40;max-width:1050px;margin:22px auto;padding:18px;background:#fff;border:1px solid #eccbd7;border-radius:22px;box-shadow:0 14px 35px #52203022}.carttop{display:flex;justify-content:space-between;align-items:center}.cart h3{margin:0;color:#7b284a}.cart small{color:#937682}.clear{border:0;background:#fff0f5;color:#c72a60;border-radius:10px;padding:8px 11px;font-weight:850;cursor:pointer}.selected{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}.chip{background:#fff0f5;border:1px solid #f1cad8;border-radius:99px;padding:7px 10px;font-size:12px}.empty{font-size:12px;color:#987b86}.total{border-top:1px solid #f0dce4;padding-top:11px;display:flex;justify-content:space-between;font-weight:900}.total strong{font-size:20px;color:#dd1f63}.checkout{width:100%;border:0;margin-top:12px;padding:14px;border-radius:14px;background:#19b968;color:#fff;font-weight:950;cursor:pointer}
 footer{text-align:center;color:#987d88;padding:30px 18px}
 @media(max-width:760px){.social-tabs{gap:7px}.social-tab{font-size:12px;padding:11px 7px}.social-logo{width:29px;height:29px;font-size:17px}.social-panel{padding:17px}.grid{grid-template-columns:1fr}.cart{margin:18px 10px}.hero{padding-top:38px}}
-</style>
+.payment-box{display:none;margin-top:14px;padding:18px;background:#fff8fb;border:1px solid #efdce5;border-radius:18px;text-align:center}
+.payment-box.active{display:block}
+.payment-box h4{margin:0 0 6px;color:#7b284a;font-size:19px}
+.payment-total{font-size:24px;font-weight:950;color:#dd1f63;margin:8px 0 15px}
+.qris-image{width:min(100%,390px);display:block;margin:0 auto 15px;border-radius:12px}
+.payment-note{font-size:12px;color:#927b85;line-height:1.6;margin-bottom:12px}
+.confirm-payment{width:100%;border:0;padding:13px;border-radius:13px;background:#19b968;color:#fff;font-weight:950;cursor:pointer}
+.back-order{width:100%;border:0;margin-top:8px;padding:11px;border-radius:13px;background:#fff0f5;color:#c72a60;font-weight:850;cursor:pointer}</style>
 </head>
 <body>
 <header><div class="nav"><div class="logo">hello_boost</div><a class="wa" href="https://wa.me/6283179090525" target="_blank">WhatsApp</a></div></header>
@@ -63,16 +70,91 @@ footer{text-align:center;color:#987d88;padding:30px 18px}
 
 <div class="cart"><div class="carttop"><div><h3>Pesanan kamu</h3><small><span id="count">0</span> paket dipilih</small></div><button class="clear" id="clear">Hapus semua</button></div><div class="selected" id="selected"><span class="empty">Belum ada paket dipilih.</span></div><div class="total"><span>Total</span><strong id="total">Rp0</strong></div><button class="checkout" id="checkout">Pesan semua via WhatsApp</button></div>
 <footer>hello_boost • Order: +62 831-7909-0525</footer>
+<div class="payment-box" id="paymentBox">
+  <h4>Pembayaran QRIS</h4>
+  <div class="payment-total" id="paymentTotal">Rp0</div>
+  <img src="qris.jpg" class="qris-image" alt="QRIS Hello Boost">
+  <div class="payment-note">
+    Scan QRIS di atas untuk melakukan pembayaran.
+  </div>
+  <button class="confirm-payment">
+    Saya Sudah Bayar
+  </button>
+</div>
 
 <script>
-const packages=[...document.querySelectorAll('.pkg')], emojis=[...document.querySelectorAll('.reactionEmoji')], selected=document.getElementById('selected'),count=document.getElementById('count'),total=document.getElementById('total');
-const rupiah=n=>'Rp'+n.toLocaleString('id-ID');
-function chosen(){return emojis.filter(e=>e.checked).map(e=>e.value)}
-function update(){const p=packages.filter(x=>x.checked),e=chosen();count.textContent=p.length;total.textContent=rupiah(p.reduce((a,x)=>a+Number(x.dataset.price),0));selected.innerHTML=p.length?p.map(x=>'<span class="chip">'+x.dataset.name+(x.classList.contains('reactionPkg')?' • '+(e.length?e.join(' '):'emoji belum dipilih'):'')+'</span>').join(''):'<span class="empty">Belum ada paket dipilih.</span>'}
-packages.forEach(x=>x.addEventListener('change',update));emojis.forEach(x=>x.addEventListener('change',update));
-document.getElementById('clear').onclick=()=>{packages.forEach(x=>x.checked=false);emojis.forEach(x=>x.checked=false);update()};
-document.getElementById('checkout').onclick=()=>{const p=packages.filter(x=>x.checked),e=chosen();if(!p.length)return alert('Pilih minimal satu paket.');if(p.some(x=>x.classList.contains('reactionPkg'))&&!e.length)return alert('Pilih minimal satu emoji untuk reaksi WhatsApp.');const lines=p.map((x,i)=>(i+1)+'. '+x.dataset.name+' - '+rupiah(Number(x.dataset.price))+(x.classList.contains('reactionPkg')?' - Emoji: '+e.join(' '):''));const sum=p.reduce((a,x)=>a+Number(x.dataset.price),0);window.open('https://wa.me/6283179090525?text='+encodeURIComponent('Halo hello_boost, saya ingin order:\n\n'+lines.join('\n')+'\n\nTotal: '+rupiah(sum)),'_blank')};
-document.querySelectorAll('.social-tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.social-tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.social-panel').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.target).classList.add('active')});
+const packages = [...document.querySelectorAll('.pkg')];
+const emojis = [...document.querySelectorAll('.reactionEmoji')];
+
+const rupiah = n => 'Rp' + n.toLocaleString('id-ID');
+
+function chosen() {
+  return emojis.filter(e => e.checked).map(e => e.value);
+}
+
+function update() {
+  const p = packages.filter(x => x.checked);
+  const e = chosen();
+
+  document.getElementById('count').textContent = p.length + e.length;
+  document.getElementById('total').textContent =
+    rupiah(
+      p.reduce((a, x) => a + Number(x.dataset.price), 0)
+    );
+
+  packages.forEach(x => x.addEventListener('change', update));
+  emojis.forEach(x => x.addEventListener('change', update));
+}
+
+document.getElementById('clear').onclick = () => {
+  packages.forEach(x => x.checked = false);
+  emojis.forEach(x => x.checked = false);
+  update();
+};
+
+document.getElementById('checkout').onclick = () => {
+  const p = packages.filter(x => x.checked);
+
+  if (!p.length) {
+    alert('Silakan pilih paket terlebih dahulu.');
+    return;
+  }
+
+  const total = p.reduce(
+    (a, x) => a + Number(x.dataset.price),
+    0
+  );
+
+  document.getElementById('paymentTotal').textContent =
+    rupiah(total);
+
+  document.getElementById('paymentBox').classList.add('active');
+
+  document.getElementById('paymentBox').scrollIntoView({
+    behavior: 'smooth'
+  });
+};
+
+document.querySelectorAll('.social-tab').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('.social-tab').forEach(x =>
+      x.classList.remove('active')
+    );
+
+    document.querySelectorAll('.social-panel').forEach(x =>
+      x.classList.remove('active')
+    );
+
+    btn.classList.add('active');
+
+    document.getElementById(
+      btn.dataset.target
+    ).classList.add('active');
+
+    update();
+  };
+});
+
 update();
 </script>
 </body></html>
