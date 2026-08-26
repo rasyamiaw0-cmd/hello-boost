@@ -125,6 +125,34 @@ document.getElementById('checkout').onclick = () => {
     0
   );
 
+  document.querySelector('.confirm-payment').onclick = () => {
+  const p = packages.filter(x => x.checked);
+
+  if (!p.length) {
+    alert('Belum ada paket yang dipilih.');
+    return;
+  }
+
+  const total = p.reduce(
+    (a, x) => a + Number(x.dataset.price),
+    0
+  );
+
+  let pesan = 'Halo, saya sudah melakukan pembayaran.\n\n';
+  pesan += 'Pesanan:\n';
+
+  p.forEach(x => {
+    pesan += '- ' + x.dataset.name + ' - ' + rupiah(Number(x.dataset.price)) + '\n';
+  });
+
+  pesan += '\nTotal: ' + rupiah(total);
+  pesan += '\n\nMohon diproses ya.';
+
+  window.open(
+    'https://wa.me/6283179090525?text=' + encodeURIComponent(pesan),
+    '_blank'
+  );
+};
   document.getElementById('paymentTotal').textContent =
     rupiah(total);
 
