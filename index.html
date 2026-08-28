@@ -3,354 +3,2193 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>hello_boost — List Harga</title>
+
 <style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:#fff8fb;color:#33272d}
-header{position:sticky;top:0;z-index:50;background:#ffffffde;backdrop-filter:blur(16px);border-bottom:1px solid #f0dce5}
-.nav{max-width:1050px;margin:auto;padding:15px 18px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:22px;font-weight:950;letter-spacing:-.7px;color:#e92970}.wa{background:#19b968;color:#fff;text-decoration:none;padding:10px 15px;border-radius:12px;font-weight:850}
-.hero{max-width:1050px;margin:auto;padding:58px 18px 30px;text-align:center}.hero h1{margin:0 0 10px;font-size:clamp(36px,7vw,64px);letter-spacing:-3px}.hero p{margin:0;color:#8b727d}
-.wrap{max-width:1050px;margin:auto;padding:18px}.heading{text-align:center;margin:4px 0 22px}.heading h2{margin:0;font-size:26px}.heading p{margin:6px 0;color:#927b85;font-size:13px}
-.social-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:760px;margin:0 auto 22px}
-.social-tab{border:1px solid #efdce5;background:#fff;border-radius:18px;padding:14px 12px;display:flex;align-items:center;justify-content:center;gap:10px;font-weight:900;color:#674c58;cursor:pointer;box-shadow:0 8px 24px #7e3a520b;transition:.2s}
-.social-tab:hover{transform:translateY(-2px)}.social-tab.active{background:linear-gradient(135deg,#f72b78,#ff6a9d);color:#fff;border-color:transparent;box-shadow:0 12px 28px #f72b7840}
-.social-logo{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;font-size:20px}.social-logo svg{width:21px;height:21px;display:block}.platform-icon svg{width:30px;height:30px;display:block}.ig{background:linear-gradient(135deg,#782bff,#ff2d77,#ffb22f);color:#fff}.tt{background:#111;color:#fff}.wh{background:#19b968;color:#fff}
-.social-panel{display:none;background:#fff;border:1px solid #efdce5;border-radius:25px;padding:23px;box-shadow:0 12px 35px #7e3a520b}.social-panel.active{display:block}
-.platform-head{display:flex;align-items:center;gap:14px;padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid #f0dce5}.platform-head h3{margin:0;font-size:24px}.platform-head p{margin:4px 0 0;color:#967b87;font-size:12px}
-.platform-icon{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:29px;flex:0 0 52px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.card{background:#fff;border:1px solid #efdce5;border-radius:19px;padding:16px}.card h4{margin:0 0 4px;font-size:17px}.desc{font-size:12px;color:#9b7c87;margin-bottom:9px}
-.row{display:flex;align-items:center;justify-content:space-between;padding:10px 8px;border-radius:10px;cursor:pointer}.row:hover{background:#fff3f7}.row label{display:flex;align-items:center;gap:8px;cursor:pointer}
-.pkg{appearance:none;width:18px;height:18px;border:2px solid #dfabc0;border-radius:5px;background:#fff;position:relative}.pkg:checked{background:#f52d78;border-color:#f52d78}.pkg:checked:after{content:"✓";position:absolute;color:#fff;font-weight:900;left:2px;top:-3px}
-.emoji-title{font-size:12px;font-weight:900;margin:10px 0 7px}.emojis{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}.emoji{position:relative}.emoji input{position:absolute;opacity:0}.emoji span{display:grid;place-items:center;width:44px;height:44px;border:1px solid #ead9df;border-radius:13px;background:#fff;font-size:23px;cursor:pointer}.emoji input:checked+span{border:2px solid #19b968;background:#ebfff3;transform:scale(1.05)}.note{font-size:11px;color:#957883;margin-bottom:8px}
-.cart{position:sticky;bottom:10px;z-index:40;max-width:1050px;margin:22px auto;padding:18px;background:#fff;border:1px solid #eccbd7;border-radius:22px;box-shadow:0 14px 35px #52203022}.carttop{display:flex;justify-content:space-between;align-items:center}.cart h3{margin:0;color:#7b284a}.cart small{color:#937682}.clear{border:0;background:#fff0f5;color:#c72a60;border-radius:10px;padding:8px 11px;font-weight:850;cursor:pointer}.selected{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}.chip{background:#fff0f5;border:1px solid #f1cad8;border-radius:99px;padding:7px 10px;font-size:12px}.empty{font-size:12px;color:#987b86}.total{border-top:1px solid #f0dce4;padding-top:11px;display:flex;justify-content:space-between;font-weight:900}.total strong{font-size:20px;color:#dd1f63}.checkout{width:100%;border:0;margin-top:12px;padding:14px;border-radius:14px;background:#19b968;color:#fff;font-weight:950;cursor:pointer}
-footer{text-align:center;color:#987d88;padding:30px 18px}
-@media(max-width:760px){.social-tabs{gap:7px}.social-tab{font-size:12px;padding:11px 7px}.social-logo{width:29px;height:29px;font-size:17px}.social-panel{padding:17px}.grid{grid-template-columns:1fr}.cart{margin:18px 10px}.hero{padding-top:38px}}
-.payment-box{display:none;margin-top:14px;padding:18px;background:#fff8fb;border:1px solid #efdce5;border-radius:18px;text-align:center}
-.payment-box.active{display:block}
-.payment-box h4{margin:0 0 6px;color:#7b284a;font-size:19px}
-.payment-total{font-size:24px;font-weight:950;color:#dd1f63;margin:8px 0 15px}
-.qris-image{width:min(100%,390px);display:block;margin:0 auto 15px;border-radius:12px}
-.payment-note{font-size:12px;color:#927b85;line-height:1.6;margin-bottom:12px}
-.confirm-payment{width:100%;border:0;padding:13px;border-radius:13px;background:#19b968;color:#fff;font-weight:950;cursor:pointer}
-.back-order{width:100%;border:0;margin-top:8px;padding:11px;border-radius:13px;background:#fff0f5;color:#c72a60;font-weight:850;cursor:pointer}</style>
-</head>
-<body>
-<header class="nav"><div class="logo">hello_boost</div><div style="display:flex;gap:8px;align-items:center"><a class="wa" href="https://wa.me/6283179090525" target="_blank">WhatsApp</a><a href="https://whatsapp.com/channel/0029VbDLT2yFi8xb1RpB4M36" target="_blank" style="background:#e92970;color:#fff;text-decoration:none;padding:14px 12px;border-radius:18px;font-weight:900;font-size:12px;white-space:nowrap">SALURAN TESTIMONI</a></div></header>
+*{
+  box-sizing:border-box;
+}
 
-<main class="wrap">
-<div class="heading"><h2>Pilih Sosmed</h2><p>Pilih platform terlebih dahulu agar daftar harga tetap rapi dan tidak membingungkan.</p></div>
-<div class="social-tabs">
-<button class="social-tab active" data-target="instagram"><span class="social-logo ig"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.7" r="1.2" fill="currentColor"/></svg></span>Instagram</button>
-<button class="social-tab" data-target="tiktok"><span class="social-logo tt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.1 4h3.1c.3 1.9 1.4 3.4 3.3 4.2v3.1c-1.4-.1-2.6-.5-3.7-1.2v6.1c0 3.2-2.5 5.8-5.8 5.8S5.2 19.4 5.2 16.2s2.5-5.8 5.8-5.8c.4 0 .8 0 1.2.1v3.2a2.8 2.8 0 0 0-1.2-.3 2.8 2.8 0 1 0 2.8 2.8V4.5c0-.2.1-.4.3-.5Z" fill="currentColor"/></svg></span>TikTok</button>
-<button class="social-tab" data-target="whatsapp"><span class="social-logo wh"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.5 7.5L4 20l1.2-4.1A8.5 8.5 0 1 1 20.5 11.6Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 8.2c.3-.4.7-.4 1-.1l1 1.1c.2.3.2.6 0 .9l-.5.6c.6 1.1 1.5 2 2.6 2.6l.6-.5c.3-.2.6-.2.9 0l1.1 1c.3.3.3.7-.1 1-.6.5-1.3.7-2 .4-2.5-.8-5-3.3-5.8-5.8-.3-.7-.1-1.4.4-2Z" fill="currentColor"/></svg></span>WhatsApp</button>
-  <button class="social-tab" data-target="facebook">
-  <span class="social-logo fb">f</span>
-  Facebook
-  </button>
-</div>
+html{
+  scroll-behavior:smooth;
+}
 
-<section class="social-panel active" id="instagram"><div class="platform-head"><div class="platform-icon ig"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.7" r="1.2" fill="currentColor"/></svg></div><div><h3>Instagram</h3><p>Followers • Like • View • Komentar</p></div></div><div class="grid">
-<div class="card"><h4>Followers</h4><div class="desc">Paket followers</div>
-<div class="row"><label><input class="pkg" type="checkbox" data-name="Instagram 100 Followers" data-price="5000">100 Followers</label><b>Rp5.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="Instagram 500 Followers" data-price="20000">500 Followers</label><b>Rp20.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="Instagram 1.000 Followers" data-price="35000">1.000 Followers</label><b>Rp35.000</b></div></div>
-<div class="card"><h4>Like</h4><div class="desc">Paket like</div><div class="row"><label><input class="pkg" type="checkbox" data-name="Instagram 100 Like" data-price="1000">100 Like</label><b>Rp1.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="Instagram 500 Like" data-price="5000">500 Like</label><b>Rp5.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="Instagram 1.000 Like" data-price="10000">1.000 Like</label><b>Rp10.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="Instagram 5.000 Like" data-price="50000">5.000 Like</label><b>Rp50.000</b></div></div>
-<div class="card"><h4>View</h4><div class="desc">Paket view</div><div class="row"><label><input class="pkg" type="checkbox" data-name="Instagram 1.000 View" data-price="1000">1.000 View</label><b>Rp1.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="Instagram 5.000 View" data-price="5000">5.000 View</label><b>Rp5.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="Instagram 10.000 View" data-price="10000">10.000 View</label><b>Rp10.000</b></div></div>
-<div class="card"><h4>Komentar</h4><div class="desc">Mulai dari 20 komentar</div><div class="row"><label><input class="pkg" type="checkbox" data-name="Instagram 20 Komentar" data-price="2000">20 Komentar</label><b>Rp2.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="Instagram 50 Komentar" data-price="4500">50 Komentar</label><b>Rp4.500</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="Instagram 100 Komentar" data-price="8000">100 Komentar</label><b>Rp8.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="Instagram 200 Komentar" data-price="15000">200 Komentar</label><b>Rp15.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="Instagram 500 Komentar" data-price="35000">500 Komentar</label><b>Rp35.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="Instagram 1.000 Komentar" data-price="60000">1.000 Komentar</label><b>Rp60.000</b></div></div>
-</div></section>
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  background:#fff8fb;
+  color:#33272d;
+}
 
-<section class="social-panel" id="tiktok"><div class="platform-head"><div class="platform-icon tt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.1 4h3.1c.3 1.9 1.4 3.4 3.3 4.2v3.1c-1.4-.1-2.6-.5-3.7-1.2v6.1c0 3.2-2.5 5.8-5.8 5.8S5.2 19.4 5.2 16.2s2.5-5.8 5.8-5.8c.4 0 .8 0 1.2.1v3.2a2.8 2.8 0 0 0-1.2-.3 2.8 2.8 0 1 0 2.8 2.8V4.5c0-.2.1-.4.3-.5Z" fill="currentColor"/></svg></div><div><h3>TikTok</h3><p>Followers • Like • View • Komentar</p></div></div><div class="grid">
-<div class="card"><h4>Followers</h4><div class="desc">Paket followers</div><div class="row"><label><input class="pkg" type="checkbox" data-name="TikTok 100 Followers" data-price="10000">100 Followers</label><b>Rp10.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="TikTok 500 Followers" data-price="40000">500 Followers</label><b>Rp40.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="TikTok 1.000 Followers" data-price="170000">1.000 Followers</label><b>Rp170.000</b></div></div>
-<div class="card"><h4>Like</h4><div class="desc">Paket like</div><div class="row"><label><input class="pkg" type="checkbox" data-name="TikTok 100 Like" data-price="1000">100 Like</label><b>Rp1.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="TikTok 1.000 Like" data-price="10000">1.000 Like</label><b>Rp10.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="TikTok 5.000 Like" data-price="50000">5.000 Like</label><b>Rp50.000</b></div></div>
-<div class="card"><h4>View</h4><div class="desc">Paket view</div><div class="row"><label><input class="pkg" type="checkbox" data-name="TikTok 1.000 View" data-price="2000">1.000 View</label><b>Rp2.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="TikTok 5.000 View" data-price="10000">5.000 View</label><b>Rp10.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="TikTok 10.000 View" data-price="20000">10.000 View</label><b>Rp20.000</b></div></div>
-<div class="card"><h4>Komentar</h4><div class="desc">Mulai dari 20 komentar</div><div class="row"><label><input class="pkg" type="checkbox" data-name="TikTok 20 Komentar" data-price="4500">20 Komentar</label><b>Rp4.500</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="TikTok 50 Komentar" data-price="10000">50 Komentar</label><b>Rp10.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="TikTok 100 Komentar" data-price="18000">100 Komentar</label><b>Rp18.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="TikTok 200 Komentar" data-price="35000">200 Komentar</label><b>Rp35.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="TikTok 500 Komentar" data-price="80000">500 Komentar</label><b>Rp80.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="TikTok 1.000 Komentar" data-price="150000">1.000 Komentar</label><b>Rp150.000</b></div></div>
-</div></section>
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:#ffffffde;
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid #f0dce5;
+}
 
-<section class="social-panel" id="whatsapp"><div class="platform-head"><div class="platform-icon wh"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.5 7.5L4 20l1.2-4.1A8.5 8.5 0 1 1 20.5 11.6Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 8.2c.3-.4.7-.4 1-.1l1 1.1c.2.3.2.6 0 .9l-.5.6c.6 1.1 1.5 2 2.6 2.6l.6-.5c.3-.2.6-.2.9 0l1.1 1c.3.3.3.7-.1 1-.6.5-1.3.7-2 .4-2.5-.8-5-3.3-5.8-5.8-.3-.7-.1-1.4.4-2Z" fill="currentColor"/></svg></div><div><h3>WhatsApp</h3><p>Followers Saluran • Reaksi Postingan</p></div></div><div class="grid">
-<div class="card"><h4>Followers Saluran</h4><div class="desc">Paket followers channel</div><div class="row"><label><input class="pkg" type="checkbox" data-name="WhatsApp 100 Followers Saluran" data-price="5000">100 Followers</label><b>Rp5.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="WhatsApp 500 Followers Saluran" data-price="20000">500 Followers</label><b>Rp20.000</b></div><div class="row"><label><input class="pkg" type="checkbox" data-name="WhatsApp 1.000 Followers Saluran" data-price="35000">1.000 Followers</label><b>Rp35.000</b></div></div>
-<div class="card"><h4>Reaksi Postingan Saluran</h4><div class="desc">Bebas pilih emoji — bisa lebih dari satu</div><div class="emoji-title">Pilih emoji</div><div class="emojis"><label class="emoji"><input class="reactionEmoji" type="checkbox" value="👍"><span>👍</span></label><label class="emoji"><input class="reactionEmoji" type="checkbox" value="❤️"><span style="color:#FF2D55">❤</span></label><label class="emoji"><input class="reactionEmoji" type="checkbox" value="😂"><span>😂</span></label><label class="emoji"><input class="reactionEmoji" type="checkbox" value="😯"><span>😯</span></label><label class="emoji"><input class="reactionEmoji" type="checkbox" value="🥺"><span>🥺</span></label><label class="emoji"><input class="reactionEmoji" type="checkbox" value="🙏"><span>🙏</span></label></div><div class="note">Harga mulai Rp1.000 = 10 reaksi.</div>
-<div class="row"><label><input class="pkg reactionPkg" type="checkbox" data-name="WhatsApp 10 Reaksi" data-price="1000">10 Reaksi</label><b>Rp1.000</b></div><div class="row"><label><input class="pkg reactionPkg" type="checkbox" data-name="WhatsApp 20 Reaksi" data-price="2000">20 Reaksi</label><b>Rp2.000</b></div><div class="row"><label><input class="pkg reactionPkg" type="checkbox" data-name="WhatsApp 50 Reaksi" data-price="5000">50 Reaksi</label><b>Rp5.000</b></div><div class="row"><label><input class="pkg reactionPkg" type="checkbox" data-name="WhatsApp 100 Reaksi" data-price="10000">100 Reaksi</label><b>Rp10.000</b></div><div class="row"><label><input class="pkg reactionPkg" type="checkbox" data-name="WhatsApp 200 Reaksi" data-price="20000">200 Reaksi</label><b>Rp20.000</b></div><div class="row"><label><input class="pkg reactionPkg" type="checkbox" data-name="WhatsApp 500 Reaksi" data-price="50000">500 Reaksi</label><b>Rp50.000</b></div><div class="row"><label><input class="pkg reactionPkg" type="checkbox" data-name="WhatsApp 1.000 Reaksi" data-price="100000">1.000 Reaksi</label><b>Rp100.000</b></div></div>
-</div></section>
-<section class="social-panel" id="facebook">
+.nav{
+  max-width:1050px;
+  margin:auto;
+  padding:15px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
 
-  <div class="platform-head">
-    <div class="platform-icon fb">f</div>
-    <div>
-      <h3>Facebook</h3>
-      <p>Pilih paket Facebook yang kamu butuhkan</p>
-    </div>
-  </div>
+.logo{
+  font-size:22px;
+  font-weight:950;
+  letter-spacing:-.7px;
+  color:#e92970;
+}
 
-  <div class="card">
-    <h4>Followers Facebook</h4>
-    <div class="desc">Paket followers Facebook</div>
+.header-buttons{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
 
-    <div class="row">
-      <label>
-        <input class="pkg" type="checkbox"
-          data-name="Facebook 100 Followers"
-          data-price="5000">
-        100 Followers — Rp5.000
-      </label>
-    </div>
+.wa{
+  background:#19b968;
+  color:#fff;
+  text-decoration:none;
+  padding:10px 15px;
+  border-radius:12px;
+  font-weight:850;
+}
 
-    <div class="row">
-      <label>
-        <input class="pkg" type="checkbox"
-          data-name="Facebook 500 Followers"
-          data-price="20000">
-        500 Followers — Rp20.000
-      </label>
-    </div>
+.testi{
+  background:#e92970;
+  color:#fff;
+  text-decoration:none;
+  padding:11px 12px;
+  border-radius:12px;
+  font-weight:900;
+  font-size:12px;
+  white-space:nowrap;
+}
 
-    <div class="row">
-      <label>
-        <input class="pkg" type="checkbox"
-          data-name="Facebook 1000 Followers"
-          data-price="35000">
-        1.000 Followers — Rp35.000
-      </label>
-    </div>
-  </div>
+/* HERO */
+.hero{
+  max-width:1050px;
+  margin:auto;
+  padding:58px 18px 30px;
+  text-align:center;
+}
 
+.hero h1{
+  margin:0 0 10px;
+  font-size:clamp(36px,7vw,64px);
+  letter-spacing:-3px;
+}
 
-  <div class="card">
-    <h4>Like Facebook</h4>
-    <div class="desc">Paket like Facebook</div>
+.hero p{
+  margin:0;
+  color:#8b727d;
+}
 
-    <div class="row">
-      <label>
-        <input class="pkg" type="checkbox"
-          data-name="Facebook 100 Like"
-          data-price="2000">
-        100 Like — Rp2.000
-      </label>
-    </div>
+/* CONTENT */
+.wrap{
+  max-width:1050px;
+  margin:auto;
+  padding:18px;
+}
 
-    <div class="row">
-      <label>
-        <input class="pkg" type="checkbox"
-          data-name="Facebook 500 Like"
-          data-price="9000">
-        500 Like — Rp9.000
-      </label>
-    </div>
+.heading{
+  text-align:center;
+  margin:4px 0 22px;
+}
 
-    <div class="row">
-      <label>
-        <input class="pkg" type="checkbox"
-          data-name="Facebook 1000 Like"
-          data-price="17000">
-        1.000 Like — Rp17.000
-      </label>
-    </div>
-  </div>
+.heading h2{
+  margin:0;
+  font-size:26px;
+}
 
+.heading p{
+  margin:6px 0;
+  color:#927b85;
+  font-size:13px;
+}
 
-  <div class="card">
-    <h4>View Facebook</h4>
-    <div class="desc">Paket view Facebook</div>
+/* SOCIAL TAB */
+.social-tabs{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  max-width:760px;
+  margin:0 auto 22px;
+}
 
-    <div class="row">
-      <label>
-        <input class="pkg" type="checkbox"
-          data-name="Facebook 1000 View"
-          data-price="3000">
-        1.000 View — Rp3.000
-      </label>
-    </div>
+.social-tab{
+  border:1px solid #efdce5;
+  background:#fff;
+  border-radius:18px;
+  padding:14px 12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-weight:900;
+  color:#674c58;
+  cursor:pointer;
+  box-shadow:0 8px 24px #7e3a520b;
+  transition:.2s;
+}
 
-    <div class="row">
-      <label>
-        <input class="pkg" type="checkbox"
-          data-name="Facebook 5000 View"
-          data-price="13000">
-        5.000 View — Rp13.000
-      </label>
-    </div>
+.social-tab:hover{
+  transform:translateY(-2px);
+}
 
-    <div class="row">
-      <label>
-        <input class="pkg" type="checkbox"
-          data-name="Facebook 10000 View"
-          data-price="24000">
-        10.000 View — Rp24.000
-      </label>
-    </div>
-  </div>
+.social-tab.active{
+  background:linear-gradient(135deg,#f72b78,#ff6a9d);
+  color:#fff;
+  border-color:transparent;
+  box-shadow:0 12px 28px #f72b7840;
+}
 
+.social-logo{
+  width:34px;
+  height:34px;
+  border-radius:11px;
+  display:grid;
+  place-items:center;
+  font-size:20px;
+}
 
-  <div class="card">
-    <h4>Member Grup Facebook</h4>
-    <div class="desc">Paket member grup Facebook</div>
+.social-logo svg{
+  width:21px;
+  height:21px;
+  display:block;
+}
 
-    <div class="row">
-      <label>
-        <input class="pkg" type="checkbox"
-          data-name="Facebook 100 Member Grup"
-          data-price="5000">
-        100 Member — Rp5.000
-      </label>
-    </div>
+.ig{
+  background:linear-gradient(135deg,#782bff,#ff2d77,#ffb22f);
+  color:#fff;
+}
 
-    <div class="row">
-      <label>
-        <input class="pkg" type="checkbox"
-          data-name="Facebook 500 Member Grup"
-          data-price="20000">
-        500 Member — Rp20.000
-      </label>
-    </div>
+.tt{
+  background:#111;
+  color:#fff;
+}
 
-    <div class="row">
-      <label>
-        <input class="pkg" type="checkbox"
-          data-name="Facebook 1000 Member Grup"
-          data-price="35000">
-        1.000 Member — Rp35.000
-      </label>
-    </div>
-  </div>
+.wh{
+  background:#19b968;
+  color:#fff;
+}
 
-</section>
-</main>
+.fb{
+  background:#1877f2;
+  color:#fff;
+  font-weight:950;
+}
 
-<div class="cart"><div class="carttop"><div><h3>Pesanan kamu</h3><small><span id="count">0</span> paket dipilih</small></div><button class="clear" id="clear">Hapus semua</button></div><div class="selected" id="selected"><span class="empty">Belum ada paket dipilih.</span></div><div class="total"><span>Total</span><strong id="total">Rp0</strong></div><button class="checkout" id="checkout">Pesan semua via WhatsApp</button></div>
-<footer>hello_boost • Order: +62 831-7909-0525</footer>
-<div class="payment-box" id="paymentBox">
-  <h4>Pembayaran QRIS</h4>
-  <div class="payment-total" id="paymentTotal">Rp0</div>
-  <img src="qris.jpg" class="qris-image" alt="QRIS Hello Boost">
-  <div class="payment-note">
-    Scan QRIS di atas untuk melakukan pembayaran.
-  </div>
-  <button class="confirm-payment">
-    Saya Sudah Bayar
-  </button>
-</div>
+/* PANEL */
+.social-panel{
+  display:none;
+  background:#fff;
+  border:1px solid #efdce5;
+  border-radius:25px;
+  padding:23px;
+  box-shadow:0 12px 35px #7e3a520b;
+}
 
-    if (qty < MIN_ORDER) {
-      hiddenPkg.checked = false;
+.social-panel.active{
+  display:block;
+}
 
-      priceText.textContent =
-        'Minimal ' + MIN_ORDER;
+.platform-head{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding-bottom:18px;
+  margin-bottom:18px;
+  border-bottom:1px solid #f0dce5;
+}
 
-      priceText.style.color = '#e92970';
+.platform-head h3{
+  margin:0;
+  font-size:24px;
+}
 
-      update();
-      return;
-    }
+.platform-head p{
+  margin:4px 0 0;
+  color:#967b87;
+  font-size:12px;
+}
 
-    if (qty > MAX_ORDER) {
-      qty = MAX_ORDER;
-      qtyInput.value = MAX_ORDER;
+.platform-icon{
+  width:52px;
+  height:52px;
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  font-size:29px;
+  flex:0 0 52px;
+}
 
+.platform-icon svg{
+  width:30px;
+  height:30px;
+}
 
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
 
+.card{
+  background:#fff;
+  border:1px solid #efdce5;
+  border-radius:19px;
+  padding:16px;
+}
 
-/* Tombol checkout */
-document.getElementById('checkout').onclick = () => {
+.card h4{
+  margin:0 0 4px;
+  font-size:17px;
+}
 
-  const p = packages.filter(x => x.checked);
+.desc{
+  font-size:12px;
+  color:#9b7c87;
+  margin-bottom:12px;
+}
 
-  if (!p.length) {
-    alert('Silakan pilih jumlah paket terlebih dahulu.');
-    return;
+/* CUSTOM QUANTITY */
+.quantity-box{
+  background:#fff8fb;
+  border:1px solid #f0d4df;
+  border-radius:14px;
+  padding:13px;
+}
+
+.quantity-label{
+  display:block;
+  font-size:12px;
+  font-weight:850;
+  color:#795867;
+  margin-bottom:7px;
+}
+
+.quantity-input{
+  width:100%;
+  border:1px solid #dfabc0;
+  background:#fff;
+  border-radius:11px;
+  padding:12px;
+  font-size:16px;
+  outline:none;
+  color:#33272d;
+  font-weight:800;
+}
+
+.quantity-input:focus{
+  border-color:#f52d78;
+  box-shadow:0 0 0 3px #f52d7815;
+}
+
+.price-preview{
+  margin-top:9px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+}
+
+.price-preview span{
+  font-size:11px;
+  color:#957883;
+}
+
+.price-preview strong{
+  color:#dd1f63;
+  font-size:17px;
+}
+
+/* WHATSAPP EMOJI */
+.emoji-title{
+  font-size:12px;
+  font-weight:900;
+  margin:10px 0 7px;
+}
+
+.emojis{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:10px;
+}
+
+.emoji{
+  position:relative;
+}
+
+.emoji input{
+  position:absolute;
+  opacity:0;
+}
+
+.emoji span{
+  display:grid;
+  place-items:center;
+  width:44px;
+  height:44px;
+  border:1px solid #ead9df;
+  border-radius:13px;
+  background:#fff;
+  font-size:23px;
+  cursor:pointer;
+}
+
+.emoji input:checked+span{
+  border:2px solid #19b968;
+  background:#ebfff3;
+  transform:scale(1.05);
+}
+
+.note{
+  font-size:11px;
+  color:#957883;
+  margin-bottom:8px;
+}
+
+/* CART */
+.cart{
+  position:sticky;
+  bottom:10px;
+  z-index:40;
+  max-width:1050px;
+  margin:22px auto;
+  padding:18px;
+  background:#fff;
+  border:1px solid #eccbd7;
+  border-radius:22px;
+  box-shadow:0 14px 35px #52203022;
+}
+
+.carttop{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.cart h3{
+  margin:0;
+  color:#7b284a;
+}
+
+.cart small{
+  color:#937682;
+}
+
+.clear{
+  border:0;
+  background:#fff0f5;
+  color:#c72a60;
+  border-radius:10px;
+  padding:8px 11px;
+  font-weight:850;
+  cursor:pointer;
+}
+
+.selected{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin:12px 0;
+}
+
+.chip{
+  background:#fff0f5;
+  border:1px solid #f1cad8;
+  border-radius:99px;
+  padding:7px 10px;
+  font-size:12px;
+}
+
+.empty{
+  font-size:12px;
+  color:#987b86;
+}
+
+.total{
+  border-top:1px solid #f0dce4;
+  padding-top:11px;
+  display:flex;
+  justify-content:space-between;
+  font-weight:900;
+}
+
+.total strong{
+  font-size:20px;
+  color:#dd1f63;
+}
+
+.checkout{
+  width:100%;
+  border:0;
+  margin-top:12px;
+  padding:14px;
+  border-radius:14px;
+  background:#19b968;
+  color:#fff;
+  font-weight:950;
+  cursor:pointer;
+}
+
+/* PAYMENT */
+.payment-box{
+  display:none;
+  max-width:1050px;
+  margin:18px auto;
+  padding:18px;
+  background:#fff;
+  border:1px solid #efdce5;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 10px 30px #7e3a520b;
+}
+
+.payment-box.active{
+  display:block;
+}
+
+.payment-box h4{
+  margin:0 0 6px;
+  color:#7b284a;
+  font-size:19px;
+}
+
+.payment-total{
+  font-size:24px;
+  font-weight:950;
+  color:#dd1f63;
+  margin:8px 0 15px;
+}
+
+.qris-image{
+  width:min(100%,390px);
+  display:block;
+  margin:0 auto 15px;
+  border-radius:12px;
+}
+
+.payment-note{
+  font-size:12px;
+  color:#927b85;
+  line-height:1.6;
+  margin-bottom:12px;
+}
+
+.confirm-payment{
+  width:100%;
+  border:0;
+  padding:13px;
+  border-radius:13px;
+  background:#19b968;
+  color:#fff;
+  font-weight:950;
+  cursor:pointer;
+}
+
+.back-order{
+  width:100%;
+  border:0;
+  margin-top:8px;
+  padding:11px;
+  border-radius:13px;
+  background:#fff0f5;
+  color:#c72a60;
+  font-weight:850;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  color:#987d88;
+  padding:30px 18px;
+}
+
+/* MOBILE */
+@media(max-width:760px){
+
+  .nav{
+    padding:12px;
   }
 
-  const total = p.reduce(
-    (a, x) => a + Number(x.dataset.price),
-    0
+  .logo{
+    font-size:18px;
+  }
+
+  .header-buttons{
+    gap:5px;
+  }
+
+  .wa{
+    padding:9px 10px;
+    font-size:11px;
+  }
+
+  .testi{
+    padding:10px 8px;
+    font-size:10px;
+  }
+
+  .social-tabs{
+    gap:7px;
+  }
+
+  .social-tab{
+    font-size:12px;
+    padding:11px 7px;
+  }
+
+  .social-logo{
+    width:29px;
+    height:29px;
+    font-size:17px;
+  }
+
+  .social-panel{
+    padding:17px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .cart{
+    margin:18px 10px;
+  }
+
+  .hero{
+    padding-top:38px;
+  }
+
+  .payment-box{
+    margin:18px 10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="nav">
+
+    <div class="logo">
+      hello_boost
+    </div>
+
+    <div class="header-buttons">
+
+      <a
+        class="wa"
+        href="https://wa.me/6283179090525"
+        target="_blank">
+        WhatsApp
+      </a>
+
+      <a
+        class="testi"
+        href="https://whatsapp.com/channel/0029VbDLT2yFi8xb1RpB4M36"
+        target="_blank">
+        TESTIMONI
+      </a>
+
+    </div>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+<div class="hero">
+
+  <h1>Boost Sosmed 🚀</h1>
+
+  <p>
+    Pilih layanan dan tentukan jumlah yang kamu inginkan.
+  </p>
+
+</div>
+
+
+<main class="wrap">
+
+  <div class="heading">
+
+    <h2>Pilih Sosmed</h2>
+
+    <p>
+      Kamu bebas menentukan jumlah sendiri.
+      Harga akan dihitung otomatis.
+    </p>
+
+  </div>
+
+
+  <!-- SOCIAL TABS -->
+  <div class="social-tabs">
+
+    <button
+      class="social-tab active"
+      data-target="instagram">
+
+      <span class="social-logo ig">
+
+        <svg viewBox="0 0 24 24">
+          <rect
+            x="3"
+            y="3"
+            width="18"
+            height="18"
+            rx="5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"/>
+
+          <circle
+            cx="12"
+            cy="12"
+            r="4.2"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"/>
+
+          <circle
+            cx="17.5"
+            cy="6.7"
+            r="1.2"
+            fill="currentColor"/>
+        </svg>
+
+      </span>
+
+      Instagram
+
+    </button>
+
+
+    <button
+      class="social-tab"
+      data-target="tiktok">
+
+      <span class="social-logo tt">
+
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M14.1 4h3.1c.3 1.9 1.4 3.4 3.3 4.2v3.1c-1.4-.1-2.6-.5-3.7-1.2v6.1c0 3.2-2.5 5.8-5.8 5.8S5.2 19.4 5.2 16.2s2.5-5.8 5.8-5.8c.4 0 .8 0 1.2.1v3.2a2.8 2.8 0 0 0-1.2-.3 2.8 2.8 0 1 0 2.8 2.8V4.5c0-.2.1-.4.3-.5Z"
+            fill="currentColor"/>
+        </svg>
+
+      </span>
+
+      TikTok
+
+    </button>
+
+
+    <button
+      class="social-tab"
+      data-target="whatsapp">
+
+      <span class="social-logo wh">
+
+        <svg viewBox="0 0 24 24">
+
+          <path
+            d="M20.5 11.6a8.5 8.5 0 0 1-12.5 7.5L4 20l1.2-4.1A8.5 8.5 0 1 1 20.5 11.6Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"/>
+
+          <path
+            d="M9 8.2c.3-.4.7-.4 1-.1l1 1.1c.2.3.2.6 0 .9l-.5.6c.6 1.1 1.5 2 2.6 2.6l.6-.5c.3-.2.6-.2.9 0l1.1 1c.3.3.3.7-.1 1-.6.5-1.3.7-2 .4-2.5-.8-5-3.3-5.8-5.8-.3-.7-.1-1.4.4-2Z"
+            fill="currentColor"/>
+
+        </svg>
+
+      </span>
+
+      WhatsApp
+
+    </button>
+
+
+    <button
+      class="social-tab"
+      data-target="facebook">
+
+      <span class="social-logo fb">
+        f
+      </span>
+
+      Facebook
+
+    </button>
+
+  </div>
+
+
+  <!-- ================= INSTAGRAM ================= -->
+
+  <section
+    class="social-panel active"
+    id="instagram">
+
+    <div class="platform-head">
+
+      <div class="platform-icon ig">
+
+        <svg viewBox="0 0 24 24">
+
+          <rect
+            x="3"
+            y="3"
+            width="18"
+            height="18"
+            rx="5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"/>
+
+          <circle
+            cx="12"
+            cy="12"
+            r="4.2"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"/>
+
+          <circle
+            cx="17.5"
+            cy="6.7"
+            r="1.2"
+            fill="currentColor"/>
+
+        </svg>
+
+      </div>
+
+      <div>
+
+        <h3>Instagram</h3>
+
+        <p>
+          Followers • Like • View • Komentar
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="grid">
+
+
+      <!-- IG FOLLOWERS -->
+
+      <div class="card">
+
+        <h4>Followers</h4>
+
+        <div class="desc">
+          Harga dasar 100 Followers = Rp5.000
+        </div>
+
+        <div class="quantity-box">
+
+          <label class="quantity-label">
+            Masukkan jumlah Followers
+          </label>
+
+          <input
+            class="quantity-input"
+            type="number"
+            min="100"
+            step="1"
+            data-name="Instagram Followers"
+            data-base-qty="100"
+            data-base-price="5000"
+            placeholder="Contoh: 250">
+
+          <div class="price-preview">
+
+            <span>
+              Minimal 100
+            </span>
+
+            <strong>
+              Rp0
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- IG LIKE -->
+
+      <div class="card">
+
+        <h4>Like</h4>
+
+        <div class="desc">
+          Harga dasar 100 Like = Rp1.000
+        </div>
+
+        <div class="quantity-box">
+
+          <label class="quantity-label">
+            Masukkan jumlah Like
+          </label>
+
+          <input
+            class="quantity-input"
+            type="number"
+            min="100"
+            step="1"
+            data-name="Instagram Like"
+            data-base-qty="100"
+            data-base-price="1000"
+            placeholder="Contoh: 350">
+
+          <div class="price-preview">
+
+            <span>
+              Minimal 100
+            </span>
+
+            <strong>
+              Rp0
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- IG VIEW -->
+
+      <div class="card">
+
+        <h4>View</h4>
+
+        <div class="desc">
+          Harga dasar 1.000 View = Rp1.000
+        </div>
+
+        <div class="quantity-box">
+
+          <label class="quantity-label">
+            Masukkan jumlah View
+          </label>
+
+          <input
+            class="quantity-input"
+            type="number"
+            min="1000"
+            step="1"
+            data-name="Instagram View"
+            data-base-qty="1000"
+            data-base-price="1000"
+            placeholder="Contoh: 2500">
+
+          <div class="price-preview">
+
+            <span>
+              Minimal 1.000
+            </span>
+
+            <strong>
+              Rp0
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- IG KOMENTAR -->
+
+      <div class="card">
+
+        <h4>Komentar</h4>
+
+        <div class="desc">
+          Harga dasar 20 Komentar = Rp2.000
+        </div>
+
+        <div class="quantity-box">
+
+          <label class="quantity-label">
+            Masukkan jumlah Komentar
+          </label>
+
+          <input
+            class="quantity-input"
+            type="number"
+            min="20"
+            step="1"
+            data-name="Instagram Komentar"
+            data-base-qty="20"
+            data-base-price="2000"
+            placeholder="Contoh: 75">
+
+          <div class="price-preview">
+
+            <span>
+              Minimal 20
+            </span>
+
+            <strong>
+              Rp0
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= TIKTOK ================= -->
+
+  <section
+    class="social-panel"
+    id="tiktok">
+
+    <div class="platform-head">
+
+      <div class="platform-icon tt">
+
+        <svg viewBox="0 0 24 24">
+
+          <path
+            d="M14.1 4h3.1c.3 1.9 1.4 3.4 3.3 4.2v3.1c-1.4-.1-2.6-.5-3.7-1.2v6.1c0 3.2-2.5 5.8-5.8 5.8S5.2 19.4 5.2 16.2s2.5-5.8 5.8-5.8c.4 0 .8 0 1.2.1v3.2a2.8 2.8 0 0 0-1.2-.3 2.8 2.8 0 1 0 2.8 2.8V4.5c0-.2.1-.4.3-.5Z"
+            fill="currentColor"/>
+
+        </svg>
+
+      </div>
+
+      <div>
+
+        <h3>TikTok</h3>
+
+        <p>
+          Followers • Like • View • Komentar
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="grid">
+
+
+      <div class="card">
+
+        <h4>Followers</h4>
+
+        <div class="desc">
+          Harga dasar 100 Followers = Rp10.000
+        </div>
+
+        <div class="quantity-box">
+
+          <label class="quantity-label">
+            Masukkan jumlah Followers
+          </label>
+
+          <input
+            class="quantity-input"
+            type="number"
+            min="100"
+            step="1"
+            data-name="TikTok Followers"
+            data-base-qty="100"
+            data-base-price="10000"
+            placeholder="Contoh: 250">
+
+          <div class="price-preview">
+
+            <span>Minimal 100</span>
+
+            <strong>Rp0</strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="card">
+
+        <h4>Like</h4>
+
+        <div class="desc">
+          Harga dasar 100 Like = Rp1.000
+        </div>
+
+        <div class="quantity-box">
+
+          <label class="quantity-label">
+            Masukkan jumlah Like
+          </label>
+
+          <input
+            class="quantity-input"
+            type="number"
+            min="100"
+            step="1"
+            data-name="TikTok Like"
+            data-base-qty="100"
+            data-base-price="1000"
+            placeholder="Contoh: 350">
+
+          <div class="price-preview">
+
+            <span>Minimal 100</span>
+
+            <strong>Rp0</strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="card">
+
+        <h4>View</h4>
+
+        <div class="desc">
+          Harga dasar 1.000 View = Rp2.000
+        </div>
+
+        <div class="quantity-box">
+
+          <label class="quantity-label">
+            Masukkan jumlah View
+          </label>
+
+          <input
+            class="quantity-input"
+            type="number"
+            min="1000"
+            step="1"
+            data-name="TikTok View"
+            data-base-qty="1000"
+            data-base-price="2000"
+            placeholder="Contoh: 2500">
+
+          <div class="price-preview">
+
+            <span>Minimal 1.000</span>
+
+            <strong>Rp0</strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="card">
+
+        <h4>Komentar</h4>
+
+        <div class="desc">
+          Harga dasar 20 Komentar = Rp4.500
+        </div>
+
+        <div class="quantity-box">
+
+          <label class="quantity-label">
+            Masukkan jumlah Komentar
+          </label>
+
+          <input
+            class="quantity-input"
+            type="number"
+            min="20"
+            step="1"
+            data-name="TikTok Komentar"
+            data-base-qty="20"
+            data-base-price="4500"
+            placeholder="Contoh: 75">
+
+          <div class="price-preview">
+
+            <span>Minimal 20</span>
+
+            <strong>Rp0</strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= WHATSAPP ================= -->
+
+  <section
+    class="social-panel"
+    id="whatsapp">
+
+    <div class="platform-head">
+
+      <div class="platform-icon wh">
+
+        <svg viewBox="0 0 24 24">
+
+          <path
+            d="M20.5 11.6a8.5 8.5 0 0 1-12.5 7.5L4 20l1.2-4.1A8.5 8.5 0 1 1 20.5 11.6Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"/>
+
+          <path
+            d="M9 8.2c.3-.4.7-.4 1-.1l1 1.1c.2.3.2.6 0 .9l-.5.6c.6 1.1 1.5 2 2.6 2.6l.6-.5c.3-.2.6-.2.9 0l1.1 1c.3.3.3.7-.1 1-.6.5-1.3.7-2 .4-2.5-.8-5-3.3-5.8-5.8-.3-.7-.1-1.4.4-2Z"
+            fill="currentColor"/>
+
+        </svg>
+
+      </div>
+
+      <div>
+
+        <h3>WhatsApp</h3>
+
+        <p>
+          Followers Saluran • Reaksi Postingan
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="grid">
+
+
+      <!-- WA FOLLOWERS -->
+
+      <div class="card">
+
+        <h4>Followers Saluran</h4>
+
+        <div class="desc">
+          Harga dasar 100 Followers = Rp5.000
+        </div>
+
+        <div class="quantity-box">
+
+          <label class="quantity-label">
+            Masukkan jumlah Followers
+          </label>
+
+          <input
+            class="quantity-input"
+            type="number"
+            min="100"
+            step="1"
+            data-name="WhatsApp Followers Saluran"
+            data-base-qty="100"
+            data-base-price="5000"
+            placeholder="Contoh: 250">
+
+          <div class="price-preview">
+
+            <span>Minimal 100</span>
+
+            <strong>Rp0</strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- WA REAKSI -->
+
+      <div class="card">
+
+        <h4>Reaksi Postingan Saluran</h4>
+
+        <div class="desc">
+          Pilih emoji yang ingin digunakan
+        </div>
+
+        <div class="emoji-title">
+          Pilih emoji
+        </div>
+
+        <div class="emojis">
+
+          <label class="emoji">
+            <input
+              class="reactionEmoji"
+              type="checkbox"
+              value="👍">
+            <span>👍</span>
+          </label>
+
+          <label class="emoji">
+            <input
+              class="reactionEmoji"
+              type="checkbox"
+              value="❤️">
+            <span>❤️</span>
+          </label>
+
+          <label class="emoji">
+            <input
+              class="reactionEmoji"
+              type="checkbox"
+              value="😂">
+            <span>😂</span>
+          </label>
+
+          <label class="emoji">
+            <input
+              class="reactionEmoji"
+              type="checkbox"
+              value="😯">
+            <span>😯</span>
+          </label>
+
+          <label class="emoji">
+            <input
+              class="reactionEmoji"
+              type="checkbox"
+              value="🥺">
+            <span>🥺</span>
+          </label>
+
+          <label class="emoji">
+            <input
+              class="reactionEmoji"
+              type="checkbox"
+              value="🙏">
+            <span>🙏</span>
+          </label>
+
+        </div>
+
+        <div class="note">
+          Harga dasar 10 reaksi = Rp1.000
+        </div>
+
+        <div class="quantity-box">
+
+          <label class="quantity-label">
+            Masukkan jumlah reaksi
+          </label>
+
+          <input
+            class="quantity-input"
+            id="waReactionQty"
+            type="number"
+            min="10"
+            step="1"
+            data-name="WhatsApp Reaksi"
+            data-base-qty="10"
+            data-base-price="1000"
+            placeholder="Contoh: 75">
+
+          <div class="price-preview">
+
+            <span>Minimal 10</span>
+
+            <strong>Rp0</strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FACEBOOK ================= -->
+
+  <section
+    class="social-panel"
+    id="facebook">
+
+    <div class="platform-head">
+
+      <div class="platform-icon fb">
+        f
+      </div>
+
+      <div>
+
+        <h3>Facebook</h3>
+
+        <p>
+          Followers • Like • View • Member Grup
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="grid">
+
+
+      <!-- FB FOLLOWERS -->
+
+      <div class="card">
+
+        <h4>Followers Facebook</h4>
+
+        <div class="desc">
+          Harga dasar 100 Followers = Rp5.000
+        </div>
+
+        <div class="quantity-box">
+
+          <label class="quantity-label">
+            Masukkan jumlah Followers
+          </label>
+
+          <input
+            class="quantity-input"
+            type="number"
+            min="100"
+            step="1"
+            data-name="Facebook Followers"
+            data-base-qty="100"
+            data-base-price="5000"
+            placeholder="Contoh: 250">
+
+          <div class="price-preview">
+
+            <span>Minimal 100</span>
+
+            <strong>Rp0</strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FB LIKE -->
+
+      <div class="card">
+
+        <h4>Like Facebook</h4>
+
+        <div class="desc">
+          Harga dasar 100 Like = Rp2.000
+        </div>
+
+        <div class="quantity-box">
+
+          <label class="quantity-label">
+            Masukkan jumlah Like
+          </label>
+
+          <input
+            class="quantity-input"
+            type="number"
+            min="100"
+            step="1"
+            data-name="Facebook Like"
+            data-base-qty="100"
+            data-base-price="2000"
+            placeholder="Contoh: 350">
+
+          <div class="price-preview">
+
+            <span>Minimal 100</span>
+
+            <strong>Rp0</strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FB VIEW -->
+
+      <div class="card">
+
+        <h4>View Facebook</h4>
+
+        <div class="desc">
+          Harga dasar 1.000 View = Rp3.000
+        </div>
+
+        <div class="quantity-box">
+
+          <label class="quantity-label">
+            Masukkan jumlah View
+          </label>
+
+          <input
+            class="quantity-input"
+            type="number"
+            min="1000"
+            step="1"
+            data-name="Facebook View"
+            data-base-qty="1000"
+            data-base-price="3000"
+            placeholder="Contoh: 2500">
+
+          <div class="price-preview">
+
+            <span>Minimal 1.000</span>
+
+            <strong>Rp0</strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FB MEMBER -->
+
+      <div class="card">
+
+        <h4>Member Grup Facebook</h4>
+
+        <div class="desc">
+          Harga dasar 100 Member = Rp5.000
+        </div>
+
+        <div class="quantity-box">
+
+          <label class="quantity-label">
+            Masukkan jumlah Member
+          </label>
+
+          <input
+            class="quantity-input"
+            type="number"
+            min="100"
+            step="1"
+            data-name="Facebook Member Grup"
+            data-base-qty="100"
+            data-base-price="5000"
+            placeholder="Contoh: 250">
+
+          <div class="price-preview">
+
+            <span>Minimal 100</span>
+
+            <strong>Rp0</strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- ================= CART ================= -->
+
+<div class="cart">
+
+  <div class="carttop">
+
+    <div>
+
+      <h3>
+        Pesanan kamu
+      </h3>
+
+      <small>
+        <span id="count">0</span>
+        layanan dipilih
+      </small>
+
+    </div>
+
+    <button
+      class="clear"
+      id="clear">
+      Hapus semua
+    </button>
+
+  </div>
+
+
+  <div
+    class="selected"
+    id="selected">
+
+    <span class="empty">
+      Belum ada pesanan.
+    </span>
+
+  </div>
+
+
+  <div class="total">
+
+    <span>
+      Total
+    </span>
+
+    <strong id="total">
+      Rp0
+    </strong>
+
+  </div>
+
+
+  <button
+    class="checkout"
+    id="checkout">
+
+    Lanjut Pembayaran
+
+  </button>
+
+</div>
+
+
+<!-- ================= PAYMENT ================= -->
+
+<div
+  class="payment-box"
+  id="paymentBox">
+
+  <h4>
+    Pembayaran QRIS
+  </h4>
+
+  <div
+    class="payment-total"
+    id="paymentTotal">
+    Rp0
+  </div>
+
+
+  <img
+    src="qris.jpg"
+    class="qris-image"
+    alt="QRIS Hello Boost">
+
+
+  <div class="payment-note">
+
+    Scan QRIS di atas untuk melakukan pembayaran.
+    <br>
+    Setelah pembayaran berhasil, klik tombol
+    <b>Saya Sudah Bayar</b>.
+
+  </div>
+
+
+  <button
+    class="confirm-payment"
+    id="confirmPayment">
+
+    Saya Sudah Bayar
+
+  </button>
+
+
+  <button
+    class="back-order"
+    id="backOrder">
+
+    Kembali ke Pesanan
+
+  </button>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  hello_boost • Order:
+  +62 831-7909-0525
+
+</footer>
+
+
+<script>
+
+/* =========================
+   FORMAT RUPIAH
+========================= */
+
+function rupiah(angka){
+
+  return 'Rp' +
+    Math.round(angka)
+      .toLocaleString('id-ID');
+
+}
+
+
+/* =========================
+   AMBIL SEMUA INPUT
+========================= */
+
+const quantityInputs =
+  document.querySelectorAll(
+    '.quantity-input'
   );
 
-  document.querySelector(
-    '.confirm-payment'
-  ).onclick = () => {
 
-    const p = packages.filter(x => x.checked);
+/* =========================
+   KERANJANG
+========================= */
 
-    if (!p.length) {
-      alert('Belum ada paket yang dipilih.');
-      return;
+let cartItems = [];
+
+
+/* =========================
+   HITUNG HARGA
+========================= */
+
+function calculatePrice(input){
+
+  const qty =
+    Number(input.value);
+
+  const baseQty =
+    Number(input.dataset.baseQty);
+
+  const basePrice =
+    Number(input.dataset.basePrice);
+
+
+  if(
+    !qty ||
+    qty < baseQty
+  ){
+
+    return 0;
+
+  }
+
+
+  return (
+    qty / baseQty
+  ) * basePrice;
+
+}
+
+
+/* =========================
+   UPDATE PREVIEW
+========================= */
+
+function updateInput(input){
+
+  const price =
+    calculatePrice(input);
+
+  const preview =
+    input
+      .closest('.quantity-box')
+      .querySelector('.price-preview strong');
+
+
+  preview.textContent =
+    price > 0
+      ? rupiah(price)
+      : 'Rp0';
+
+}
+
+
+/* =========================
+   UPDATE CART
+========================= */
+
+function updateCart(){
+
+  cartItems = [];
+
+
+  quantityInputs.forEach(input => {
+
+    const qty =
+      Number(input.value);
+
+    const min =
+      Number(input.dataset.baseQty);
+
+
+    if(
+      qty &&
+      qty >= min
+    ){
+
+      const price =
+        calculatePrice(input);
+
+
+      cartItems.push({
+
+        input:input,
+
+        name:input.dataset.name,
+
+        qty:qty,
+
+        price:price
+
+      });
+
     }
 
-    const total = p.reduce(
-      (a, x) => a + Number(x.dataset.price),
-      0
-    );
-
-    let pesan =
-      'Halo, saya sudah melakukan pembayaran.\n\n';
-
-    pesan += 'Pesanan:\n';
-
-    p.forEach(x => {
-      pesan +=
-        '- ' +
-        x.dataset.name +
-        ' - ' +
-        rupiah(Number(x.dataset.price)) +
-        '\n';
-    });
-
-    pesan +=
-      '\nTotal: ' +
-      rupiah(total);
-
-    pesan +=
-      '\n\nMohon diproses ya.';
-
-    window.open(
-      'https://wa.me/6283179090525?text=' +
-      encodeURIComponent(pesan),
-      '_blank'
-    );
-
-    document.getElementById(
-      'paymentTotal'
-    ).textContent = rupiah(total);
-
-    document.getElementById(
-      'paymentBox'
-    ).classList.add('active');
-
-    document.getElementById(
-      'paymentBox'
-    ).scrollIntoView({
-      behavior: 'smooth'
-    });
-  };
-};
+  });
 
 
-/* Ganti platform */
-document.querySelectorAll(
-  '.social-tab'
-).forEach(btn => {
+  const selected =
+    document.getElementById('selected');
 
-  btn.onclick = () => {
+  const count =
+    document.getElementById('count');
 
-    document.querySelectorAll(
-      '.social-tab'
-    ).forEach(x =>
-      x.classList.remove('active')
-    );
+  const total =
+    document.getElementById('total');
 
-    document.querySelectorAll(
-      '.social-panel'
-    ).forEach(x =>
-      x.classList.remove('active')
-    );
 
-    btn.classList.add('active');
+  count.textContent =
+    cartItems.length;
 
-    document.getElementById(
-      btn.dataset.target
-    ).classList.add('active');
 
-    update();
-  };
+  if(!cartItems.length){
+
+    selected.innerHTML =
+      '<span class="empty">Belum ada pesanan.</span>';
+
+    total.textContent =
+      'Rp0';
+
+    return;
+
+  }
+
+
+  selected.innerHTML = '';
+
+
+  let grandTotal = 0;
+
+
+  cartItems.forEach((item,index) => {
+
+    grandTotal += item.price;
+
+
+    const chip =
+      document.createElement('div');
+
+    chip.className =
+      'chip';
+
+    chip.textContent =
+      item.name +
+      ' ' +
+      item.qty.toLocaleString('id-ID') +
+      ' — ' +
+      rupiah(item.price);
+
+
+    selected.appendChild(chip);
+
+  });
+
+
+  total.textContent =
+    rupiah(grandTotal);
+
+}
+
+
+/* =========================
+   INPUT JUMLAH
+========================= */
+
+quantityInputs.forEach(input => {
+
+  input.addEventListener(
+    'input',
+    function(){
+
+      updateInput(this);
+
+      updateCart();
+
+    }
+  );
+
 });
 
 
-update();
+/* =========================
+   TAB SOSMED
+========================= */
+
+document
+  .querySelectorAll('.social-tab')
+  .forEach(button => {
+
+    button.addEventListener(
+      'click',
+      function(){
+
+        document
+          .querySelectorAll('.social-tab')
+          .forEach(btn => {
+
+            btn.classList.remove(
+              'active'
+            );
+
+          });
+
+
+        document
+          .querySelectorAll('.social-panel')
+          .forEach(panel => {
+
+            panel.classList.remove(
+              'active'
+            );
+
+          });
+
+
+        this.classList.add(
+          'active'
+        );
+
+
+        const target =
+          document.getElementById(
+            this.dataset.target
+          );
+
+
+        target.classList.add(
+          'active'
+        );
+
+      }
+    );
+
+  });
+
+
+/* =========================
+   HAPUS SEMUA
+========================= */
+
+document
+  .getElementById('clear')
+  .addEventListener(
+    'click',
+    function(){
+
+      quantityInputs.forEach(input => {
+
+        input.value = '';
+
+        updateInput(input);
+
+      });
+
+
+      document
+        .querySelectorAll(
+          '.reactionEmoji'
+        )
+        .forEach(emoji => {
+
+          emoji.checked = false;
+
+        });
+
+
+      document
+        .getElementById('paymentBox')
+        .classList.remove(
+          'active'
+        );
+
+
+      updateCart();
+
+    }
+  );
+
+
+/* =========================
+   CHECKOUT
+========================= */
+
+document
+  .getElementById('checkout')
+  .addEventListener(
+    'click',
+    function(){
+
+      updateCart();
+
+
+      if(!cartItems.length){
+
+        alert(
+          'Silakan masukkan jumlah pesanan terlebih dahulu.'
+        );
+
+        return;
+
+      }
+
+
+      const invalid =
+        [...quantityInputs].some(input => {
+
+          if(!input.value){
+
+            return false;
+
+          }
+
+
+          const qty =
+            Number(input.value);
+
+          const min =
+            Number(input.dataset.baseQty);
+
+
+          return qty < min;
+
+        });
+
+
+      if(invalid){
+
+        alert(
+          'Jumlah yang dimasukkan kurang dari minimal pesanan.'
+        );
+
+        return;
+
+      }
+
+
+      let total = 0;
+
+
+      cartItems.forEach(item => {
+
+        total += item.price;
+
+      });
+
+
+      document
+        .getElementById('paymentTotal')
+        .textContent =
+        rupiah(total);
+
+
+      const paymentBox =
+        document.getElementById(
+          'paymentBox'
+        );
+
+
+      paymentBox.classList.add(
+        'active'
+      );
+
+
+      paymentBox.scrollIntoView({
+        behavior:'smooth',
+        block:'center'
+      });
+
+    }
+  );
+
+
+/* =========================
+   KEMBALI
+========================= */
+
+document
+  .getElementById('backOrder')
+  .addEventListener(
+    'click',
+    function(){
+
+      document
+        .getElementById('paymentBox')
+        .classList.remove(
+          'active'
+        );
+
+    }
+  );
+
+
+/* =========================
+   SUDAH BAYAR
+========================= */
+
+document
+  .getElementById('confirmPayment')
+  .addEventListener(
+    'click',
+    function(){
+
+      updateCart();
+
+
+      if(!cartItems.length){
+
+        alert(
+          'Belum ada pesanan.'
+        );
+
+        return;
+
+      }
+
+
+      let total = 0;
+
+
+      let pesan =
+        'Halo, saya sudah melakukan pembayaran.\n\n';
+
+
+      pesan +=
+        'Pesanan:\n';
+
+
+      cartItems.forEach(item => {
+
+        total += item.price;
+
+
+        pesan +=
+          '- ' +
+          item.name +
+          ' ' +
+          item.qty.toLocaleString('id-ID') +
+          ' — ' +
+          rupiah(item.price) +
+          '\n';
+
+      });
+
+
+      /* EMOJI WHATSAPP */
+
+      const selectedEmoji =
+        [...document.querySelectorAll(
+          '.reactionEmoji:checked'
+        )]
+        .map(x => x.value);
+
+
+      if(selectedEmoji.length){
+
+        pesan +=
+          '\nEmoji reaksi: ' +
+          selectedEmoji.join(' ');
+
+      }
+
+
+      pesan +=
+        '\n\nTotal: ' +
+        rupiah(total);
+
+
+      pesan +=
+        '\n\nMohon diproses ya 🙏';
+
+
+      const whatsappURL =
+        'https://wa.me/6283179090525?text=' +
+        encodeURIComponent(pesan);
+
+
+      window.open(
+        whatsappURL,
+        '_blank'
+      );
+
+    }
+  );
+
+
+/* =========================
+   START
+========================= */
+
+updateCart();
+
 </script>
-</body></html>
+
+</body>
+</html>
