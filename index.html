@@ -227,94 +227,116 @@ footer{text-align:center;color:#987d88;padding:30px 18px}
   </button>
 </div>
 
-<script>
-const packages = [...document.querySelectorAll('.pkg')];
-const emojis = [...document.querySelectorAll('.reactionEmoji')];
+    if (qty < MIN_ORDER) {
+      hiddenPkg.checked = false;
 
-const rupiah = n => 'Rp' + n.toLocaleString('id-ID');
+      priceText.textContent =
+        'Minimal ' + MIN_ORDER;
 
-function chosen() {
-  return emojis.filter(e => e.checked).map(e => e.value);
-}
+      priceText.style.color = '#e92970';
 
-function update() {
+      update();
+      return;
+    }
+
+    if (qty > MAX_ORDER) {
+      qty = MAX_ORDER;
+      qtyInput.value = MAX_ORDER;
+
+
+
+
+/* Tombol checkout */
+document.getElementById('checkout').onclick = () => {
+
   const p = packages.filter(x => x.checked);
-  const e = chosen();
 
-  document.getElementById('count').textContent = p.length + e.length;
-  document.getElementById('total').textContent =
-    rupiah(
-      p.reduce((a, x) => a + Number(x.dataset.price), 0)
+  if (!p.length) {
+    alert('Silakan pilih jumlah paket terlebih dahulu.');
+    return;
+  }
+
+  const total = p.reduce(
+    (a, x) => a + Number(x.dataset.price),
+    0
+  );
+
+  document.querySelector(
+    '.confirm-payment'
+  ).onclick = () => {
+
+    const p = packages.filter(x => x.checked);
+
+    if (!p.length) {
+      alert('Belum ada paket yang dipilih.');
+      return;
+    }
+
+    const total = p.reduce(
+      (a, x) => a + Number(x.dataset.price),
+      0
     );
 
-  packages.forEach(x => x.addEventListener('change', update));
-  emojis.forEach(x => x.addEventListener('change', update));
-}
+    let pesan =
+      'Halo, saya sudah melakukan pembayaran.\n\n';
 
-document.getElementById('clear').onclick = () => {
-  packages.forEach(x => x.checked = false);
-  emojis.forEach(x => x.checked = false);
-  update();
+    pesan += 'Pesanan:\n';
+
+    p.forEach(x => {
+      pesan +=
+        '- ' +
+        x.dataset.name +
+        ' - ' +
+        rupiah(Number(x.dataset.price)) +
+        '\n';
+    });
+
+    pesan +=
+      '\nTotal: ' +
+      rupiah(total);
+
+    pesan +=
+      '\n\nMohon diproses ya.';
+
+    window.open(
+      'https://wa.me/6283179090525?text=' +
+      encodeURIComponent(pesan),
+      '_blank'
+    );
+
+    document.getElementById(
+      'paymentTotal'
+    ).textContent = rupiah(total);
+
+    document.getElementById(
+      'paymentBox'
+    ).classList.add('active');
+
+    document.getElementById(
+      'paymentBox'
+    ).scrollIntoView({
+      behavior: 'smooth'
+    });
+  };
 };
 
-document.getElementById('checkout').onclick = () => {
-  const p = packages.filter(x => x.checked);
 
-  if (!p.length) {
-    alert('Silakan pilih paket terlebih dahulu.');
-    return;
-  }
+/* Ganti platform */
+document.querySelectorAll(
+  '.social-tab'
+).forEach(btn => {
 
-  const total = p.reduce(
-    (a, x) => a + Number(x.dataset.price),
-    0
-  );
-
-  document.querySelector('.confirm-payment').onclick = () => {
-  const p = packages.filter(x => x.checked);
-
-  if (!p.length) {
-    alert('Belum ada paket yang dipilih.');
-    return;
-  }
-
-  const total = p.reduce(
-    (a, x) => a + Number(x.dataset.price),
-    0
-  );
-
-  let pesan = 'Halo, saya sudah melakukan pembayaran.\n\n';
-  pesan += 'Pesanan:\n';
-
-  p.forEach(x => {
-    pesan += '- ' + x.dataset.name + ' - ' + rupiah(Number(x.dataset.price)) + '\n';
-  });
-
-  pesan += '\nTotal: ' + rupiah(total);
-  pesan += '\n\nMohon diproses ya.';
-
-  window.open(
-    'https://wa.me/6283179090525?text=' + encodeURIComponent(pesan),
-    '_blank'
-  );
-};
-  document.getElementById('paymentTotal').textContent =
-    rupiah(total);
-
-  document.getElementById('paymentBox').classList.add('active');
-
-  document.getElementById('paymentBox').scrollIntoView({
-    behavior: 'smooth'
-  });
-};
-
-document.querySelectorAll('.social-tab').forEach(btn => {
   btn.onclick = () => {
-    document.querySelectorAll('.social-tab').forEach(x =>
+
+    document.querySelectorAll(
+      '.social-tab'
+    ).forEach(x =>
       x.classList.remove('active')
     );
 
-    document.querySelectorAll('.social-panel').forEach(x =>
+    document.querySelectorAll(
+      '.social-panel'
+    ).forEach(x =>
       x.classList.remove('active')
     );
 
@@ -327,6 +349,7 @@ document.querySelectorAll('.social-tab').forEach(btn => {
     update();
   };
 });
+
 
 update();
 </script>
