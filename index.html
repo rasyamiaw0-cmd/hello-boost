@@ -75,6 +75,25 @@ header{
   white-space:nowrap;
 }
 
+/* WATERMARK GARANSI */
+.guarantee-watermark{
+  position:fixed;
+  left:50%;
+  bottom:8px;
+  transform:translateX(-50%);
+  z-index:35;
+  background:#e92970;
+  color:#fff;
+  padding:7px 14px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:950;
+  letter-spacing:.3px;
+  white-space:nowrap;
+  box-shadow:0 5px 18px #e9297040;
+  pointer-events:none;
+}
+
 /* HERO */
 .hero{
   max-width:1050px;
@@ -516,7 +535,7 @@ header{
 footer{
   text-align:center;
   color:#987d88;
-  padding:30px 18px;
+  padding:30px 18px 55px;
 }
 
 /* MOBILE */
@@ -578,11 +597,23 @@ footer{
   .payment-box{
     margin:18px 10px;
   }
+
+  .guarantee-watermark{
+    font-size:9px;
+    padding:6px 11px;
+    bottom:6px;
+  }
+
 }
 </style>
 </head>
 
 <body>
+
+<!-- WATERMARK GARANSI -->
+<div class="guarantee-watermark">
+  SEMUA PESANAN BERGARANSI 1×48 JAM
+</div>
 
 <!-- HEADER -->
 <header>
@@ -613,7 +644,6 @@ footer{
   </div>
 </header>
 
-
 <!-- HERO -->
 <div class="hero">
 
@@ -624,7 +654,6 @@ footer{
   </p>
 
 </div>
-
 
 <main class="wrap">
 
@@ -638,7 +667,6 @@ footer{
     </p>
 
   </div>
-
 
   <!-- SOCIAL TABS -->
   <div class="social-tabs">
@@ -681,7 +709,6 @@ footer{
 
     </button>
 
-
     <button
       class="social-tab"
       data-target="tiktok">
@@ -699,7 +726,6 @@ footer{
       TikTok
 
     </button>
-
 
     <button
       class="social-tab"
@@ -727,7 +753,6 @@ footer{
 
     </button>
 
-
     <button
       class="social-tab"
       data-target="facebook">
@@ -742,9 +767,7 @@ footer{
 
   </div>
 
-
-  <!-- ================= INSTAGRAM ================= -->
-
+  <!-- INSTAGRAM -->
   <section
     class="social-panel active"
     id="instagram">
@@ -795,11 +818,7 @@ footer{
 
     </div>
 
-
     <div class="grid">
-
-
-      <!-- IG FOLLOWERS -->
 
       <div class="card">
 
@@ -826,23 +845,13 @@ footer{
             placeholder="Contoh: 250">
 
           <div class="price-preview">
-
-            <span>
-              Minimal 100
-            </span>
-
-            <strong>
-              Rp0
-            </strong>
-
+            <span>Minimal 100</span>
+            <strong>Rp0</strong>
           </div>
 
         </div>
 
       </div>
-
-
-      <!-- IG LIKE -->
 
       <div class="card">
 
@@ -869,23 +878,13 @@ footer{
             placeholder="Contoh: 350">
 
           <div class="price-preview">
-
-            <span>
-              Minimal 100
-            </span>
-
-            <strong>
-              Rp0
-            </strong>
-
+            <span>Minimal 100</span>
+            <strong>Rp0</strong>
           </div>
 
         </div>
 
       </div>
-
-
-      <!-- IG VIEW -->
 
       <div class="card">
 
@@ -912,23 +911,13 @@ footer{
             placeholder="Contoh: 2500">
 
           <div class="price-preview">
-
-            <span>
-              Minimal 1.000
-            </span>
-
-            <strong>
-              Rp0
-            </strong>
-
+            <span>Minimal 1.000</span>
+            <strong>Rp0</strong>
           </div>
 
         </div>
 
       </div>
-
-
-      <!-- IG KOMENTAR -->
 
       <div class="card">
 
@@ -955,15 +944,8 @@ footer{
             placeholder="Contoh: 75">
 
           <div class="price-preview">
-
-            <span>
-              Minimal 20
-            </span>
-
-            <strong>
-              Rp0
-            </strong>
-
+            <span>Minimal 20</span>
+            <strong>Rp0</strong>
           </div>
 
         </div>
@@ -974,9 +956,7 @@ footer{
 
   </section>
 
-
-  <!-- ================= TIKTOK ================= -->
-
+  <!-- TIKTOK -->
   <section
     class="social-panel"
     id="tiktok">
@@ -1007,9 +987,7 @@ footer{
 
     </div>
 
-
     <div class="grid">
-
 
       <div class="card">
 
@@ -1036,17 +1014,13 @@ footer{
             placeholder="Contoh: 250">
 
           <div class="price-preview">
-
             <span>Minimal 100</span>
-
             <strong>Rp0</strong>
-
           </div>
 
         </div>
 
       </div>
-
 
       <div class="card">
 
@@ -1073,17 +1047,13 @@ footer{
             placeholder="Contoh: 350">
 
           <div class="price-preview">
-
             <span>Minimal 100</span>
-
             <strong>Rp0</strong>
-
           </div>
 
         </div>
 
       </div>
-
 
       <div class="card">
 
@@ -1110,17 +1080,13 @@ footer{
             placeholder="Contoh: 2500">
 
           <div class="price-preview">
-
             <span>Minimal 1.000</span>
-
             <strong>Rp0</strong>
-
           </div>
 
         </div>
 
       </div>
-
 
       <div class="card">
 
@@ -1147,11 +1113,8 @@ footer{
             placeholder="Contoh: 75">
 
           <div class="price-preview">
-
             <span>Minimal 20</span>
-
             <strong>Rp0</strong>
-
           </div>
 
         </div>
@@ -1162,9 +1125,7 @@ footer{
 
   </section>
 
-
-  <!-- ================= WHATSAPP ================= -->
-
+  <!-- WHATSAPP -->
   <section
     class="social-panel"
     id="whatsapp">
@@ -1201,11 +1162,7 @@ footer{
 
     </div>
 
-
     <div class="grid">
-
-
-      <!-- WA FOLLOWERS -->
 
       <div class="card">
 
@@ -1232,19 +1189,13 @@ footer{
             placeholder="Contoh: 250">
 
           <div class="price-preview">
-
             <span>Minimal 100</span>
-
             <strong>Rp0</strong>
-
           </div>
 
         </div>
 
       </div>
-
-
-      <!-- WA REAKSI -->
 
       <div class="card">
 
@@ -1332,11 +1283,8 @@ footer{
             placeholder="Contoh: 75">
 
           <div class="price-preview">
-
             <span>Minimal 10</span>
-
             <strong>Rp0</strong>
-
           </div>
 
         </div>
@@ -1347,9 +1295,7 @@ footer{
 
   </section>
 
-
-  <!-- ================= FACEBOOK ================= -->
-
+  <!-- FACEBOOK -->
   <section
     class="social-panel"
     id="facebook">
@@ -1372,11 +1318,7 @@ footer{
 
     </div>
 
-
     <div class="grid">
-
-
-      <!-- FB FOLLOWERS -->
 
       <div class="card">
 
@@ -1403,19 +1345,13 @@ footer{
             placeholder="Contoh: 250">
 
           <div class="price-preview">
-
             <span>Minimal 100</span>
-
             <strong>Rp0</strong>
-
           </div>
 
         </div>
 
       </div>
-
-
-      <!-- FB LIKE -->
 
       <div class="card">
 
@@ -1442,19 +1378,13 @@ footer{
             placeholder="Contoh: 350">
 
           <div class="price-preview">
-
             <span>Minimal 100</span>
-
             <strong>Rp0</strong>
-
           </div>
 
         </div>
 
       </div>
-
-
-      <!-- FB VIEW -->
 
       <div class="card">
 
@@ -1481,19 +1411,13 @@ footer{
             placeholder="Contoh: 2500">
 
           <div class="price-preview">
-
             <span>Minimal 1.000</span>
-
             <strong>Rp0</strong>
-
           </div>
 
         </div>
 
       </div>
-
-
-      <!-- FB MEMBER -->
 
       <div class="card">
 
@@ -1520,11 +1444,8 @@ footer{
             placeholder="Contoh: 250">
 
           <div class="price-preview">
-
             <span>Minimal 100</span>
-
             <strong>Rp0</strong>
-
           </div>
 
         </div>
@@ -1537,9 +1458,7 @@ footer{
 
 </main>
 
-
-<!-- ================= CART ================= -->
-
+<!-- CART -->
 <div class="cart">
 
   <div class="carttop">
@@ -1565,7 +1484,6 @@ footer{
 
   </div>
 
-
   <div
     class="selected"
     id="selected">
@@ -1575,7 +1493,6 @@ footer{
     </span>
 
   </div>
-
 
   <div class="total">
 
@@ -1589,7 +1506,6 @@ footer{
 
   </div>
 
-
   <button
     class="checkout"
     id="checkout">
@@ -1600,9 +1516,7 @@ footer{
 
 </div>
 
-
-<!-- ================= PAYMENT ================= -->
-
+<!-- PAYMENT -->
 <div
   class="payment-box"
   id="paymentBox">
@@ -1617,12 +1531,10 @@ footer{
     Rp0
   </div>
 
-
   <img
     src="qris.jpg"
     class="qris-image"
     alt="QRIS Hello Boost">
-
 
   <div class="payment-note">
 
@@ -1633,7 +1545,6 @@ footer{
 
   </div>
 
-
   <button
     class="confirm-payment"
     id="confirmPayment">
@@ -1641,7 +1552,6 @@ footer{
     Saya Sudah Bayar
 
   </button>
-
 
   <button
     class="back-order"
@@ -1653,9 +1563,7 @@ footer{
 
 </div>
 
-
 <!-- FOOTER -->
-
 <footer>
 
   hello_boost • Order:
@@ -1663,13 +1571,9 @@ footer{
 
 </footer>
 
-
 <script>
 
-/* =========================
-   FORMAT RUPIAH
-========================= */
-
+/* FORMAT RUPIAH */
 function rupiah(angka){
 
   return 'Rp' +
@@ -1678,28 +1582,16 @@ function rupiah(angka){
 
 }
 
-
-/* =========================
-   AMBIL SEMUA INPUT
-========================= */
-
+/* AMBIL SEMUA INPUT */
 const quantityInputs =
   document.querySelectorAll(
     '.quantity-input'
   );
 
-
-/* =========================
-   KERANJANG
-========================= */
-
+/* KERANJANG */
 let cartItems = [];
 
-
-/* =========================
-   HITUNG HARGA
-========================= */
-
+/* HITUNG HARGA */
 function calculatePrice(input){
 
   const qty =
@@ -1711,7 +1603,6 @@ function calculatePrice(input){
   const basePrice =
     Number(input.dataset.basePrice);
 
-
   if(
     !qty ||
     qty < baseQty
@@ -1721,18 +1612,13 @@ function calculatePrice(input){
 
   }
 
-
   return (
     qty / baseQty
   ) * basePrice;
 
 }
 
-
-/* =========================
-   UPDATE PREVIEW
-========================= */
-
+/* UPDATE PREVIEW */
 function updateInput(input){
 
   const price =
@@ -1743,7 +1629,6 @@ function updateInput(input){
       .closest('.quantity-box')
       .querySelector('.price-preview strong');
 
-
   preview.textContent =
     price > 0
       ? rupiah(price)
@@ -1751,15 +1636,10 @@ function updateInput(input){
 
 }
 
-
-/* =========================
-   UPDATE CART
-========================= */
-
+/* UPDATE CART */
 function updateCart(){
 
   cartItems = [];
-
 
   quantityInputs.forEach(input => {
 
@@ -1769,7 +1649,6 @@ function updateCart(){
     const min =
       Number(input.dataset.baseQty);
 
-
     if(
       qty &&
       qty >= min
@@ -1777,7 +1656,6 @@ function updateCart(){
 
       const price =
         calculatePrice(input);
-
 
       cartItems.push({
 
@@ -1795,7 +1673,6 @@ function updateCart(){
 
   });
 
-
   const selected =
     document.getElementById('selected');
 
@@ -1805,10 +1682,8 @@ function updateCart(){
   const total =
     document.getElementById('total');
 
-
   count.textContent =
     cartItems.length;
-
 
   if(!cartItems.length){
 
@@ -1822,17 +1697,13 @@ function updateCart(){
 
   }
 
-
   selected.innerHTML = '';
-
 
   let grandTotal = 0;
 
-
-  cartItems.forEach((item,index) => {
+  cartItems.forEach(item => {
 
     grandTotal += item.price;
-
 
     const chip =
       document.createElement('div');
@@ -1847,22 +1718,16 @@ function updateCart(){
       ' — ' +
       rupiah(item.price);
 
-
     selected.appendChild(chip);
 
   });
-
 
   total.textContent =
     rupiah(grandTotal);
 
 }
 
-
-/* =========================
-   INPUT JUMLAH
-========================= */
-
+/* INPUT JUMLAH */
 quantityInputs.forEach(input => {
 
   input.addEventListener(
@@ -1878,11 +1743,7 @@ quantityInputs.forEach(input => {
 
 });
 
-
-/* =========================
-   TAB SOSMED
-========================= */
-
+/* TAB SOSMED */
 document
   .querySelectorAll('.social-tab')
   .forEach(button => {
@@ -1901,7 +1762,6 @@ document
 
           });
 
-
         document
           .querySelectorAll('.social-panel')
           .forEach(panel => {
@@ -1912,17 +1772,14 @@ document
 
           });
 
-
         this.classList.add(
           'active'
         );
-
 
         const target =
           document.getElementById(
             this.dataset.target
           );
-
 
         target.classList.add(
           'active'
@@ -1933,11 +1790,7 @@ document
 
   });
 
-
-/* =========================
-   HAPUS SEMUA
-========================= */
-
+/* HAPUS SEMUA */
 document
   .getElementById('clear')
   .addEventListener(
@@ -1952,7 +1805,6 @@ document
 
       });
 
-
       document
         .querySelectorAll(
           '.reactionEmoji'
@@ -1963,24 +1815,18 @@ document
 
         });
 
-
       document
         .getElementById('paymentBox')
         .classList.remove(
           'active'
         );
 
-
       updateCart();
 
     }
   );
 
-
-/* =========================
-   CHECKOUT
-========================= */
-
+/* CHECKOUT */
 document
   .getElementById('checkout')
   .addEventListener(
@@ -1988,7 +1834,6 @@ document
     function(){
 
       updateCart();
-
 
       if(!cartItems.length){
 
@@ -2000,7 +1845,6 @@ document
 
       }
 
-
       const invalid =
         [...quantityInputs].some(input => {
 
@@ -2010,18 +1854,15 @@ document
 
           }
 
-
           const qty =
             Number(input.value);
 
           const min =
             Number(input.dataset.baseQty);
 
-
           return qty < min;
 
         });
-
 
       if(invalid){
 
@@ -2033,9 +1874,7 @@ document
 
       }
 
-
       let total = 0;
-
 
       cartItems.forEach(item => {
 
@@ -2043,23 +1882,19 @@ document
 
       });
 
-
       document
         .getElementById('paymentTotal')
         .textContent =
         rupiah(total);
-
 
       const paymentBox =
         document.getElementById(
           'paymentBox'
         );
 
-
       paymentBox.classList.add(
         'active'
       );
-
 
       paymentBox.scrollIntoView({
         behavior:'smooth',
@@ -2069,11 +1904,7 @@ document
     }
   );
 
-
-/* =========================
-   KEMBALI
-========================= */
-
+/* KEMBALI */
 document
   .getElementById('backOrder')
   .addEventListener(
@@ -2089,11 +1920,7 @@ document
     }
   );
 
-
-/* =========================
-   SUDAH BAYAR
-========================= */
-
+/* SUDAH BAYAR */
 document
   .getElementById('confirmPayment')
   .addEventListener(
@@ -2101,7 +1928,6 @@ document
     function(){
 
       updateCart();
-
 
       if(!cartItems.length){
 
@@ -2113,22 +1939,17 @@ document
 
       }
 
-
       let total = 0;
-
 
       let pesan =
         'Halo, saya sudah melakukan pembayaran.\n\n';
 
-
       pesan +=
         'Pesanan:\n';
-
 
       cartItems.forEach(item => {
 
         total += item.price;
-
 
         pesan +=
           '- ' +
@@ -2141,15 +1962,12 @@ document
 
       });
 
-
       /* EMOJI WHATSAPP */
-
       const selectedEmoji =
         [...document.querySelectorAll(
           '.reactionEmoji:checked'
         )]
         .map(x => x.value);
-
 
       if(selectedEmoji.length){
 
@@ -2159,20 +1977,16 @@ document
 
       }
 
-
       pesan +=
         '\n\nTotal: ' +
         rupiah(total);
 
-
       pesan +=
         '\n\nMohon diproses ya 🙏';
-
 
       const whatsappURL =
         'https://wa.me/6283179090525?text=' +
         encodeURIComponent(pesan);
-
 
       window.open(
         whatsappURL,
@@ -2182,11 +1996,7 @@ document
     }
   );
 
-
-/* =========================
-   START
-========================= */
-
+/* START */
 updateCart();
 
 </script>
