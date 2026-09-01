@@ -593,8 +593,9 @@ bottom:6px
 }
 </style></head><body><div class="guarantee-watermark">
 SEMUA PESANAN BERGARANSI 1×48 JAM
-</div><header>
-<div class="nav"><div class="logo">hello_boost</div><div class="header-buttons"><a class="wa"
+</div><header><div class="nav"><div class="logo">
+hello_boost
+</div><div class="header-buttons"><a class="wa"
 href="https://wa.me/6283179090525"
 target="_blank">
 WhatsApp
@@ -606,27 +607,34 @@ target="_blank">
 TESTIMONI
 </a>
 
-</div>
-</div>
-</header><div class="hero"><h1>Boost Sosmed 🚀</h1><p>
+</div></div></header><div class="hero"><h1>
+Boost Sosmed 🚀
+</h1><p>
 Pilih layanan dan tentukan jumlah yang kamu inginkan.
-</p></div><main class="wrap"><div class="heading"><h2>Pilih Sosmed</h2><p>
-Minimal order semua layanan adalah 20.
-Harga akan dihitung otomatis.
-</p></div><div class="social-tabs" id="socialTabs"></div><div id="panels"></div></main><div class="cart"><div class="carttop"><div><h3>Pesanan kamu</h3><small>
-<span id="count">0</span>
-layanan dipilih
+</p></div><main class="wrap"><div class="heading"><h2>
+Pilih Sosmed
+</h2><p>
+View biasa minimal 100. View Story dan Live Streaming View minimal 20.
+Layanan lainnya minimal 20.
+</p></div><div class="social-tabs" id="socialTabs"></div><div id="panels"></div></main><div class="cart"><div class="carttop"><div><h3>
+Pesanan kamu
+</h3><small><span id="count">
+0
+</span>layanan dipilih
+
 </small></div><button class="clear" id="clear">
 Hapus semua
 </button></div><div class="selected" id="selected"><span class="empty">
 Belum ada pesanan.
-</span></div><div class="total"><span>Total</span>
-
-<strong id="total">
+</span></div><div class="total"><span>
+Total
+</span><strong id="total">
 Rp0
 </strong></div><button class="checkout" id="checkout">
 Lanjut Pembayaran
-</button></div><div class="payment-box" id="paymentBox"><h4>Pembayaran QRIS</h4><div class="payment-total" id="paymentTotal">
+</button></div><div class="payment-box" id="paymentBox"><h4>
+Pembayaran QRIS
+</h4><div class="payment-total" id="paymentTotal">
 Rp0
 </div><img
 src="qris.jpg"
@@ -649,6 +657,12 @@ Kembali ke Pesanan
 
 /* =========================================================
    DATA PRODUK + HARGA JUAL
+
+   MINIMAL ORDER:
+   VIEW BIASA = 100
+   VIEW STORY = 20
+   LIVE STREAMING VIEW = 20
+   LAINNYA = 20
    ========================================================= */
 
 const products = [
@@ -658,109 +672,141 @@ id:"instagram",
 name:"Instagram",
 icon:"https://cdn.simpleicons.org/instagram/E4405F",
 desc:"Followers Indonesia • Like Indonesia • Komen Indonesia • Story • Live • Repost",
+
 items:[
 
 ["Followers (Indonesia)","Instagram Followers Indonesia",100,50000],
+
 ["Like (Indonesia)","Instagram Like Indonesia",100,20000],
+
 ["Komen (Indonesia)","Instagram Komen Indonesia",100,350000],
 
 ["View Story","Instagram View Story",1000,1000],
+
 ["Like Story","Instagram Like Story",1000,25000],
+
 ["View Live Stream","Instagram View Live Stream",1000,20000],
+
 ["Repost","Instagram Repost",100,8000]
 
 ]
 },
+
 
 {
 id:"tiktok",
 name:"TikTok",
 icon:"https://cdn.simpleicons.org/tiktok/111111",
 desc:"Followers Indonesia • Like Indonesia • View • Komentar",
+
 items:[
 
 ["Followers (Indonesia)","TikTok Followers Indonesia",1000,100000],
+
 ["Like (Indonesia)","TikTok Like Indonesia",1000,30000],
-["View","TikTok View",1000,2000],
+
+["View","TikTok View",1000,2000,100],
+
 ["Komentar","TikTok Komentar",1000,100000]
 
 ]
 },
+
 
 {
 id:"whatsapp",
 name:"WhatsApp",
 icon:"https://cdn.simpleicons.org/whatsapp/25D366",
 desc:"Followers Saluran • Reaksi Postingan Saluran",
+
 items:[
 
 ["Followers Saluran","WhatsApp Followers Saluran",1000,10000],
+
 ["Reaksi Postingan Saluran","WhatsApp Reaksi",1000,1000]
 
 ]
 },
+
 
 {
 id:"facebook",
 name:"Facebook",
 icon:"https://cdn.simpleicons.org/facebook/1877F2",
 desc:"View • Member Grup • Followers Indonesia • Like Indonesia • Komen Indonesia",
+
 items:[
 
-["View Facebook","Facebook View",1000,3000],
+["View Facebook","Facebook View",1000,3000,100],
+
 ["Member Grup Facebook","Facebook Member Grup",1000,5000],
+
 ["Followers (Indonesia)","Facebook Followers Indonesia",1000,130000],
+
 ["Like (Indonesia)","Facebook Like Indonesia",1000,110000],
+
 ["Komen (Indonesia)","Facebook Komen Indonesia",1000,300000]
 
 ]
 },
+
 
 {
 id:"shopee",
 name:"Shopee",
 icon:"https://cdn.simpleicons.org/shopee/EE4D2D",
 desc:"Followers • Like Indonesia • Live Streaming View",
+
 items:[
 
 ["Followers Shopee","Shopee Followers",1000,10000],
+
 ["Like Shopee (Indonesia)","Shopee Like Indonesia",1000,10000],
+
 ["Live Streaming View","Shopee Live Streaming View",1000,70000]
 
 ]
 },
+
 
 {
 id:"telegram",
 name:"Telegram",
 icon:"https://cdn.simpleicons.org/telegram/229ED9",
 desc:"Followers Saluran • View Story",
+
 items:[
 
 ["Followers Saluran","Telegram Followers Saluran",1000,5000],
+
 ["View Story","Telegram View Story",1000,5000]
 
 ]
 },
+
 
 {
 id:"threads",
 name:"Threads",
 icon:"https://cdn.simpleicons.org/threads/111111",
 desc:"Followers • Like",
+
 items:[
 
 ["Followers Threads","Threads Followers",1000,100000],
+
 ["Like Threads","Threads Like",1000,25000]
 
 ]
 },
+
 
 {
 id:"spotify",
 name:"Spotify",
 icon:"https://cdn.simpleicons.org/spotify/1DB954",
 desc:"Followers",
+
 items:[
 
 ["Followers Spotify","Spotify Followers",1000,150000]
@@ -768,38 +814,47 @@ items:[
 ]
 },
 
+
 {
 id:"twitter",
 name:"X (Twitter)",
 icon:"https://cdn.simpleicons.org/x/111111",
 desc:"Followers • Like • View",
+
 items:[
 
 ["Followers","X Followers",1000,200000],
+
 ["Like","X Like",1000,60000],
-["View","X View",1000,500]
+
+["View","X View",1000,500,100]
 
 ]
 },
+
 
 {
 id:"roblox",
 name:"Roblox",
 icon:"https://cdn.simpleicons.org/roblox/111111",
 desc:"Followers Indonesia • Friends Indonesia",
+
 items:[
 
 ["Followers (Indonesia)","Roblox Followers Indonesia",1000,130000],
+
 ["Friends (Indonesia)","Roblox Friends Indonesia",1000,50000]
 
 ]
 },
+
 
 {
 id:"tokopedia",
 name:"Tokopedia",
 icon:"https://cdn.simpleicons.org/tokopedia/42B549",
 desc:"Followers",
+
 items:[
 
 ["Followers Tokopedia","Tokopedia Followers",1000,130000]
@@ -807,11 +862,13 @@ items:[
 ]
 },
 
+
 {
 id:"twitch",
 name:"Twitch",
 icon:"https://cdn.simpleicons.org/twitch/9146FF",
 desc:"Followers",
+
 items:[
 
 ["Followers Twitch","Twitch Followers",1000,40000]
@@ -819,35 +876,73 @@ items:[
 ]
 },
 
+
 {
 id:"linkedin",
 name:"LinkedIn",
 icon:"https://cdn.simpleicons.org/linkedin/0A66C2",
 desc:"Followers • Like",
+
 items:[
 
 ["Followers LinkedIn","LinkedIn Followers",1000,2200000],
+
 ["Like LinkedIn","LinkedIn Like",1000,650000]
 
 ]
 },
+
 
 {
 id:"youtube",
 name:"YouTube",
 icon:"https://cdn.simpleicons.org/youtube/FF0000",
 desc:"Subscriber • Like • View • Live Streaming",
+
 items:[
 
 ["Subscriber YouTube","YouTube Subscriber",1000,650000],
+
 ["Like YouTube","YouTube Like",1000,30000],
-["View YouTube","YouTube View",1000,35000],
+
+["View YouTube","YouTube View",1000,35000,100],
+
 ["Live Streaming View (15 Menit)","YouTube Live Streaming View 15 Menit",1000,5000]
 
 ]
 }
 
 ];
+
+
+/* =========================================================
+   FUNGSI MINIMAL ORDER
+   ========================================================= */
+
+function getMinOrder(item){
+
+/*
+Index ke-4 digunakan untuk minimum khusus.
+
+Contoh:
+
+["View","TikTok View",1000,2000,100]
+
+berarti minimal = 100.
+
+Jika tidak ada angka ke-5,
+minimal otomatis = 20.
+*/
+
+if(item[4] !== undefined){
+
+return Number(item[4]);
+
+}
+
+return 20;
+
+}
 
 
 /* =========================================================
@@ -872,6 +967,7 @@ document.getElementById("socialTabs");
 const panels =
 document.getElementById("panels");
 
+
 products.forEach((platform,index)=>{
 
 const button =
@@ -885,10 +981,17 @@ button.dataset.target =
 platform.id;
 
 button.innerHTML = `
+
 <span class="social-logo">
-<img src="${platform.icon}" alt="${platform.name}">
+
+<img
+src="${platform.icon}"
+alt="${platform.name}">
+
 </span>
+
 ${platform.name}
+
 `;
 
 tabs.appendChild(button);
@@ -909,17 +1012,29 @@ section.innerHTML = `
 <div class="platform-head">
 
 <div class="platform-icon">
-<img src="${platform.icon}" alt="${platform.name}">
+
+<img
+src="${platform.icon}"
+alt="${platform.name}">
+
 </div>
 
 <div>
-<h3>${platform.name}</h3>
-<p>${platform.desc}</p>
+
+<h3>
+${platform.name}
+</h3>
+
+<p>
+${platform.desc}
+</p>
+
 </div>
 
 </div>
 
 <div class="grid"></div>
+
 `;
 
 const grid =
@@ -927,6 +1042,9 @@ section.querySelector(".grid");
 
 
 platform.items.forEach(item=>{
+
+const minOrder =
+getMinOrder(item);
 
 const card =
 document.createElement("div");
@@ -936,10 +1054,15 @@ card.className =
 
 card.innerHTML = `
 
-<h4>${item[0]}</h4>
+<h4>
+${item[0]}
+</h4>
 
 <div class="desc">
-Harga dasar 1.000 = ${rupiah(item[3])}
+
+Harga dasar 1.000 =
+${rupiah(item[3])}
+
 </div>
 
 <div class="quantity-box">
@@ -949,21 +1072,39 @@ Masukkan jumlah
 </label>
 
 <input
+
 class="quantity-input"
+
 type="number"
-min="20"
+
+min="${minOrder}"
+
 step="1"
+
 data-name="${item[1]}"
+
 data-base-qty="${item[2]}"
+
 data-base-price="${item[3]}"
-placeholder="Contoh: 1000">
+
+data-min-order="${minOrder}"
+
+placeholder="Contoh: ${minOrder}">
 
 <div class="price-preview">
-<span>Minimal 20</span>
-<strong>Rp0</strong>
+
+<span>
+Minimal ${minOrder}
+</span>
+
+<strong>
+Rp0
+</strong>
+
 </div>
 
 </div>
+
 `;
 
 grid.appendChild(card);
@@ -1001,9 +1142,16 @@ Number(input.dataset.baseQty);
 const basePrice =
 Number(input.dataset.basePrice);
 
-if(!qty || qty < 20){
+const minOrder =
+Number(input.dataset.minOrder);
+
+
+if(!qty || qty < minOrder){
+
 return 0;
+
 }
+
 
 return (qty / baseQty) * basePrice;
 
@@ -1023,6 +1171,7 @@ const preview =
 input.closest(".quantity-box")
 .querySelector(".price-preview strong");
 
+
 preview.textContent =
 price > 0
 ? rupiah(price)
@@ -1039,12 +1188,17 @@ function updateCart(){
 
 cartItems = [];
 
+
 quantityInputs.forEach(input=>{
 
 const qty =
 Number(input.value);
 
-if(qty && qty >= 20){
+const minOrder =
+Number(input.dataset.minOrder);
+
+
+if(qty && qty >= minOrder){
 
 const price =
 calculatePrice(input);
@@ -1052,8 +1206,11 @@ calculatePrice(input);
 cartItems.push({
 
 input:input,
+
 name:input.dataset.name,
+
 qty:qty,
+
 price:price
 
 });
@@ -1099,6 +1256,7 @@ cartItems.forEach(item=>{
 
 grandTotal += item.price;
 
+
 const chip =
 document.createElement("div");
 
@@ -1106,11 +1264,13 @@ chip.className =
 "chip";
 
 chip.textContent =
+
 item.name +
 " " +
 item.qty.toLocaleString("id-ID") +
 " — " +
 rupiah(item.price);
+
 
 selected.appendChild(chip);
 
@@ -1132,6 +1292,7 @@ quantityInputs.forEach(input=>{
 input.addEventListener("input",function(){
 
 updateInput(this);
+
 updateCart();
 
 });
@@ -1152,14 +1313,18 @@ button.addEventListener("click",function(){
 document
 .querySelectorAll(".social-tab")
 .forEach(btn=>{
+
 btn.classList.remove("active");
+
 });
 
 
 document
 .querySelectorAll(".social-panel")
 .forEach(panel=>{
+
 panel.classList.remove("active");
+
 });
 
 
@@ -1186,6 +1351,7 @@ document
 quantityInputs.forEach(input=>{
 
 input.value = "";
+
 updateInput(input);
 
 });
@@ -1209,6 +1375,61 @@ document
 .getElementById("checkout")
 .addEventListener("click",function(){
 
+/*
+Cek input yang diisi tetapi kurang dari
+minimum layanan tersebut.
+*/
+
+const invalidInput =
+[...quantityInputs].find(input=>{
+
+if(!input.value){
+
+return false;
+
+}
+
+
+const qty =
+Number(input.value);
+
+const minOrder =
+Number(input.dataset.minOrder);
+
+
+return qty < minOrder;
+
+});
+
+
+if(invalidInput){
+
+const minOrder =
+Number(invalidInput.dataset.minOrder);
+
+
+alert(
+
+"Jumlah minimal untuk layanan " +
+
+invalidInput.dataset.name +
+
+" adalah " +
+
+minOrder.toLocaleString("id-ID") +
+
+"."
+
+);
+
+
+invalidInput.focus();
+
+return;
+
+}
+
+
 updateCart();
 
 
@@ -1223,33 +1444,13 @@ return;
 }
 
 
-const invalid =
-[...quantityInputs].some(input=>{
-
-if(!input.value){
-return false;
-}
-
-return Number(input.value) < 20;
-
-});
-
-
-if(invalid){
-
-alert(
-"Jumlah minimal pesanan adalah 20."
-);
-
-return;
-
-}
-
-
 let total = 0;
 
+
 cartItems.forEach(item=>{
+
 total += item.price;
+
 });
 
 
@@ -1262,11 +1463,16 @@ rupiah(total);
 const paymentBox =
 document.getElementById("paymentBox");
 
+
 paymentBox.classList.add("active");
 
+
 paymentBox.scrollIntoView({
+
 behavior:"smooth",
+
 block:"center"
+
 });
 
 });
@@ -1309,8 +1515,10 @@ return;
 
 let total = 0;
 
+
 let pesan =
 "Halo, saya sudah melakukan pembayaran.\n\n";
+
 
 pesan +=
 "Pesanan:\n";
@@ -1320,7 +1528,9 @@ cartItems.forEach(item=>{
 
 total += item.price;
 
+
 pesan +=
+
 "- " +
 item.name +
 " " +
@@ -1333,6 +1543,7 @@ rupiah(item.price) +
 
 
 pesan +=
+
 "\nTotal: " +
 rupiah(total);
 
@@ -1342,13 +1553,18 @@ pesan +=
 
 
 const whatsappURL =
+
 "https://wa.me/6283179090525?text=" +
+
 encodeURIComponent(pesan);
 
 
 window.open(
+
 whatsappURL,
+
 "_blank"
+
 );
 
 });
