@@ -1,10 +1,11 @@
 <!doctype html>
-
 <html lang="id">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>hello_boost — List Harga</title><style>
+<title>hello_boost — List Harga</title>
+
+<style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 
@@ -591,11 +592,25 @@ bottom:6px
 }
 
 }
-</style></head><body><div class="guarantee-watermark">
+</style>
+</head>
+
+<body>
+
+<div class="guarantee-watermark">
 SEMUA PESANAN BERGARANSI 1×48 JAM
-</div><header><div class="nav"><div class="logo">
+</div>
+
+<header>
+<div class="nav">
+
+<div class="logo">
 hello_boost
-</div><div class="header-buttons"><a class="wa"
+</div>
+
+<div class="header-buttons">
+
+<a class="wa"
 href="https://wa.me/6283179090525"
 target="_blank">
 WhatsApp
@@ -607,56 +622,158 @@ target="_blank">
 TESTIMONI
 </a>
 
-</div></div></header><div class="hero"><h1>
+</div>
+</div>
+</header>
+
+
+<div class="hero">
+
+<h1>
 Boost Sosmed 🚀
-</h1><p>
+</h1>
+
+<p>
 Pilih layanan dan tentukan jumlah yang kamu inginkan.
-</p></div><main class="wrap"><div class="heading"><h2>
+</p>
+
+</div>
+
+
+<main class="wrap">
+
+<div class="heading">
+
+<h2>
 Pilih Sosmed
-</h2><p>
+</h2>
+
+<p>
 View biasa minimal 100. View Story dan Live Streaming View minimal 20.
 Layanan lainnya minimal 20.
-</p></div><div class="social-tabs" id="socialTabs"></div><div id="panels"></div></main><div class="cart"><div class="carttop"><div><h3>
-Pesanan kamu
-</h3><small><span id="count">
-0
-</span>layanan dipilih
+</p>
 
-</small></div><button class="clear" id="clear">
+</div>
+
+
+<div class="social-tabs" id="socialTabs"></div>
+
+<div id="panels"></div>
+
+</main>
+
+
+<div class="cart">
+
+<div class="carttop">
+
+<div>
+
+<h3>
+Pesanan kamu
+</h3>
+
+<small>
+<span id="count">0</span> layanan dipilih
+</small>
+
+</div>
+
+<button class="clear" id="clear">
 Hapus semua
-</button></div><div class="selected" id="selected"><span class="empty">
+</button>
+
+</div>
+
+
+<div class="selected" id="selected">
+
+<span class="empty">
 Belum ada pesanan.
-</span></div><div class="total"><span>
+</span>
+
+</div>
+
+
+<div class="total">
+
+<span>
 Total
-</span><strong id="total">
+</span>
+
+<strong id="total">
 Rp0
-</strong></div><button class="checkout" id="checkout">
+</strong>
+
+</div>
+
+
+<button class="checkout" id="checkout">
 Lanjut Pembayaran
-</button></div><div class="payment-box" id="paymentBox"><h4>
+</button>
+
+</div>
+
+
+<div class="payment-box" id="paymentBox">
+
+<h4>
 Pembayaran QRIS
-</h4><div class="payment-total" id="paymentTotal">
+</h4>
+
+<div class="payment-total" id="paymentTotal">
 Rp0
-</div><img
+</div>
+
+<img
 src="qris.jpg"
 class="qris-image"
 alt="QRIS Hello Boost">
 
-<div class="payment-note">Scan QRIS di atas untuk melakukan pembayaran.
+<div class="payment-note">
 
-<br>Setelah pembayaran berhasil, klik tombol
+Scan QRIS di atas untuk melakukan pembayaran.
+
+<br>
+
+Setelah pembayaran berhasil, klik tombol
 <b>Saya Sudah Bayar</b>.
 
-</div><button class="confirm-payment" id="confirmPayment">
-Saya Sudah Bayar
-</button><button class="back-order" id="backOrder">
-Kembali ke Pesanan
-</button></div><footer>hello_boost • Order:
-+62 831-7909-0525
+</div>
 
-</footer><script>
+<button class="confirm-payment" id="confirmPayment">
+Saya Sudah Bayar
+</button>
+
+<button class="back-order" id="backOrder">
+Kembali ke Pesanan
+</button>
+
+</div>
+
+
+<footer>
+hello_boost • Order:
++62 831-7909-0525
+</footer>
+
+
+<script>
 
 /* =========================================================
    DATA PRODUK + HARGA JUAL
+
+   SEMUA BASE QTY = 1.000
+
+   ARTINYA:
+   Harga yang ditulis adalah harga per 1.000.
+
+   Contoh:
+   Like IG = Rp20.000/k
+
+   100  = Rp2.000
+   500  = Rp10.000
+   1.000 = Rp20.000
 
    MINIMAL ORDER:
    VIEW BIASA = 100
@@ -675,11 +792,11 @@ desc:"Followers Indonesia • Like Indonesia • Komen Indonesia • Story • L
 
 items:[
 
-["Followers (Indonesia)","Instagram Followers Indonesia",100,50000],
+["Followers (Indonesia)","Instagram Followers Indonesia",1000,50000],
 
-["Like (Indonesia)","Instagram Like Indonesia",100,20000],
+["Like (Indonesia)","Instagram Like Indonesia",1000,20000],
 
-["Komen (Indonesia)","Instagram Komen Indonesia",100,350000],
+["Komen (Indonesia)","Instagram Komen Indonesia",1000,350000],
 
 ["View Story","Instagram View Story",1000,1000],
 
@@ -687,7 +804,7 @@ items:[
 
 ["View Live Stream","Instagram View Live Stream",1000,20000],
 
-["Repost","Instagram Repost",100,8000]
+["Repost","Instagram Repost",1000,8000]
 
 ]
 },
@@ -928,10 +1045,10 @@ Contoh:
 
 ["View","TikTok View",1000,2000,100]
 
-berarti minimal = 100.
+berarti:
 
-Jika tidak ada angka ke-5,
-minimal otomatis = 20.
+Harga dasar 1.000 = Rp2.000
+Minimum order = 100
 */
 
 if(item[4] !== undefined){
@@ -1129,6 +1246,17 @@ let cartItems = [];
 
 /* =========================================================
    HITUNG HARGA
+
+   SEMUA PRODUK:
+   BASE QTY = 1000
+
+   Contoh:
+   qty 100
+   baseQty 1000
+   basePrice 20000
+
+   100 / 1000 × 20000
+   = 2000
    ========================================================= */
 
 function calculatePrice(input){
@@ -1576,5 +1704,7 @@ whatsappURL,
 
 updateCart();
 
-</script></body>
+</script>
+
+</body>
 </html>
