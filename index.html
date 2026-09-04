@@ -3,7 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>hello_boost — List Harga</title>
+
+<title>hello_boost — Website Order</title>
+
+<!-- =====================================================
+     PREVIEW LINK WHATSAPP / SOCIAL MEDIA
+     ===================================================== -->
+
+<meta property="og:title" content="hello_boost — Website Order">
+<meta property="og:description" content="Order suntik sosmed mulai 200 perak! Full Indonesia • Semua sosmed ada & lengkap!">
+<meta property="og:image" content="https://rasyamiaw0-cmd.github.io/hello-boost/preview.jpg">
+<meta property="og:url" content="https://rasyamiaw0-cmd.github.io/hello-boost/">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="hello_boost — Website Order">
+<meta name="twitter:description" content="Order suntik sosmed mulai 200 perak! Full Indonesia • Semua sosmed ada & lengkap!">
+<meta name="twitter:image" content="https://rasyamiaw0-cmd.github.io/hello-boost/preview.jpg">
 
 <style>
 *{box-sizing:border-box}
@@ -626,7 +642,6 @@ TESTIMONI
 </div>
 </header>
 
-
 <div class="hero">
 
 <h1>
@@ -638,7 +653,6 @@ Pilih layanan dan tentukan jumlah yang kamu inginkan.
 </p>
 
 </div>
-
 
 <main class="wrap">
 
@@ -655,13 +669,11 @@ Layanan lainnya minimal 20.
 
 </div>
 
-
 <div class="social-tabs" id="socialTabs"></div>
 
 <div id="panels"></div>
 
 </main>
-
 
 <div class="cart">
 
@@ -685,7 +697,6 @@ Hapus semua
 
 </div>
 
-
 <div class="selected" id="selected">
 
 <span class="empty">
@@ -693,7 +704,6 @@ Belum ada pesanan.
 </span>
 
 </div>
-
 
 <div class="total">
 
@@ -707,13 +717,11 @@ Rp0
 
 </div>
 
-
 <button class="checkout" id="checkout">
 Lanjut Pembayaran
 </button>
 
 </div>
-
 
 <div class="payment-box" id="paymentBox">
 
@@ -751,40 +759,12 @@ Kembali ke Pesanan
 
 </div>
 
-
 <footer>
 hello_boost • Order:
 +62 831-7909-0525
 </footer>
 
-
 <script>
-
-/* =========================================================
-   DATA PRODUK + HARGA JUAL
-
-   SEMUA BASE QTY = 1.000
-
-   ARTINYA:
-   Harga yang ditulis adalah harga per 1.000.
-
-   Contoh:
-   Like IG = Rp20.000/k
-
-   100  = Rp2.000
-   500  = Rp10.000
-   1.000 = Rp20.000
-
-   MINIMAL ORDER:
-   VIEW BIASA = 100
-   VIEW STORY = 20
-   LIVE STREAMING VIEW = 20
-   LAINNYA = 20
-
-   KHUSUS:
-   INSTAGRAM FOLLOWERS = 100
-   TIKTOK FOLLOWERS = 50
-   ========================================================= */
 
 const products = [
 
@@ -795,24 +775,15 @@ icon:"https://cdn.simpleicons.org/instagram/E4405F",
 desc:"Followers Indonesia • Like Indonesia • Komen Indonesia • Story • Live • Repost",
 
 items:[
-
 ["Followers (Indonesia)","Instagram Followers Indonesia",1000,50000,100],
-
 ["Like (Indonesia)","Instagram Like Indonesia",1000,20000],
-
 ["Komen (Indonesia)","Instagram Komen Indonesia",1000,350000],
-
 ["View Story","Instagram View Story",1000,1000],
-
 ["Like Story","Instagram Like Story",1000,25000],
-
 ["View Live Stream","Instagram View Live Stream",1000,20000],
-
 ["Repost","Instagram Repost",1000,8000]
-
 ]
 },
-
 
 {
 id:"tiktok",
@@ -821,18 +792,12 @@ icon:"https://cdn.simpleicons.org/tiktok/111111",
 desc:"Followers Indonesia • Like Indonesia • View • Komentar",
 
 items:[
-
 ["Followers (Indonesia)","TikTok Followers Indonesia",1000,100000,50],
-
 ["Like (Indonesia)","TikTok Like Indonesia",1000,30000],
-
 ["View","TikTok View",1000,2000,100],
-
 ["Komentar","TikTok Komentar",1000,100000]
-
 ]
 },
-
 
 {
 id:"whatsapp",
@@ -841,14 +806,10 @@ icon:"https://cdn.simpleicons.org/whatsapp/25D366",
 desc:"Followers Saluran • Reaksi Postingan Saluran",
 
 items:[
-
 ["Followers Saluran","WhatsApp Followers Saluran",1000,10000],
-
 ["Reaksi Postingan Saluran","WhatsApp Reaksi",1000,1000]
-
 ]
 },
-
 
 {
 id:"facebook",
@@ -857,20 +818,13 @@ icon:"https://cdn.simpleicons.org/facebook/1877F2",
 desc:"View • Member Grup • Followers Indonesia • Like Indonesia • Komen Indonesia",
 
 items:[
-
 ["View Facebook","Facebook View",1000,3000,100],
-
 ["Member Grup Facebook","Facebook Member Grup",1000,5000],
-
 ["Followers (Indonesia)","Facebook Followers Indonesia",1000,130000],
-
 ["Like (Indonesia)","Facebook Like Indonesia",1000,110000],
-
 ["Komen (Indonesia)","Facebook Komen Indonesia",1000,300000]
-
 ]
 },
-
 
 {
 id:"shopee",
@@ -879,16 +833,11 @@ icon:"https://cdn.simpleicons.org/shopee/EE4D2D",
 desc:"Followers • Like Indonesia • Live Streaming View",
 
 items:[
-
 ["Followers Shopee","Shopee Followers",1000,10000],
-
 ["Like Shopee (Indonesia)","Shopee Like Indonesia",1000,10000],
-
 ["Live Streaming View","Shopee Live Streaming View",1000,70000]
-
 ]
 },
-
 
 {
 id:"telegram",
@@ -897,14 +846,10 @@ icon:"https://cdn.simpleicons.org/telegram/229ED9",
 desc:"Followers Saluran • View Story",
 
 items:[
-
 ["Followers Saluran","Telegram Followers Saluran",1000,5000],
-
 ["View Story","Telegram View Story",1000,5000]
-
 ]
 },
-
 
 {
 id:"threads",
@@ -913,14 +858,10 @@ icon:"https://cdn.simpleicons.org/threads/111111",
 desc:"Followers • Like",
 
 items:[
-
 ["Followers Threads","Threads Followers",1000,100000],
-
 ["Like Threads","Threads Like",1000,25000]
-
 ]
 },
-
 
 {
 id:"spotify",
@@ -929,12 +870,9 @@ icon:"https://cdn.simpleicons.org/spotify/1DB954",
 desc:"Followers",
 
 items:[
-
 ["Followers Spotify","Spotify Followers",1000,150000]
-
 ]
 },
-
 
 {
 id:"twitter",
@@ -943,16 +881,11 @@ icon:"https://cdn.simpleicons.org/x/111111",
 desc:"Followers • Like • View",
 
 items:[
-
 ["Followers","X Followers",1000,200000],
-
 ["Like","X Like",1000,60000],
-
 ["View","X View",1000,500,100]
-
 ]
 },
-
 
 {
 id:"roblox",
@@ -961,14 +894,10 @@ icon:"https://cdn.simpleicons.org/roblox/111111",
 desc:"Followers Indonesia • Friends Indonesia",
 
 items:[
-
 ["Followers (Indonesia)","Roblox Followers Indonesia",1000,130000],
-
 ["Friends (Indonesia)","Roblox Friends Indonesia",1000,50000]
-
 ]
 },
-
 
 {
 id:"tokopedia",
@@ -977,12 +906,9 @@ icon:"https://cdn.simpleicons.org/tokopedia/42B549",
 desc:"Followers",
 
 items:[
-
 ["Followers Tokopedia","Tokopedia Followers",1000,130000]
-
 ]
 },
-
 
 {
 id:"twitch",
@@ -991,12 +917,9 @@ icon:"https://cdn.simpleicons.org/twitch/9146FF",
 desc:"Followers",
 
 items:[
-
 ["Followers Twitch","Twitch Followers",1000,40000]
-
 ]
 },
-
 
 {
 id:"linkedin",
@@ -1005,14 +928,10 @@ icon:"https://cdn.simpleicons.org/linkedin/0A66C2",
 desc:"Followers • Like",
 
 items:[
-
 ["Followers LinkedIn","LinkedIn Followers",1000,2200000],
-
 ["Like LinkedIn","LinkedIn Like",1000,650000]
-
 ]
 },
-
 
 {
 id:"youtube",
@@ -1021,44 +940,22 @@ icon:"https://cdn.simpleicons.org/youtube/FF0000",
 desc:"Subscriber • Like • View • Live Streaming",
 
 items:[
-
 ["Subscriber YouTube","YouTube Subscriber",1000,650000],
-
 ["Like YouTube","YouTube Like",1000,30000],
-
 ["View YouTube","YouTube View",1000,35000,100],
-
 ["Live Streaming View (15 Menit)","YouTube Live Streaming View 15 Menit",1000,5000]
-
 ]
 }
 
 ];
 
 
-/* =========================================================
-   FUNGSI MINIMAL ORDER
-   ========================================================= */
+/* MINIMAL ORDER */
 
 function getMinOrder(item){
 
-/*
-Index ke-4 digunakan untuk minimum khusus.
-
-Contoh:
-
-["Followers","Instagram Followers Indonesia",1000,50000,100]
-
-berarti:
-
-Harga dasar 1.000 = Rp50.000
-Minimum order = 100
-*/
-
 if(item[4] !== undefined){
-
 return Number(item[4]);
-
 }
 
 return 20;
@@ -1066,9 +963,7 @@ return 20;
 }
 
 
-/* =========================================================
-   FORMAT RUPIAH
-   ========================================================= */
+/* FORMAT RUPIAH */
 
 function rupiah(angka){
 
@@ -1078,9 +973,7 @@ Math.round(angka).toLocaleString("id-ID");
 }
 
 
-/* =========================================================
-   RENDER TAB + PANEL
-   ========================================================= */
+/* RENDER TAB + PANEL */
 
 const tabs =
 document.getElementById("socialTabs");
@@ -1238,9 +1131,7 @@ panels.appendChild(section);
 });
 
 
-/* =========================================================
-   INPUT
-   ========================================================= */
+/* INPUT */
 
 let quantityInputs =
 document.querySelectorAll(".quantity-input");
@@ -1248,20 +1139,7 @@ document.querySelectorAll(".quantity-input");
 let cartItems = [];
 
 
-/* =========================================================
-   HITUNG HARGA
-
-   SEMUA PRODUK:
-   BASE QTY = 1000
-
-   Contoh:
-   qty 100
-   baseQty 1000
-   basePrice 20000
-
-   100 / 1000 × 20000
-   = 2000
-   ========================================================= */
+/* HITUNG HARGA */
 
 function calculatePrice(input){
 
@@ -1279,20 +1157,15 @@ Number(input.dataset.minOrder);
 
 
 if(!qty || qty < minOrder){
-
 return 0;
-
 }
-
 
 return (qty / baseQty) * basePrice;
 
 }
 
 
-/* =========================================================
-   UPDATE INPUT
-   ========================================================= */
+/* UPDATE INPUT */
 
 function updateInput(input){
 
@@ -1312,9 +1185,7 @@ price > 0
 }
 
 
-/* =========================================================
-   UPDATE CART
-   ========================================================= */
+/* UPDATE CART */
 
 function updateCart(){
 
@@ -1415,9 +1286,7 @@ rupiah(grandTotal);
 }
 
 
-/* =========================================================
-   INPUT EVENT
-   ========================================================= */
+/* INPUT EVENT */
 
 quantityInputs.forEach(input=>{
 
@@ -1432,9 +1301,7 @@ updateCart();
 });
 
 
-/* =========================================================
-   TAB EVENT
-   ========================================================= */
+/* TAB EVENT */
 
 document
 .querySelectorAll(".social-tab")
@@ -1472,9 +1339,7 @@ document
 });
 
 
-/* =========================================================
-   HAPUS SEMUA
-   ========================================================= */
+/* HAPUS SEMUA */
 
 document
 .getElementById("clear")
@@ -1499,26 +1364,17 @@ updateCart();
 });
 
 
-/* =========================================================
-   CHECKOUT
-   ========================================================= */
+/* CHECKOUT */
 
 document
 .getElementById("checkout")
 .addEventListener("click",function(){
 
-/*
-Cek input yang diisi tetapi kurang dari
-minimum layanan tersebut.
-*/
-
 const invalidInput =
 [...quantityInputs].find(input=>{
 
 if(!input.value){
-
 return false;
-
 }
 
 
@@ -1610,9 +1466,7 @@ block:"center"
 });
 
 
-/* =========================================================
-   KEMBALI
-   ========================================================= */
+/* KEMBALI */
 
 document
 .getElementById("backOrder")
@@ -1625,9 +1479,7 @@ document
 });
 
 
-/* =========================================================
-   SUDAH BAYAR
-   ========================================================= */
+/* SUDAH BAYAR */
 
 document
 .getElementById("confirmPayment")
@@ -1702,9 +1554,7 @@ whatsappURL,
 });
 
 
-/* =========================================================
-   START
-   ========================================================= */
+/* START */
 
 updateCart();
 
