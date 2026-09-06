@@ -779,6 +779,7 @@ line-height:1.6
 ===================================================== */
 
 .cart{
+display:none;
 position:sticky;
 bottom:10px;
 z-index:40;
@@ -793,6 +794,22 @@ border-radius:23px;
 box-shadow:
 0 18px 45px rgba(0,0,0,.13),
 0 2px 5px rgba(0,0,0,.04)
+}
+
+.cart.show{
+display:block;
+animation:cartIn .25s ease
+}
+
+@keyframes cartIn{
+from{
+opacity:0;
+transform:translateY(12px)
+}
+to{
+opacity:1;
+transform:translateY(0)
+}
 }
 
 .carttop{
@@ -969,7 +986,7 @@ background:#e5e5e6
 
 
 /* =====================================================
-   FEATURES SECTION
+   FEATURES
 ===================================================== */
 
 .info-section{
@@ -1350,10 +1367,6 @@ background:#f0f0f1;
 color:#333
 }
 
-.channel-later:hover{
-background:#e5e5e6
-}
-
 .channel-follow{
 background:#111;
 color:#fff;
@@ -1575,11 +1588,9 @@ font-size:11px
 
 <body>
 
-
 <div class="guarantee-watermark">
 SEMUA PESANAN BERGARANSI 1×48 JAM
 </div>
-
 
 <header>
 
@@ -1614,9 +1625,7 @@ TESTIMONI
 </header>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- HERO -->
 
 <div class="hero">
 
@@ -1640,9 +1649,7 @@ dan lakukan pembayaran dengan mudah.
 </div>
 
 
-<!-- =====================================================
-     PRODUCTS
-===================================================== -->
+<!-- PRODUCTS -->
 
 <main class="wrap">
 
@@ -1660,9 +1667,7 @@ Layanan lainnya minimal 20. Harga ditampilkan per 1.000.
 </div>
 
 
-<!-- =====================================================
-     SEARCH BAR
-===================================================== -->
+<!-- SEARCH -->
 
 <div class="search-wrap">
 
@@ -1726,11 +1731,9 @@ Instagram, TikTok, Followers, Like, View, atau Komentar.
 </main>
 
 
-<!-- =====================================================
-     CART
-===================================================== -->
+<!-- CART -->
 
-<div class="cart">
+<div class="cart" id="cart">
 
 <div class="carttop">
 
@@ -1759,10 +1762,6 @@ Hapus semua
 class="selected"
 id="selected">
 
-<span class="empty">
-Belum ada pesanan.
-</span>
-
 </div>
 
 
@@ -1788,9 +1787,7 @@ Lanjut Pembayaran
 </div>
 
 
-<!-- =====================================================
-     PAYMENT
-===================================================== -->
+<!-- PAYMENT -->
 
 <div
 class="payment-box"
@@ -1837,9 +1834,7 @@ Kembali ke Pesanan
 </div>
 
 
-<!-- =====================================================
-     KEUNGGULAN
-===================================================== -->
+<!-- KEUNGGULAN -->
 
 <section class="info-section">
 
@@ -1857,7 +1852,6 @@ Kami mengutamakan proses order yang mudah, cepat, dan nyaman.
 
 
 <div class="info-grid">
-
 
 <div class="info-card">
 
@@ -1912,15 +1906,12 @@ Jangan pernah memberikan password akun kepada siapapun.
 
 </div>
 
-
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     CARA ORDER
-===================================================== -->
+<!-- CARA ORDER -->
 
 <section class="info-section">
 
@@ -1940,13 +1931,11 @@ Ikuti langkah berikut.
 
 <div class="steps">
 
-
 <div class="step">
 <div class="step-number">1</div>
 <h3>Pilih Layanan</h3>
 <p>Pilih platform dan layanan yang ingin kamu order.</p>
 </div>
-
 
 <div class="step">
 <div class="step-number">2</div>
@@ -1954,13 +1943,11 @@ Ikuti langkah berikut.
 <p>Masukkan jumlah pesanan sesuai kebutuhan.</p>
 </div>
 
-
 <div class="step">
 <div class="step-number">3</div>
 <h3>Lanjut Pembayaran</h3>
 <p>Periksa pesanan lalu klik tombol Lanjut Pembayaran.</p>
 </div>
-
 
 <div class="step">
 <div class="step-number">4</div>
@@ -1968,13 +1955,11 @@ Ikuti langkah berikut.
 <p>Scan QRIS dan bayar sesuai nominal yang tertera.</p>
 </div>
 
-
 <div class="step">
 <div class="step-number">5</div>
 <h3>Screenshot Bukti</h3>
 <p>Screenshot bukti pembayaran setelah pembayaran berhasil.</p>
 </div>
-
 
 <div class="step">
 <div class="step-number">6</div>
@@ -1982,22 +1967,18 @@ Ikuti langkah berikut.
 <p>Klik tombol Saya Sudah Bayar pada halaman pembayaran.</p>
 </div>
 
-
 <div class="step">
 <div class="step-number">7</div>
 <h3>Kirim Bukti</h3>
 <p>Kirim screenshot bukti pembayaran melalui WhatsApp.</p>
 </div>
 
-
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     TESTIMONI
-===================================================== -->
+<!-- TESTIMONI -->
 
 <section class="info-section">
 
@@ -2015,7 +1996,6 @@ Beberapa pengalaman pelanggan setelah menggunakan layanan kami.
 
 
 <div class="testimonials">
-
 
 <div class="testimonial">
 
@@ -2120,15 +2100,12 @@ Reaksi Postingan Saluran
 
 </div>
 
-
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     FAQ
-===================================================== -->
+<!-- FAQ -->
 
 <section class="faq-section">
 
@@ -2280,13 +2257,10 @@ klik Saya Sudah Bayar → kirim bukti pembayaran melalui WhatsApp.
 
 </div>
 
-
 </section>
 
 
-<!-- =====================================================
-     POPUP WHATSAPP CHANNEL
-===================================================== -->
+<!-- POPUP -->
 
 <div
 class="channel-popup"
@@ -2341,9 +2315,7 @@ Tidak ingin melihat popup ini? Klik Nanti.
 </div>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -2421,7 +2393,7 @@ items:[
 ["Member Grup Facebook","Facebook Member Grup",1000,5000],
 ["Followers (Indonesia)","Facebook Followers Indonesia",1000,130000],
 ["Like (Indonesia)","Facebook Like Indonesia",1000,110000],
-["Komen (Indonesia)","Facebook Komen Indonesia",1000,300000]
+["Komen Indonesia","Facebook Komen Indonesia",1000,300000]
 ]
 },
 
@@ -2612,10 +2584,6 @@ const reactionEmojis = [
 "🙏"
 ];
 
-
-/* =====================================================
-   AMBIL REAKSI
-===================================================== */
 
 function getSelectedReaction(){
 
@@ -2976,22 +2944,39 @@ document.getElementById("count");
 const total =
 document.getElementById("total");
 
+const cart =
+document.getElementById("cart");
 
-count.textContent =
-cartItems.length;
 
+/*
+   CART HANYA MUNCUL JIKA ADA PESANAN VALID
+*/
 
 if(!cartItems.length){
 
-selected.innerHTML =
-'<span class="empty">Belum ada pesanan.</span>';
+cart.classList.remove("show");
 
-total.textContent =
-"Rp0";
+selected.innerHTML = "";
+
+count.textContent = "0";
+
+total.textContent = "Rp0";
 
 return;
 
 }
+
+
+/*
+   JIKA SUDAH ADA PRODUK,
+   TAMPILKAN CART
+*/
+
+cart.classList.add("show");
+
+
+count.textContent =
+cartItems.length;
 
 
 selected.innerHTML = "";
