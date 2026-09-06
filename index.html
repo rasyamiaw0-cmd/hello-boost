@@ -19,10 +19,6 @@
 
 <style>
 
-/* =====================================================
-   GLOBAL
-===================================================== */
-
 *{
 box-sizing:border-box;
 -webkit-tap-highlight-color:transparent
@@ -603,6 +599,8 @@ transition:.15s;
 font-weight:800
 }
 
+/* RANDOM dibuat sedikit lebih lebar */
+
 .emoji:first-child span{
 font-size:10px;
 letter-spacing:.3px;
@@ -1137,19 +1135,9 @@ font-size:25px
 
 <body>
 
-
-<!-- =====================================================
-     GARANSI
-===================================================== -->
-
 <div class="guarantee-watermark">
 SEMUA PESANAN BERGARANSI 1×48 JAM
 </div>
-
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
 
 <header>
 
@@ -1182,10 +1170,6 @@ TESTIMONI
 </header>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
-
 <div class="hero">
 
 <div class="hero-badge">
@@ -1207,10 +1191,6 @@ dan lakukan pembayaran dengan mudah.
 
 </div>
 
-
-<!-- =====================================================
-     PRODUK
-===================================================== -->
 
 <main class="wrap">
 
@@ -1238,10 +1218,6 @@ id="panels">
 
 </main>
 
-
-<!-- =====================================================
-     CART
-===================================================== -->
 
 <div class="cart">
 
@@ -1298,10 +1274,6 @@ Lanjut Pembayaran
 </div>
 
 
-<!-- =====================================================
-     PAYMENT
-===================================================== -->
-
 <div
 class="payment-box"
 id="paymentBox">
@@ -1347,19 +1319,11 @@ Kembali ke Pesanan
 </div>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
 <footer>
 hello_boost • Order:
 +62 831-7909-0525
 </footer>
 
-
-<!-- =====================================================
-     POPUP WHATSAPP CHANNEL
-===================================================== -->
 
 <div
 class="channel-popup"
@@ -1630,6 +1594,8 @@ Math.round(angka).toLocaleString("id-ID");
 
 /* =====================================================
    REAKSI WHATSAPP
+   RANDOM DIKIRIM SEBAGAI "RANDOM"
+   AGAR SISTEM PUSAT/PROVIDER YANG MENENTUKAN
 ===================================================== */
 
 const reactionEmojis = [
@@ -1638,20 +1604,13 @@ const reactionEmojis = [
 "❤️",
 "😂",
 "😯",
-"🥺",
-"🙏"
+"😥",
+"🙏",
+"👏",
+"🔥",
+"🏆",
+"🎉"
 ];
-
-const realReactions = [
-"👍",
-"❤️",
-"😂",
-"😯",
-"🥺",
-"🙏"
-];
-
-let randomReaction = null;
 
 
 /* =====================================================
@@ -1666,31 +1625,19 @@ document.querySelector(
 );
 
 if(!selected){
-return "👍";
+return "RANDOM";
 }
 
-const value = selected.value;
+/*
+   Jangan melakukan Math.random() di website.
 
-if(value === "RANDOM"){
+   Jika user memilih RANDOM,
+   nilai yang dikirim tetap "RANDOM".
+   Dengan begitu sistem pusat/provider yang
+   bertugas menentukan emoji secara acak.
+*/
 
-if(!randomReaction){
-
-randomReaction =
-realReactions[
-Math.floor(
-Math.random() * realReactions.length
-)
-];
-
-}
-
-return randomReaction;
-
-}
-
-randomReaction = null;
-
-return value;
+return selected.value;
 
 }
 
@@ -1858,7 +1805,7 @@ ${emoji}
 </div>
 
 <div class="note">
-RANDOM akan memilih salah satu reaksi secara acak.
+RANDOM ditentukan oleh sistem pusat/provider.
 </div>
 `
 :
@@ -2097,8 +2044,6 @@ document
 
 input.addEventListener("change",function(){
 
-randomReaction = null;
-
 updateCart();
 
 });
@@ -2161,9 +2106,6 @@ input.value = "";
 updateInput(input);
 
 });
-
-
-randomReaction = null;
 
 
 document
