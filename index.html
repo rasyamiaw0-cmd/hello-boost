@@ -38,8 +38,7 @@ color:#151318;
 min-height:100vh
 }
 
-button,
-input{
+button,input{
 font-family:inherit
 }
 
@@ -47,9 +46,12 @@ button{
 -webkit-appearance:none
 }
 
+a{
+-webkit-tap-highlight-color:transparent
+}
 
 /* =====================================================
-   HEADER PREMIUM
+   HEADER
 ===================================================== */
 
 header{
@@ -147,9 +149,8 @@ background:#fff;
 transform:translateY(-2px)
 }
 
-
 /* =====================================================
-   GUARANTEE
+   GUARANTEE WATERMARK
 ===================================================== */
 
 .guarantee-watermark{
@@ -170,9 +171,8 @@ box-shadow:0 8px 25px rgba(0,0,0,.18);
 pointer-events:none
 }
 
-
 /* =====================================================
-   HERO PREMIUM
+   HERO
 ===================================================== */
 
 .hero{
@@ -252,6 +252,50 @@ background:linear-gradient(90deg,#111,#ff5b96);
 margin:23px auto 0
 }
 
+/* =====================================================
+   BENEFITS
+===================================================== */
+
+.benefits{
+max-width:1000px;
+margin:5px auto 40px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px
+}
+
+.benefit{
+background:rgba(255,255,255,.88);
+border:1px solid #e4e4e6;
+border-radius:18px;
+padding:18px 15px;
+text-align:center;
+box-shadow:0 8px 25px rgba(0,0,0,.035);
+transition:.2s
+}
+
+.benefit:hover{
+transform:translateY(-2px);
+box-shadow:0 12px 30px rgba(0,0,0,.07)
+}
+
+.benefit-icon{
+font-size:25px;
+margin-bottom:7px
+}
+
+.benefit-title{
+font-size:14px;
+font-weight:950;
+color:#111
+}
+
+.benefit-text{
+font-size:11px;
+line-height:1.5;
+color:#888;
+margin-top:4px
+}
 
 /* =====================================================
    WRAP
@@ -277,16 +321,15 @@ color:#111
 }
 
 .heading p{
-max-width:600px;
+max-width:650px;
 margin:7px auto;
 color:#858585;
 font-size:12px;
 line-height:1.6
 }
 
-
 /* =====================================================
-   TAB PREMIUM
+   TABS
 ===================================================== */
 
 .social-tabs{
@@ -328,9 +371,8 @@ box-shadow:
 0 0 0 3px rgba(255,255,255,.8) inset
 }
 
-
 /* =====================================================
-   LOGO APLIKASI
+   LOGO
 ===================================================== */
 
 .social-logo{
@@ -371,9 +413,8 @@ height:35px;
 display:block
 }
 
-
 /* =====================================================
-   PANEL PREMIUM
+   PANEL
 ===================================================== */
 
 .social-panel{
@@ -426,7 +467,6 @@ font-size:12px;
 line-height:1.5
 }
 
-
 /* =====================================================
    GRID
 ===================================================== */
@@ -437,9 +477,8 @@ grid-template-columns:repeat(2,1fr);
 gap:14px
 }
 
-
 /* =====================================================
-   CARD PREMIUM
+   CARD
 ===================================================== */
 
 .card{
@@ -489,9 +528,23 @@ color:#111
 .desc{
 font-size:11px;
 color:#8a8a8a;
-margin-bottom:13px
+margin-bottom:13px;
+display:flex;
+flex-direction:column;
+gap:2px
 }
 
+.price-main{
+font-size:16px;
+font-weight:950;
+color:#e91e63;
+letter-spacing:-.2px
+}
+
+.price-min{
+font-size:10px;
+color:#888
+}
 
 /* =====================================================
    QUANTITY
@@ -555,7 +608,6 @@ font-size:17px;
 letter-spacing:-.3px
 }
 
-
 /* =====================================================
    EMOJI
 ===================================================== */
@@ -599,8 +651,6 @@ transition:.15s;
 font-weight:800
 }
 
-/* RANDOM dibuat sedikit lebih lebar */
-
 .emoji:first-child span{
 font-size:10px;
 letter-spacing:.3px;
@@ -625,9 +675,8 @@ color:#888;
 margin-bottom:8px
 }
 
-
 /* =====================================================
-   CART PREMIUM
+   CART
 ===================================================== */
 
 .cart{
@@ -734,9 +783,8 @@ transform:translateY(-1px);
 box-shadow:0 11px 25px rgba(0,0,0,.18)
 }
 
-
 /* =====================================================
-   PAYMENT PREMIUM
+   PAYMENT
 ===================================================== */
 
 .payment-box{
@@ -819,6 +867,297 @@ transition:.2s
 background:#e5e5e6
 }
 
+/* =====================================================
+   FEATURES SECTION
+===================================================== */
+
+.info-section{
+max-width:1100px;
+margin:70px auto 0;
+padding:18px
+}
+
+.section-title{
+text-align:center;
+margin-bottom:25px
+}
+
+.section-title h2{
+margin:0;
+font-size:28px;
+letter-spacing:-1px;
+font-weight:950;
+color:#111
+}
+
+.section-title p{
+margin:7px auto 0;
+font-size:12px;
+color:#888;
+line-height:1.6
+}
+
+.info-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:14px
+}
+
+.info-card{
+background:rgba(255,255,255,.9);
+border:1px solid #e2e2e4;
+border-radius:20px;
+padding:22px 18px;
+box-shadow:0 10px 30px rgba(0,0,0,.04);
+transition:.22s
+}
+
+.info-card:hover{
+transform:translateY(-3px);
+box-shadow:0 15px 35px rgba(0,0,0,.07)
+}
+
+.info-icon{
+font-size:28px;
+margin-bottom:10px
+}
+
+.info-card h3{
+margin:0 0 6px;
+font-size:17px;
+font-weight:950;
+color:#111
+}
+
+.info-card p{
+margin:0;
+font-size:12px;
+line-height:1.7;
+color:#777
+}
+
+/* =====================================================
+   CARA ORDER
+===================================================== */
+
+.steps{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px
+}
+
+.step{
+position:relative;
+background:#fff;
+border:1px solid #e3e3e5;
+border-radius:18px;
+padding:18px 15px;
+box-shadow:0 8px 25px rgba(0,0,0,.035)
+}
+
+.step-number{
+width:30px;
+height:30px;
+border-radius:50%;
+background:#111;
+color:#fff;
+display:grid;
+place-items:center;
+font-size:12px;
+font-weight:950;
+margin-bottom:10px
+}
+
+.step h3{
+margin:0 0 6px;
+font-size:14px;
+font-weight:950
+}
+
+.step p{
+margin:0;
+font-size:11px;
+line-height:1.55;
+color:#888
+}
+
+/* =====================================================
+   TESTIMONI
+===================================================== */
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:14px
+}
+
+.testimonial{
+background:#fff;
+border:1px solid #e3e3e5;
+border-radius:20px;
+padding:18px;
+box-shadow:0 8px 25px rgba(0,0,0,.035);
+position:relative;
+overflow:hidden
+}
+
+.testimonial:before{
+content:"";
+position:absolute;
+left:0;
+top:0;
+bottom:0;
+width:4px;
+background:linear-gradient(180deg,#ff4f91,#ff9fc1)
+}
+
+.testimonial-top{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+margin-bottom:9px
+}
+
+.testimonial-name{
+font-weight:950;
+font-size:14px;
+color:#111
+}
+
+.stars{
+font-size:13px;
+letter-spacing:1px
+}
+
+.testimonial p{
+margin:0;
+font-size:12px;
+line-height:1.7;
+color:#777
+}
+
+.testimonial-service{
+margin-top:11px;
+font-size:10px;
+font-weight:850;
+color:#e91e63
+}
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+.faq-section{
+max-width:900px;
+margin:70px auto 0;
+padding:18px
+}
+
+.faq-item{
+background:#fff;
+border:1px solid #e3e3e5;
+border-radius:16px;
+margin-bottom:10px;
+overflow:hidden;
+box-shadow:0 6px 20px rgba(0,0,0,.03)
+}
+
+.faq-question{
+width:100%;
+border:0;
+background:none;
+padding:17px 18px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+text-align:left;
+cursor:pointer;
+font-size:14px;
+font-weight:900;
+color:#222
+}
+
+.faq-icon{
+width:26px;
+height:26px;
+flex:0 0 26px;
+display:grid;
+place-items:center;
+border-radius:50%;
+background:#f5f5f6;
+color:#e91e63;
+font-size:18px;
+transition:.25s
+}
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+transition:max-height .3s ease
+}
+
+.faq-answer p{
+margin:0;
+padding:0 18px 17px;
+font-size:12px;
+line-height:1.75;
+color:#777
+}
+
+.faq-item.active .faq-icon{
+transform:rotate(45deg);
+background:#111;
+color:#fff
+}
+
+/* =====================================================
+   FLOATING WHATSAPP
+===================================================== */
+
+.floating-wa{
+position:fixed;
+right:18px;
+bottom:82px;
+z-index:9999;
+
+display:flex;
+align-items:center;
+gap:9px;
+
+padding:12px 17px;
+border-radius:999px;
+
+background:#25D366;
+color:#fff;
+text-decoration:none;
+
+font-size:14px;
+font-weight:900;
+
+box-shadow:0 8px 25px rgba(0,0,0,.22);
+
+transition:
+transform .25s ease,
+box-shadow .25s ease
+}
+
+.floating-wa:hover{
+transform:translateY(-3px);
+box-shadow:0 12px 30px rgba(0,0,0,.28)
+}
+
+.floating-wa-icon{
+width:30px;
+height:30px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:rgba(255,255,255,.18);
+font-size:18px
+}
 
 /* =====================================================
    FOOTER
@@ -827,7 +1166,7 @@ background:#e5e5e6
 footer{
 text-align:center;
 color:#8a8a8a;
-padding:34px 18px 58px;
+padding:45px 18px 95px;
 font-size:11px
 }
 
@@ -835,9 +1174,8 @@ footer b{
 color:#333
 }
 
-
 /* =====================================================
-   POPUP PREMIUM
+   POPUP
 ===================================================== */
 
 .channel-popup{
@@ -973,7 +1311,6 @@ transform:translateY(-1px)
 font-size:18px
 }
 
-
 /* =====================================================
    MOBILE
 ===================================================== */
@@ -1020,6 +1357,16 @@ letter-spacing:-3.3px
 .hero p{
 font-size:13px;
 max-width:340px
+}
+
+.benefits{
+grid-template-columns:1fr;
+gap:9px;
+margin-bottom:30px
+}
+
+.benefit{
+padding:15px
 }
 
 .social-tabs{
@@ -1088,6 +1435,44 @@ margin:18px 10px
 margin:18px 10px
 }
 
+.info-section{
+margin-top:50px
+}
+
+.info-grid{
+grid-template-columns:1fr
+}
+
+.steps{
+grid-template-columns:1fr 1fr;
+gap:9px
+}
+
+.step{
+padding:15px 13px
+}
+
+.testimonials{
+grid-template-columns:1fr
+}
+
+.faq-section{
+margin-top:50px
+}
+
+.floating-wa{
+right:14px;
+bottom:78px;
+padding:11px 14px;
+font-size:13px
+}
+
+.floating-wa-icon{
+width:28px;
+height:28px;
+font-size:17px
+}
+
 .guarantee-watermark{
 font-size:9px;
 padding:6px 11px;
@@ -1152,14 +1537,16 @@ SEMUA PESANAN BERGARANSI 1×48 JAM
 <a
 class="wa"
 href="https://wa.me/6283179090525"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 WhatsApp
 </a>
 
 <a
 class="testi"
 href="https://whatsapp.com/channel/0029VbDLT2yFi8xb1RpB4M36"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 TESTIMONI
 </a>
 
@@ -1169,6 +1556,10 @@ TESTIMONI
 
 </header>
 
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <div class="hero">
 
@@ -1192,6 +1583,47 @@ dan lakukan pembayaran dengan mudah.
 </div>
 
 
+<!-- =====================================================
+     BENEFITS
+===================================================== -->
+
+<div class="wrap">
+
+<div class="benefits">
+
+<div class="benefit">
+<div class="benefit-icon">🔄</div>
+<div class="benefit-title">Garansi Refill</div>
+<div class="benefit-text">
+Refill jika pesanan mengalami penurunan dalam 48 jam setelah pesanan selesai.
+</div>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">⚡</div>
+<div class="benefit-title">Proses Cepat</div>
+<div class="benefit-text">
+Pesanan diproses secepat mungkin setelah pembayaran dikonfirmasi.
+</div>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">🔐</div>
+<div class="benefit-title">Aman & Terpercaya</div>
+<div class="benefit-text">
+Layanan aman dengan proses order yang mudah dan terpercaya.
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
+
 <main class="wrap">
 
 <div class="heading">
@@ -1202,7 +1634,7 @@ Pilih Sosmed
 
 <p>
 View biasa minimal 100. View Story dan Live Streaming View minimal 20.
-Layanan lainnya minimal 20.
+Layanan lainnya minimal 20. Harga ditampilkan per 1.000.
 </p>
 
 </div>
@@ -1218,6 +1650,10 @@ id="panels">
 
 </main>
 
+
+<!-- =====================================================
+     CART
+===================================================== -->
 
 <div class="cart">
 
@@ -1274,6 +1710,10 @@ Lanjut Pembayaran
 </div>
 
 
+<!-- =====================================================
+     PAYMENT
+===================================================== -->
+
 <div
 class="payment-box"
 id="paymentBox">
@@ -1319,11 +1759,480 @@ Kembali ke Pesanan
 </div>
 
 
+<!-- =====================================================
+     KEUNGGULAN
+===================================================== -->
+
+<section class="info-section">
+
+<div class="section-title">
+
+<h2>
+Kenapa Pilih hello_boost?
+</h2>
+
+<p>
+Kami mengutamakan proses order yang mudah, cepat, dan nyaman.
+</p>
+
+</div>
+
+<div class="info-grid">
+
+<div class="info-card">
+
+<div class="info-icon">
+🔄
+</div>
+
+<h3>
+Garansi Refill 1×48 Jam
+</h3>
+
+<p>
+Jika pesanan mengalami penurunan dalam 48 jam setelah
+pesanan selesai, kami siap melakukan refill sesuai
+ketentuan layanan yang dipesan.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="info-icon">
+⚡
+</div>
+
+<h3>
+Proses Cepat
+</h3>
+
+<p>
+Pesanan diproses secepat mungkin setelah pembayaran
+dan bukti pembayaran dikonfirmasi.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="info-icon">
+🔐
+</div>
+
+<h3>
+Aman & Terpercaya
+</h3>
+
+<p>
+Cukup berikan username atau link yang diperlukan.
+Jangan pernah memberikan password akun kepada siapapun.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CARA ORDER
+===================================================== -->
+
+<section class="info-section">
+
+<div class="section-title">
+
+<h2>
+🛒 Cara Order
+</h2>
+
+<p>
+Order di hello_boost sangat mudah.
+Ikuti langkah berikut.
+</p>
+
+</div>
+
+<div class="steps">
+
+<div class="step">
+<div class="step-number">1</div>
+<h3>Pilih Layanan</h3>
+<p>Pilih platform dan layanan yang ingin kamu order.</p>
+</div>
+
+<div class="step">
+<div class="step-number">2</div>
+<h3>Masukkan Jumlah</h3>
+<p>Masukkan jumlah pesanan sesuai kebutuhan.</p>
+</div>
+
+<div class="step">
+<div class="step-number">3</div>
+<h3>Lanjut Pembayaran</h3>
+<p>Periksa pesanan lalu klik tombol Lanjut Pembayaran.</p>
+</div>
+
+<div class="step">
+<div class="step-number">4</div>
+<h3>Bayar QRIS</h3>
+<p>Scan QRIS dan bayar sesuai nominal yang tertera.</p>
+</div>
+
+<div class="step">
+<div class="step-number">5</div>
+<h3>Screenshot Bukti</h3>
+<p>Screenshot bukti pembayaran setelah pembayaran berhasil.</p>
+</div>
+
+<div class="step">
+<div class="step-number">6</div>
+<h3>Saya Sudah Bayar</h3>
+<p>Klik tombol Saya Sudah Bayar pada halaman pembayaran.</p>
+</div>
+
+<div class="step">
+<div class="step-number">7</div>
+<h3>Kirim Bukti</h3>
+<p>Kirim screenshot bukti pembayaran melalui WhatsApp.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     TESTIMONI
+===================================================== -->
+
+<section class="info-section">
+
+<div class="section-title">
+
+<h2>
+💬 Testimoni
+</h2>
+
+<p>
+Beberapa pengalaman pelanggan setelah menggunakan layanan kami.
+</p>
+
+</div>
+
+<div class="testimonials">
+
+<div class="testimonial">
+
+<div class="testimonial-top">
+
+<div class="testimonial-name">
+Asep
+</div>
+
+<div class="stars">
+⭐⭐⭐⭐⭐
+</div>
+
+</div>
+
+<p>
+“Prosesnya cepat, pesanan followers dan reaksi sudah masuk.
+Mantap, ditunggu next order ❤️”
+</p>
+
+<div class="testimonial-service">
+Followers & Reaksi WhatsApp
+</div>
+
+</div>
+
+
+<div class="testimonial">
+
+<div class="testimonial-top">
+
+<div class="testimonial-name">
+Angga
+</div>
+
+<div class="stars">
+⭐⭐⭐⭐⭐
+</div>
+
+</div>
+
+<p>
+“Order 100 followers saluran WA, sudah selesai dan sesuai
+pesanan. Terima kasih kak ❤️”
+</p>
+
+<div class="testimonial-service">
+Followers Saluran WhatsApp
+</div>
+
+</div>
+
+
+<div class="testimonial">
+
+<div class="testimonial-top">
+
+<div class="testimonial-name">
+Rahul
+</div>
+
+<div class="stars">
+⭐⭐⭐⭐⭐
+</div>
+
+</div>
+
+<p>
+“Pesanan 100 followers sudah selesai. Prosesnya lancar
+dan cepat 👍”
+</p>
+
+<div class="testimonial-service">
+Followers Saluran WhatsApp
+</div>
+
+</div>
+
+
+<div class="testimonial">
+
+<div class="testimonial-top">
+
+<div class="testimonial-name">
+Nissa
+</div>
+
+<div class="stars">
+⭐⭐⭐⭐⭐
+</div>
+
+</div>
+
+<p>
+“Order 117 reaksi postingan saluran WA sudah selesai.
+Next order lagi ❤️”
+</p>
+
+<div class="testimonial-service">
+Reaksi Postingan Saluran
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FAQ
+===================================================== -->
+
+<section class="faq-section">
+
+<div class="section-title">
+
+<h2>
+❓ FAQ
+</h2>
+
+<p>
+Pertanyaan yang sering ditanyakan pelanggan.
+</p>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+<span>
+Apakah layanan hello_boost aman?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+Ya. Pesanan diproses menggunakan layanan boost sesuai
+produk yang dipilih. Untuk keamanan, cukup kirim username
+atau link yang diperlukan. Jangan memberikan password akun.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+<span>
+Berapa lama proses pesanan?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+Pesanan diproses secepat mungkin setelah pembayaran dan
+bukti pembayaran dikonfirmasi. Waktu pengerjaan dapat
+berbeda tergantung layanan dan jumlah pesanan.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+<span>
+Bagaimana garansinya?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+Pesanan mendapatkan garansi refill 1×48 jam. Jika terjadi
+penurunan dalam 48 jam setelah pesanan dinyatakan selesai,
+refill dapat dilakukan sesuai ketentuan layanan yang dipesan.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+<span>
+Bisa refund?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+Refund mengikuti kondisi dan ketentuan pesanan. Jika pesanan
+sudah diproses atau selesai, refund tidak otomatis tersedia.
+Silakan hubungi admin terlebih dahulu untuk pengecekan.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+<span>
+Bagaimana cara order?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+Pilih layanan → masukkan jumlah → klik Lanjut Pembayaran →
+bayar melalui QRIS → screenshot bukti pembayaran →
+klik Saya Sudah Bayar → kirim bukti pembayaran melalui WhatsApp.
+</p>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     FLOATING WHATSAPP
+===================================================== -->
+
+<a
+class="floating-wa"
+href="https://wa.me/6283179090525?text=Halo%20hello_boost%2C%20saya%20mau%20order."
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Chat WhatsApp">
+
+<span class="floating-wa-icon">
+💬
+</span>
+
+<span>
+Chat WhatsApp
+</span>
+
+</a>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
-hello_boost • Order:
+
+<b>hello_boost</b>
+ • Order:
 +62 831-7909-0525
+
+<br><br>
+
+Aman • Cepat • Terpercaya
+
 </footer>
 
+
+<!-- =====================================================
+     CHANNEL POPUP
+===================================================== -->
 
 <div
 class="channel-popup"
@@ -1362,7 +2271,10 @@ href="https://whatsapp.com/channel/0029VbDLT2yFi8xb1RpB4M36"
 target="_blank"
 rel="noopener noreferrer">
 
-<span class="bell">♧</span>
+<span class="bell">
+🔔
+</span>
+
 Ikuti
 
 </a>
@@ -1593,9 +2505,29 @@ Math.round(angka).toLocaleString("id-ID");
 
 
 /* =====================================================
+   HARGA PER 1K
+===================================================== */
+
+function pricePerK(baseQty,basePrice){
+
+return (basePrice / baseQty) * 1000;
+
+}
+
+
+/* =====================================================
+   HARGA MINIMAL
+===================================================== */
+
+function minimumPrice(baseQty,basePrice,minOrder){
+
+return (minOrder / baseQty) * basePrice;
+
+}
+
+
+/* =====================================================
    REAKSI WHATSAPP
-   RANDOM DIKIRIM SEBAGAI "RANDOM"
-   AGAR SISTEM PUSAT/PROVIDER YANG MENENTUKAN
 ===================================================== */
 
 const reactionEmojis = [
@@ -1605,16 +2537,12 @@ const reactionEmojis = [
 "😂",
 "😯",
 "😥",
-"🙏",
-"👏",
-"🔥",
-"🏆",
-"🎉"
+"🙏"
 ];
 
 
 /* =====================================================
-   AMBIL REAKSI TERPILIH
+   AMBIL REAKSI
 ===================================================== */
 
 function getSelectedReaction(){
@@ -1627,15 +2555,6 @@ document.querySelector(
 if(!selected){
 return "RANDOM";
 }
-
-/*
-   Jangan melakukan Math.random() di website.
-
-   Jika user memilih RANDOM,
-   nilai yang dikirim tetap "RANDOM".
-   Dengan begitu sistem pusat/provider yang
-   bertugas menentukan emoji secara acak.
-*/
 
 return selected.value;
 
@@ -1742,6 +2661,17 @@ platform.id === "whatsapp" &&
 item[0] === "Reaksi Postingan Saluran";
 
 
+const perK =
+pricePerK(item[2],item[3]);
+
+const minPrice =
+minimumPrice(
+item[2],
+item[3],
+minOrder
+);
+
+
 card.innerHTML = `
 
 <h4>
@@ -1750,8 +2680,13 @@ ${item[0]}
 
 <div class="desc">
 
-Harga dasar 1.000 =
-${rupiah(item[3])}
+<div class="price-main">
+${rupiah(perK)}/k
+</div>
+
+<div class="price-min">
+Mulai dari ${rupiah(minPrice)}
+</div>
 
 </div>
 
@@ -2133,13 +3068,11 @@ if(!input.value){
 return false;
 }
 
-
 const qty =
 Number(input.value);
 
 const minOrder =
 Number(input.dataset.minOrder);
-
 
 return qty < minOrder;
 
@@ -2320,6 +3253,59 @@ whatsappURL,
 "_blank"
 
 );
+
+});
+
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+document
+.querySelectorAll(".faq-question")
+.forEach(button=>{
+
+button.addEventListener("click",function(){
+
+const item =
+this.parentElement;
+
+const answer =
+item.querySelector(".faq-answer");
+
+
+document
+.querySelectorAll(".faq-item")
+.forEach(other=>{
+
+if(other !== item){
+
+other.classList.remove("active");
+
+other
+.querySelector(".faq-answer")
+.style.maxHeight = null;
+
+}
+
+});
+
+
+item.classList.toggle("active");
+
+
+if(item.classList.contains("active")){
+
+answer.style.maxHeight =
+answer.scrollHeight + "px";
+
+}else{
+
+answer.style.maxHeight = null;
+
+}
+
+});
 
 });
 
