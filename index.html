@@ -503,12 +503,7 @@ top:0;
 left:18px;
 right:18px;
 height:1px;
-background:linear-gradient(
-90deg,
-transparent,
-#ff77a955,
-transparent
-);
+background:linear-gradient(90deg,transparent,#ff77a955,transparent);
 opacity:0;
 transition:.2s
 }
@@ -829,6 +824,10 @@ transform:translateY(-1px);
 box-shadow:0 11px 25px rgba(0,0,0,.18)
 }
 
+/* ============================= */
+/* PEMBAYARAN */
+/* ============================= */
+
 .payment-box{
 display:none;
 max-width:1100px;
@@ -857,7 +856,133 @@ letter-spacing:-.4px
 font-size:26px;
 font-weight:950;
 color:#111;
-margin:8px 0 16px
+margin:8px 0 18px
+}
+
+.payment-method-title{
+font-size:12px;
+font-weight:950;
+color:#555;
+text-align:left;
+margin:0 0 9px
+}
+
+.payment-methods{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:9px;
+margin-bottom:17px
+}
+
+.payment-method{
+position:relative;
+border:1px solid #e1e1e3;
+background:#fff;
+border-radius:15px;
+padding:13px;
+text-align:left;
+cursor:pointer;
+transition:.2s ease;
+box-shadow:0 5px 15px rgba(0,0,0,.025)
+}
+
+.payment-method:hover{
+border-color:#cfcfd2;
+transform:translateY(-1px)
+}
+
+.payment-method.active{
+border:2px solid #111;
+background:#f8f8f9;
+box-shadow:0 7px 20px rgba(0,0,0,.07)
+}
+
+.payment-method-name{
+font-size:13px;
+font-weight:950;
+color:#111;
+margin-bottom:3px
+}
+
+.payment-method-number{
+font-size:11px;
+color:#888;
+font-weight:700;
+letter-spacing:.2px
+}
+
+.payment-method-check{
+position:absolute;
+right:10px;
+top:10px;
+width:20px;
+height:20px;
+border-radius:50%;
+background:#111;
+color:#fff;
+display:none;
+align-items:center;
+justify-content:center;
+font-size:11px;
+font-weight:950
+}
+
+.payment-method.active .payment-method-check{
+display:flex
+}
+
+.payment-detail{
+display:none;
+background:#f8f8f9;
+border:1px solid #e5e5e7;
+border-radius:17px;
+padding:14px;
+margin-bottom:15px;
+text-align:left
+}
+
+.payment-detail.active{
+display:block;
+animation:panelIn .2s ease
+}
+
+.payment-detail-top{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px
+}
+
+.payment-detail-name{
+font-size:13px;
+font-weight:950;
+color:#111
+}
+
+.payment-detail-number{
+font-size:17px;
+font-weight:950;
+color:#111;
+letter-spacing:.3px;
+margin-top:4px
+}
+
+.copy-payment{
+border:0;
+background:#111;
+color:#fff;
+padding:9px 12px;
+border-radius:10px;
+font-size:10px;
+font-weight:900;
+cursor:pointer;
+white-space:nowrap;
+transition:.2s
+}
+
+.copy-payment:hover{
+background:#292929;
+transform:translateY(-1px)
 }
 
 .qris-image{
@@ -1416,7 +1541,34 @@ margin:18px 10px
 }
 
 .payment-box{
-margin:18px 10px
+margin:18px 10px;
+padding:17px
+}
+
+.payment-methods{
+grid-template-columns:1fr 1fr;
+gap:7px
+}
+
+.payment-method{
+padding:11px
+}
+
+.payment-method-name{
+font-size:12px
+}
+
+.payment-method-number{
+font-size:9px
+}
+
+.payment-detail-number{
+font-size:15px
+}
+
+.copy-payment{
+padding:8px 10px;
+font-size:9px
 }
 
 .info-section{
@@ -1657,12 +1809,16 @@ Lanjut Pembayaran
 
 </div>
 
+<!-- ============================= -->
+<!-- PAYMENT BOX -->
+<!-- ============================= -->
+
 <div
 class="payment-box"
 id="paymentBox">
 
 <h4>
-Pembayaran QRIS
+Pilih Metode Pembayaran
 </h4>
 
 <div
@@ -1671,19 +1827,173 @@ id="paymentTotal">
 Rp0
 </div>
 
+<div class="payment-method-title">
+Pilih metode pembayaran
+</div>
+
+<div class="payment-methods">
+
+<div
+class="payment-method active"
+data-method="QRIS"
+data-number="QRIS">
+
+<div class="payment-method-name">
+📱 QRIS
+</div>
+
+<div class="payment-method-number">
+Scan QRIS
+</div>
+
+<div class="payment-method-check">
+✓
+</div>
+
+</div>
+
+<div
+class="payment-method"
+data-method="DANA"
+data-number="083179090525">
+
+<div class="payment-method-name">
+💙 DANA
+</div>
+
+<div class="payment-method-number">
+083179090525
+</div>
+
+<div class="payment-method-check">
+✓
+</div>
+
+</div>
+
+<div
+class="payment-method"
+data-method="ShopeePay"
+data-number="083179090525">
+
+<div class="payment-method-name">
+🟠 ShopeePay
+</div>
+
+<div class="payment-method-number">
+083179090525
+</div>
+
+<div class="payment-method-check">
+✓
+</div>
+
+</div>
+
+<div
+class="payment-method"
+data-method="GoPay"
+data-number="083179090525">
+
+<div class="payment-method-name">
+🔵 GoPay
+</div>
+
+<div class="payment-method-number">
+083179090525
+</div>
+
+<div class="payment-method-check">
+✓
+</div>
+
+</div>
+
+<div
+class="payment-method"
+data-method="SeaBank"
+data-number="901721201069">
+
+<div class="payment-method-name">
+🏦 SeaBank
+</div>
+
+<div class="payment-method-number">
+901721201069
+</div>
+
+<div class="payment-method-check">
+✓
+</div>
+
+</div>
+
+</div>
+
+<div
+class="payment-detail active"
+id="qrisDetail">
+
+<div class="payment-detail-top">
+
+<div>
+
+<div class="payment-detail-name">
+📱 Pembayaran QRIS
+</div>
+
+</div>
+
+</div>
+
 <img
 src="qris.jpg"
 class="qris-image"
 alt="QRIS Hello Boost">
 
+</div>
+
+<div
+class="payment-detail"
+id="ewalletDetail">
+
+<div class="payment-detail-top">
+
+<div>
+
+<div
+class="payment-detail-name"
+id="paymentDetailName">
+DANA
+</div>
+
+<div
+class="payment-detail-number"
+id="paymentDetailNumber">
+083179090525
+</div>
+
+</div>
+
+<button
+type="button"
+class="copy-payment"
+id="copyPayment">
+Salin
+</button>
+
+</div>
+
+</div>
+
 <div class="payment-note">
 
-Scan QRIS di atas untuk melakukan pembayaran.
+Pastikan nominal pembayaran sesuai dengan total pesanan.
 
 <br>
 
 Setelah pembayaran berhasil, klik tombol
-<b>Saya Sudah Bayar</b>.
+<b>Saya Sudah Bayar</b> dan kirim bukti pembayaran melalui WhatsApp.
 
 </div>
 
@@ -1804,31 +2114,31 @@ Ikuti langkah berikut.
 <div class="step">
 <div class="step-number">3</div>
 <h3>Lanjut Pembayaran</h3>
-<p>Periksa pesanan lalu klik tombol Lanjut Pembayaran.</p>
+<p>Periksa pesanan lalu klik Lanjut Pembayaran.</p>
 </div>
 
 <div class="step">
 <div class="step-number">4</div>
-<h3>Bayar QRIS</h3>
-<p>Scan QRIS dan bayar sesuai nominal yang tertera.</p>
+<h3>Pilih Pembayaran</h3>
+<p>Pilih QRIS, DANA, ShopeePay, GoPay, atau SeaBank.</p>
 </div>
 
 <div class="step">
 <div class="step-number">5</div>
+<h3>Bayar</h3>
+<p>Bayar sesuai nominal total pesanan.</p>
+</div>
+
+<div class="step">
+<div class="step-number">6</div>
 <h3>Screenshot Bukti</h3>
 <p>Screenshot bukti pembayaran setelah pembayaran berhasil.</p>
 </div>
 
 <div class="step">
-<div class="step-number">6</div>
-<h3>Saya Sudah Bayar</h3>
-<p>Klik tombol Saya Sudah Bayar pada halaman pembayaran.</p>
-</div>
-
-<div class="step">
 <div class="step-number">7</div>
-<h3>Kirim Bukti</h3>
-<p>Kirim screenshot bukti pembayaran melalui WhatsApp.</p>
+<h3>Saya Sudah Bayar</h3>
+<p>Klik tombol Saya Sudah Bayar dan kirim bukti pembayaran melalui WhatsApp.</p>
 </div>
 
 </div>
@@ -2092,7 +2402,7 @@ Bagaimana cara order?
 
 <p>
 Pilih layanan → masukkan jumlah → klik Lanjut Pembayaran →
-bayar melalui QRIS → screenshot bukti pembayaran →
+pilih metode pembayaran → bayar → screenshot bukti pembayaran →
 klik Saya Sudah Bayar → kirim bukti pembayaran melalui WhatsApp.
 </p>
 
@@ -2178,10 +2488,7 @@ desc:"Followers Indonesia • Like Indonesia • View • Komen Indonesia • St
 
 items:[
 ["Followers (Indonesia)","Instagram Followers Indonesia",1000,50000,100],
-
-/* MINIMAL INSTAGRAM LIKE DIUBAH MENJADI 100 */
 ["Like (Indonesia)","Instagram Like Indonesia",1000,20000,100],
-
 ["View","Instagram View",1000,2000,100],
 ["Komen (Indonesia)","Instagram Komen Indonesia",1000,350000],
 ["View Story","Instagram View Story",1000,1000],
@@ -3056,6 +3363,129 @@ updateCart();
 
 });
 
+let selectedPaymentMethod = "QRIS";
+let selectedPaymentNumber = "QRIS";
+
+const paymentMethods =
+document.querySelectorAll(".payment-method");
+
+const qrisDetail =
+document.getElementById("qrisDetail");
+
+const ewalletDetail =
+document.getElementById("ewalletDetail");
+
+const paymentDetailName =
+document.getElementById("paymentDetailName");
+
+const paymentDetailNumber =
+document.getElementById("paymentDetailNumber");
+
+const copyPayment =
+document.getElementById("copyPayment");
+
+paymentMethods.forEach(method=>{
+
+method.addEventListener("click",function(){
+
+paymentMethods.forEach(item=>{
+
+item.classList.remove("active");
+
+});
+
+this.classList.add("active");
+
+selectedPaymentMethod =
+this.dataset.method;
+
+selectedPaymentNumber =
+this.dataset.number;
+
+if(selectedPaymentMethod === "QRIS"){
+
+qrisDetail.classList.add("active");
+
+ewalletDetail.classList.remove("active");
+
+}else{
+
+qrisDetail.classList.remove("active");
+
+ewalletDetail.classList.add("active");
+
+paymentDetailName.textContent =
+selectedPaymentMethod;
+
+paymentDetailNumber.textContent =
+selectedPaymentNumber;
+
+}
+
+});
+
+});
+
+copyPayment.addEventListener("click",async function(){
+
+if(
+!selectedPaymentNumber ||
+selectedPaymentMethod === "QRIS"
+){
+
+return;
+
+}
+
+try{
+
+await navigator.clipboard.writeText(
+selectedPaymentNumber
+);
+
+const oldText =
+this.textContent;
+
+this.textContent =
+"✓ Tersalin";
+
+setTimeout(()=>{
+
+this.textContent =
+oldText;
+
+},1500);
+
+}catch(error){
+
+const textarea =
+document.createElement("textarea");
+
+textarea.value =
+selectedPaymentNumber;
+
+document.body.appendChild(textarea);
+
+textarea.select();
+
+document.execCommand("copy");
+
+textarea.remove();
+
+this.textContent =
+"✓ Tersalin";
+
+setTimeout(()=>{
+
+this.textContent =
+"Salin";
+
+},1500);
+
+}
+
+});
+
 document
 .getElementById("checkout")
 .addEventListener("click",function(){
@@ -3064,7 +3494,9 @@ const invalidInput =
 [...quantityInputs].find(input=>{
 
 if(!input.value){
+
 return false;
+
 }
 
 const qty =
@@ -3127,12 +3559,13 @@ document
 .textContent =
 rupiah(total);
 
-const paymentBox =
-document.getElementById("paymentBox");
+document
+.getElementById("paymentBox")
+.classList.add("active");
 
-paymentBox.classList.add("active");
-
-paymentBox.scrollIntoView({
+document
+.getElementById("paymentBox")
+.scrollIntoView({
 
 behavior:"smooth",
 
@@ -3172,7 +3605,21 @@ let pesan =
 "Halo, saya sudah melakukan pembayaran.\n\n";
 
 pesan +=
-"Pesanan:\n";
+"Metode Pembayaran: " +
+selectedPaymentMethod +
+"\n";
+
+if(selectedPaymentMethod !== "QRIS"){
+
+pesan +=
+"Nomor: " +
+selectedPaymentNumber +
+"\n";
+
+}
+
+pesan +=
+"\nPesanan:\n";
 
 cartItems.forEach(item=>{
 
@@ -3206,7 +3653,10 @@ pesan +=
 rupiah(total);
 
 pesan +=
-"\n\nMohon diproses ya 🙏";
+"\n\nSaya akan mengirimkan bukti pembayaran di sini.";
+
+pesan +=
+"\nMohon diproses ya 🙏";
 
 const whatsappURL =
 
