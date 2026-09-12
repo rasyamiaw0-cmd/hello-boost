@@ -511,6 +511,26 @@ font-size:9px;
 margin-top:3px;
 }
 
+/* PERINGATAN JUMLAH */
+
+.quantity-warning{
+display:none;
+margin-top:6px;
+color:#ff7aa9;
+font-size:10px;
+font-weight:800;
+line-height:1.5;
+}
+
+.quantity-warning.show{
+display:block;
+}
+
+.quantity-input.invalid{
+border-color:rgba(227,107,118,.7);
+box-shadow:0 0 0 2px rgba(227,107,118,.07);
+}
+
 .order-fields{
 margin-top:14px;
 display:grid;
@@ -1280,12 +1300,15 @@ transform:translateX(-50%) translateY(0);
 .info-grid{
 grid-template-columns:repeat(2,1fr);
 }
+
 .steps{
 grid-template-columns:repeat(2,1fr);
 }
+
 .testimonial-grid{
 grid-template-columns:repeat(2,1fr);
 }
+
 .footer-grid{
 grid-template-columns:1fr 1fr;
 }
@@ -1459,21 +1482,27 @@ lalu lakukan pembayaran dengan mudah.
 <div class="private-warning-title">
 ⚠️ <span>AKUN WAJIB TIDAK DI PRIVATE</span> ⚠️
 </div>
+
 <div class="private-warning-text">
 Pastikan akun atau konten target dapat diakses/public selama proses berlangsung.
 </div>
 </div>
 
 <section class="search-section">
+
 <div class="search-box">
+
 <input
 type="text"
 id="searchInput"
 placeholder="Cari layanan social media..."
 autocomplete="off"
 >
+
 <span class="search-icon">⌕</span>
+
 </div>
+
 </section>
 
 <div class="tabs-wrapper">
@@ -1514,10 +1543,12 @@ autocomplete="off"
 <section class="section" id="produk">
 
 <div class="section-heading">
+
 <div>
 <div class="section-title">Layanan</div>
 <div class="section-subtitle">Pilih layanan yang kamu butuhkan</div>
 </div>
+
 </div>
 
 <div class="service-grid" id="serviceGrid"></div>
@@ -1531,10 +1562,12 @@ Layanan yang kamu cari tidak ditemukan.
 <section class="section" id="cartSection">
 
 <div class="section-heading">
+
 <div>
 <div class="section-title">Pesanan</div>
 <div class="section-subtitle">Periksa pesanan sebelum melanjutkan pembayaran</div>
 </div>
+
 </div>
 
 <div class="cart-card">
@@ -1600,10 +1633,17 @@ Periksa detail pesanan kemudian pilih metode pembayaran.
 </div>
 
 <div class="payment-number" id="paymentNumber">
+
 <div class="payment-number-row">
+
 <strong id="paymentAccount">-</strong>
-<button class="copy-btn" id="copyPayment" type="button">Salin</button>
+
+<button class="copy-btn" id="copyPayment" type="button">
+Salin
+</button>
+
 </div>
+
 </div>
 
 <div class="qris-wrapper" id="qrisWrapper">
@@ -1629,7 +1669,9 @@ Konfirmasi Pembayaran via WhatsApp
 
 <div class="status-box" id="statusBox">
 
-<div class="status-title">Pesanan berhasil dibuat</div>
+<div class="status-title">
+Pesanan berhasil dibuat
+</div>
 
 <div class="status-desc">
 Detail pesanan sudah disiapkan. Silakan lanjutkan konfirmasi melalui WhatsApp.
@@ -1646,10 +1688,12 @@ ID Pesanan: -
 <section class="section">
 
 <div class="section-heading">
+
 <div>
 <div class="section-title">Cara Order</div>
 <div class="section-subtitle">Hanya beberapa langkah</div>
 </div>
+
 </div>
 
 <div class="steps">
@@ -1684,33 +1728,74 @@ ID Pesanan: -
 <section class="section" id="testimoni">
 
 <div class="section-heading">
+
 <div>
 <div class="section-title">Testimoni</div>
 <div class="section-subtitle">Pengalaman pelanggan hello_boost</div>
 </div>
+
 </div>
 
 <div class="testimonial-grid">
 
 <div class="testimonial">
-<div class="testimonial-stars">★★★★★</div>
-<p>Order followers sesuai jumlah yang dipesan. Prosesnya juga cukup cepat.</p>
-<div class="testimonial-name">Customer #01</div>
-<div class="testimonial-role">Instagram</div>
+
+<div class="testimonial-stars">
+★★★★★
+</div>
+
+<p>
+Order followers sesuai jumlah yang dipesan. Prosesnya juga cukup cepat.
+</p>
+
+<div class="testimonial-name">
+Customer #01
+</div>
+
+<div class="testimonial-role">
+Instagram
+</div>
+
 </div>
 
 <div class="testimonial">
-<div class="testimonial-stars">★★★★★</div>
-<p>Harga murah dan cara ordernya gampang. Tinggal pilih layanan lalu checkout.</p>
-<div class="testimonial-name">Customer #02</div>
-<div class="testimonial-role">TikTok</div>
+
+<div class="testimonial-stars">
+★★★★★
+</div>
+
+<p>
+Harga murah dan cara ordernya gampang. Tinggal pilih layanan lalu checkout.
+</p>
+
+<div class="testimonial-name">
+Customer #02
+</div>
+
+<div class="testimonial-role">
+TikTok
+</div>
+
 </div>
 
 <div class="testimonial">
-<div class="testimonial-stars">★★★★★</div>
-<p>Admin responsif ketika konfirmasi pembayaran. Recommended.</p>
-<div class="testimonial-name">Customer #03</div>
-<div class="testimonial-role">Social Media</div>
+
+<div class="testimonial-stars">
+★★★★★
+</div>
+
+<p>
+Admin responsif ketika konfirmasi pembayaran. Recommended.
+</p>
+
+<div class="testimonial-name">
+Customer #03
+</div>
+
+<div class="testimonial-role">
+Social Media
+</div>
+
 </div>
 
 </div>
@@ -1719,73 +1804,92 @@ ID Pesanan: -
 <section class="section">
 
 <div class="section-heading">
+
 <div>
 <div class="section-title">FAQ</div>
 <div class="section-subtitle">Pertanyaan yang sering ditanyakan</div>
 </div>
+
 </div>
 
 <div class="faq-list">
 
 <div class="faq-item">
+
 <button class="faq-question" type="button">
 Apakah akun harus public?
 <span class="faq-plus">+</span>
 </button>
+
 <div class="faq-answer">
 Ya. Untuk layanan yang membutuhkan akses ke profil atau konten,
 pastikan akun tidak di-private selama proses berlangsung.
 </div>
+
 </div>
 
 <div class="faq-item">
+
 <button class="faq-question" type="button">
 Berapa lama proses pesanan?
 <span class="faq-plus">+</span>
 </button>
+
 <div class="faq-answer">
 Estimasi proses ditampilkan langsung pada setiap produk.
 Waktu dapat berbeda tergantung layanan, jumlah order dan kondisi sistem.
 </div>
+
 </div>
 
 <div class="faq-item">
+
 <button class="faq-question" type="button">
 Apakah bisa membatalkan pesanan?
 <span class="faq-plus">+</span>
 </button>
+
 <div class="faq-answer">
 Pesanan yang sudah diproses umumnya tidak dapat dibatalkan.
 Pastikan link, username, jumlah dan layanan sudah benar.
 </div>
+
 </div>
 
 <div class="faq-item">
+
 <button class="faq-question" type="button">
 Apakah data login diperlukan?
 <span class="faq-plus">+</span>
 </button>
+
 <div class="faq-answer">
 Tidak. Jangan pernah memberikan password, OTP, kode login atau recovery code.
 </div>
+
 </div>
 
 <div class="faq-item">
+
 <button class="faq-question" type="button">
 Bagaimana cara mengetahui ID pesanan?
 <span class="faq-plus">+</span>
 </button>
+
 <div class="faq-answer">
 ID pesanan dibuat otomatis ketika kamu melanjutkan checkout.
 </div>
+
 </div>
 
 </div>
 
 <div class="notice">
+
 <strong>⚠️ Keamanan:</strong>
 Jangan berikan password, OTP, kode login, recovery code atau informasi keamanan akun kepada siapapun.
 hello_boost hanya membutuhkan data target sesuai layanan.
+
 </div>
 
 </section>
@@ -1801,8 +1905,15 @@ hello_boost hanya membutuhkan data target sesuai layanan.
 <div class="footer-brand">
 
 <div class="brand">
-<div class="brand-logo">hb</div>
-<div class="brand-name">hello_<span>boost</span></div>
+
+<div class="brand-logo">
+hb
+</div>
+
+<div class="brand-name">
+hello_<span>boost</span>
+</div>
+
 </div>
 
 <p>
@@ -1813,29 +1924,69 @@ harga transparan dan proses order yang mudah.
 </div>
 
 <div>
-<div class="footer-title">Navigasi</div>
-<div class="footer-links">
-<a href="#">Beranda</a>
-<a href="#produk">Layanan</a>
-<a href="#testimoni">Testimoni</a>
-<a href="#cartSection">Pesanan</a>
+
+<div class="footer-title">
+Navigasi
 </div>
+
+<div class="footer-links">
+
+<a href="#">
+Beranda
+</a>
+
+<a href="#produk">
+Layanan
+</a>
+
+<a href="#testimoni">
+Testimoni
+</a>
+
+<a href="#cartSection">
+Pesanan
+</a>
+
+</div>
+
 </div>
 
 <div>
-<div class="footer-title">Kontak</div>
-<div class="footer-links">
-<a href="https://wa.me/6283179090525" target="_blank">WhatsApp Admin</a>
-<a href="#produk">Daftar Layanan</a>
-<a href="#testimoni">Testimoni</a>
+
+<div class="footer-title">
+Kontak
 </div>
+
+<div class="footer-links">
+
+<a href="https://wa.me/6283179090525" target="_blank">
+WhatsApp Admin
+</a>
+
+<a href="#produk">
+Daftar Layanan
+</a>
+
+<a href="#testimoni">
+Testimoni
+</a>
+
+</div>
+
 </div>
 
 </div>
 
 <div class="footer-bottom">
-<span>© 2026 hello_boost</span>
-<span>Social Media Service</span>
+
+<span>
+© 2026 hello_boost
+</span>
+
+<span>
+Social Media Service
+</span>
+
 </div>
 
 </div>
@@ -1877,19 +2028,36 @@ Admin
 <div class="popup-top">
 
 <div>
-<h3>hello_boost</h3>
-<p>Dapatkan informasi dan bantuan terbaru melalui WhatsApp.</p>
+
+<h3>
+hello_boost
+</h3>
+
+<p>
+Dapatkan informasi dan bantuan terbaru melalui WhatsApp.
+</p>
+
 </div>
 
-<button class="popup-close" id="popupClose" type="button">×</button>
+<button class="popup-close" id="popupClose" type="button">
+×
+</button>
 
 </div>
 
 <div class="popup-list">
 
-<div class="popup-list-item">Info order dan layanan terbaru.</div>
-<div class="popup-list-item">Konfirmasi pembayaran lebih mudah.</div>
-<div class="popup-list-item">Bantuan ketika mengalami kendala order.</div>
+<div class="popup-list-item">
+Info order dan layanan terbaru.
+</div>
+
+<div class="popup-list-item">
+Konfirmasi pembayaran lebih mudah.
+</div>
+
+<div class="popup-list-item">
+Bantuan ketika mengalami kendala order.
+</div>
 
 </div>
 
@@ -2020,7 +2188,6 @@ QRIS:{account:""}
 /*
    ESTIMASI PROSES
    Dalam menit.
-   Angka ini bisa kamu ubah kapan saja.
 */
 
 const DEFAULT_PROCESS_MINUTES=30;
@@ -2061,30 +2228,38 @@ const toast=document.getElementById("toast");
 ================================ */
 
 function rupiah(number){
+
 return new Intl.NumberFormat("id-ID",{
 style:"currency",
 currency:"IDR",
 maximumFractionDigits:0
 }).format(number);
+
 }
 
 function pricePerK(price,quantity){
+
 return(price/1000)*quantity;
+
 }
 
 function getMinOrder(item){
+
 return Array.isArray(item)&&typeof item[3]==="number"
 ?item[3]
 :20;
+
 }
 
 function escapeHTML(value){
+
 return String(value)
 .replace(/&/g,"&amp;")
 .replace(/</g,"&lt;")
 .replace(/>/g,"&gt;")
 .replace(/"/g,"&quot;")
 .replace(/'/g,"&#039;");
+
 }
 
 /* ================================
@@ -2320,6 +2495,7 @@ ${escapeHTML(activePlatform)}
 <div class="service-price">
 
 <div>
+
 <span class="price-main">
 ${rupiah(price)}
 </span>
@@ -2327,6 +2503,7 @@ ${rupiah(price)}
 <span class="price-unit">
 / 1.000
 </span>
+
 </div>
 
 </div>
@@ -2379,6 +2556,10 @@ value="${minOrder}"
 inputmode="numeric"
 >
 
+<div class="quantity-warning">
+⚠️ Minimal order ${minOrder.toLocaleString("id-ID")}.
+</div>
+
 </div>
 
 <div>
@@ -2417,47 +2598,97 @@ card.querySelector(".quantity-input");
 const pricePreview=
 card.querySelector(".price-preview");
 
+const quantityWarning=
+card.querySelector(".quantity-warning");
+
 /*
-   FIX JUMLAH:
-   Saat user menghapus angka,
-   input boleh kosong sementara.
-   Nilai baru dipastikan saat blur.
+   PERINGATAN MINIMAL ORDER
+   Muncul langsung ketika jumlah
+   yang dimasukkan kurang dari minimum.
 */
 
-quantityInput.addEventListener("input",()=>{
+function updateQuantityWarning(){
 
 const raw=quantityInput.value;
 
 if(raw===""){
+
+quantityWarning.classList.remove("show");
+
+quantityInput.classList.remove("invalid");
+
 pricePreview.value="Rp0";
+
 return;
+
 }
 
 let qty=Number(raw);
 
 if(!Number.isFinite(qty)){
+
+quantityWarning.classList.remove("show");
+
+quantityInput.classList.remove("invalid");
+
 return;
+
 }
 
-if(qty<0){
-qty=0;
-quantityInput.value=0;
+if(qty<minOrder){
+
+quantityWarning.textContent=
+`⚠️ Minimal order ${minOrder.toLocaleString("id-ID")}. Kamu memasukkan ${qty.toLocaleString("id-ID")}.`;
+
+quantityWarning.classList.add("show");
+
+quantityInput.classList.add("invalid");
+
+}else{
+
+quantityWarning.classList.remove("show");
+
+quantityInput.classList.remove("invalid");
+
 }
 
 pricePreview.value=
 rupiah(pricePerK(price,qty));
 
+}
+
+/*
+   Saat user mengetik jumlah,
+   peringatan langsung diperbarui.
+*/
+
+quantityInput.addEventListener("input",()=>{
+
+updateQuantityWarning();
+
 });
+
+/*
+   Saat keluar dari kolom jumlah,
+   jika masih kurang dari minimum,
+   otomatis dikembalikan ke minimum.
+*/
 
 quantityInput.addEventListener("blur",()=>{
 
 let qty=Number(quantityInput.value);
 
 if(!Number.isFinite(qty)||qty<minOrder){
+
 qty=minOrder;
-}
 
 quantityInput.value=qty;
+
+}
+
+quantityInput.classList.remove("invalid");
+
+quantityWarning.classList.remove("show");
 
 pricePreview.value=
 rupiah(pricePerK(price,qty));
@@ -2487,8 +2718,20 @@ card.querySelector(".add-btn")
 let qty=Number(quantityInput.value);
 
 if(!Number.isFinite(qty)||qty<minOrder){
-qty=minOrder;
-quantityInput.value=qty;
+
+quantityInput.classList.add("invalid");
+
+quantityWarning.textContent=
+`⚠️ Minimal order ${minOrder.toLocaleString("id-ID")}. Silakan masukkan jumlah minimal ${minOrder.toLocaleString("id-ID")}.`;
+
+quantityWarning.classList.add("show");
+
+showToast(
+`Minimal order ${minOrder.toLocaleString("id-ID")}.`
+);
+
+return;
+
 }
 
 addToCart({
@@ -2600,6 +2843,7 @@ Belum ada layanan di pesanan.
 cartTotal.textContent="Rp0";
 
 paymentBox.classList.remove("show");
+
 statusBox.classList.remove("show");
 
 saveCart();
@@ -2911,8 +3155,10 @@ message+=
 `\nHarga: ${rupiah(item.total)}`;
 
 if(item.reaction){
+
 message+=
 `\nReaksi: ${item.reaction}`;
+
 }
 
 if(item.estimate){
@@ -2978,7 +3224,9 @@ faq.classList.remove("open");
 });
 
 if(!wasOpen){
+
 item.classList.add("open");
+
 }
 
 });
@@ -3002,7 +3250,9 @@ const popupWhatsApp=
 document.getElementById("popupWhatsApp");
 
 function closePopup(){
+
 popupOverlay.classList.remove("show");
+
 }
 
 popupClose.addEventListener("click",closePopup);
@@ -3012,7 +3262,9 @@ popupLater.addEventListener("click",closePopup);
 popupOverlay.addEventListener("click",event=>{
 
 if(event.target===popupOverlay){
+
 closePopup();
+
 }
 
 });
