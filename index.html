@@ -1,3770 +1,2847 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>hello_boost — Website Order</title>
-
-<meta property="og:title" content="hello_boost — Website Order">
-<meta property="og:description" content="Order suntik sosmed mulai 200 perak! Full Indonesia • Semua sosmed ada & lengkap!">
-<meta property="og:image" content="https://rasyamiaw0-cmd.github.io/hello-boost/preview.jpg">
-<meta property="og:url" content="https://rasyamiaw0-cmd.github.io/hello-boost/">
-<meta property="og:type" content="website">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="hello_boost — Website Order">
-<meta name="twitter:description" content="Order suntik sosmed mulai 200 perak! Full Indonesia • Semua sosmed ada & lengkap!">
-<meta name="twitter:image" content="https://rasyamiaw0-cmd.github.io/hello-boost/preview.jpg">
-
-<style>
-
-*{
-box-sizing:border-box;
--webkit-tap-highlight-color:transparent
-}
-
-html{
-scroll-behavior:smooth
-}
-
-body{
-margin:0;
-font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-background:
-radial-gradient(circle at 50% -10%,#ffd9e8 0,transparent 32%),
-linear-gradient(180deg,#fffafd 0%,#f7f7f8 42%,#f4f4f5 100%);
-color:#151318;
-min-height:100vh
-}
-
-button,input{
-font-family:inherit
-}
-
-button{
--webkit-appearance:none
-}
-
-a{
--webkit-tap-highlight-color:transparent
-}
-
-header{
-position:sticky;
-top:0;
-z-index:50;
-background:rgba(255,255,255,.78);
-backdrop-filter:blur(20px);
--webkit-backdrop-filter:blur(20px);
-border-bottom:1px solid rgba(20,20,20,.07);
-box-shadow:0 8px 30px rgba(0,0,0,.035)
-}
-
-.nav{
-max-width:1100px;
-margin:auto;
-padding:13px 18px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:15px
-}
-
-.logo{
-position:relative;
-font-size:23px;
-font-weight:950;
-letter-spacing:-1.3px;
-color:#111;
-display:flex;
-align-items:center;
-gap:9px
-}
-
-.logo:before{
-content:"";
-width:9px;
-height:9px;
-border-radius:50%;
-background:linear-gradient(135deg,#ff4f91,#ff8ab7);
-box-shadow:0 0 0 5px #ff4f9115;
-display:inline-block
-}
-
-.logo span{
-background:linear-gradient(135deg,#111 15%,#555 50%,#111 85%);
--webkit-background-clip:text;
-background-clip:text;
--webkit-text-fill-color:transparent
-}
-
-.header-buttons{
-display:flex;
-gap:8px;
-align-items:center
-}
-
-.wa,
-.testi{
-display:flex;
-align-items:center;
-justify-content:center;
-text-decoration:none;
-transition:.2s ease
-}
-
-.wa{
-background:#111;
-color:#fff;
-padding:10px 16px;
-border-radius:13px;
-font-weight:850;
-box-shadow:0 7px 18px rgba(0,0,0,.13)
-}
-
-.wa:hover{
-transform:translateY(-2px);
-box-shadow:0 10px 25px rgba(0,0,0,.18)
-}
-
-.testi{
-background:rgba(255,255,255,.9);
-color:#171717;
-padding:10px 13px;
-border-radius:13px;
-font-weight:900;
-font-size:12px;
-white-space:nowrap;
-border:1px solid #e3e3e3;
-box-shadow:0 5px 15px rgba(0,0,0,.04)
-}
-
-.testi:hover{
-background:#fff;
-transform:translateY(-2px)
-}
-
-.guarantee-watermark{
-position:fixed;
-left:50%;
-bottom:9px;
-transform:translateX(-50%);
-z-index:35;
-background:rgba(17,17,17,.94);
-color:#fff;
-padding:7px 15px;
-border-radius:999px;
-font-size:10px;
-font-weight:950;
-letter-spacing:.35px;
-white-space:nowrap;
-box-shadow:0 8px 25px rgba(0,0,0,.18);
-pointer-events:none
-}
-
-.hero{
-max-width:1100px;
-margin:auto;
-padding:76px 18px 43px;
-text-align:center;
-position:relative
-}
-
-.hero:before{
-content:"";
-position:absolute;
-left:50%;
-top:28px;
-transform:translateX(-50%);
-width:190px;
-height:75px;
-background:#ff74a933;
-filter:blur(45px);
-border-radius:50%;
-pointer-events:none
-}
-
-.hero-badge{
-display:inline-flex;
-align-items:center;
-gap:7px;
-padding:7px 12px;
-border:1px solid #f0d7e2;
-background:rgba(255,255,255,.7);
-border-radius:999px;
-font-size:11px;
-font-weight:850;
-color:#777;
-margin-bottom:16px;
-box-shadow:0 5px 20px rgba(0,0,0,.035)
-}
-
-.hero-badge i{
-width:6px;
-height:6px;
-background:#ff4f91;
-border-radius:50%;
-box-shadow:0 0 0 4px #ff4f9115
-}
-
-.hero h1{
-margin:0;
-font-size:clamp(43px,8vw,76px);
-line-height:.98;
-letter-spacing:-4.5px;
-font-weight:950;
-color:#111
-}
-
-.hero h1 .pink{
-background:linear-gradient(135deg,#111 0%,#ff3f87 58%,#ff83ad 100%);
--webkit-background-clip:text;
-background-clip:text;
--webkit-text-fill-color:transparent
-}
-
-.hero p{
-max-width:550px;
-margin:17px auto 0;
-color:#777;
-font-size:14px;
-line-height:1.7
-}
-
-.hero-line{
-width:45px;
-height:4px;
-border-radius:99px;
-background:linear-gradient(90deg,#111,#ff5b96);
-margin:23px auto 0
-}
-
-.wrap{
-max-width:1100px;
-margin:auto;
-padding:18px
-}
-
-.heading{
-text-align:center;
-margin:4px 0 24px
-}
-
-.heading h2{
-margin:0;
-font-size:28px;
-letter-spacing:-1px;
-font-weight:950;
-color:#111
-}
-
-.heading p{
-max-width:650px;
-margin:7px auto;
-color:#858585;
-font-size:12px;
-line-height:1.6
-}
-
-.search-wrap{
-max-width:700px;
-margin:0 auto 20px;
-position:relative
-}
-
-.search-icon{
-position:absolute;
-left:16px;
-top:50%;
-transform:translateY(-50%);
-font-size:18px;
-pointer-events:none;
-opacity:.65
-}
-
-.search-input{
-width:100%;
-height:52px;
-padding:0 48px 0 46px;
-border:1px solid #dedee1;
-background:rgba(255,255,255,.94);
-border-radius:17px;
-outline:none;
-font-size:14px;
-font-weight:700;
-color:#111;
-box-shadow:
-0 8px 25px rgba(0,0,0,.045),
-inset 0 1px 0 rgba(255,255,255,.8);
-transition:.2s ease
-}
-
-.search-input::placeholder{
-color:#999;
-font-weight:600
-}
-
-.search-input:hover{
-border-color:#cfcfd2
-}
-
-.search-input:focus{
-border-color:#111;
-box-shadow:
-0 0 0 3px rgba(0,0,0,.06),
-0 10px 30px rgba(0,0,0,.06)
-}
-
-.search-clear{
-position:absolute;
-right:10px;
-top:50%;
-transform:translateY(-50%);
-width:32px;
-height:32px;
-border:0;
-border-radius:50%;
-background:#f0f0f1;
-color:#555;
-font-size:18px;
-cursor:pointer;
-display:none;
-place-items:center
-}
-
-.search-clear:hover{
-background:#e4e4e5
-}
-
-.search-result{
-text-align:center;
-font-size:11px;
-color:#888;
-margin:-8px auto 17px;
-min-height:16px
-}
-
-.social-tabs{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:9px;
-max-width:1000px;
-margin:0 auto 22px
-}
-
-.social-tab{
-border:1px solid #e3e3e5;
-background:rgba(255,255,255,.88);
-border-radius:17px;
-padding:12px 7px;
-display:flex;
-align-items:center;
-justify-content:center;
-gap:7px;
-font-weight:900;
-color:#3c3c40;
-cursor:pointer;
-box-shadow:0 7px 24px rgba(0,0,0,.035);
-transition:.22s ease
-}
-
-.social-tab:hover{
-transform:translateY(-2px);
-border-color:#cfcfd2;
-box-shadow:0 12px 28px rgba(0,0,0,.07)
-}
-
-.social-tab.active{
-background:#111;
-color:#fff;
-border-color:#111;
-box-shadow:
-0 10px 28px rgba(0,0,0,.17),
-0 0 0 3px rgba(255,255,255,.8) inset
-}
-
-.social-tab.hidden{
-display:none
-}
-
-.social-logo{
-width:32px;
-height:32px;
-border-radius:10px;
-display:grid;
-place-items:center;
-overflow:hidden;
-flex:0 0 32px;
-background:#fff;
-box-shadow:0 3px 9px rgba(0,0,0,.06)
-}
-
-.social-logo img{
-width:21px;
-height:21px;
-display:block
-}
-
-.platform-icon{
-width:54px;
-height:54px;
-border-radius:17px;
-display:grid;
-place-items:center;
-overflow:hidden;
-flex:0 0 54px;
-background:#fff;
-box-shadow:
-0 7px 18px rgba(0,0,0,.09),
-0 0 0 1px rgba(0,0,0,.04)
-}
-
-.platform-icon img{
-width:35px;
-height:35px;
-display:block
-}
-
-.social-panel{
-display:none;
-background:rgba(255,255,255,.91);
-border:1px solid #e1e1e3;
-border-radius:27px;
-padding:24px;
-box-shadow:
-0 18px 55px rgba(0,0,0,.055),
-0 2px 5px rgba(0,0,0,.025)
-}
-
-.social-panel.active{
-display:block;
-animation:panelIn .3s ease
-}
-
-.social-panel.hidden{
-display:none!important
-}
-
-@keyframes panelIn{
-from{
-opacity:0;
-transform:translateY(7px)
-}
-to{
-opacity:1;
-transform:translateY(0)
-}
-}
-
-.platform-head{
-display:flex;
-align-items:center;
-gap:15px;
-padding-bottom:19px;
-margin-bottom:19px;
-border-bottom:1px solid #ededee
-}
-
-.platform-head h3{
-margin:0;
-font-size:25px;
-letter-spacing:-.8px;
-color:#111
-}
-
-.platform-head p{
-margin:4px 0 0;
-color:#818181;
-font-size:12px;
-line-height:1.5
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:14px
-}
-
-.card{
-background:linear-gradient(180deg,#fff 0%,#fcfcfc 100%);
-border:1px solid #e5e5e6;
-border-radius:20px;
-padding:17px;
-transition:.22s ease;
-position:relative;
-overflow:hidden
-}
-
-.card:before{
-content:"";
-position:absolute;
-top:0;
-left:18px;
-right:18px;
-height:1px;
-background:linear-gradient(90deg,transparent,#ff77a955,transparent);
-opacity:0;
-transition:.2s
-}
-
-.card:hover{
-border-color:#d5d5d7;
-box-shadow:0 12px 32px rgba(0,0,0,.07);
-transform:translateY(-2px)
-}
-
-.card:hover:before{
-opacity:1
-}
-
-.card.hidden{
-display:none
-}
-
-.card h4{
-margin:0 0 5px;
-font-size:17px;
-letter-spacing:-.25px;
-color:#111
-}
-
-.desc{
-font-size:11px;
-color:#8a8a8a;
-margin-bottom:13px;
-display:flex;
-flex-direction:column;
-gap:2px
-}
-
-.price-main{
-font-size:16px;
-font-weight:950;
-color:#e91e63;
-letter-spacing:-.2px
-}
-
-.price-min{
-font-size:10px;
-color:#888
-}
-
-.quantity-box{
-background:#f8f8f9;
-border:1px solid #e5e5e7;
-border-radius:15px;
-padding:13px
-}
-
-.quantity-label{
-display:block;
-font-size:11px;
-font-weight:900;
-color:#555;
-margin-bottom:7px
-}
-
-.quantity-input{
-width:100%;
-border:1px solid #dedee1;
-background:#fff;
-border-radius:12px;
-padding:12px;
-font-size:16px;
-outline:none;
-color:#111;
-font-weight:850;
-transition:.2s
-}
-
-.quantity-input:hover{
-border-color:#c9c9cc
-}
-
-.quantity-input:focus{
-border-color:#111;
-box-shadow:
-0 0 0 3px rgba(0,0,0,.06),
-0 5px 15px rgba(0,0,0,.04)
-}
-
-.price-preview{
-margin-top:9px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:8px
-}
-
-.price-preview span{
-font-size:10px;
-color:#888
-}
-
-.price-preview strong{
-color:#111;
-font-size:17px;
-letter-spacing:-.3px
-}
-
-.emoji-title{
-font-size:11px;
-font-weight:900;
-margin:11px 0 7px;
-color:#555
-}
-
-.emojis{
-display:flex;
-flex-wrap:wrap;
-gap:7px;
-margin-bottom:9px
-}
-
-.emoji{
-position:relative
-}
-
-.emoji input{
-position:absolute;
-opacity:0;
-pointer-events:none
-}
-
-.emoji span{
-display:grid;
-place-items:center;
-min-width:44px;
-height:44px;
-padding:0 9px;
-border:1px solid #ddd;
-border-radius:13px;
-background:#fff;
-font-size:23px;
-cursor:pointer;
-transition:.15s;
-font-weight:800
-}
-
-.emoji:first-child span{
-font-size:10px;
-letter-spacing:.3px;
-padding:0 12px
-}
-
-.emoji span:hover{
-background:#f5f5f5;
-transform:translateY(-1px)
-}
-
-.emoji input:checked+span{
-border:2px solid #111;
-background:#f1f1f1;
-transform:scale(1.05);
-box-shadow:0 4px 12px rgba(0,0,0,.08)
-}
-
-.note{
-font-size:10px;
-color:#888;
-margin-bottom:8px
-}
-
-.no-results{
-display:none;
-text-align:center;
-background:#fff;
-border:1px solid #e3e3e5;
-border-radius:20px;
-padding:30px 20px;
-color:#888;
-box-shadow:0 8px 25px rgba(0,0,0,.035)
-}
-
-.no-results.show{
-display:block
-}
-
-.no-results-icon{
-font-size:30px;
-margin-bottom:8px
-}
-
-.no-results-title{
-font-size:16px;
-font-weight:950;
-color:#222;
-margin-bottom:5px
-}
-
-.no-results-text{
-font-size:12px;
-line-height:1.6
-}
-
-.cart{
-display:none;
-position:sticky;
-bottom:10px;
-z-index:40;
-max-width:1100px;
-margin:22px auto;
-padding:19px;
-background:rgba(255,255,255,.94);
-backdrop-filter:blur(15px);
--webkit-backdrop-filter:blur(15px);
-border:1px solid #dedee0;
-border-radius:23px;
-box-shadow:
-0 18px 45px rgba(0,0,0,.13),
-0 2px 5px rgba(0,0,0,.04)
-}
-
-.cart.show{
-display:block;
-animation:cartIn .25s ease
-}
-
-@keyframes cartIn{
-from{
-opacity:0;
-transform:translateY(12px)
-}
-to{
-opacity:1;
-transform:translateY(0)
-}
-}
-
-.carttop{
-display:flex;
-justify-content:space-between;
-align-items:center
-}
-
-.cart h3{
-margin:0;
-color:#111;
-font-size:18px;
-letter-spacing:-.4px
-}
-
-.cart small{
-color:#858585;
-font-size:11px
-}
-
-.clear{
-border:1px solid #e1e1e1;
-background:#f5f5f5;
-color:#333;
-border-radius:11px;
-padding:8px 11px;
-font-weight:850;
-cursor:pointer;
-transition:.2s
-}
-
-.clear:hover{
-background:#e9e9e9
-}
-
-.selected{
-display:flex;
-flex-wrap:wrap;
-gap:7px;
-margin:13px 0
-}
-
-.chip{
-background:#f5f5f6;
-border:1px solid #e1e1e2;
-border-radius:99px;
-padding:7px 10px;
-font-size:11px;
-color:#444
-}
-
-.empty{
-font-size:11px;
-color:#888
-}
-
-.total{
-border-top:1px solid #e7e7e8;
-padding-top:12px;
-display:flex;
-justify-content:space-between;
-font-weight:900
-}
-
-.total strong{
-font-size:21px;
-letter-spacing:-.4px;
-color:#111
-}
-
-.checkout{
-width:100%;
-border:0;
-margin-top:12px;
-padding:14px;
-border-radius:14px;
-background:linear-gradient(135deg,#111,#292929);
-color:#fff;
-font-weight:950;
-cursor:pointer;
-transition:.2s;
-box-shadow:0 8px 20px rgba(0,0,0,.13)
-}
-
-.checkout:hover{
-transform:translateY(-1px);
-box-shadow:0 11px 25px rgba(0,0,0,.18)
-}
-
-/* ============================= */
-/* PEMBAYARAN */
-/* ============================= */
-
-.payment-box{
-display:none;
-max-width:1100px;
-margin:18px auto;
-padding:21px;
-background:rgba(255,255,255,.94);
-border:1px solid #dedee0;
-border-radius:22px;
-text-align:center;
-box-shadow:0 15px 40px rgba(0,0,0,.06)
-}
-
-.payment-box.active{
-display:block;
-animation:panelIn .3s ease
-}
-
-.payment-box h4{
-margin:0 0 6px;
-color:#111;
-font-size:20px;
-letter-spacing:-.4px
-}
-
-.payment-total{
-font-size:26px;
-font-weight:950;
-color:#111;
-margin:8px 0 18px
-}
-
-.payment-method-title{
-font-size:12px;
-font-weight:950;
-color:#555;
-text-align:left;
-margin:0 0 9px
-}
-
-.payment-methods{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:9px;
-margin-bottom:17px
-}
-
-.payment-method{
-position:relative;
-border:1px solid #e1e1e3;
-background:#fff;
-border-radius:15px;
-padding:13px;
-text-align:left;
-cursor:pointer;
-transition:.2s ease;
-box-shadow:0 5px 15px rgba(0,0,0,.025)
-}
-
-.payment-method:hover{
-border-color:#cfcfd2;
-transform:translateY(-1px)
-}
-
-.payment-method.active{
-border:2px solid #111;
-background:#f8f8f9;
-box-shadow:0 7px 20px rgba(0,0,0,.07)
-}
-
-.payment-method-name{
-font-size:13px;
-font-weight:950;
-color:#111;
-margin-bottom:3px
-}
-
-.payment-method-number{
-font-size:11px;
-color:#888;
-font-weight:700;
-letter-spacing:.2px
-}
-
-.payment-method-check{
-position:absolute;
-right:10px;
-top:10px;
-width:20px;
-height:20px;
-border-radius:50%;
-background:#111;
-color:#fff;
-display:none;
-align-items:center;
-justify-content:center;
-font-size:11px;
-font-weight:950
-}
-
-.payment-method.active .payment-method-check{
-display:flex
-}
-
-.payment-detail{
-display:none;
-background:#f8f8f9;
-border:1px solid #e5e5e7;
-border-radius:17px;
-padding:14px;
-margin-bottom:15px;
-text-align:left
-}
-
-.payment-detail.active{
-display:block;
-animation:panelIn .2s ease
-}
-
-.payment-detail-top{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:10px
-}
-
-.payment-detail-name{
-font-size:13px;
-font-weight:950;
-color:#111
-}
-
-.payment-detail-number{
-font-size:17px;
-font-weight:950;
-color:#111;
-letter-spacing:.3px;
-margin-top:4px
-}
-
-.copy-payment{
-border:0;
-background:#111;
-color:#fff;
-padding:9px 12px;
-border-radius:10px;
-font-size:10px;
-font-weight:900;
-cursor:pointer;
-white-space:nowrap;
-transition:.2s
-}
-
-.copy-payment:hover{
-background:#292929;
-transform:translateY(-1px)
-}
-
-.qris-image{
-width:min(100%,390px);
-display:block;
-margin:0 auto 15px;
-border-radius:14px;
-box-shadow:0 8px 25px rgba(0,0,0,.09)
-}
-
-.payment-note{
-font-size:12px;
-color:#777;
-line-height:1.65;
-margin-bottom:12px
-}
-
-.confirm-payment{
-width:100%;
-border:0;
-padding:13px;
-border-radius:13px;
-background:#111;
-color:#fff;
-font-weight:950;
-cursor:pointer;
-transition:.2s
-}
-
-.confirm-payment:hover{
-background:#292929;
-transform:translateY(-1px)
-}
-
-.back-order{
-width:100%;
-border:0;
-margin-top:8px;
-padding:11px;
-border-radius:13px;
-background:#f0f0f1;
-color:#222;
-font-weight:850;
-cursor:pointer;
-transition:.2s
-}
-
-.back-order:hover{
-background:#e5e5e6
-}
-
-.info-section{
-max-width:1100px;
-margin:70px auto 0;
-padding:18px
-}
-
-.section-title{
-text-align:center;
-margin-bottom:25px
-}
-
-.section-title h2{
-margin:0;
-font-size:28px;
-letter-spacing:-1px;
-font-weight:950;
-color:#111
-}
-
-.section-title p{
-margin:7px auto 0;
-font-size:12px;
-color:#888;
-line-height:1.6
-}
-
-.info-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:14px
-}
-
-.info-card{
-background:rgba(255,255,255,.9);
-border:1px solid #e2e2e4;
-border-radius:20px;
-padding:22px 18px;
-box-shadow:0 10px 30px rgba(0,0,0,.04);
-transition:.22s
-}
-
-.info-card:hover{
-transform:translateY(-3px);
-box-shadow:0 15px 35px rgba(0,0,0,.07)
-}
-
-.info-icon{
-font-size:28px;
-margin-bottom:10px
-}
-
-.info-card h3{
-margin:0 0 6px;
-font-size:17px;
-font-weight:950;
-color:#111
-}
-
-.info-card p{
-margin:0;
-font-size:12px;
-line-height:1.7;
-color:#777
-}
-
-.steps{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px
-}
-
-.step{
-position:relative;
-background:#fff;
-border:1px solid #e3e3e5;
-border-radius:18px;
-padding:18px 15px;
-box-shadow:0 8px 25px rgba(0,0,0,.035)
-}
-
-.step-number{
-width:30px;
-height:30px;
-border-radius:50%;
-background:#111;
-color:#fff;
-display:grid;
-place-items:center;
-font-size:12px;
-font-weight:950;
-margin-bottom:10px
-}
-
-.step h3{
-margin:0 0 6px;
-font-size:14px;
-font-weight:950
-}
-
-.step p{
-margin:0;
-font-size:11px;
-line-height:1.55;
-color:#888
-}
-
-.testimonials{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:14px
-}
-
-.testimonial{
-background:#fff;
-border:1px solid #e3e3e5;
-border-radius:20px;
-padding:18px;
-box-shadow:0 8px 25px rgba(0,0,0,.035);
-position:relative;
-overflow:hidden
-}
-
-.testimonial:before{
-content:"";
-position:absolute;
-left:0;
-top:0;
-bottom:0;
-width:4px;
-background:linear-gradient(180deg,#ff4f91,#ff9fc1)
-}
-
-.testimonial-top{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:10px;
-margin-bottom:9px
-}
-
-.testimonial-name{
-font-weight:950;
-font-size:14px;
-color:#111
-}
-
-.stars{
-font-size:13px;
-letter-spacing:1px
-}
-
-.testimonial p{
-margin:0;
-font-size:12px;
-line-height:1.7;
-color:#777
-}
-
-.testimonial-service{
-margin-top:11px;
-font-size:10px;
-font-weight:850;
-color:#e91e63
-}
-
-.faq-section{
-max-width:900px;
-margin:70px auto 0;
-padding:18px
-}
-
-.faq-item{
-background:#fff;
-border:1px solid #e3e3e5;
-border-radius:16px;
-margin-bottom:10px;
-overflow:hidden;
-box-shadow:0 6px 20px rgba(0,0,0,.03)
-}
-
-.faq-question{
-width:100%;
-border:0;
-background:none;
-padding:17px 18px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:15px;
-text-align:left;
-cursor:pointer;
-font-size:14px;
-font-weight:900;
-color:#222
-}
-
-.faq-icon{
-width:26px;
-height:26px;
-flex:0 0 26px;
-display:grid;
-place-items:center;
-border-radius:50%;
-background:#f5f5f6;
-color:#e91e63;
-font-size:18px;
-transition:.25s
-}
-
-.faq-answer{
-max-height:0;
-overflow:hidden;
-transition:max-height .3s ease
-}
-
-.faq-answer p{
-margin:0;
-padding:0 18px 17px;
-font-size:12px;
-line-height:1.75;
-color:#777
-}
-
-.faq-item.active .faq-icon{
-transform:rotate(45deg);
-background:#111;
-color:#fff
-}
-
-.channel-popup{
-position:fixed;
-inset:0;
-z-index:10000;
-display:none;
-align-items:center;
-justify-content:center;
-padding:20px;
-background:rgba(0,0,0,.38);
-backdrop-filter:blur(6px);
--webkit-backdrop-filter:blur(6px)
-}
-
-.channel-popup.show{
-display:flex;
-animation:popupFade .25s ease
-}
-
-@keyframes popupFade{
-from{
-opacity:0
-}
-to{
-opacity:1
-}
-}
-
-.channel-content{
-position:relative;
-width:min(100%,390px);
-background:
-radial-gradient(circle at 100% 0,#ffdce9 0,transparent 38%),
-linear-gradient(180deg,#fff 0%,#fffafa 100%);
-border:1px solid rgba(255,255,255,.8);
-border-radius:28px;
-padding:28px 22px 22px;
-text-align:center;
-box-shadow:
-0 25px 70px rgba(0,0,0,.25),
-0 5px 20px rgba(0,0,0,.08);
-animation:popupUp .3s ease
-}
-
-@keyframes popupUp{
-from{
-opacity:0;
-transform:translateY(18px) scale(.97)
-}
-to{
-opacity:1;
-transform:translateY(0) scale(1)
-}
-}
-
-.channel-close{
-position:absolute;
-right:13px;
-top:13px;
-width:32px;
-height:32px;
-border:0;
-border-radius:50%;
-background:#f2f2f3;
-color:#555;
-font-size:20px;
-cursor:pointer;
-display:grid;
-place-items:center;
-transition:.2s
-}
-
-.channel-close:hover{
-background:#e5e5e6;
-transform:rotate(90deg)
-}
-
-.bell{
-width:68px;
-height:68px;
-margin:0 auto 15px;
-border-radius:22px;
-display:grid;
-place-items:center;
-font-size:35px;
-background:linear-gradient(135deg,#111,#343434);
-box-shadow:
-0 12px 28px rgba(0,0,0,.17),
-0 0 0 6px #ff4f9114
-}
-
-.channel-title{
-margin:0 0 8px;
-font-size:22px;
-font-weight:950;
-letter-spacing:-.6px;
-color:#111
-}
-
-.channel-text{
-margin:0 auto;
-max-width:310px;
-font-size:12px;
-line-height:1.7;
-color:#777
-}
-
-.channel-actions{
-display:flex;
-gap:8px;
-margin-top:20px
-}
-
-.channel-later,
-.channel-follow{
-flex:1;
-border:0;
-padding:12px;
-border-radius:13px;
-font-size:12px;
-font-weight:900;
-cursor:pointer;
-transition:.2s
-}
-
-.channel-later{
-background:#f0f0f1;
-color:#333
-}
-
-.channel-follow{
-background:#111;
-color:#fff;
-box-shadow:0 7px 18px rgba(0,0,0,.15)
-}
-
-.channel-follow:hover{
-background:#292929;
-transform:translateY(-1px)
-}
-
-.channel-note{
-margin-top:12px;
-font-size:9px;
-color:#aaa
-}
-
-footer{
-text-align:center;
-color:#8a8a8a;
-padding:45px 18px 95px;
-font-size:11px
-}
-
-footer b{
-color:#333
-}
-
-@media(max-width:760px){
-
-.nav{
-padding:12px
-}
-
-.logo{
-font-size:18px;
-letter-spacing:-1px
-}
-
-.logo:before{
-width:7px;
-height:7px
-}
-
-.header-buttons{
-gap:5px
-}
-
-.wa{
-padding:9px 10px;
-font-size:11px
-}
-
-.testi{
-padding:9px 8px;
-font-size:10px
-}
-
-.hero{
-padding:54px 18px 36px
-}
-
-.hero h1{
-font-size:clamp(42px,14vw,58px);
-letter-spacing:-3.3px
-}
-
-.hero p{
-font-size:13px;
-max-width:340px
-}
-
-.search-wrap{
-margin-bottom:16px
-}
-
-.search-input{
-height:49px;
-font-size:13px;
-border-radius:15px
-}
-
-.search-result{
-font-size:10px
-}
-
-.social-tabs{
-grid-template-columns:repeat(5,1fr);
-gap:5px
-}
-
-.social-tab{
-flex-direction:column;
-gap:4px;
-font-size:9px;
-padding:9px 3px;
-border-radius:14px
-}
-
-.social-logo{
-width:28px;
-height:28px;
-flex-basis:28px;
-border-radius:8px
-}
-
-.social-logo img{
-width:19px;
-height:19px
-}
-
-.social-panel{
-padding:17px;
-border-radius:22px
-}
-
-.platform-head{
-gap:11px
-}
-
-.platform-icon{
-width:46px;
-height:46px;
-flex-basis:46px;
-border-radius:14px
-}
-
-.platform-icon img{
-width:30px;
-height:30px
-}
-
-.platform-head h3{
-font-size:21px
-}
-
-.grid{
-grid-template-columns:1fr
-}
-
-.card{
-padding:15px
-}
-
-.cart{
-margin:18px 10px
-}
-
-.payment-box{
-margin:18px 10px;
-padding:17px
-}
-
-.payment-methods{
-grid-template-columns:1fr 1fr;
-gap:7px
-}
-
-.payment-method{
-padding:11px
-}
-
-.payment-method-name{
-font-size:12px
-}
-
-.payment-method-number{
-font-size:9px
-}
-
-.payment-detail-number{
-font-size:15px
-}
-
-.copy-payment{
-padding:8px 10px;
-font-size:9px
-}
-
-.info-section{
-margin-top:50px
-}
-
-.info-grid{
-grid-template-columns:1fr
-}
-
-.steps{
-grid-template-columns:1fr 1fr;
-gap:9px
-}
-
-.step{
-padding:15px 13px
-}
-
-.testimonials{
-grid-template-columns:1fr
-}
-
-.faq-section{
-margin-top:50px
-}
-
-.guarantee-watermark{
-font-size:9px;
-padding:6px 11px;
-bottom:6px
-}
-
-.channel-content{
-width:100%;
-max-width:360px;
-padding:25px 18px 20px;
-border-radius:24px
-}
-
-.channel-title{
-font-size:20px
-}
-
-.channel-actions{
-gap:7px
-}
-
-.channel-later,
-.channel-follow{
-padding:11px 8px;
-font-size:11px
-}
-
-}
-
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>hello_boost — Website Order</title>
+  <meta
+    name="description"
+    content="hello_boost — layanan sosial media dengan proses mudah, cepat, dan aman."
+  />
+
+  <meta property="og:title" content="hello_boost — Website Order" />
+  <meta
+    property="og:description"
+    content="Order layanan sosial media dengan mudah."
+  />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#111827" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fb;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(17, 24, 39, 0.96);
+      backdrop-filter: blur(12px);
+      color: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .header-inner {
+      max-width: 1150px;
+      margin: auto;
+      padding: 13px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .brand {
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+    }
+
+    .brand span {
+      color: #60a5fa;
+    }
+
+    .header-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .header-btn {
+      border: 0;
+      border-radius: 10px;
+      padding: 9px 13px;
+      font-weight: 700;
+      color: white;
+      background: #2563eb;
+      transition: 0.2s;
+    }
+
+    .header-btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.9;
+    }
+
+    .header-btn.testi {
+      background: #374151;
+    }
+
+    /* GUARANTEE */
+    .guarantee {
+      background: #eff6ff;
+      color: #1d4ed8;
+      text-align: center;
+      padding: 8px 15px;
+      font-size: 13px;
+      font-weight: 700;
+      border-bottom: 1px solid #dbeafe;
+    }
+
+    /* HERO */
+    .hero {
+      background:
+        radial-gradient(circle at top right, rgba(59, 130, 246, 0.18), transparent 30%),
+        linear-gradient(135deg, #111827, #1e3a8a);
+      color: white;
+      padding: 70px 18px 65px;
+    }
+
+    .hero-inner {
+      max-width: 1050px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 7vw, 62px);
+      line-height: 1.05;
+      margin-bottom: 18px;
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: #60a5fa;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #dbeafe;
+      font-size: 16px;
+    }
+
+    .hero-actions {
+      margin-top: 27px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero-btn {
+      border: 0;
+      padding: 12px 19px;
+      border-radius: 12px;
+      font-weight: 800;
+      background: white;
+      color: #1e3a8a;
+    }
+
+    .hero-btn.secondary {
+      background: rgba(255,255,255,0.12);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 30px 18px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .section-desc {
+      color: #6b7280;
+      margin-bottom: 20px;
+    }
+
+    /* TABS */
+    .tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scrollbar-width: thin;
+    }
+
+    .tab {
+      white-space: nowrap;
+      border: 1px solid #e5e7eb;
+      background: white;
+      color: #374151;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-weight: 800;
+      transition: 0.2s;
+    }
+
+    .tab.active {
+      background: #2563eb;
+      color: white;
+      border-color: #2563eb;
+    }
+
+    /* SEARCH */
+    .search-box {
+      margin: 18px 0;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 13px;
+      outline: none;
+      background: white;
+    }
+
+    .search-box input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    /* PRODUCTS */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 17px;
+      padding: 17px;
+      box-shadow: 0 5px 18px rgba(15, 23, 42, 0.05);
+      transition: 0.2s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+
+    .product-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .product-name {
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .product-platform {
+      font-size: 12px;
+      color: #6b7280;
+      margin-top: 2px;
+    }
+
+    .product-price {
+      color: #2563eb;
+      font-size: 20px;
+      font-weight: 900;
+      margin: 8px 0;
+    }
+
+    .product-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 10px 0;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 5px 8px;
+      background: #f3f4f6;
+      color: #374151;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .badge.blue {
+      background: #eff6ff;
+      color: #1d4ed8;
+    }
+
+    .badge.green {
+      background: #ecfdf5;
+      color: #047857;
+    }
+
+    .product-note {
+      font-size: 12px;
+      color: #6b7280;
+      margin-bottom: 12px;
+    }
+
+    .field-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 800;
+      color: #374151;
+      margin-bottom: 5px;
+    }
+
+    .product-card input,
+    .product-card select {
+      width: 100%;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      padding: 10px;
+      outline: none;
+      background: #fff;
+      margin-bottom: 9px;
+    }
+
+    .product-card input:focus,
+    .product-card select:focus {
+      border-color: #2563eb;
+    }
+
+    .qty-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .add-btn {
+      width: 100%;
+      border: 0;
+      border-radius: 11px;
+      padding: 11px;
+      color: white;
+      background: #2563eb;
+      font-weight: 900;
+      margin-top: 4px;
+    }
+
+    .add-btn:hover {
+      background: #1d4ed8;
+    }
+
+    /* CART */
+    .cart-box {
+      margin-top: 30px;
+      background: #111827;
+      color: white;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 12px 35px rgba(17, 24, 39, 0.18);
+    }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .cart-title {
+      font-size: 21px;
+      font-weight: 900;
+    }
+
+    .cart-count {
+      background: #2563eb;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .cart-empty {
+      color: #9ca3af;
+      padding: 10px 0;
+    }
+
+    .cart-item {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 14px 0;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+    }
+
+    .cart-item-name {
+      font-weight: 900;
+    }
+
+    .cart-item-detail {
+      font-size: 12px;
+      color: #d1d5db;
+    }
+
+    .cart-item-price {
+      font-weight: 900;
+      text-align: right;
+    }
+
+    .remove-btn {
+      margin-top: 6px;
+      border: 0;
+      background: transparent;
+      color: #fca5a5;
+      font-size: 12px;
+      padding: 0;
+    }
+
+    .cart-total {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      margin-top: 5px;
+      padding-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .checkout-btn {
+      width: 100%;
+      border: 0;
+      margin-top: 15px;
+      border-radius: 12px;
+      padding: 13px;
+      background: #22c55e;
+      color: white;
+      font-weight: 900;
+      font-size: 16px;
+    }
+
+    .checkout-btn:hover {
+      background: #16a34a;
+    }
+
+    /* ORDER PREVIEW */
+    .preview-box {
+      display: none;
+      margin-top: 20px;
+      background: white;
+      border: 2px solid #dbeafe;
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .preview-box.show {
+      display: block;
+    }
+
+    .preview-title {
+      font-size: 21px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .preview-order-id {
+      background: #eff6ff;
+      color: #1d4ed8;
+      padding: 11px;
+      border-radius: 10px;
+      font-weight: 900;
+      margin-bottom: 13px;
+    }
+
+    .preview-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .preview-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 14px;
+    }
+
+    .preview-row span:first-child {
+      color: #6b7280;
+    }
+
+    .preview-total {
+      margin-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 19px;
+      font-weight: 900;
+    }
+
+    /* PAYMENT */
+    .payment-box {
+      display: none;
+      margin-top: 20px;
+      background: white;
+      border-radius: 20px;
+      padding: 22px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .payment-box.show {
+      display: block;
+    }
+
+    .payment-methods {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin: 15px 0;
+    }
+
+    .payment-method {
+      border: 1px solid #d1d5db;
+      background: white;
+      border-radius: 10px;
+      padding: 10px 5px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .payment-method.active {
+      border-color: #2563eb;
+      background: #eff6ff;
+      color: #1d4ed8;
+    }
+
+    .payment-number {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      padding: 13px;
+      border-radius: 11px;
+      margin-top: 10px;
+    }
+
+    .payment-number strong {
+      display: block;
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+
+    .copy-btn {
+      border: 0;
+      background: #111827;
+      color: white;
+      border-radius: 9px;
+      padding: 8px 11px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-top: 6px;
+    }
+
+    .qris {
+      max-width: 270px;
+      margin: 18px auto;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .payment-warning {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #9a3412;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    .confirm-btn {
+      width: 100%;
+      border: 0;
+      background: #22c55e;
+      color: white;
+      padding: 14px;
+      border-radius: 12px;
+      font-weight: 900;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+
+    /* STATUS */
+    .status-box {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 18px;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+    }
+
+    .status-box.show {
+      display: block;
+    }
+
+    .status-title {
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    /* INFO */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .info-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 17px;
+      padding: 20px;
+    }
+
+    .info-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .info-card h3 {
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+
+    .info-card p {
+      color: #6b7280;
+      font-size: 13px;
+    }
+
+    /* STEPS */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .step {
+      background: white;
+      border: 1px solid #e5e7eb;
+      padding: 18px;
+      border-radius: 15px;
+    }
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #2563eb;
+      color: white;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .step h3 {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .step p {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .testimonial {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 17px;
+      padding: 19px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    }
+
+    .stars {
+      color: #f59e0b;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .testimonial p {
+      font-size: 13px;
+      color: #4b5563;
+      margin-bottom: 12px;
+    }
+
+    .testimonial strong {
+      font-size: 13px;
+    }
+
+    /* FAQ */
+    .faq {
+      margin-top: 20px;
+      display: grid;
+      gap: 9px;
+    }
+
+    .faq-item {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      border: 0;
+      background: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      text-align: left;
+      font-weight: 900;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 15px 15px;
+      color: #6b7280;
+      font-size: 13px;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    /* SECURITY */
+    .security {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #991b1b;
+      padding: 18px;
+      border-radius: 15px;
+      margin-top: 20px;
+      font-size: 13px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      margin-top: 40px;
+      padding: 40px 18px 25px;
+    }
+
+    .footer-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    .footer-brand {
+      font-size: 23px;
+      font-weight: 900;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .footer-brand span {
+      color: #60a5fa;
+    }
+
+    .footer-text {
+      font-size: 13px;
+      color: #9ca3af;
+      max-width: 500px;
+    }
+
+    .footer-col h3 {
+      color: white;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 13px;
+      color: #9ca3af;
+      margin: 6px 0;
+    }
+
+    .footer-col a:hover {
+      color: white;
+    }
+
+    .copyright {
+      max-width: 1150px;
+      margin: 30px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    /* POPUP */
+    .popup {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: min(360px, calc(100% - 36px));
+      background: white;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+      border-radius: 16px;
+      padding: 17px;
+      z-index: 2000;
+      display: none;
+    }
+
+    .popup.show {
+      display: block;
+      animation: popupIn 0.25s ease;
+    }
+
+    @keyframes popupIn {
+      from {
+        transform: translateY(15px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .popup-close {
+      float: right;
+      border: 0;
+      background: transparent;
+      font-size: 20px;
+      color: #6b7280;
+    }
+
+    .popup h3 {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .popup p {
+      color: #6b7280;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .popup-btn {
+      display: block;
+      text-align: center;
+      background: #2563eb;
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 20px;
+      transform: translate(-50%, 20px);
+      background: #111827;
+      color: white;
+      padding: 11px 15px;
+      border-radius: 10px;
+      font-size: 13px;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 3000;
+      transition: 0.25s;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    /* NO RESULTS */
+    .no-results {
+      display: none;
+      background: white;
+      padding: 20px;
+      border-radius: 14px;
+      color: #6b7280;
+      text-align: center;
+      border: 1px solid #e5e7eb;
+      margin-top: 10px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .info-grid,
+      .testimonials {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .header-inner {
+        align-items: flex-start;
+      }
+
+      .brand {
+        font-size: 18px;
+      }
+
+      .header-buttons {
+        gap: 5px;
+      }
+
+      .header-btn {
+        padding: 7px 9px;
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 50px 16px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .container {
+        padding: 25px 13px;
+      }
+
+      .product-grid,
+      .info-grid,
+      .testimonials,
+      .steps,
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .payment-methods {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .qty-row {
+        grid-template-columns: 1fr;
+      }
+
+      .cart-item {
+        grid-template-columns: 1fr;
+      }
+
+      .cart-item-price {
+        text-align: left;
+      }
+
+      .preview-row {
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="guarantee-watermark">
-SEMUA PESANAN BERGARANSI 1×48 JAM
-</div>
-
-<header>
-
-<div class="nav">
-
-<div class="logo">
-<span>hello_boost</span>
-</div>
-
-<div class="header-buttons">
-
-<a
-class="wa"
-href="https://wa.me/6283179090525"
-target="_blank"
-rel="noopener noreferrer">
-WhatsApp
-</a>
-
-<a
-class="testi"
-href="https://whatsapp.com/channel/0029VbDLT2yFi8xb1RpB4M36"
-target="_blank"
-rel="noopener noreferrer">
-TESTIMONI
-</a>
-
-</div>
-
-</div>
-
-</header>
-
-<div class="hero">
-
-<div class="hero-badge">
-<i></i>
-Layanan Boost Sosmed Indonesia
-</div>
-
-<h1>
-Boost Sosmed
-<span class="pink">🚀</span>
-</h1>
-
-<p>
-Pilih layanan, masukkan jumlah yang kamu inginkan,
-dan lakukan pembayaran dengan mudah.
-</p>
-
-<div class="hero-line"></div>
-
-</div>
-
-<main class="wrap">
-
-<div class="heading">
-
-<h2>
-Pilih Sosmed
-</h2>
-
-<p>
-View biasa minimal 100. View Story dan Live Streaming View minimal 20.
-Layanan lainnya minimal 20. Harga ditampilkan per 1.000.
-</p>
-
-</div>
-
-<div class="search-wrap">
-
-<span class="search-icon">
-🔍
-</span>
-
-<input
-type="search"
-id="searchInput"
-class="search-input"
-placeholder="Cari layanan... contoh: followers, like, view, komentar"
-autocomplete="off">
-
-<button
-type="button"
-id="searchClear"
-class="search-clear"
-aria-label="Hapus pencarian">
-×
-</button>
-
-</div>
-
-<div
-class="search-result"
-id="searchResult">
-</div>
-
-<div
-class="social-tabs"
-id="socialTabs">
-</div>
-
-<div
-id="panels">
-</div>
-
-<div
-class="no-results"
-id="noResults">
-
-<div class="no-results-icon">
-🔍
-</div>
-
-<div class="no-results-title">
-Layanan tidak ditemukan
-</div>
-
-<div class="no-results-text">
-Coba gunakan kata kunci lain seperti
-Instagram, TikTok, Followers, Like, View, atau Komentar.
-</div>
-
-</div>
-
-</main>
-
-<div class="cart" id="cart">
-
-<div class="carttop">
-
-<div>
-
-<h3>
-Pesanan kamu
-</h3>
-
-<small>
-<span id="count">0</span> layanan dipilih
-</small>
-
-</div>
-
-<button
-class="clear"
-id="clear">
-Hapus semua
-</button>
-
-</div>
-
-<div
-class="selected"
-id="selected">
-</div>
-
-<div class="total">
-
-<span>
-Total
-</span>
-
-<strong id="total">
-Rp0
-</strong>
-
-</div>
-
-<button
-class="checkout"
-id="checkout">
-Lanjut Pembayaran
-</button>
-
-</div>
-
-<!-- ============================= -->
-<!-- PAYMENT BOX -->
-<!-- ============================= -->
-
-<div
-class="payment-box"
-id="paymentBox">
-
-<h4>
-Pilih Metode Pembayaran
-</h4>
-
-<div
-class="payment-total"
-id="paymentTotal">
-Rp0
-</div>
-
-<div class="payment-method-title">
-Pilih metode pembayaran
-</div>
-
-<div class="payment-methods">
-
-<div
-class="payment-method active"
-data-method="QRIS"
-data-number="QRIS">
-
-<div class="payment-method-name">
-📱 QRIS
-</div>
-
-<div class="payment-method-number">
-Scan QRIS
-</div>
-
-<div class="payment-method-check">
-✓
-</div>
-
-</div>
-
-<div
-class="payment-method"
-data-method="DANA"
-data-number="083179090525">
-
-<div class="payment-method-name">
-💙 DANA
-</div>
-
-<div class="payment-method-number">
-083179090525
-</div>
-
-<div class="payment-method-check">
-✓
-</div>
-
-</div>
-
-<div
-class="payment-method"
-data-method="ShopeePay"
-data-number="083179090525">
-
-<div class="payment-method-name">
-🟠 ShopeePay
-</div>
-
-<div class="payment-method-number">
-083179090525
-</div>
-
-<div class="payment-method-check">
-✓
-</div>
-
-</div>
-
-<div
-class="payment-method"
-data-method="GoPay"
-data-number="083179090525">
-
-<div class="payment-method-name">
-🔵 GoPay
-</div>
-
-<div class="payment-method-number">
-083179090525
-</div>
-
-<div class="payment-method-check">
-✓
-</div>
-
-</div>
-
-<div
-class="payment-method"
-data-method="SeaBank"
-data-number="901721201069">
-
-<div class="payment-method-name">
-🏦 SeaBank
-</div>
-
-<div class="payment-method-number">
-901721201069
-</div>
-
-<div class="payment-method-check">
-✓
-</div>
-
-</div>
-
-</div>
-
-<div
-class="payment-detail active"
-id="qrisDetail">
-
-<div class="payment-detail-top">
-
-<div>
-
-<div class="payment-detail-name">
-📱 Pembayaran QRIS
-</div>
-
-</div>
-
-</div>
-
-<img
-src="qris.jpg"
-class="qris-image"
-alt="QRIS Hello Boost">
-
-</div>
-
-<div
-class="payment-detail"
-id="ewalletDetail">
-
-<div class="payment-detail-top">
-
-<div>
-
-<div
-class="payment-detail-name"
-id="paymentDetailName">
-DANA
-</div>
-
-<div
-class="payment-detail-number"
-id="paymentDetailNumber">
-083179090525
-</div>
-
-</div>
-
-<button
-type="button"
-class="copy-payment"
-id="copyPayment">
-Salin
-</button>
-
-</div>
-
-</div>
-
-<div class="payment-note">
-
-Pastikan nominal pembayaran sesuai dengan total pesanan.
-
-<br>
-
-Setelah pembayaran berhasil, klik tombol
-<b>Saya Sudah Bayar</b> dan kirim bukti pembayaran melalui WhatsApp.
-
-</div>
-
-<button
-class="confirm-payment"
-id="confirmPayment">
-Saya Sudah Bayar
-</button>
-
-<button
-class="back-order"
-id="backOrder">
-Kembali ke Pesanan
-</button>
-
-</div>
-
-<section class="info-section">
-
-<div class="section-title">
-
-<h2>
-Kenapa Pilih hello_boost?
-</h2>
-
-<p>
-Kami mengutamakan proses order yang mudah, cepat, dan nyaman.
-</p>
-
-</div>
-
-<div class="info-grid">
-
-<div class="info-card">
-
-<div class="info-icon">
-🔄
-</div>
-
-<h3>
-Garansi Refill 1×48 Jam
-</h3>
-
-<p>
-Refill jika pesanan mengalami penurunan dalam kurun waktu
-maksimal 48 jam setelah pesanan selesai.
-</p>
-
-</div>
-
-<div class="info-card">
-
-<div class="info-icon">
-⚡
-</div>
-
-<h3>
-Proses Cepat
-</h3>
-
-<p>
-Pesanan diproses secepat mungkin setelah pembayaran
-dan bukti pembayaran dikonfirmasi.
-</p>
-
-</div>
-
-<div class="info-card">
-
-<div class="info-icon">
-🔐
-</div>
-
-<h3>
-Aman & Terpercaya
-</h3>
-
-<p>
-Cukup berikan username atau link yang diperlukan.
-Jangan pernah memberikan password akun kepada siapapun.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="info-section">
-
-<div class="section-title">
-
-<h2>
-🛒 Cara Order
-</h2>
-
-<p>
-Order di hello_boost sangat mudah.
-Ikuti langkah berikut.
-</p>
-
-</div>
-
-<div class="steps">
-
-<div class="step">
-<div class="step-number">1</div>
-<h3>Pilih Layanan</h3>
-<p>Pilih platform dan layanan yang ingin kamu order.</p>
-</div>
-
-<div class="step">
-<div class="step-number">2</div>
-<h3>Masukkan Jumlah</h3>
-<p>Masukkan jumlah pesanan sesuai kebutuhan.</p>
-</div>
-
-<div class="step">
-<div class="step-number">3</div>
-<h3>Lanjut Pembayaran</h3>
-<p>Periksa pesanan lalu klik Lanjut Pembayaran.</p>
-</div>
-
-<div class="step">
-<div class="step-number">4</div>
-<h3>Pilih Pembayaran</h3>
-<p>Pilih QRIS, DANA, ShopeePay, GoPay, atau SeaBank.</p>
-</div>
-
-<div class="step">
-<div class="step-number">5</div>
-<h3>Bayar</h3>
-<p>Bayar sesuai nominal total pesanan.</p>
-</div>
-
-<div class="step">
-<div class="step-number">6</div>
-<h3>Screenshot Bukti</h3>
-<p>Screenshot bukti pembayaran setelah pembayaran berhasil.</p>
-</div>
-
-<div class="step">
-<div class="step-number">7</div>
-<h3>Saya Sudah Bayar</h3>
-<p>Klik tombol Saya Sudah Bayar dan kirim bukti pembayaran melalui WhatsApp.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="info-section">
-
-<div class="section-title">
-
-<h2>
-💬 Testimoni
-</h2>
-
-<p>
-Beberapa pengalaman pelanggan setelah menggunakan layanan kami.
-</p>
-
-</div>
-
-<div class="testimonials">
-
-<div class="testimonial">
-
-<div class="testimonial-top">
-
-<div class="testimonial-name">
-Asep
-</div>
-
-<div class="stars">
-⭐⭐⭐⭐⭐
-</div>
-
-</div>
-
-<p>
-“Prosesnya cepat, pesanan followers dan reaksi sudah masuk.
-Mantap, ditunggu next order ❤️”
-</p>
-
-<div class="testimonial-service">
-Followers & Reaksi WhatsApp
-</div>
-
-</div>
-
-<div class="testimonial">
-
-<div class="testimonial-top">
-
-<div class="testimonial-name">
-Angga
-</div>
-
-<div class="stars">
-⭐⭐⭐⭐⭐
-</div>
-
-</div>
-
-<p>
-“Order 100 followers saluran WA, sudah selesai dan sesuai
-pesanan. Terima kasih kak ❤️”
-</p>
-
-<div class="testimonial-service">
-Followers Saluran WhatsApp
-</div>
-
-</div>
-
-<div class="testimonial">
-
-<div class="testimonial-top">
-
-<div class="testimonial-name">
-Rahul
-</div>
-
-<div class="stars">
-⭐⭐⭐⭐⭐
-</div>
-
-</div>
-
-<p>
-“Pesanan 100 followers sudah selesai. Prosesnya lancar
-dan cepat 👍”
-</p>
-
-<div class="testimonial-service">
-Followers Saluran WhatsApp
-</div>
-
-</div>
-
-<div class="testimonial">
-
-<div class="testimonial-top">
-
-<div class="testimonial-name">
-Nissa
-</div>
-
-<div class="stars">
-⭐⭐⭐⭐⭐
-</div>
-
-</div>
-
-<p>
-“Order 117 reaksi postingan saluran WA sudah selesai.
-Next order lagi ❤️”
-</p>
-
-<div class="testimonial-service">
-Reaksi Postingan Saluran
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="faq-section">
-
-<div class="section-title">
-
-<h2>
-❓ FAQ
-</h2>
-
-<p>
-Pertanyaan yang sering ditanyakan pelanggan.
-</p>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-
-<span>
-Apakah layanan hello_boost aman?
-</span>
-
-<span class="faq-icon">
-+
-</span>
-
-</button>
-
-<div class="faq-answer">
-
-<p>
-Ya. Pesanan diproses menggunakan layanan boost sesuai
-produk yang dipilih. Untuk keamanan, cukup kirim username
-atau link yang diperlukan. Jangan memberikan password akun.
-</p>
-
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-
-<span>
-Berapa lama proses pesanan?
-</span>
-
-<span class="faq-icon">
-+
-</span>
-
-</button>
-
-<div class="faq-answer">
-
-<p>
-Pesanan diproses secepat mungkin setelah pembayaran dan
-bukti pembayaran dikonfirmasi. Waktu pengerjaan dapat
-berbeda tergantung layanan dan jumlah pesanan.
-</p>
-
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-
-<span>
-Bagaimana garansinya?
-</span>
-
-<span class="faq-icon">
-+
-</span>
-
-</button>
-
-<div class="faq-answer">
-
-<p>
-Pesanan mendapatkan garansi refill 1×48 jam. Refill jika
-pesanan mengalami penurunan dalam kurun waktu maksimal
-48 jam setelah pesanan selesai, sesuai ketentuan layanan
-yang dipesan.
-</p>
-
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-
-<span>
-Bisa refund?
-</span>
-
-<span class="faq-icon">
-+
-</span>
-
-</button>
-
-<div class="faq-answer">
-
-<p>
-Refund mengikuti kondisi dan ketentuan pesanan. Jika pesanan
-sudah diproses atau selesai, refund tidak otomatis tersedia.
-Silakan hubungi admin terlebih dahulu untuk pengecekan.
-</p>
-
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-
-<span>
-Bagaimana cara order?
-</span>
-
-<span class="faq-icon">
-+
-</span>
-
-</button>
-
-<div class="faq-answer">
-
-<p>
-Pilih layanan → masukkan jumlah → klik Lanjut Pembayaran →
-pilih metode pembayaran → bayar → screenshot bukti pembayaran →
-klik Saya Sudah Bayar → kirim bukti pembayaran melalui WhatsApp.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<div
-class="channel-popup"
-id="channelPopup">
-
-<div class="channel-content">
-
-<button
-class="channel-close"
-id="channelClose"
-aria-label="Tutup">
-×
-</button>
-
-<div class="bell">
-🔔
-</div>
-
-<h3 class="channel-title">
-Gabung Channel WhatsApp
-</h3>
-
-<p class="channel-text">
-Yuk ikuti channel WhatsApp hello_boost untuk mendapatkan
-info harga, promo, update layanan, dan informasi terbaru.
-</p>
-
-<div class="channel-actions">
-
-<button
-class="channel-later"
-id="channelLater">
-Nanti
-</button>
-
-<a
-class="channel-follow"
-href="https://whatsapp.com/channel/0029VbDLT2yFi8xb1RpB4M36"
-target="_blank"
-rel="noopener noreferrer">
-Ikuti Sekarang
-</a>
-
-</div>
-
-<div class="channel-note">
-Tidak ingin melihat popup ini? Klik Nanti.
-</div>
-
-</div>
-
-</div>
-
-<footer>
-
-<b>hello_boost</b>
- • Order:
-+62 831-7909-0525
-
-<br><br>
-
-Aman • Cepat • Terpercaya
-
-</footer>
-
-<script>
-
-const products = [
-
-{
-id:"instagram",
-name:"Instagram",
-icon:"https://cdn.simpleicons.org/instagram/E4405F",
-desc:"Followers Indonesia • Like Indonesia • View • Komen Indonesia • Story • Live • Repost",
-
-items:[
-["Followers (Indonesia)","Instagram Followers Indonesia",1000,50000,100],
-["Like (Indonesia)","Instagram Like Indonesia",1000,20000,100],
-["View","Instagram View",1000,2000,100],
-["Komen (Indonesia)","Instagram Komen Indonesia",1000,350000],
-["View Story","Instagram View Story",1000,1000],
-["Like Story","Instagram Like Story",1000,25000],
-["View Live Stream","Instagram View Live Stream",1000,20000],
-["Repost","Instagram Repost",1000,8000]
-]
-},
-
-{
-id:"tiktok",
-name:"TikTok",
-icon:"https://cdn.simpleicons.org/tiktok/111111",
-desc:"Followers Indonesia • Like Indonesia • View • Komentar",
-
-items:[
-["Followers (Indonesia)","TikTok Followers Indonesia",1000,100000,50],
-["Like (Indonesia)","TikTok Like Indonesia",1000,30000],
-["View","TikTok View",1000,2000,100],
-["Komentar","TikTok Komentar",1000,100000]
-]
-},
-
-{
-id:"whatsapp",
-name:"WhatsApp",
-icon:"https://cdn.simpleicons.org/whatsapp/25D366",
-desc:"Followers Saluran • Reaksi Postingan Saluran",
-
-items:[
-["Followers Saluran","WhatsApp Followers Saluran",1000,10000],
-["Reaksi Postingan Saluran","WhatsApp Reaksi",1000,1000]
-]
-},
-
-{
-id:"facebook",
-name:"Facebook",
-icon:"https://cdn.simpleicons.org/facebook/1877F2",
-desc:"View • Member Grup • Followers Indonesia • Like Indonesia • Komen Indonesia",
-
-items:[
-["View Facebook","Facebook View",1000,3000,100],
-["Member Grup Facebook","Facebook Member Grup",1000,5000],
-["Followers (Indonesia)","Facebook Followers Indonesia",1000,130000],
-["Like (Indonesia)","Facebook Like Indonesia",1000,110000],
-["Komen Indonesia","Facebook Komen Indonesia",1000,300000]
-]
-},
-
-{
-id:"shopee",
-name:"Shopee",
-icon:"https://cdn.simpleicons.org/shopee/EE4D2D",
-desc:"Followers • Like Indonesia • Live Streaming View",
-
-items:[
-["Followers Shopee","Shopee Followers",1000,10000],
-["Like Shopee (Indonesia)","Shopee Like Indonesia",1000,10000],
-["Live Streaming View","Shopee Live Streaming View",1000,70000]
-]
-},
-
-{
-id:"telegram",
-name:"Telegram",
-icon:"https://cdn.simpleicons.org/telegram/229ED9",
-desc:"Followers Saluran • View Story",
-
-items:[
-["Followers Saluran","Telegram Followers Saluran",1000,5000],
-["View Story","Telegram View Story",1000,5000]
-]
-},
-
-{
-id:"threads",
-name:"Threads",
-icon:"https://cdn.simpleicons.org/threads/111111",
-desc:"Followers • Like",
-
-items:[
-["Followers Threads","Threads Followers",1000,100000],
-["Like Threads","Threads Like",1000,25000]
-]
-},
-
-{
-id:"spotify",
-name:"Spotify",
-icon:"https://cdn.simpleicons.org/spotify/1DB954",
-desc:"Followers",
-
-items:[
-["Followers Spotify","Spotify Followers",1000,150000]
-]
-},
-
-{
-id:"twitter",
-name:"X (Twitter)",
-icon:"https://cdn.simpleicons.org/x/111111",
-desc:"Followers • Like • View",
-
-items:[
-["Followers","X Followers",1000,200000],
-["Like","X Like",1000,60000],
-["View","X View",1000,500,100]
-]
-},
-
-{
-id:"roblox",
-name:"Roblox",
-icon:"https://cdn.simpleicons.org/roblox/111111",
-desc:"Followers Indonesia • Friends Indonesia",
-
-items:[
-["Followers (Indonesia)","Roblox Followers Indonesia",1000,130000],
-["Friends (Indonesia)","Roblox Friends Indonesia",1000,50000]
-]
-},
-
-{
-id:"tokopedia",
-name:"Tokopedia",
-icon:"https://cdn.simpleicons.org/tokopedia/42B549",
-desc:"Followers",
-
-items:[
-["Followers Tokopedia","Tokopedia Followers",1000,130000]
-]
-},
-
-{
-id:"twitch",
-name:"Twitch",
-icon:"https://cdn.simpleicons.org/twitch/9146FF",
-desc:"Followers",
-
-items:[
-["Followers Twitch","Twitch Followers",1000,40000]
-]
-},
-
-{
-id:"linkedin",
-name:"LinkedIn",
-icon:"https://cdn.simpleicons.org/linkedin/0A66C2",
-desc:"Followers • Like",
-
-items:[
-["Followers LinkedIn","LinkedIn Followers",1000,2200000],
-["Like LinkedIn","LinkedIn Like",1000,650000]
-]
-},
-
-{
-id:"youtube",
-name:"YouTube",
-icon:"https://cdn.simpleicons.org/youtube/FF0000",
-desc:"Subscriber • Like • View • Live Streaming",
-
-items:[
-["Subscriber YouTube","YouTube Subscriber",1000,650000],
-["Like YouTube","YouTube Like",1000,30000],
-["View YouTube","YouTube View",1000,35000,100],
-["Live Streaming View (15 Menit)","YouTube Live Streaming View 15 Menit",1000,5000]
-]
-}
-
-];
-
-function getMinOrder(item){
-
-if(item[4] !== undefined){
-return Number(item[4]);
-}
-
-return 20;
-
-}
-
-function rupiah(angka){
-
-return "Rp" +
-Math.round(angka).toLocaleString("id-ID");
-
-}
-
-function pricePerK(baseQty,basePrice){
-
-return (basePrice / baseQty) * 1000;
-
-}
-
-function minimumPrice(baseQty,basePrice,minOrder){
-
-return (minOrder / baseQty) * basePrice;
-
-}
-
-const reactionEmojis = [
-"RANDOM",
-"👍",
-"❤️",
-"😂",
-"😯",
-"😥",
-"🙏"
-];
-
-function getSelectedReaction(){
-
-const selected =
-document.querySelector(
-'input[name="whatsappReaction"]:checked'
-);
-
-if(!selected){
-return "RANDOM";
-}
-
-return selected.value;
-
-}
-
-const tabs =
-document.getElementById("socialTabs");
-
-const panels =
-document.getElementById("panels");
-
-products.forEach((platform,index)=>{
-
-const button =
-document.createElement("button");
-
-button.className =
-"social-tab" +
-(index===0 ? " active" : "");
-
-button.dataset.target =
-platform.id;
-
-button.innerHTML = `
-
-<span class="social-logo">
-
-<img
-src="${platform.icon}"
-alt="${platform.name}">
-
-</span>
-
-${platform.name}
-
-`;
-
-tabs.appendChild(button);
-
-const section =
-document.createElement("section");
-
-section.className =
-"social-panel" +
-(index===0 ? " active" : "");
-
-section.id =
-platform.id;
-
-section.innerHTML = `
-
-<div class="platform-head">
-
-<div class="platform-icon">
-
-<img
-src="${platform.icon}"
-alt="${platform.name}">
-
-</div>
-
-<div>
-
-<h3>
-${platform.name}
-</h3>
-
-<p>
-${platform.desc}
-</p>
-
-</div>
-
-</div>
-
-<div class="grid"></div>
-
-`;
-
-const grid =
-section.querySelector(".grid");
-
-platform.items.forEach(item=>{
-
-const minOrder =
-getMinOrder(item);
-
-const card =
-document.createElement("div");
-
-card.className =
-"card";
-
-const isWhatsAppReaction =
-platform.id === "whatsapp" &&
-item[0] === "Reaksi Postingan Saluran";
-
-const perK =
-pricePerK(item[2],item[3]);
-
-const minPrice =
-minimumPrice(
-item[2],
-item[3],
-minOrder
-);
-
-card.dataset.search =
-(
-platform.name +
-" " +
-platform.desc +
-" " +
-item[0] +
-" " +
-item[1]
-).toLowerCase();
-
-card.innerHTML = `
-
-<h4>
-${item[0]}
-</h4>
-
-<div class="desc">
-
-<div class="price-main">
-${rupiah(perK)}/k
-</div>
-
-<div class="price-min">
-Mulai dari ${rupiah(minPrice)}
-</div>
-
-</div>
-
-<div class="quantity-box">
-
-<label class="quantity-label">
-Masukkan jumlah
-</label>
-
-<input
-class="quantity-input"
-type="number"
-min="${minOrder}"
-step="1"
-data-name="${item[1]}"
-data-base-qty="${item[2]}"
-data-base-price="${item[3]}"
-data-min-order="${minOrder}"
-data-reaction="${isWhatsAppReaction ? "true" : "false"}"
-placeholder="Contoh: ${minOrder}">
-
-${
-isWhatsAppReaction
-?
-`
-<div class="emoji-title">
-Pilih reaksi
-</div>
-
-<div class="emojis">
-
-${reactionEmojis.map((emoji,emojiIndex)=>`
-
-<label class="emoji">
-
-<input
-type="radio"
-name="whatsappReaction"
-value="${emoji}"
-${emojiIndex===0 ? "checked" : ""}
->
-
-<span>
-${emoji}
-</span>
-
-</label>
-
-`).join("")}
-
-</div>
-
-<div class="note">
-RANDOM ditentukan oleh sistem pusat/provider.
-</div>
-`
-:
-""
-}
-
-<div class="price-preview">
-
-<span>
-Minimal ${minOrder}
-</span>
-
-<strong>
-Rp0
-</strong>
-
-</div>
-
-</div>
-
-`;
-
-grid.appendChild(card);
-
-});
-
-panels.appendChild(section);
-
-});
-
-let quantityInputs =
-document.querySelectorAll(".quantity-input");
-
-let cartItems = [];
-
-function calculatePrice(input){
-
-const qty =
-Number(input.value);
-
-const baseQty =
-Number(input.dataset.baseQty);
-
-const basePrice =
-Number(input.dataset.basePrice);
-
-const minOrder =
-Number(input.dataset.minOrder);
-
-if(!qty || qty < minOrder){
-return 0;
-}
-
-return (qty / baseQty) * basePrice;
-
-}
-
-function updateInput(input){
-
-const price =
-calculatePrice(input);
-
-const preview =
-input.closest(".quantity-box")
-.querySelector(".price-preview strong");
-
-preview.textContent =
-price > 0
-? rupiah(price)
-: "Rp0";
-
-}
-
-function updateCart(){
-
-cartItems = [];
-
-quantityInputs.forEach(input=>{
-
-const qty =
-Number(input.value);
-
-const minOrder =
-Number(input.dataset.minOrder);
-
-if(qty && qty >= minOrder){
-
-const price =
-calculatePrice(input);
-
-const reaction =
-input.dataset.reaction === "true"
-? getSelectedReaction()
-: "";
-
-cartItems.push({
-
-input:input,
-
-name:input.dataset.name,
-
-qty:qty,
-
-price:price,
-
-reaction:reaction
-
-});
-
-}
-
-});
-
-const selected =
-document.getElementById("selected");
-
-const count =
-document.getElementById("count");
-
-const total =
-document.getElementById("total");
-
-const cart =
-document.getElementById("cart");
-
-if(!cartItems.length){
-
-cart.classList.remove("show");
-
-selected.innerHTML = "";
-
-count.textContent = "0";
-
-total.textContent = "Rp0";
-
-return;
-
-}
-
-cart.classList.add("show");
-
-count.textContent =
-cartItems.length;
-
-selected.innerHTML = "";
-
-let grandTotal = 0;
-
-cartItems.forEach(item=>{
-
-grandTotal += item.price;
-
-const chip =
-document.createElement("div");
-
-chip.className =
-"chip";
-
-chip.textContent =
-
-item.name +
-
-(item.reaction
-? " " + item.reaction
-: "") +
-
-" " +
-
-item.qty.toLocaleString("id-ID") +
-
-" — " +
-
-rupiah(item.price);
-
-selected.appendChild(chip);
-
-});
-
-total.textContent =
-rupiah(grandTotal);
-
-}
-
-quantityInputs.forEach(input=>{
-
-input.addEventListener("input",function(){
-
-updateInput(this);
-
-updateCart();
-
-});
-
-});
-
-document
-.querySelectorAll('input[name="whatsappReaction"]')
-.forEach(input=>{
-
-input.addEventListener("change",function(){
-
-updateCart();
-
-});
-
-});
-
-document
-.querySelectorAll(".social-tab")
-.forEach(button=>{
-
-button.addEventListener("click",function(){
-
-document
-.querySelectorAll(".social-tab")
-.forEach(btn=>{
-
-btn.classList.remove("active");
-
-});
-
-document
-.querySelectorAll(".social-panel")
-.forEach(panel=>{
-
-panel.classList.remove("active");
-
-});
-
-this.classList.add("active");
-
-document
-.getElementById(this.dataset.target)
-.classList.add("active");
-
-});
-
-});
-
-const searchInput =
-document.getElementById("searchInput");
-
-const searchClear =
-document.getElementById("searchClear");
-
-const searchResult =
-document.getElementById("searchResult");
-
-const noResults =
-document.getElementById("noResults");
-
-function performSearch(){
-
-const keyword =
-searchInput.value
-.trim()
-.toLowerCase();
-
-const allTabs =
-document.querySelectorAll(".social-tab");
-
-const allPanels =
-document.querySelectorAll(".social-panel");
-
-let totalMatches = 0;
-
-let firstVisiblePlatform = null;
-
-products.forEach(platform=>{
-
-const panel =
-document.getElementById(platform.id);
-
-const tab =
-document.querySelector(
-`.social-tab[data-target="${platform.id}"]`
-);
-
-if(!panel || !tab){
-return;
-}
-
-const cards =
-panel.querySelectorAll(".card");
-
-let platformMatches = 0;
-
-const platformText =
-(
-platform.name +
-" " +
-platform.desc
-).toLowerCase();
-
-cards.forEach(card=>{
-
-const cardText =
-card.dataset.search || "";
-
-const matched =
-!keyword ||
-platformText.includes(keyword) ||
-cardText.includes(keyword);
-
-if(matched){
-
-card.classList.remove("hidden");
-
-platformMatches++;
-
-}else{
-
-card.classList.add("hidden");
-
-}
-
-});
-
-if(platformMatches > 0){
-
-tab.classList.remove("hidden");
-
-panel.classList.remove("hidden");
-
-totalMatches += platformMatches;
-
-if(!firstVisiblePlatform){
-
-firstVisiblePlatform = platform.id;
-
-}
-
-}else{
-
-tab.classList.add("hidden");
-
-panel.classList.add("hidden");
-
-panel.classList.remove("active");
-
-}
-
-});
-
-if(keyword){
-
-searchClear.style.display =
-"grid";
-
-searchResult.textContent =
-totalMatches +
-(totalMatches === 1
-? " layanan ditemukan"
-: " layanan ditemukan");
-
-}else{
-
-searchClear.style.display =
-"none";
-
-searchResult.textContent = "";
-
-}
-
-if(keyword && totalMatches === 0){
-
-noResults.classList.add("show");
-
-allTabs.forEach(tab=>{
-tab.classList.remove("active");
-});
-
-allPanels.forEach(panel=>{
-panel.classList.remove("active");
-});
-
-return;
-
-}else{
-
-noResults.classList.remove("show");
-
-}
-
-let activeTab =
-document.querySelector(
-".social-tab.active:not(.hidden)"
-);
-
-let activePanel =
-document.querySelector(
-".social-panel.active:not(.hidden)"
-);
-
-if(!activeTab || !activePanel){
-
-if(firstVisiblePlatform){
-
-allTabs.forEach(tab=>{
-tab.classList.remove("active");
-});
-
-allPanels.forEach(panel=>{
-panel.classList.remove("active");
-});
-
-const newTab =
-document.querySelector(
-`.social-tab[data-target="${firstVisiblePlatform}"]`
-);
-
-const newPanel =
-document.getElementById(firstVisiblePlatform);
-
-if(newTab && newPanel){
-
-newTab.classList.add("active");
-newPanel.classList.add("active");
-
-}
-
-}
-
-}
-
-}
-
-searchInput.addEventListener(
-"input",
-performSearch
-);
-
-searchClear.addEventListener(
-"click",
-function(){
-
-searchInput.value = "";
-
-performSearch();
-
-searchInput.focus();
-
-}
-);
-
-document
-.getElementById("clear")
-.addEventListener("click",function(){
-
-quantityInputs.forEach(input=>{
-
-input.value = "";
-
-updateInput(input);
-
-});
-
-document
-.getElementById("paymentBox")
-.classList.remove("active");
-
-updateCart();
-
-});
-
-let selectedPaymentMethod = "QRIS";
-let selectedPaymentNumber = "QRIS";
-
-const paymentMethods =
-document.querySelectorAll(".payment-method");
-
-const qrisDetail =
-document.getElementById("qrisDetail");
-
-const ewalletDetail =
-document.getElementById("ewalletDetail");
-
-const paymentDetailName =
-document.getElementById("paymentDetailName");
-
-const paymentDetailNumber =
-document.getElementById("paymentDetailNumber");
-
-const copyPayment =
-document.getElementById("copyPayment");
-
-paymentMethods.forEach(method=>{
-
-method.addEventListener("click",function(){
-
-paymentMethods.forEach(item=>{
-
-item.classList.remove("active");
-
-});
-
-this.classList.add("active");
-
-selectedPaymentMethod =
-this.dataset.method;
-
-selectedPaymentNumber =
-this.dataset.number;
-
-if(selectedPaymentMethod === "QRIS"){
-
-qrisDetail.classList.add("active");
-
-ewalletDetail.classList.remove("active");
-
-}else{
-
-qrisDetail.classList.remove("active");
-
-ewalletDetail.classList.add("active");
-
-paymentDetailName.textContent =
-selectedPaymentMethod;
-
-paymentDetailNumber.textContent =
-selectedPaymentNumber;
-
-}
-
-});
-
-});
-
-copyPayment.addEventListener("click",async function(){
-
-if(
-!selectedPaymentNumber ||
-selectedPaymentMethod === "QRIS"
-){
-
-return;
-
-}
-
-try{
-
-await navigator.clipboard.writeText(
-selectedPaymentNumber
-);
-
-const oldText =
-this.textContent;
-
-this.textContent =
-"✓ Tersalin";
-
-setTimeout(()=>{
-
-this.textContent =
-oldText;
-
-},1500);
-
-}catch(error){
-
-const textarea =
-document.createElement("textarea");
-
-textarea.value =
-selectedPaymentNumber;
-
-document.body.appendChild(textarea);
-
-textarea.select();
-
-document.execCommand("copy");
-
-textarea.remove();
-
-this.textContent =
-"✓ Tersalin";
-
-setTimeout(()=>{
-
-this.textContent =
-"Salin";
-
-},1500);
-
-}
-
-});
-
-document
-.getElementById("checkout")
-.addEventListener("click",function(){
-
-const invalidInput =
-[...quantityInputs].find(input=>{
-
-if(!input.value){
-
-return false;
-
-}
-
-const qty =
-Number(input.value);
-
-const minOrder =
-Number(input.dataset.minOrder);
-
-return qty < minOrder;
-
-});
-
-if(invalidInput){
-
-const minOrder =
-Number(invalidInput.dataset.minOrder);
-
-alert(
-
-"Jumlah minimal untuk layanan " +
-
-invalidInput.dataset.name +
-
-" adalah " +
-
-minOrder.toLocaleString("id-ID") +
-
-"."
-
-);
-
-invalidInput.focus();
-
-return;
-
-}
-
-updateCart();
-
-if(!cartItems.length){
-
-alert(
-"Silakan masukkan jumlah pesanan terlebih dahulu."
-);
-
-return;
-
-}
-
-let total = 0;
-
-cartItems.forEach(item=>{
-
-total += item.price;
-
-});
-
-document
-.getElementById("paymentTotal")
-.textContent =
-rupiah(total);
-
-document
-.getElementById("paymentBox")
-.classList.add("active");
-
-document
-.getElementById("paymentBox")
-.scrollIntoView({
-
-behavior:"smooth",
-
-block:"center"
-
-});
-
-});
-
-document
-.getElementById("backOrder")
-.addEventListener("click",function(){
-
-document
-.getElementById("paymentBox")
-.classList.remove("active");
-
-});
-
-document
-.getElementById("confirmPayment")
-.addEventListener("click",function(){
-
-updateCart();
-
-if(!cartItems.length){
-
-alert("Belum ada pesanan.");
-
-return;
-
-}
-
-let total = 0;
-
-let pesan =
-"Halo, saya sudah melakukan pembayaran.\n\n";
-
-pesan +=
-"Metode Pembayaran: " +
-selectedPaymentMethod +
-"\n";
-
-if(selectedPaymentMethod !== "QRIS"){
-
-pesan +=
-"Nomor: " +
-selectedPaymentNumber +
-"\n";
-
-}
-
-pesan +=
-"\nPesanan:\n";
-
-cartItems.forEach(item=>{
-
-total += item.price;
-
-pesan +=
-
-"- " +
-
-item.name +
-
-(item.reaction
-? " " + item.reaction
-: "") +
-
-" " +
-
-item.qty.toLocaleString("id-ID") +
-
-" — " +
-
-rupiah(item.price) +
-
-"\n";
-
-});
-
-pesan +=
-
-"\nTotal: " +
-rupiah(total);
-
-pesan +=
-"\n\nSaya akan mengirimkan bukti pembayaran di sini.";
-
-pesan +=
-"\nMohon diproses ya 🙏";
-
-const whatsappURL =
-
-"https://wa.me/6283179090525?text=" +
-
-encodeURIComponent(pesan);
-
-window.open(
-
-whatsappURL,
-
-"_blank"
-
-);
-
-});
-
-document
-.querySelectorAll(".faq-question")
-.forEach(button=>{
-
-button.addEventListener("click",function(){
-
-const item =
-this.parentElement;
-
-const answer =
-item.querySelector(".faq-answer");
-
-document
-.querySelectorAll(".faq-item")
-.forEach(other=>{
-
-if(other !== item){
-
-other.classList.remove("active");
-
-other
-.querySelector(".faq-answer")
-.style.maxHeight = null;
-
-}
-
-});
-
-item.classList.toggle("active");
-
-if(item.classList.contains("active")){
-
-answer.style.maxHeight =
-answer.scrollHeight + "px";
-
-}else{
-
-answer.style.maxHeight = null;
-
-}
-
-});
-
-});
-
-const channelPopup =
-document.getElementById("channelPopup");
-
-const channelClose =
-document.getElementById("channelClose");
-
-const channelLater =
-document.getElementById("channelLater");
-
-function closeChannelPopup(){
-
-channelPopup.classList.remove("show");
-
-}
-
-channelClose.addEventListener(
-"click",
-closeChannelPopup
-);
-
-channelLater.addEventListener(
-"click",
-closeChannelPopup
-);
-
-channelPopup.addEventListener(
-"click",
-function(event){
-
-if(event.target === channelPopup){
-
-closeChannelPopup();
-
-}
-
-});
-
-setTimeout(function(){
-
-channelPopup.classList.add("show");
-
-},5000);
-
-updateCart();
-
-</script>
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        hello<span>_boost</span>
+      </div>
+
+      <div class="header-buttons">
+        <a
+          class="header-btn"
+          href="https://wa.me/6283179090525"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          WhatsApp
+        </a>
+
+        <a
+          class="header-btn testi"
+          href="#testimoni"
+        >
+          Testimoni
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="guarantee">
+    🛡️ Layanan mudah • Proses cepat • Jangan pernah berikan password / OTP
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>
+        Tingkatkan Sosial Media<br />
+        Bersama <span>hello_boost</span>
+      </h1>
+
+      <p>
+        Pilih platform, masukkan target dan jumlah pesanan,
+        lalu lakukan pembayaran sesuai metode yang tersedia.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#order" class="hero-btn">
+          🚀 Mulai Order
+        </a>
+
+        <a href="#cara-order" class="hero-btn secondary">
+          📋 Cara Order
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER -->
+  <main id="order" class="container">
+
+    <h2 class="section-title">Pilih Layanan</h2>
+    <p class="section-desc">
+      Pilih platform dan layanan yang kamu butuhkan.
+    </p>
+
+    <div id="tabs" class="tabs"></div>
+
+    <div class="search-box">
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="🔎 Cari layanan..."
+        autocomplete="off"
+      />
+    </div>
+
+    <div id="productPanels"></div>
+
+    <div id="noResults" class="no-results">
+      Layanan yang kamu cari tidak ditemukan.
+    </div>
+
+    <!-- CART -->
+    <section class="cart-box">
+      <div class="cart-header">
+        <div class="cart-title">🛒 Keranjang Pesanan</div>
+        <div id="cartCount" class="cart-count">0 item</div>
+      </div>
+
+      <div id="cartItems">
+        <div class="cart-empty">
+          Belum ada layanan yang ditambahkan.
+        </div>
+      </div>
+
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">Rp0</span>
+      </div>
+
+      <button id="checkoutBtn" class="checkout-btn">
+        Lanjut ke Checkout
+      </button>
+    </section>
+
+    <!-- PREVIEW -->
+    <section id="previewBox" class="preview-box">
+
+      <div class="preview-title">
+        📋 Preview Pesanan
+      </div>
+
+      <div id="previewOrderId" class="preview-order-id">
+        ID Pesanan: -
+      </div>
+
+      <div id="previewList" class="preview-list"></div>
+
+      <div class="preview-total">
+        <span>Total</span>
+        <span id="previewTotal">Rp0</span>
+      </div>
+
+      <button id="continuePaymentBtn" class="confirm-btn">
+        Lanjut ke Pembayaran
+      </button>
+
+    </section>
+
+    <!-- PAYMENT -->
+    <section id="paymentBox" class="payment-box">
+
+      <h2 class="section-title">
+        💳 Pembayaran
+      </h2>
+
+      <p class="section-desc">
+        Pilih salah satu metode pembayaran berikut.
+      </p>
+
+      <div id="paymentMethods" class="payment-methods">
+
+        <button
+          class="payment-method active"
+          data-method="QRIS"
+          type="button"
+        >
+          QRIS
+        </button>
+
+        <button
+          class="payment-method"
+          data-method="DANA"
+          type="button"
+        >
+          DANA
+        </button>
+
+        <button
+          class="payment-method"
+          data-method="ShopeePay"
+          type="button"
+        >
+          ShopeePay
+        </button>
+
+        <button
+          class="payment-method"
+          data-method="GoPay"
+          type="button"
+        >
+          GoPay
+        </button>
+
+        <button
+          class="payment-method"
+          data-method="SeaBank"
+          type="button"
+        >
+          SeaBank
+        </button>
+
+      </div>
+
+      <div id="paymentInfo" class="payment-number">
+        <strong id="paymentName">
+          QRIS
+        </strong>
+
+        <div id="paymentNumber">
+          Scan QRIS di bawah.
+        </div>
+
+        <button
+          id="copyPaymentBtn"
+          class="copy-btn"
+          type="button"
+        >
+          Salin
+        </button>
+      </div>
+
+      <img
+        id="qrisImage"
+        class="qris"
+        src="qris.jpg"
+        alt="QRIS hello_boost"
+        onerror="this.style.display='none';"
+      />
+
+      <div class="payment-warning">
+        ⚠️ Pastikan nominal pembayaran sesuai total pesanan.
+        Jangan pernah memberikan password, kode OTP, PIN, atau data
+        rahasia akun kepada siapa pun.
+      </div>
+
+      <button id="confirmPaymentBtn" class="confirm-btn">
+        ✅ Saya Sudah Bayar — Konfirmasi via WhatsApp
+      </button>
+
+    </section>
+
+    <!-- STATUS -->
+    <section id="statusBox" class="status-box">
+
+      <div class="status-title">
+        ✅ Pesanan berhasil dibuat
+      </div>
+
+      <p id="statusOrderId">
+        ID Pesanan: -
+      </p>
+
+      <p style="margin-top: 7px;">
+        Kamu akan diarahkan ke WhatsApp untuk mengirim detail pesanan
+        kepada admin.
+      </p>
+
+      <p style="margin-top: 7px; font-size: 12px;">
+        Status ini merupakan status tampilan di halaman.
+        Konfirmasi dan proses pesanan dilakukan melalui admin.
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- INFO -->
+  <section class="container">
+
+    <h2 class="section-title">
+      Kenapa Order di hello_boost?
+    </h2>
+
+    <p class="section-desc">
+      Dibuat supaya proses order lebih sederhana.
+    </p>
+
+    <div class="info-grid">
+
+      <div class="info-card">
+        <div class="info-icon">⚡</div>
+        <h3>Proses Cepat</h3>
+        <p>
+          Estimasi proses setiap layanan dapat berbeda
+          tergantung provider dan kondisi layanan.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon">🛡️</div>
+        <h3>Lebih Aman</h3>
+        <p>
+          Kamu tidak perlu memberikan password atau OTP akun
+          untuk melakukan order.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon">📱</div>
+        <h3>Mudah Digunakan</h3>
+        <p>
+          Pilih layanan, masukkan target, tentukan jumlah,
+          lalu lanjutkan pembayaran.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CARA ORDER -->
+  <section id="cara-order" class="container">
+
+    <h2 class="section-title">
+      Cara Order
+    </h2>
+
+    <p class="section-desc">
+      Ikuti langkah berikut untuk melakukan pesanan.
+    </p>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Pilih Platform</h3>
+        <p>
+          Pilih Instagram, TikTok, WhatsApp, Facebook,
+          atau platform lainnya.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Pilih Layanan</h3>
+        <p>
+          Pilih layanan sesuai kebutuhan dan cek minimal order.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Masukkan Target</h3>
+        <p>
+          Masukkan link, username, atau target sesuai layanan.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Tentukan Jumlah</h3>
+        <p>
+          Masukkan jumlah pesanan sesuai minimal order.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">5</div>
+        <h3>Checkout</h3>
+        <p>
+          Periksa kembali detail pesanan sebelum membayar.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">6</div>
+        <h3>Pilih Pembayaran</h3>
+        <p>
+          Pilih metode pembayaran yang tersedia.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">7</div>
+        <h3>Lakukan Pembayaran</h3>
+        <p>
+          Bayar sesuai total yang tertera pada halaman.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">8</div>
+        <h3>Konfirmasi</h3>
+        <p>
+          Kirim detail order kepada admin melalui WhatsApp.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TESTIMONI -->
+  <section id="testimoni" class="container">
+
+    <h2 class="section-title">
+      ⭐ Testimoni
+    </h2>
+
+    <p class="section-desc">
+      Beberapa contoh pengalaman pelanggan.
+    </p>
+
+    <div class="testimonials">
+
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>
+          "Ordernya gampang dan respon admin cepat."
+        </p>
+        <strong>— Customer hello_boost</strong>
+      </div>
+
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>
+          "Tampilan websitenya simpel, jadi gampang pilih layanan."
+        </p>
+        <strong>— Customer hello_boost</strong>
+      </div>
+
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>
+          "Proses order tidak ribet, tinggal masukkan target."
+        </p>
+        <strong>— Customer hello_boost</strong>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FAQ -->
+  <section class="container">
+
+    <h2 class="section-title">
+      ❓ FAQ
+    </h2>
+
+    <p class="section-desc">
+      Pertanyaan yang sering ditanyakan.
+    </p>
+
+    <div class="faq">
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          Apa itu hello_boost?
+          <span>＋</span>
+        </button>
+
+        <div class="faq-answer">
+          hello_boost adalah website untuk melakukan order
+          layanan sosial media secara online.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          Apakah harus memberikan password akun?
+          <span>＋</span>
+        </button>
+
+        <div class="faq-answer">
+          Tidak. Jangan pernah memberikan password, OTP, PIN,
+          atau kode keamanan akun kepada admin maupun pihak lain.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          Berapa lama proses pesanan?
+          <span>＋</span>
+        </button>
+
+        <div class="faq-answer">
+          Estimasi proses tergantung layanan, provider,
+          jumlah pesanan, dan kondisi sistem. Informasi
+          estimasi dapat dilihat pada setiap kartu layanan.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          Bagaimana cara konfirmasi pembayaran?
+          <span>＋</span>
+        </button>
+
+        <div class="faq-answer">
+          Setelah melakukan pembayaran, tekan tombol
+          konfirmasi pembayaran. Kamu akan diarahkan ke WhatsApp
+          dengan detail order dan ID pesanan.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          Apa itu ID Pesanan?
+          <span>＋</span>
+        </button>
+
+        <div class="faq-answer">
+          ID Pesanan adalah kode unik seperti
+          HB-20260912-ABCDE yang digunakan untuk membantu
+          admin mengenali pesanan kamu.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          Apakah status pesanan bisa dilihat secara real-time?
+          <span>＋</span>
+        </button>
+
+        <div class="faq-answer">
+          Pada versi website ini, status yang ditampilkan adalah
+          status tampilan setelah checkout. Status real-time
+          membutuhkan sistem backend/database yang terhubung
+          dengan panel admin.
+        </div>
+      </div>
+
+    </div>
+
+    <div class="security">
+      <strong>🔐 Keamanan:</strong><br />
+      hello_boost tidak membutuhkan password akun, OTP, PIN,
+      atau kode login untuk melakukan order. Jangan berikan
+      data tersebut kepada siapa pun.
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+        <div class="footer-brand">
+          hello<span>_boost</span>
+        </div>
+
+        <p class="footer-text">
+          Website order layanan sosial media dengan proses
+          sederhana dan mudah digunakan.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Menu</h3>
+
+        <a href="#order">
+          Order
+        </a>
+
+        <a href="#cara-order">
+          Cara Order
+        </a>
+
+        <a href="#testimoni">
+          Testimoni
+        </a>
+      </div>
+
+      <div class="footer-col">
+        <h3>Kontak</h3>
+
+        <a
+          href="https://wa.me/6283179090525"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          WhatsApp Admin
+        </a>
+
+        <a
+          href="https://whatsapp.com/channel/0029VbExample"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Channel WhatsApp
+        </a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> hello_boost. All rights reserved.
+    </div>
+
+  </footer>
+
+  <!-- POPUP -->
+  <div id="channelPopup" class="popup">
+
+    <button
+      id="closePopup"
+      class="popup-close"
+      type="button"
+      aria-label="Tutup"
+    >
+      ×
+    </button>
+
+    <h3>📢 Ikuti Channel WhatsApp</h3>
+
+    <p>
+      Dapatkan informasi dan update terbaru dari hello_boost.
+    </p>
+
+    <a
+      class="popup-btn"
+      href="https://whatsapp.com/channel/0029VbExample"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Ikuti Channel
+    </a>
+
+  </div>
+
+  <div id="toast" class="toast">
+    Berhasil
+  </div>
+
+  <script>
+    "use strict";
+
+    /* =====================================================
+       DATA PRODUK
+    ===================================================== */
+
+    const products = [
+      /* INSTAGRAM */
+      {
+        platform: "Instagram",
+        service: "Followers ID",
+        price: 50000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "Instagram",
+        service: "Like ID",
+        price: 20000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "Instagram",
+        service: "View",
+        price: 2000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "Instagram",
+        service: "Komentar",
+        price: 350000,
+        min: 20,
+        unit: "1K"
+      },
+      {
+        platform: "Instagram",
+        service: "View Story",
+        price: 1000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "Instagram",
+        service: "Like Story",
+        price: 25000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "Instagram",
+        service: "Live",
+        price: 20000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "Instagram",
+        service: "Repost",
+        price: 8000,
+        min: 100,
+        unit: "1K"
+      },
+
+      /* TIKTOK */
+      {
+        platform: "TikTok",
+        service: "Followers ID",
+        price: 100000,
+        min: 50,
+        unit: "1K"
+      },
+      {
+        platform: "TikTok",
+        service: "Like ID",
+        price: 30000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "TikTok",
+        service: "View",
+        price: 2000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "TikTok",
+        service: "Komentar",
+        price: 100000,
+        min: 20,
+        unit: "1K"
+      },
+
+      /* WHATSAPP */
+      {
+        platform: "WhatsApp",
+        service: "Followers Saluran",
+        price: 10000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "WhatsApp",
+        service: "Reaksi Postingan",
+        price: 1000,
+        min: 100,
+        unit: "1K",
+        reaction: true
+      },
+
+      /* FACEBOOK */
+      {
+        platform: "Facebook",
+        service: "View",
+        price: 3000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "Facebook",
+        service: "Member Grup",
+        price: 5000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "Facebook",
+        service: "Followers ID",
+        price: 130000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "Facebook",
+        service: "Like ID",
+        price: 110000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "Facebook",
+        service: "Komen",
+        price: 300000,
+        min: 20,
+        unit: "1K"
+      },
+
+      /* SHOPEE */
+      {
+        platform: "Shopee",
+        service: "Followers",
+        price: 10000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "Shopee",
+        service: "Like ID",
+        price: 10000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "Shopee",
+        service: "Live",
+        price: 70000,
+        min: 100,
+        unit: "1K"
+      },
+
+      /* TELEGRAM */
+      {
+        platform: "Telegram",
+        service: "Followers",
+        price: 5000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "Telegram",
+        service: "View Story",
+        price: 5000,
+        min: 100,
+        unit: "1K"
+      },
+
+      /* THREADS */
+      {
+        platform: "Threads",
+        service: "Followers",
+        price: 100000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "Threads",
+        service: "Like",
+        price: 25000,
+        min: 100,
+        unit: "1K"
+      },
+
+      /* SPOTIFY */
+      {
+        platform: "Spotify",
+        service: "Followers",
+        price: 150000,
+        min: 100,
+        unit: "1K"
+      },
+
+      /* X */
+      {
+        platform: "X",
+        service: "Followers",
+        price: 200000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "X",
+        service: "Like",
+        price: 60000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "X",
+        service: "View",
+        price: 500,
+        min: 100,
+        unit: "1K"
+      },
+
+      /* ROBLOX */
+      {
+        platform: "Roblox",
+        service: "Followers ID",
+        price: 130000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "Roblox",
+        service: "Friends ID",
+        price: 50000,
+        min: 100,
+        unit: "1K"
+      },
+
+      /* TOKOPEDIA */
+      {
+        platform: "Tokopedia",
+        service: "Followers",
+        price: 130000,
+        min: 100,
+        unit: "1K"
+      },
+
+      /* TWITCH */
+      {
+        platform: "Twitch",
+        service: "Followers",
+        price: 40000,
+        min: 100,
+        unit: "1K"
+      },
+
+      /* LINKEDIN */
+      {
+        platform: "LinkedIn",
+        service: "Followers",
+        price: 2200000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "LinkedIn",
+        service: "Like",
+        price: 650000,
+        min: 100,
+        unit: "1K"
+      },
+
+      /* YOUTUBE */
+      {
+        platform: "YouTube",
+        service: "Subscriber",
+        price: 650000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "YouTube",
+        service: "Like",
+        price: 30000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "YouTube",
+        service: "View",
+        price: 35000,
+        min: 100,
+        unit: "1K"
+      },
+      {
+        platform: "YouTube",
+        service: "Live",
+        price: 5000,
+        min: 100,
+        unit: "1K"
+      }
+    ];
+
+    /* =====================================================
+       STATE
+    ===================================================== */
+
+    let cart = [];
+    let activePlatform = products.length > 0
+      ? products[0].platform
+      : "";
+
+    let selectedPayment = "QRIS";
+    let currentOrder = null;
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
+    const tabsEl = document.getElementById("tabs");
+    const productPanelsEl = document.getElementById("productPanels");
+    const searchInput = document.getElementById("searchInput");
+    const noResultsEl = document.getElementById("noResults");
+
+    const cartItemsEl = document.getElementById("cartItems");
+    const cartCountEl = document.getElementById("cartCount");
+    const cartTotalEl = document.getElementById("cartTotal");
+    const checkoutBtn = document.getElementById("checkoutBtn");
+
+    const previewBox = document.getElementById("previewBox");
+    const previewOrderIdEl = document.getElementById("previewOrderId");
+    const previewListEl = document.getElementById("previewList");
+    const previewTotalEl = document.getElementById("previewTotal");
+    const continuePaymentBtn = document.getElementById("continuePaymentBtn");
+
+    const paymentBox = document.getElementById("paymentBox");
+    const paymentNameEl = document.getElementById("paymentName");
+    const paymentNumberEl = document.getElementById("paymentNumber");
+    const copyPaymentBtn = document.getElementById("copyPaymentBtn");
+    const confirmPaymentBtn = document.getElementById("confirmPaymentBtn");
+
+    const statusBox = document.getElementById("statusBox");
+    const statusOrderIdEl = document.getElementById("statusOrderId");
+
+    const toastEl = document.getElementById("toast");
+
+    /* =====================================================
+       HELPER
+    ===================================================== */
+
+    function rupiah(number) {
+      return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        maximumFractionDigits: 0
+      }).format(number);
+    }
+
+    function escapeHTML(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function showToast(message) {
+      toastEl.textContent = message;
+      toastEl.classList.add("show");
+
+      clearTimeout(showToast.timer);
+
+      showToast.timer = setTimeout(function () {
+        toastEl.classList.remove("show");
+      }, 2200);
+    }
+
+    function getOrderId() {
+      const now = new Date();
+
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, "0");
+      const day = String(now.getDate()).padStart(2, "0");
+
+      const random = Math.random()
+        .toString(36)
+        .substring(2, 7)
+        .toUpperCase();
+
+      return "HB-" + year + month + day + "-" + random;
+    }
+
+    function getItemPrice(pricePerK, quantity) {
+      return Math.ceil((pricePerK * quantity) / 1000);
+    }
+
+    function getMinOrder(product) {
+      return product.min || 20;
+    }
+
+    /* =====================================================
+       RENDER TABS
+    ===================================================== */
+
+    function renderTabs() {
+      const platforms = [];
+
+      products.forEach(function (product) {
+        if (!platforms.includes(product.platform)) {
+          platforms.push(product.platform);
+        }
+      });
+
+      tabsEl.innerHTML = "";
+
+      platforms.forEach(function (platform) {
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.className =
+          "tab" +
+          (platform === activePlatform ? " active" : "");
+
+        button.textContent = platform;
+
+        button.addEventListener("click", function () {
+          activePlatform = platform;
+          renderTabs();
+          renderProducts();
+        });
+
+        tabsEl.appendChild(button);
+      });
+    }
+
+    /* =====================================================
+       RENDER PRODUCTS
+    ===================================================== */
+
+    function renderProducts() {
+      const query = searchInput.value.trim().toLowerCase();
+
+      productPanelsEl.innerHTML = "";
+
+      let visibleCount = 0;
+
+      const filteredProducts = products.filter(function (product) {
+        const samePlatform =
+          product.platform === activePlatform;
+
+        const searchable =
+          (
+            product.platform +
+            " " +
+            product.service
+          ).toLowerCase();
+
+        const matchesSearch =
+          query === "" ||
+          searchable.includes(query);
+
+        return samePlatform && matchesSearch;
+      });
+
+      const grid = document.createElement("div");
+      grid.className = "product-grid";
+
+      filteredProducts.forEach(function (product, index) {
+        visibleCount++;
+
+        const card = document.createElement("div");
+        card.className = "product-card";
+
+        const minOrder = getMinOrder(product);
+
+        const safePlatform = escapeHTML(product.platform);
+        const safeService = escapeHTML(product.service);
+
+        card.innerHTML = `
+          <div class="product-top">
+            <div>
+              <div class="product-name">${safeService}</div>
+              <div class="product-platform">${safePlatform}</div>
+            </div>
+          </div>
+
+          <div class="product-price">
+            ${rupiah(product.price)}
+            <span style="font-size:11px;color:#6b7280;">/ 1K</span>
+          </div>
+
+          <div class="product-meta">
+            <span class="badge blue">
+              Minimal ${minOrder}
+            </span>
+
+            <span class="badge green">
+              ⚡ Proses 0–24 jam*
+            </span>
+
+            <span class="badge">
+              🛡️ Garansi 1×48 jam*
+            </span>
+          </div>
+
+          <div class="product-note">
+            *Estimasi/ketentuan dapat berbeda tergantung layanan dan provider.
+          </div>
+
+          <label class="field-label">
+            Link / Username / Target
+          </label>
+
+          <input
+            class="target-input"
+            type="text"
+            placeholder="Masukkan target..."
+            autocomplete="off"
+          />
+
+          ${
+            product.reaction
+              ? `
+                <label class="field-label">
+                  Pilih Reaksi
+                </label>
+
+                <select class="reaction-select">
+                  <option value="❤️">❤️ Love</option>
+                  <option value="👍">👍 Like</option>
+                  <option value="😂">😂 Haha</option>
+                  <option value="😮">😮 Wow</option>
+                  <option value="😢">😢 Sad</option>
+                  <option value="😡">😡 Angry</option>
+                </select>
+              `
+              : ""
+          }
+
+          <div class="qty-row">
+            <div>
+              <label class="field-label">
+                Jumlah
+              </label>
+
+              <input
+                class="qty-input"
+                type="number"
+                min="${minOrder}"
+                value="${minOrder}"
+                step="1"
+              />
+            </div>
+
+            <div>
+              <label class="field-label">
+                Estimasi Harga
+              </label>
+
+              <input
+                class="price-preview"
+                type="text"
+                value="${rupiah(getItemPrice(product.price, minOrder))}"
+                readonly
+              />
+            </div>
+          </div>
+
+          <button class="add-btn" type="button">
+            + Tambah ke Keranjang
+          </button>
+        `;
+
+        const targetInput =
+          card.querySelector(".target-input");
+
+        const qtyInput =
+          card.querySelector(".qty-input");
+
+        const pricePreview =
+          card.querySelector(".price-preview");
+
+        const reactionSelect =
+          card.querySelector(".reaction-select");
+
+        const addButton =
+          card.querySelector(".add-btn");
+
+        function updatePricePreview() {
+          let qty = parseInt(qtyInput.value, 10);
+
+          if (!Number.isFinite(qty) || qty < minOrder) {
+            qty = minOrder;
+          }
+
+          qtyInput.value = qty;
+
+          pricePreview.value =
+            rupiah(getItemPrice(product.price, qty));
+        }
+
+        qtyInput.addEventListener(
+          "input",
+          updatePricePreview
+        );
+
+        addButton.addEventListener("click", function () {
+          const target = targetInput.value.trim();
+
+          const quantity =
+            parseInt(qtyInput.value, 10);
+
+          if (!target) {
+            showToast("Masukkan link / username terlebih dahulu.");
+            targetInput.focus();
+            return;
+          }
+
+          if (
+            !Number.isFinite(quantity) ||
+            quantity < minOrder
+          ) {
+            showToast(
+              "Minimal order " +
+              minOrder +
+              "."
+            );
+            qtyInput.focus();
+            return;
+          }
+
+          const reaction = reactionSelect
+            ? reactionSelect.value
+            : "";
+
+          cart.push({
+            id: Date.now() + "-" + index,
+            platform: product.platform,
+            service: product.service,
+            target: target,
+            quantity: quantity,
+            pricePerK: product.price,
+            price: getItemPrice(
+              product.price,
+              quantity
+            ),
+            reaction: reaction
+          });
+
+          renderCart();
+
+          targetInput.value = "";
+
+          showToast("Pesanan ditambahkan ke keranjang.");
+        });
+
+        grid.appendChild(card);
+      });
+
+      if (visibleCount > 0) {
+        productPanelsEl.appendChild(grid);
+        noResultsEl.style.display = "none";
+      } else {
+        noResultsEl.style.display = "block";
+      }
+    }
+
+    /* =====================================================
+       RENDER CART
+    ===================================================== */
+
+    function getCartTotal() {
+      return cart.reduce(function (total, item) {
+        return total + item.price;
+      }, 0);
+    }
+
+    function renderCart() {
+      cartItemsEl.innerHTML = "";
+
+      if (cart.length === 0) {
+        cartItemsEl.innerHTML = `
+          <div class="cart-empty">
+            Belum ada layanan yang ditambahkan.
+          </div>
+        `;
+      } else {
+        cart.forEach(function (item) {
+          const div = document.createElement("div");
+          div.className = "cart-item";
+
+          const reactionText =
+            item.reaction
+              ? " • Reaksi: " + item.reaction
+              : "";
+
+          div.innerHTML = `
+            <div>
+              <div class="cart-item-name">
+                ${escapeHTML(item.platform)} —
+                ${escapeHTML(item.service)}
+              </div>
+
+              <div class="cart-item-detail">
+                Target: ${escapeHTML(item.target)}
+              </div>
+
+              <div class="cart-item-detail">
+                Jumlah: ${item.quantity}${reactionText}
+              </div>
+
+              <button
+                class="remove-btn"
+                type="button"
+                data-id="${escapeHTML(item.id)}"
+              >
+                Hapus
+              </button>
+            </div>
+
+            <div class="cart-item-price">
+              ${rupiah(item.price)}
+            </div>
+          `;
+
+          const removeButton =
+            div.querySelector(".remove-btn");
+
+          removeButton.addEventListener("click", function () {
+            cart = cart.filter(function (cartItem) {
+              return cartItem.id !== item.id;
+            });
+
+            renderCart();
+
+            previewBox.classList.remove("show");
+            paymentBox.classList.remove("show");
+            statusBox.classList.remove("show");
+          });
+
+          cartItemsEl.appendChild(div);
+        });
+      }
+
+      cartCountEl.textContent =
+        cart.length + " item";
+
+      cartTotalEl.textContent =
+        rupiah(getCartTotal());
+
+      checkoutBtn.disabled =
+        cart.length === 0;
+
+      checkoutBtn.style.opacity =
+        cart.length === 0 ? "0.55" : "1";
+    }
+
+    /* =====================================================
+       CHECKOUT
+    ===================================================== */
+
+    function createPreview() {
+      if (cart.length === 0) {
+        showToast("Keranjang masih kosong.");
+        return;
+      }
+
+      const orderId = getOrderId();
+
+      currentOrder = {
+        id: orderId,
+        items: cart.map(function (item) {
+          return Object.assign({}, item);
+        }),
+        total: getCartTotal(),
+        payment: selectedPayment,
+        createdAt: new Date().toISOString()
+      };
+
+      previewOrderIdEl.textContent =
+        "ID Pesanan: " + orderId;
+
+      previewListEl.innerHTML = "";
+
+      currentOrder.items.forEach(function (item) {
+        const row = document.createElement("div");
+        row.className = "preview-row";
+
+        const reaction =
+          item.reaction
+            ? " • Reaksi " + item.reaction
+            : "";
+
+        row.innerHTML = `
+          <span>
+            ${escapeHTML(item.platform)} —
+            ${escapeHTML(item.service)}
+          </span>
+
+          <strong>
+            ${item.quantity} •
+            ${rupiah(item.price)}
+            ${escapeHTML(reaction)}
+          </strong>
+        `;
+
+        const targetRow =
+          document.createElement("div");
+
+        targetRow.className = "preview-row";
+
+        targetRow.innerHTML = `
+          <span>Target</span>
+          <strong>
+            ${escapeHTML(item.target)}
+          </strong>
+        `;
+
+        previewListEl.appendChild(row);
+        previewListEl.appendChild(targetRow);
+      });
+
+      previewTotalEl.textContent =
+        rupiah(currentOrder.total);
+
+      previewBox.classList.add("show");
+
+      paymentBox.classList.remove("show");
+      statusBox.classList.remove("show");
+
+      previewBox.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+    checkoutBtn.addEventListener(
+      "click",
+      createPreview
+    );
+
+    /* =====================================================
+       PAYMENT
+    ===================================================== */
+
+    const paymentData = {
+      QRIS: {
+        name: "QRIS",
+        number: "Scan QRIS di bawah."
+      },
+
+      DANA: {
+        name: "DANA",
+        number: "083179090525"
+      },
+
+      ShopeePay: {
+        name: "ShopeePay",
+        number: "083179090525"
+      },
+
+      GoPay: {
+        name: "GoPay",
+        number: "083179090525"
+      },
+
+      SeaBank: {
+        name: "SeaBank",
+        number: "901083179090525"
+      }
+    };
+
+    function updatePayment() {
+      const data =
+        paymentData[selectedPayment];
+
+      paymentNameEl.textContent =
+        data.name;
+
+      paymentNumberEl.textContent =
+        data.number;
+
+      const qrisImage =
+        document.getElementById("qrisImage");
+
+      if (selectedPayment === "QRIS") {
+        qrisImage.style.display = "block";
+        copyPaymentBtn.style.display = "none";
+      } else {
+        qrisImage.style.display = "none";
+        copyPaymentBtn.style.display = "inline-block";
+      }
+
+      document
+        .querySelectorAll(".payment-method")
+        .forEach(function (button) {
+          button.classList.toggle(
+            "active",
+            button.dataset.method === selectedPayment
+          );
+        });
+    }
+
+    document
+      .querySelectorAll(".payment-method")
+      .forEach(function (button) {
+        button.addEventListener("click", function () {
+          selectedPayment =
+            button.dataset.method;
+
+          if (currentOrder) {
+            currentOrder.payment =
+              selectedPayment;
+          }
+
+          updatePayment();
+        });
+      });
+
+    continuePaymentBtn.addEventListener(
+      "click",
+      function () {
+        if (!currentOrder) {
+          showToast("Buat preview pesanan terlebih dahulu.");
+          return;
+        }
+
+        paymentBox.classList.add("show");
+
+        updatePayment();
+
+        paymentBox.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    );
+
+    copyPaymentBtn.addEventListener(
+      "click",
+      async function () {
+        const text =
+          paymentData[selectedPayment].number;
+
+        if (!text || selectedPayment === "QRIS") {
+          return;
+        }
+
+        try {
+          await navigator.clipboard.writeText(text);
+          showToast("Nomor pembayaran berhasil disalin.");
+        } catch (error) {
+          showToast("Gagal menyalin nomor pembayaran.");
+        }
+      }
+    );
+
+    /* =====================================================
+       CONFIRM PAYMENT + WHATSAPP
+    ===================================================== */
+
+    confirmPaymentBtn.addEventListener(
+      "click",
+      function () {
+        if (!currentOrder) {
+          showToast("Pesanan belum tersedia.");
+          return;
+        }
+
+        currentOrder.payment =
+          selectedPayment;
+
+        statusOrderIdEl.textContent =
+          "ID Pesanan: " +
+          currentOrder.id;
+
+        statusBox.classList.add("show");
+
+        const lines = [];
+
+        lines.push(
+          "*ORDER HELLO_BOOST*"
+        );
+
+        lines.push("");
+
+        lines.push(
+          "ID Pesanan: " +
+          currentOrder.id
+        );
+
+        lines.push(
+          "Metode Pembayaran: " +
+          currentOrder.payment
+        );
+
+        lines.push("");
+
+        currentOrder.items.forEach(
+          function (item, index) {
+            lines.push(
+              "*" +
+              (index + 1) +
+              ". " +
+              item.platform +
+              " - " +
+              item.service +
+              "*"
+            );
+
+            lines.push(
+              "Target: " +
+              item.target
+            );
+
+            lines.push(
+              "Jumlah: " +
+              item.quantity
+            );
+
+            if (item.reaction) {
+              lines.push(
+                "Reaksi: " +
+                item.reaction
+              );
+            }
+
+            lines.push(
+              "Harga: " +
+              rupiah(item.price)
+            );
+
+            lines.push("");
+          }
+        );
+
+        lines.push(
+          "*TOTAL: " +
+          rupiah(currentOrder.total) +
+          "*"
+        );
+
+        lines.push("");
+
+        lines.push(
+          "Saya sudah melakukan pembayaran. Mohon dicek."
+        );
+
+        const message =
+          lines.join("\n");
+
+        const whatsappUrl =
+          "https://wa.me/6283179090525?text=" +
+          encodeURIComponent(message);
+
+        window.open(
+          whatsappUrl,
+          "_blank",
+          "noopener,noreferrer"
+        );
+
+        showToast(
+          "Membuka WhatsApp..."
+        );
+
+        statusBox.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }
+    );
+
+    /* =====================================================
+       SEARCH
+    ===================================================== */
+
+    searchInput.addEventListener(
+      "input",
+      function () {
+        renderProducts();
+      }
+    );
+
+    /* =====================================================
+       FAQ
+    ===================================================== */
+
+    document
+      .querySelectorAll(".faq-question")
+      .forEach(function (button) {
+        button.addEventListener(
+          "click",
+          function () {
+            const item =
+              button.closest(".faq-item");
+
+            const isOpen =
+              item.classList.contains("open");
+
+            document
+              .querySelectorAll(".faq-item")
+              .forEach(function (faqItem) {
+                faqItem.classList.remove("open");
+
+                const icon =
+                  faqItem.querySelector(
+                    ".faq-question span"
+                  );
+
+                if (icon) {
+                  icon.textContent = "＋";
+                }
+              });
+
+            if (!isOpen) {
+              item.classList.add("open");
+
+              const icon =
+                item.querySelector(
+                  ".faq-question span"
+                );
+
+              if (icon) {
+                icon.textContent = "－";
+              }
+            }
+          }
+        );
+      });
+
+    /* =====================================================
+       POPUP CHANNEL
+    ===================================================== */
+
+    const channelPopup =
+      document.getElementById("channelPopup");
+
+    const closePopup =
+      document.getElementById("closePopup");
+
+    const popupClosedKey =
+      "hello_boost_popup_closed";
+
+    function showChannelPopup() {
+      try {
+        const alreadyClosed =
+          localStorage.getItem(
+            popupClosedKey
+          );
+
+        if (!alreadyClosed) {
+          channelPopup.classList.add("show");
+        }
+      } catch (error) {
+        channelPopup.classList.add("show");
+      }
+    }
+
+    closePopup.addEventListener(
+      "click",
+      function () {
+        channelPopup.classList.remove("show");
+
+        try {
+          localStorage.setItem(
+            popupClosedKey,
+            "1"
+          );
+        } catch (error) {
+          /* Ignore localStorage errors */
+        }
+      }
+    );
+
+    setTimeout(
+      showChannelPopup,
+      5000
+    );
+
+    /* =====================================================
+       FOOTER YEAR
+    ===================================================== */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    /* =====================================================
+       INITIAL RENDER
+    ===================================================== */
+
+    renderTabs();
+    renderProducts();
+    renderCart();
+    updatePayment();
+
+  </script>
 
 </body>
 </html>
