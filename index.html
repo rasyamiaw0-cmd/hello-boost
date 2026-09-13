@@ -2395,6 +2395,21 @@ footer{
     grid-template-columns:1fr;
   }
 }
+
+
+/* Emoji reaksi kembali ke emoji original/native */
+.reaction-btn{
+  font-family:inherit;
+  font-variant-emoji:emoji;
+  font-size:20px;
+}
+.reaction-btn.random-reaction{
+  width:auto;
+  min-width:58px;
+  padding:0 10px;
+  font-size:11px;
+  font-weight:850;
+}
 </style>
 </head>
 
@@ -2597,34 +2612,106 @@ footer{
 </div>
 
 <!-- =======================================================
+     CARA ORDER
+======================================================= -->
+
+<section class="section">
+
+  <div class="section-heading">
+
+    <div>
+
+      <div class="section-title">
+
+        <span class="ui-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M5 5h14v14H5z"/>
+            <path d="m8 12 2.5 2.5L16 9"/>
+          </svg>
+        </span>
+
+        Cara Order
+
+      </div>
+
+      <div class="section-subtitle">
+        Hanya beberapa langkah
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="steps">
+
+    <div class="step">
+
+      <div class="step-number">
+        01
+      </div>
+
+      <h3>Pilih layanan</h3>
+
+      <p>
+        Pilih platform dan layanan sesuai kebutuhanmu.
+      </p>
+
+    </div>
+
+    <div class="step">
+
+      <div class="step-number">
+        02
+      </div>
+
+      <h3>Isi target</h3>
+
+      <p>
+        Masukkan link atau username target yang benar.
+      </p>
+
+    </div>
+
+    <div class="step">
+
+      <div class="step-number">
+        03
+      </div>
+
+      <h3>Pembayaran</h3>
+
+      <p>
+        Pilih metode pembayaran yang tersedia.
+      </p>
+
+    </div>
+
+    <div class="step">
+
+      <div class="step-number">
+        04
+      </div>
+
+      <h3>Konfirmasi</h3>
+
+      <p>
+        Kirim detail order melalui WhatsApp untuk diproses.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
      INFO
 ======================================================= -->
 
 <section class="section">
 
   <div class="info-grid">
-
-    <div class="info-card">
-
-      <div class="info-icon">
-
-        <span class="ui-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M4 7h16M4 12h16M4 17h10"/>
-            <path d="M7 4v6M14 9v6M18 14v6"/>
-          </svg>
-        </span>
-
-      </div>
-
-      <h3>Harga Transparan</h3>
-
-      <p>
-        Harga layanan dan minimal order ditampilkan
-        sebelum melakukan order.
-      </p>
-
-    </div>
 
     <div class="info-card">
 
@@ -2645,6 +2732,28 @@ footer{
       <p>
         Masukkan link atau username target sesuai
         layanan yang dipilih.
+      </p>
+
+    </div>
+
+    <div class="info-card">
+
+      <div class="info-icon">
+
+        <span class="ui-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 7h16M4 12h16M4 17h10"/>
+            <path d="M7 4v6M14 9v6M18 14v6"/>
+          </svg>
+        </span>
+
+      </div>
+
+      <h3>Harga Transparan</h3>
+
+      <p>
+        Harga layanan dan minimal order ditampilkan
+        sebelum melakukan order.
       </p>
 
     </div>
@@ -3067,99 +3176,6 @@ footer{
       id="statusOrderId"
     >
       ID Pesanan: -
-    </div>
-
-  </div>
-
-</section>
-
-<!-- =======================================================
-     CARA ORDER
-======================================================= -->
-
-<section class="section">
-
-  <div class="section-heading">
-
-    <div>
-
-      <div class="section-title">
-
-        <span class="ui-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M5 5h14v14H5z"/>
-            <path d="m8 12 2.5 2.5L16 9"/>
-          </svg>
-        </span>
-
-        Cara Order
-
-      </div>
-
-      <div class="section-subtitle">
-        Hanya beberapa langkah
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="steps">
-
-    <div class="step">
-
-      <div class="step-number">
-        01
-      </div>
-
-      <h3>Pilih layanan</h3>
-
-      <p>
-        Pilih platform dan layanan sesuai kebutuhanmu.
-      </p>
-
-    </div>
-
-    <div class="step">
-
-      <div class="step-number">
-        02
-      </div>
-
-      <h3>Isi target</h3>
-
-      <p>
-        Masukkan link atau username target yang benar.
-      </p>
-
-    </div>
-
-    <div class="step">
-
-      <div class="step-number">
-        03
-      </div>
-
-      <h3>Pembayaran</h3>
-
-      <p>
-        Pilih metode pembayaran yang tersedia.
-      </p>
-
-    </div>
-
-    <div class="step">
-
-      <div class="step-number">
-        04
-      </div>
-
-      <h3>Konfirmasi</h3>
-
-      <p>
-        Kirim detail order melalui WhatsApp untuk diproses.
-      </p>
-
     </div>
 
   </div>
@@ -3956,9 +3972,9 @@ const products = {
 
   Instagram:[
     ["Followers Indonesia",50000,"Followers Instagram",100],
-    ["Followers Luar",7000,"Followers Instagram Luar",10],
+    ["Followers Luar",10000,"Followers Instagram Luar",10],
     ["Like Indonesia",20000,"Like Instagram",100],
-    ["Like Luar",1000,"Like Instagram Luar",10],
+    ["Like Luar",2000,"Like Instagram Luar",10],
     ["View",2000,"View Instagram",100],
     ["Komen",350000,"Komentar Instagram",20],
     ["Komentar Luar (Custom)",20000,"Komentar Instagram Luar (Custom)",20],
@@ -3978,7 +3994,7 @@ const products = {
   ],
 
   WhatsApp:[
-    ["Followers Saluran",10000,"Followers Channel WhatsApp",100],
+    ["Followers Saluran",15000,"Followers Channel WhatsApp",100],
     ["Reaksi Postingan",1000,"Reaksi Postingan WhatsApp",10]
   ],
 
@@ -4398,6 +4414,22 @@ function renderTabs(){
    EMOJI INI SENGAJA TIDAK DIUBAH
 ========================================================= */
 
+function getTargetLabel(name){
+  const n = String(name).toLowerCase();
+  if(n.includes("followers saluran")) return "Link Saluran";
+  if(n.includes("followers")) return "Link Profil";
+  if(n.includes("like") || n.includes("view") || n.includes("vt")) return "Link Postingan";
+  return "Link / Target";
+}
+
+function getTargetPlaceholder(name){
+  const label = getTargetLabel(name);
+  if(label === "Link Profil") return "Masukkan link profil";
+  if(label === "Link Saluran") return "Masukkan link saluran";
+  if(label === "Link Postingan") return "Masukkan link postingan";
+  return "Masukkan link target";
+}
+
 function reactionHTML(){
 
   return `
@@ -4410,41 +4442,13 @@ function reactionHTML(){
 
       <div class="reaction-options">
 
-        <button
-          type="button"
-          class="reaction-btn"
-          data-reaction="♡"
-        >♡</button>
-
-        <button
-          type="button"
-          class="reaction-btn"
-          data-reaction="♡"
-        >♡</button>
-
-        <button
-          type="button"
-          class="reaction-btn"
-          data-reaction="◡"
-        >◡</button>
-
-        <button
-          type="button"
-          class="reaction-btn"
-          data-reaction="○"
-        >○</button>
-
-        <button
-          type="button"
-          class="reaction-btn"
-          data-reaction="⌣"
-        >⌣</button>
-
-        <button
-          type="button"
-          class="reaction-btn"
-          data-reaction="⊖"
-        >⊖</button>
+        <button type="button" class="reaction-btn" data-reaction="❤️">❤️</button>
+        <button type="button" class="reaction-btn" data-reaction="😂">😂</button>
+        <button type="button" class="reaction-btn" data-reaction="😮">😮</button>
+        <button type="button" class="reaction-btn" data-reaction="😢">😢</button>
+        <button type="button" class="reaction-btn" data-reaction="😡">😡</button>
+        <button type="button" class="reaction-btn" data-reaction="👍">👍</button>
+        <button type="button" class="reaction-btn random-reaction" data-reaction="🎲">Random</button>
 
       </div>
 
@@ -4609,13 +4613,13 @@ function renderServices(searchTerm=""){
         <div>
 
           <label class="field-label">
-            Link / Username
+            ${getTargetLabel(name)}
           </label>
 
           <input
             type="text"
             class="field-input target-input"
-            placeholder="Masukkan link atau username"
+            placeholder="${getTargetPlaceholder(name)}"
             autocomplete="off"
           >
 
@@ -4856,6 +4860,11 @@ function renderServices(searchTerm=""){
 
           }
 
+          if(isReaction && !card.querySelector(".reaction-btn.active")){
+            showToast("Pilih salah satu reaksi terlebih dahulu.");
+            return;
+          }
+
           const target =
             card
               .querySelector(
@@ -4898,13 +4907,7 @@ function renderServices(searchTerm=""){
             quantity:
               qty,
 
-            reaction:
-              card
-                .querySelector(
-                  ".reaction-btn.active"
-                )
-                ?.dataset
-                .reaction || "",
+            reaction: getSelectedReaction(card),
 
             estimate:
               getEstimate()
@@ -4930,6 +4933,16 @@ function renderServices(searchTerm=""){
 /* =========================================================
    CART
 ========================================================= */
+
+function getSelectedReaction(card){
+  const active = card.querySelector(".reaction-btn.active");
+  if(!active) return "";
+  if(active.dataset.reaction === "🎲"){
+    const pool = ["❤️","😂","😮","😢","😡","👍"];
+    return pool[Math.floor(Math.random()*pool.length)];
+  }
+  return active.dataset.reaction || "";
+}
 
 function addToCart(item){
 
