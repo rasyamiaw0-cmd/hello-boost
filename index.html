@@ -519,9 +519,32 @@ button{
   min-width:max-content;
 }
 
+.platform-icon{
+  width:19px;
+  height:19px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:none;
+  color:currentColor;
+}
+
+.platform-icon svg{
+  width:100%;
+  height:100%;
+  display:block;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.75;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
 .tab{
   min-width:100px;
   height:48px;
+
+  gap:8px;
 
   padding:0 16px;
 
@@ -724,6 +747,9 @@ button{
 }
 
 .service-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
   flex-shrink:0;
 
   padding:7px 10px;
@@ -924,8 +950,26 @@ button{
 }
 
 /* =========================================================
-   REACTION
+   REACTION — MONOCHROME / OUTLINE STYLE
 ========================================================= */
+.reaction-btn{
+  color:var(--pink2);
+  background:rgba(233,91,145,.045);
+  border:1px solid rgba(233,91,145,.22);
+  text-rendering:geometricPrecision;
+}
+.reaction-btn.active{
+  color:#fff;
+  background:rgba(233,91,145,.14);
+  border-color:var(--pink);
+  box-shadow:0 0 14px rgba(233,91,145,.16);
+}
+/* Emoji tetap satu warna; tidak menggunakan warna emoji bawaan browser */
+.reaction-btn{
+  font-family:"Segoe UI Symbol","Noto Sans Symbols 2","Arial Unicode MS",sans-serif;
+  font-variant-emoji:text;
+}
+
 
 .reaction-box{
   margin-top:5px;
@@ -3911,10 +3955,13 @@ footer{
 const products = {
 
   Instagram:[
-    ["Followers ID",50000,"Followers Instagram",100],
-    ["Like ID",20000,"Like Instagram",100],
+    ["Followers Indonesia",50000,"Followers Instagram",100],
+    ["Followers Luar",7000,"Followers Instagram Luar",10],
+    ["Like Indonesia",20000,"Like Instagram",100],
+    ["Like Luar",1000,"Like Instagram Luar",10],
     ["View",2000,"View Instagram",100],
     ["Komen",350000,"Komentar Instagram",20],
+    ["Komentar Luar (Custom)",20000,"Komentar Instagram Luar (Custom)",20],
     ["View Story",1000,"View Story Instagram",100],
     ["Like Story",25000,"Like Story Instagram",100],
     ["Live",20000,"View Live Instagram",100],
@@ -3922,8 +3969,10 @@ const products = {
   ],
 
   TikTok:[
-    ["Followers ID",100000,"Followers TikTok",50],
-    ["Like ID",30000,"Like TikTok",100],
+    ["Followers Indonesia",100000,"Followers TikTok",50],
+    ["Followers Luar",32000,"Followers TikTok Luar",10],
+    ["Like Indonesia",30000,"Like TikTok",100],
+    ["Like Luar",5000,"Like TikTok Luar",50],
     ["View",2000,"View TikTok",100],
     ["Komentar",100000,"Komentar TikTok",20]
   ],
@@ -3936,14 +3985,14 @@ const products = {
   Facebook:[
     ["View",3000,"View Facebook",100],
     ["Member Grup",5000,"Member Grup Facebook",100],
-    ["Followers ID",130000,"Followers Facebook",100],
-    ["Like ID",110000,"Like Facebook",100],
+    ["Followers Indonesia",130000,"Followers Facebook",100],
+    ["Like Indonesia",110000,"Like Facebook",100],
     ["Komen",300000,"Komentar Facebook",20]
   ],
 
   Shopee:[
     ["Followers",10000,"Followers Shopee",100],
-    ["Like ID",10000,"Like Shopee",100],
+    ["Like Indonesia",10000,"Like Shopee",100],
     ["Live",70000,"Penonton Live Shopee",100]
   ],
 
@@ -3968,8 +4017,8 @@ const products = {
   ],
 
   Roblox:[
-    ["Followers ID",130000,"Followers Roblox",100],
-    ["Friends ID",50000,"Friends Roblox",100]
+    ["Followers Indonesia",130000,"Followers Roblox",100],
+    ["Friends Indonesia",50000,"Friends Roblox",100]
   ],
 
   Tokopedia:[
@@ -4216,6 +4265,83 @@ function showToast(message){
 }
 
 /* =========================================================
+   PLATFORM ICONS — MONOCHROME OUTLINE
+========================================================= */
+
+function platformIcon(platform){
+
+  const icons = {
+
+    Instagram:`<svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="4" y="4" width="16" height="16" rx="4"/>
+      <circle cx="12" cy="12" r="3.5"/>
+      <circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/>
+    </svg>`,
+
+    TikTok:`<svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M14 4v10.2a4.2 4.2 0 1 1-3-4"/>
+      <path d="M14 4c.7 2.2 2.1 3.6 4.3 4.1"/>
+    </svg>`,
+
+    WhatsApp:`<svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.2 11.4a8.2 8.2 0 0 1-12.1 7.2L4 20l1.4-4A8.2 8.2 0 1 1 20.2 11.4Z"/>
+      <path d="M9 9.2c.3 1.7 2.1 3.6 3.8 4.2l1.2-1 1.8.8"/>
+    </svg>`,
+
+    Facebook:`<svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="8.5"/>
+      <path d="M13.5 8.2h-1.2c-.9 0-1.4.5-1.4 1.5v1.2H9.6v1.8h1.3v4.1h2v-4.1h1.5l.3-1.8h-1.8V9.9c0-.5.2-.7.7-.7h1.1"/>
+    </svg>`,
+
+    Shopee:`<svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 8h14l-1 11H6L5 8Z"/>
+      <path d="M9 8V6.8A3 3 0 0 1 12 4a3 3 0 0 1 3 2.8V8"/>
+    </svg>`,
+
+    Telegram:`<svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="m4 11.7 15.8-6-2.5 12.6-5-3.3-2.6 2.5.3-4.1L4 11.7Z"/>
+      <path d="m9.9 13.4 5.7-5"/>
+    </svg>`,
+
+    Threads:`<svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.8 10.4c-.4-3.5-2.4-5.5-5.9-5.5-3.8 0-6.2 2.3-6.2 6.7 0 4.4 2.4 6.9 6.4 6.9 3.1 0 5.2-1.6 5.2-4.1 0-2.2-1.6-3.5-4.2-3.5-2.4 0-3.7 1.1-3.7 2.7 0 1.3 1 2.2 2.5 2.2 1.8 0 2.9-1 3-2.7"/>
+    </svg>`,
+
+    Spotify:`<svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="8.5"/>
+      <path d="M8 10.2c2.7-.8 5.8-.5 8.1.6M8.8 13c2.1-.6 4.7-.4 6.5.5M9.5 15.5c1.5-.4 3.3-.2 4.7.4"/>
+    </svg>`,
+
+    X:`<svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="m5 5 14 14M19 5 5 19"/>
+    </svg>`,
+
+    Roblox:`<svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="m7 5 12 3-3 12-12-3L7 5Z"/>
+      <path d="m11 10 3 .8-.8 3-3-.8.8-3Z"/>
+    </svg>`,
+
+    Tokopedia:`<svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 8h12l-1 11H7L6 8Z"/>
+      <path d="M9 8V6.7A3 3 0 0 1 12 4a3 3 0 0 1 3 2.7V8"/>
+      <circle cx="12" cy="12" r="1.5"/>
+    </svg>`,
+
+    Twitch:`<svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 4h14v11l-4 4h-3l-2.5 2V19H5V4Z"/>
+      <path d="M10 8v4M14 8v4"/>
+    </svg>`,
+
+    LinkedIn:`<svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="4" y="4" width="16" height="16" rx="3"/>
+      <path d="M8 10v6M8 8v.1M11 16v-3.2a2.3 2.3 0 0 1 4.6 0V16M11 10v6"/>
+    </svg>`
+  };
+
+  return `<span class="platform-icon">${icons[platform] || `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/></svg>`}</span>`;
+}
+
+/* =========================================================
    TABS
 ========================================================= */
 
@@ -4239,8 +4365,9 @@ function renderTabs(){
           : ""
         );
 
-      button.textContent =
-        platform;
+      button.innerHTML =
+        platformIcon(platform) +
+        `<span>${escapeHTML(platform)}</span>`;
 
       button.addEventListener(
         "click",
@@ -4286,38 +4413,38 @@ function reactionHTML(){
         <button
           type="button"
           class="reaction-btn"
-          data-reaction="❤️"
-        >❤️</button>
+          data-reaction="♡"
+        >♡</button>
 
         <button
           type="button"
           class="reaction-btn"
-          data-reaction="👍"
-        >👍</button>
+          data-reaction="♡"
+        >♡</button>
 
         <button
           type="button"
           class="reaction-btn"
-          data-reaction="😂"
-        >😂</button>
+          data-reaction="◡"
+        >◡</button>
 
         <button
           type="button"
           class="reaction-btn"
-          data-reaction="😮"
-        >😮</button>
+          data-reaction="○"
+        >○</button>
 
         <button
           type="button"
           class="reaction-btn"
-          data-reaction="😢"
-        >😢</button>
+          data-reaction="⌣"
+        >⌣</button>
 
         <button
           type="button"
           class="reaction-btn"
-          data-reaction="😡"
-        >😡</button>
+          data-reaction="⊖"
+        >⊖</button>
 
       </div>
 
@@ -4398,7 +4525,8 @@ function renderServices(searchTerm=""){
         </div>
 
         <div class="service-badge">
-          ${escapeHTML(activePlatform)}
+          ${platformIcon(activePlatform)}
+          <span>${escapeHTML(activePlatform)}</span>
         </div>
 
       </div>
@@ -4645,44 +4773,24 @@ function renderServices(searchTerm=""){
     quantityInput.addEventListener(
       "blur",
       ()=>{
+        const raw = quantityInput.value;
 
-        let qty =
-          Number(
-            quantityInput.value
-          );
-
-        if(
-          !Number.isFinite(qty) ||
-          qty < minOrder
-        ){
-
-          qty =
-            minOrder;
-
-          quantityInput.value =
-            qty;
-
+        if(raw === ""){
+          quantityWarning.classList.remove("show");
+          quantityInput.classList.remove("invalid");
+          pricePreview.value = "Rp0";
+          return;
         }
 
-        quantityInput
-          .classList
-          .remove("invalid");
+        const qty = Number(raw);
+        if(!Number.isFinite(qty)){
+          pricePreview.value = "Rp0";
+          return;
+        }
 
-        quantityWarning
-          .classList
-          .remove("show");
-
-        pricePreview.value =
-          rupiah(
-            pricePerK(
-              price,
-              qty
-            )
-          );
-
+        updateQuantityWarning();
       }
     );
-
     const reactionButtons =
       card.querySelectorAll(
         ".reaction-btn"
