@@ -4471,7 +4471,7 @@ let fayuServices = [];
   Jangan gunakan service_role key di HTML.
 */
 const SUPABASE_URL = "https://eaoqjbflfdinuqvqdvjc.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_QmQJdU0kPM0aKMTfwmJvVQ_HqntVG6R";
+const SUPABASE_ANON_KEY = "GANTI_DENGAN_ANON_KEY_SUPABASE";
 
 const SERVICES_API_URL =
   SUPABASE_URL +
@@ -4822,15 +4822,18 @@ function renderTabs(){
 
 function detectPlatform(service){
 
-  const text = `${service.platform || ""} ${service.category || ""} ${service.name || ""} ${service.customer_name || ""}`.toLowerCase();
+  // Nama/kategori provider menjadi sumber utama karena field `platform`
+  // dari provider kadang tidak konsisten.
+  const nameText = `${service.name || ""} ${service.category || ""}`.toLowerCase();
+  const platformText = String(service.platform || "").toLowerCase();
 
   const rules = [
     ["Instagram", /instagram|insta/],
     ["TikTok", /tiktok|tik tok/],
-    ["Facebook", /facebook|fb/],
-    ["WhatsApp", /whatsapp|wa |saluran whatsapp/],
+    ["Facebook", /facebook|\bfb\b/],
+    ["WhatsApp", /whatsapp|\bwa\b|saluran whatsapp/],
     ["Telegram", /telegram/],
-    ["YouTube", /youtube|yt /],
+    ["YouTube", /youtube|\byt\b/],
     ["Shopee", /shopee/],
     ["Tokopedia", /tokopedia/],
     ["Threads", /threads/],
@@ -4838,44 +4841,72 @@ function detectPlatform(service){
     ["X", /(^|\s)x(\s|$)|twitter/],
     ["Twitch", /twitch/],
     ["LinkedIn", /linkedin/],
-    ["Roblox", /roblox/],
+    ["Roblox", /roblox/]
   ];
 
   for(const [platform, regex] of rules){
-    if(regex.test(text)) return platform;
+    if(regex.test(nameText)) return platform;
+  }
+
+  for(const [platform, regex] of rules){
+    if(regex.test(platformText)) return platform;
   }
 
   return service.platform || "Lainnya";
 }
 
 function friendlyName(service){
-  if(service.customer_name && String(service.customer_name).trim()){
-    return String(service.customer_name).trim();
-  }
 
-  const raw = String(service.name || "Layanan Social Media");
+  const raw = String(service.name || "Layanan Social Media").trim();
+  const platform = detectPlatform(service);
+  const text = `${raw} ${service.category || ""}`.toLowerCase();
 
-  return raw
-    .replace(/\[[^\]]*\]/g, "")
-    .replace(/\([^)]*\)/g, "")
-    .replace(/\b(FP|HQ|S\s*HQ|REAL|REAL USER|CHEAPEST|FASTEST|INSTANT|UPDATE|MAX|DAYS?|DAY|K|M|D)\b/gi, "")
-    .replace(/\s{2,}/g, " ")
-    .replace(/[|\-–—]+\s*$/g, "")
-    .trim();
+  // Ubah istilah provider menjadi nama yang mudah dipahami customer awam.
+  let action = "Layanan Social Media";
+
+  if(/follower|pengikut/.test(text)) action = `Tambah Followers ${platform}`;
+  else if(/like|suka/.test(text)) action = `Tambah Like ${platform}`;
+  else if(/comment|komentar|komen/.test(text)) action = `Tambah Komentar ${platform}`;
+  else if(/view|views|tayangan/.test(text)) action = `Tambah Views ${platform}`;
+  else if(/subscriber|subscribe/.test(text)) action = `Tambah Subscriber ${platform}`;
+  else if(/member|anggota/.test(text)) action = `Tambah Member ${platform}`;
+  else if(/reaction|reaksi/.test(text)) action = `Tambah Reaksi ${platform}`;
+  else if(/story/.test(text)) action = `Tambah Views Story ${platform}`;
+  else if(/live|penonton/.test(text)) action = `Tambah Penonton Live ${platform}`;
+
+  return action;
 }
 
 function friendlyDescription(service, platform, name){
-  const raw = `${name} ${service.category || ""}`.toLowerCase();
 
-  if(raw.includes("follower") || raw.includes("pengikut")) return `Tambah followers ${platform} ke profil kamu.`;
-  if(raw.includes("like") || raw.includes("suka")) return `Tambah like pada postingan ${platform}.`;
-  if(raw.includes("view") || raw.includes("views") || raw.includes("tayangan")) return `Tambah views atau tayangan ${platform}.`;
-  if(raw.includes("comment") || raw.includes("komen")) return `Tambah komentar pada konten ${platform}.`;
-  if(raw.includes("subscriber")) return `Tambah subscriber ${platform}.`;
-  if(raw.includes("member")) return `Tambah anggota atau member ${platform}.`;
-  if(raw.includes("reaction") || raw.includes("reaksi")) return `Tambah reaksi pada postingan ${platform}.`;
-  if(raw.includes("story")) return `Tambah tayangan pada Story ${platform}.`;
-  if(raw.includes("live")) return `Tambah penonton Live ${platform}.`;
+  const raw = `${service.name || ""} ${service.category || ""}`.toLowerCase();
+
+  if(raw.includes("follower") || raw.includes("pengikut"))
+    return `Menambahkan followers/pengikut ke profil ${platform}.`;
+
+  if(raw.includes("like") || raw.includes("suka"))
+    return `Menambahkan like/suka pada postingan ${platform}.`;
+
+  if(raw.includes("view") || raw.includes("views") || raw.includes("tayangan"))
+    return `Menambahkan views/tayangan pada konten ${platform}.`;
+
+  if(raw.includes("comment") || raw.includes("komentar") || raw.includes("komen"))
+    return `Menambahkan komentar pada konten ${platform}.`;
+
+  if(raw.includes("subscriber") || raw.includes("subscribe"))
+    return `Menambahkan subscriber/pelanggan pada ${platform}.`;
+
+  if(raw.includes("member") || raw.includes("anggota"))
+    return `Menambahkan anggota/member pada ${platform}.`;
+
+  if(raw.includes("reaction") || raw.includes("reaksi"))
+    return `Menambahkan reaksi pada postingan ${platform}.`;
+
+  if(raw.includes("story"))
+    return `Menambahkan tayangan pada Story ${platform}.`;
+
+  if(raw.includes("live") || raw.includes("penonton"))
+    return `Menambahkan penonton pada Live ${platform}.`;
 
   return `Layanan ${platform} untuk membantu meningkatkan interaksi akun atau konten.`;
 }
@@ -5059,8 +5090,8 @@ function renderServices(searchTerm=""){
           <div class="service-description">${escapeHTML(description)}</div>
         </div>
         <div class="service-badge">
-          ${platformIcon(activePlatform)}
-          <span>${escapeHTML(activePlatform)}</span>
+          ${platformIcon(service.platform || activePlatform)}
+          <span>${escapeHTML(service.platform || activePlatform)}</span>
         </div>
       </div>
 
