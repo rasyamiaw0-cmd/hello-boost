@@ -2827,6 +2827,64 @@ input:focus,select:focus,textarea:focus{
 .account-balance-mini{display:none;padding:8px 10px;border-radius:11px;background:rgba(233,91,145,.09);border:1px solid rgba(233,91,145,.2);color:#fff;font-size:11px;font-weight:800;}
 @media(max-width:620px){.header-actions{gap:5px}.header-btn{padding:9px 10px}.header-btn .ui-icon{display:none}.account-balance-mini{display:block}}
 </style>
+
+<style id="hb-fayu-layout">
+/* Hello Boost — FAYU-inspired information architecture */
+.hb-fayu-landing{max-width:1120px;margin:0 auto;padding:24px 16px 0}
+.hb-fayu-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;padding:48px 34px;border-radius:22px;background:linear-gradient(135deg,#fff,#f7f8ff);border:1px solid #e5e7ef;box-shadow:0 14px 40px rgba(31,35,58,.07)}
+.hb-fayu-kicker{display:inline-flex;gap:8px;align-items:center;padding:7px 11px;border-radius:999px;background:#f0efff;color:#5b50e8;font-weight:700;font-size:12px}
+.hb-fayu-hero h1{font-size:clamp(32px,5vw,54px);line-height:1.04;margin:14px 0;color:#15182a;letter-spacing:-1.5px}
+.hb-fayu-hero h1 span{color:#635bff}
+.hb-fayu-hero p{color:#667085;line-height:1.7;max-width:620px}
+.hb-fayu-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.hb-fayu-btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 17px;border-radius:10px;text-decoration:none;font-weight:700;border:1px solid #e2e5ef}
+.hb-fayu-btn.primary{background:#635bff;color:#fff;border-color:#635bff}
+.hb-fayu-btn.secondary{background:#fff;color:#344054}
+.hb-fayu-visual{min-height:260px;border-radius:20px;background:radial-gradient(circle at 65% 25%,rgba(99,91,255,.22),transparent 28%),linear-gradient(145deg,#eff0ff,#fff);border:1px solid #e5e7ef;display:flex;align-items:center;justify-content:center}
+.hb-fayu-visual-card{width:min(84%,380px);background:#fff;border:1px solid #e5e7ef;border-radius:16px;padding:18px;box-shadow:0 18px 45px rgba(31,35,58,.10)}
+.hb-fayu-visual-card .line{height:10px;background:#eef0f6;border-radius:20px;margin:10px 0}
+.hb-fayu-visual-card .line.short{width:60%}
+.hb-fayu-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 54px}
+.hb-fayu-stat{background:#fff;border:1px solid #e5e7ef;border-radius:14px;padding:20px;text-align:center}
+.hb-fayu-stat strong{display:block;font-size:25px;color:#15182a}
+.hb-fayu-stat span{display:block;margin-top:5px;color:#667085;font-size:13px}
+.hb-fayu-section{padding:50px 0}
+.hb-fayu-section.center{text-align:center}
+.hb-fayu-section h2{font-size:30px;color:#15182a;margin:0 0 10px}
+.hb-fayu-section>p{color:#667085;line-height:1.7;max-width:720px;margin:0 auto 24px}
+.hb-fayu-about{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;align-items:center}
+.hb-fayu-about-card{background:#fff;border:1px solid #e5e7ef;border-radius:18px;padding:28px;box-shadow:0 8px 24px rgba(31,35,58,.05)}
+.hb-fayu-features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.hb-fayu-feature{background:#fff;border:1px solid #e5e7ef;border-radius:15px;padding:22px}
+.hb-fayu-feature .icon{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:#f0efff;color:#635bff;font-weight:900;margin-bottom:14px}
+.hb-fayu-feature h3{margin:0 0 7px;color:#15182a;font-size:16px}
+.hb-fayu-feature p{margin:0;color:#667085;line-height:1.6;font-size:13px}
+.hb-fayu-reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.hb-fayu-review{background:#fff;border:1px solid #e5e7ef;border-radius:15px;padding:22px}
+.hb-fayu-review p{color:#475467;line-height:1.65}
+.hb-fayu-review strong{color:#15182a}
+.hb-fayu-review small{color:#98a2b3}
+.hb-fayu-faq{max-width:820px;margin:auto}
+.hb-fayu-faq-item{background:#fff;border:1px solid #e5e7ef;border-radius:12px;padding:17px 19px;margin:9px 0}
+.hb-fayu-faq-item summary{cursor:pointer;font-weight:700;color:#344054}
+.hb-fayu-faq-item div{padding-top:12px;color:#667085;line-height:1.65}
+.hb-fayu-payments{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.hb-fayu-pay{background:#fff;border:1px solid #e5e7ef;border-radius:12px;padding:13px 18px;color:#344054;font-weight:700}
+@media(max-width:760px){
+ .hb-fayu-hero,.hb-fayu-about{grid-template-columns:1fr}
+ .hb-fayu-stats,.hb-fayu-features,.hb-fayu-reviews{grid-template-columns:1fr}
+ .hb-fayu-hero{padding:30px 20px}
+ .hb-fayu-section{padding:36px 0}
+}
+</style>
+
+
+<style>
+/* Make the service grid naturally communicate "cheapest first" */
+.service-list,.services-grid,#serviceList{display:grid;gap:14px}
+.service-sort-note{font-size:12px;color:#667085;margin:0 0 12px}
+</style>
+
 </head>
 
 <body>
@@ -2894,6 +2952,92 @@ input:focus,select:focus,textarea:focus{
   </div>
 
 </header>
+
+
+
+<section class="hb-fayu-landing" id="beranda">
+  <div class="hb-fayu-hero">
+    <div>
+      <span class="hb-fayu-kicker">HELLO BOOST • SOCIAL MEDIA PANEL</span>
+      <h1>Suntik Sosmed <span>Lebih Mudah</span></h1>
+      <p>Pesan layanan followers, likes, views, komentar, dan layanan sosial media lainnya langsung dari website Hello Boost.</p>
+      <div class="hb-fayu-cta">
+        <a class="hb-fayu-btn primary" href="#layanan">Lihat Layanan</a>
+        <a class="hb-fayu-btn secondary" href="#faq">Pertanyaan Umum</a>
+      </div>
+    </div>
+    <div class="hb-fayu-visual">
+      <div class="hb-fayu-visual-card">
+        <strong style="color:#15182a">Panel Layanan</strong>
+        <div class="line"></div>
+        <div class="line short"></div>
+        <div class="line"></div>
+        <div style="display:flex;gap:8px;margin-top:14px">
+          <span style="flex:1;height:34px;border-radius:9px;background:#f0efff"></span>
+          <span style="flex:1;height:34px;border-radius:9px;background:#635bff"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hb-fayu-stats">
+    <div class="hb-fayu-stat"><strong>606+</strong><span>Layanan Tersedia</span></div>
+    <div class="hb-fayu-stat"><strong>24 Jam</strong><span>Estimasi Proses</span></div>
+    <div class="hb-fayu-stat"><strong>100%</strong><span>Order Melalui Website</span></div>
+  </div>
+
+  <section class="hb-fayu-section" id="tentang">
+    <div class="hb-fayu-about">
+      <div class="hb-fayu-about-card">
+        <span class="hb-fayu-kicker">TENTANG HELLO BOOST</span>
+        <h2 style="margin:14px 0 8px">Pusat Suntik Sosmed</h2>
+        <p style="color:#667085;line-height:1.7;margin:0">Hello Boost menyediakan berbagai layanan social media marketing dalam satu panel. Pilih platform, pilih paket yang sesuai, lalu buat pesanan dari website.</p>
+      </div>
+      <div>
+        <h2>Kenapa Menggunakan Hello Boost?</h2>
+        <p>Setiap layanan ditampilkan dengan informasi paket yang membedakan kualitas, karakteristik, batas order, dan harga agar customer tidak hanya melihat nama produk yang sama.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="hb-fayu-section center" id="keunggulan">
+    <h2>Keunggulan Hello Boost</h2>
+    <p>Informasi layanan dibuat lebih mudah dipahami customer, tanpa menghilangkan perbedaan antar paket.</p>
+    <div class="hb-fayu-features">
+      <div class="hb-fayu-feature"><div class="icon">✓</div><h3>Banyak Pilihan</h3><p>Berbagai layanan dan paket untuk platform sosial media populer.</p></div>
+      <div class="hb-fayu-feature"><div class="icon">Rp</div><h3>Harga Jelas</h3><p>Harga ditampilkan langsung berdasarkan jumlah order yang dipilih.</p></div>
+      <div class="hb-fayu-feature"><div class="icon">24</div><h3>Proses Online</h3><p>Pesanan dibuat langsung dari panel tanpa perlu berpindah ke WhatsApp.</p></div>
+    </div>
+  </section>
+
+  <section class="hb-fayu-section center" id="testimoni">
+    <h2>Apa Kata Customer?</h2>
+    <p>Tempat untuk menampilkan pengalaman customer Hello Boost.</p>
+    <div class="hb-fayu-reviews">
+      <div class="hb-fayu-review"><p>“Pelayanan cepat dan proses order mudah.”</p><strong>Customer Hello Boost</strong><br><small>Member</small></div>
+      <div class="hb-fayu-review"><p>“Pilihan paketnya jelas dan mudah dipahami.”</p><strong>Customer Hello Boost</strong><br><small>Member</small></div>
+      <div class="hb-fayu-review"><p>“Order langsung dari website lebih praktis.”</p><strong>Customer Hello Boost</strong><br><small>Member</small></div>
+    </div>
+  </section>
+
+  <section class="hb-fayu-section" id="faq">
+    <div class="hb-fayu-section center" style="padding-top:0">
+      <h2>Pertanyaan Umum</h2>
+      <p>Beberapa pertanyaan yang sering ditanyakan customer.</p>
+    </div>
+    <div class="hb-fayu-faq">
+      <details class="hb-fayu-faq-item"><summary>Apa itu Hello Boost?</summary><div>Hello Boost adalah panel layanan social media untuk memesan followers, likes, views, komentar, dan layanan lainnya.</div></details>
+      <details class="hb-fayu-faq-item"><summary>Layanan apa saja yang tersedia?</summary><div>Layanan tersedia untuk berbagai platform. Daftar layanan ditampilkan langsung pada bagian layanan dan dapat berubah mengikuti sinkronisasi provider.</div></details>
+      <details class="hb-fayu-faq-item"><summary>Bagaimana cara order?</summary><div>Login, pilih platform dan paket, masukkan target serta jumlah, lalu buat pesanan menggunakan saldo akun.</div></details>
+    </div>
+  </section>
+
+  <section class="hb-fayu-section center" id="pembayaran">
+    <h2>Metode Pembayaran</h2>
+    <p>Saldo akun digunakan untuk melakukan order. Metode deposit dapat ditambahkan sesuai sistem pembayaran Hello Boost.</p>
+    <div class="hb-fayu-payments"><span class="hb-fayu-pay">QRIS</span><span class="hb-fayu-pay">Saldo Hello Boost</span></div>
+  </section>
+</section>
 
 <main class="container">
 
@@ -4863,15 +5007,15 @@ function friendlyName(service){
 
   let action = "Layanan Social Media";
 
-  if(/follower|pengikut/.test(text)) action = `Tambah Followers ${platform}`;
-  else if(/like|suka/.test(text)) action = `Tambah Like ${platform}`;
-  else if(/comment|komentar|komen/.test(text)) action = `Tambah Komentar ${platform}`;
-  else if(/view|views|tayangan/.test(text)) action = `Tambah Views ${platform}`;
-  else if(/subscriber|subscribe/.test(text)) action = `Tambah Subscriber ${platform}`;
-  else if(/member|anggota/.test(text)) action = `Tambah Member ${platform}`;
-  else if(/reaction|reaksi/.test(text)) action = `Tambah Reaksi ${platform}`;
-  else if(/story/.test(text)) action = `Tambah Views Story ${platform}`;
-  else if(/live|penonton/.test(text)) action = `Tambah Penonton Live ${platform}`;
+  if(/follower|pengikut/.test(text)) action = `Suntik Followers ${platform}`;
+  else if(/like|suka/.test(text)) action = `Suntik Like ${platform}`;
+  else if(/comment|komentar|komen/.test(text)) action = `Suntik Komentar ${platform}`;
+  else if(/view|views|tayangan/.test(text)) action = `Suntik Views ${platform}`;
+  else if(/subscriber|subscribe/.test(text)) action = `Suntik Subscriber ${platform}`;
+  else if(/member|anggota/.test(text)) action = `Suntik Member ${platform}`;
+  else if(/reaction|reaksi/.test(text)) action = `Suntik Reaksi ${platform}`;
+  else if(/story/.test(text)) action = `Suntik Views Story ${platform}`;
+  else if(/live|penonton/.test(text)) action = `Suntik Penonton Live ${platform}`;
 
   /*
     Jangan membuat semua paket menjadi nama yang sama.
