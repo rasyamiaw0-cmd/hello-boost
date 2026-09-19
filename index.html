@@ -5007,6 +5007,40 @@ async function loadFayuServices(){
       };
     });
 
+    /*
+      Hapus layanan duplikat: satu produk customer-facing hanya boleh
+      tampil sekali. Jika provider memiliki beberapa service ID untuk
+      produk/varian yang sama, gunakan harga termurah.
+
+      Contoh:
+      - Instagram View -> 1 layanan termurah
+      - Instagram View Indonesia -> 1 layanan termurah
+      - Instagram View Luar -> 1 layanan termurah
+      - Paket/varian berbeda tetap dipertahankan sebagai produk berbeda.
+    */
+    const uniqueProducts = new Map();
+
+    for(const service of fayuServices){
+      const productName = String(service.display_name || friendlyName(service))
+        .trim()
+        .toLowerCase();
+      const variant = String(service.package_variant || getPackageVariant(service) || "")
+        .trim()
+        .toLowerCase();
+      const key = `${service.platform}|${productName}|${variant}`;
+      const current = uniqueProducts.get(key);
+      const currentPrice = Number(current?.price ?? Infinity);
+      const servicePrice = Number(service.price ?? Infinity);
+
+      if(!current || servicePrice < currentPrice){
+        uniqueProducts.set(key, service);
+      }
+    }
+
+    const originalServiceCount = fayuServices.length;
+    fayuServices = [...uniqueProducts.values()];
+    const removedDuplicateCount = originalServiceCount - fayuServices.length;
+
     products.__dynamic = fayuServices;
 
     /* Kelompokkan seluruh produk FAYU berdasarkan platform. */
@@ -5024,7 +5058,7 @@ async function loadFayuServices(){
     renderTabs();
     renderServices(searchInput.value);
 
-    showToast(`${fayuServices.length} layanan berhasil dimuat.`);
+    showToast(`${fayuServices.length} produk unik dimuat${removedDuplicateCount ? ` • ${removedDuplicateCount} duplikat dihapus` : ""}.`);
     return true;
 
   }catch(error){
