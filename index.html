@@ -2827,252 +2827,21 @@ input:focus,select:focus,textarea:focus{
 .account-balance-mini{display:none;padding:8px 10px;border-radius:11px;background:rgba(233,91,145,.09);border:1px solid rgba(233,91,145,.2);color:#fff;font-size:11px;font-weight:800;}
 @media(max-width:620px){.header-actions{gap:5px}.header-btn{padding:9px 10px}.header-btn .ui-icon{display:none}.account-balance-mini{display:block}}
 </style>
-
-
-
-
-<style>
-/* Make the service grid naturally communicate "cheapest first" */
-.service-list,.services-grid,#serviceList{display:grid;gap:14px}
-.service-sort-note{font-size:12px;color:#667085;margin:0 0 12px}
+<style id="hello-boost-product-filter">
+.service-type-filter-wrap{padding:0 16px 18px;}
+.service-type-filter{display:flex;gap:9px;overflow-x:auto;scrollbar-width:none;}
+.service-type-filter::-webkit-scrollbar{display:none;}
+.service-type-btn{border:1px solid rgba(237,91,149,.22);background:#19181e;color:#aaa5ad;border-radius:999px;padding:9px 14px;font:700 13px/1 inherit;white-space:nowrap;cursor:pointer;transition:.18s ease;}
+.service-type-btn span{display:inline-flex;min-width:20px;height:20px;margin-left:5px;padding:0 5px;align-items:center;justify-content:center;border-radius:999px;background:#25232b;color:#aaa5ad;font-size:11px;}
+.service-type-btn.active{background:linear-gradient(135deg,var(--pink,#ed5b95),var(--pink2,#ff79ad));border-color:transparent;color:#fff;box-shadow:0 8px 22px rgba(237,91,149,.18);}
+.service-type-btn.active span{background:rgba(255,255,255,.18);color:#fff;}
+.service-variant{display:inline-flex;margin:5px 0 2px;padding:4px 8px;border-radius:7px;background:rgba(237,91,149,.10);border:1px solid rgba(237,91,149,.16);color:var(--pink2,#ff79ad);font-size:11px;font-weight:800;line-height:1.1;}
+.add-btn{font-weight:800!important;}
+@media(max-width:520px){.service-type-filter-wrap{padding-left:12px;padding-right:12px;}.service-type-btn{padding:8px 12px;font-size:12px;}}
 </style>
-
-
-<style id="hb-fayu-dashboard-style">
-/* Hello Boost dashboard — visual recreation based on the user's supplied FAYU PEDIA screenshots.
-   Uses Hello Boost branding and assets; no FAYU proprietary code/assets are copied. */
-:root{
-  --bg:#f3f6f9;
-  --surface:#fff;
-  --surface2:#f8fbfd;
-  --text:#66707d;
-  --heading:#626c78;
-  --muted:#a7afb8;
-  --line:#e5e9ed;
-  --accent:#65c7df;
-  --accent2:#3faec9;
-  --accent-soft:#e0f7fc;
-  --success:#73bf87;
-  --success2:#59ad70;
-  --shadow:0 5px 18px rgba(53,70,84,.07);
-}
-
-/* Page */
-html,body{background:var(--bg)!important;color:var(--text)!important;}
-body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;}
-body::before{display:none!important;}
-
-/* Header: logo | hamburger | theme | account */
-.top-header{
-  position:sticky!important;top:0;z-index:1000;
-  height:84px!important;
-  background:#fff!important;
-  border-bottom:1px solid #e8ecef!important;
-  box-shadow:none!important;
-  backdrop-filter:none!important;
-}
-.header-inner{
-  height:84px!important;
-  max-width:1120px!important;
-  margin:auto!important;
-  padding:0 22px!important;
-}
-.brand-logo{
-  width:auto!important;height:auto!important;
-  min-width:0!important;
-  background:none!important;
-  box-shadow:none!important;
-  border-radius:0!important;
-  color:var(--accent2)!important;
-}
-.brand-logo::before{content:"HB"!important;font-size:0!important;}
-.brand-logo::after{
-  content:"HELLO BOOST"!important;
-  font-weight:800!important;font-size:24px!important;letter-spacing:-.7px!important;
-  color:#2e7388!important;
-}
-.brand-name{display:none!important;}
-.header-actions{gap:18px!important;}
-.header-btn{
-  background:transparent!important;border:0!important;
-  color:#6f7782!important;border-radius:0!important;
-  box-shadow:none!important;padding:8px!important;
-}
-.header-btn.primary{background:transparent!important;color:#6f7782!important;border:0!important;}
-.header-btn:hover{background:#f5f7f9!important;}
-.header-btn.account{border:2px solid #222!important;border-radius:50%!important;width:48px!important;height:48px!important;padding:0!important;}
-
-/* FAYU-like drawer */
-.hb-side-drawer{
-  position:fixed;left:0;top:84px;bottom:0;width:min(390px,88vw);
-  background:#fff;z-index:1500;transform:translateX(-105%);
-  transition:transform .22s ease;box-shadow:8px 0 24px rgba(31,45,56,.10);
-  overflow:auto;padding:22px 0;
-}
-.hb-side-drawer.open{transform:translateX(0);}
-.hb-side-title{padding:0 42px 12px;text-transform:uppercase;font-size:12px;font-weight:700;color:#b1b7bf;letter-spacing:.08em;}
-.hb-side-item{
-  display:flex;align-items:center;gap:20px;padding:17px 42px;
-  color:#717b87;font-size:18px;font-weight:600;text-decoration:none;
-}
-.hb-side-item:hover{background:#f5fbfd;color:var(--accent2);}
-.hb-side-item.active{color:var(--accent2);background:#f2fbfd;border-left:4px solid var(--accent);padding-left:38px;}
-.hb-side-icon{width:26px;text-align:center;font-size:21px;}
-.hb-side-overlay{position:fixed;inset:84px 0 0;background:rgba(17,24,39,.14);z-index:1400;display:none;}
-.hb-side-overlay.open{display:block;}
-
-/* Dashboard shell */
-main,.main,.container{
-  background:transparent!important;
-}
-main,.container{
-  max-width:1120px!important;
-}
-.hero{
-  margin-top:30px!important;
-  min-height:auto!important;
-  padding:0!important;
-  background:transparent!important;
-  border:0!important;
-  box-shadow:none!important;
-}
-.hero::after{display:none!important;}
-.hero-label{display:none!important;}
-.hero h1{display:none!important;}
-.hero p{display:none!important;}
-
-/* Greeting alert */
-.hb-greeting{
-  display:flex;align-items:flex-start;gap:14px;
-  background:#dff6fc;border:1px solid #c6edf5;border-radius:16px;
-  padding:20px 22px;margin:30px 0 28px;color:#43859a;font-size:18px;line-height:1.55;
-}
-.hb-greeting strong{color:#3f879b;}
-.hb-close{margin-left:auto;font-size:25px;color:#74838c;cursor:pointer;line-height:1;}
-
-/* Recommended services panel */
-.hb-recommended{
-  background:#fff;border:1px solid #e3e8ec;border-radius:18px;
-  box-shadow:var(--shadow);overflow:hidden;margin-bottom:30px;
-}
-.hb-panel-head{
-  display:flex;align-items:center;gap:10px;padding:20px 24px;
-  background:#f2fbfd;border-bottom:1px solid #e3e8ec;
-  color:#58b8d1;font-size:19px;font-weight:700;
-}
-.hb-panel-head .chev{margin-left:auto;}
-.hb-service-row{
-  display:grid;grid-template-columns:56px 1fr 54px;align-items:center;
-  gap:14px;padding:16px 22px;border-bottom:1px solid #edf0f2;
-}
-.hb-service-row:last-child{border-bottom:0;}
-.hb-rank{color:#818992;font-size:16px;text-align:center;}
-.hb-service-copy{font-size:17px;line-height:1.5;color:#646d77;}
-.hb-service-copy strong{color:#4f5964;}
-.hb-buy{
-  width:48px;height:48px;border:0;border-radius:11px;
-  background:linear-gradient(135deg,var(--success),var(--success2));
-  color:#fff;font-size:20px;display:grid;place-items:center;cursor:pointer;
-}
-.hb-buy:hover{filter:brightness(.97);}
-
-/* Service section */
-#layanan,.services-section{
-  margin-top:30px!important;
-}
-.section-title{
-  color:#5e6874!important;font-weight:700!important;
-}
-.section-subtitle{color:#a0a8b1!important;}
-.search-box input{
-  background:#fff!important;border:1px solid #dfe5e9!important;
-  border-radius:11px!important;color:#5e6874!important;
-  box-shadow:none!important;
-}
-.search-box input:focus{border-color:#67c6dd!important;box-shadow:0 0 0 3px rgba(101,199,223,.12)!important;}
-.search-icon{color:#61bfd8!important;}
-
-.tab{
-  background:#fff!important;border:1px solid #e1e6ea!important;
-  color:#737c86!important;border-radius:10px!important;
-}
-.tab.active{
-  background:#e5f8fc!important;color:#54b5cf!important;
-  border-color:#cceef5!important;box-shadow:none!important;
-}
-
-/* Service cards -> compact list cards */
-.service-card{
-  background:#fff!important;border:1px solid #e3e8ec!important;
-  border-radius:14px!important;box-shadow:var(--shadow)!important;
-  color:#626c77!important;
-}
-.service-card:hover{transform:none!important;border-color:#d9e8ed!important;}
-.service-name{color:#626c77!important;font-size:17px!important;}
-.service-description{color:#929aa3!important;}
-.service-badge{
-  background:#eefafd!important;border-color:#d6f0f6!important;color:#5ab7cf!important;
-}
-.price-main{color:#626c77!important;}
-.price-unit{color:#9aa2aa!important;}
-.meta-chip{background:#f7f9fa!important;border-color:#e8ecef!important;color:#7c858e!important;}
-.order-btn,.checkout-btn{
-  background:linear-gradient(135deg,#72c18a,#58ad70)!important;
-  box-shadow:none!important;border-radius:10px!important;
-}
-
-/* Forms / account */
-.field-input,.field-select{
-  background:#fff!important;border:1px solid #dfe5e9!important;
-  color:#626c77!important;border-radius:10px!important;
-}
-.info-card,.cart,.cart-box,.payment-box,.status-box,.faq-item,.testimonial-card{
-  background:#fff!important;border:1px solid #e3e8ec!important;
-  box-shadow:var(--shadow)!important;color:#626c77!important;
-}
-
-/* Bottom nav in screenshot-like mobile */
-.bottom-nav{
-  background:#fff!important;border-top:1px solid #e5e9ed!important;
-  box-shadow:0 -5px 18px rgba(40,55,68,.05)!important;
-}
-.bottom-nav a,.bottom-nav button{color:#8a929b!important;}
-.bottom-nav .active{color:#61bfd8!important;}
-
-/* Responsive */
-@media(max-width:760px){
-  .top-header,.header-inner{height:84px!important;}
-  .header-inner{padding:0 18px!important;}
-  .brand-logo::after{font-size:21px!important;}
-  .hb-service-row{grid-template-columns:40px 1fr 50px;padding:15px 14px;}
-  .hb-service-copy{font-size:16px;}
-  .hb-side-drawer{top:84px;width:88vw;}
-}
-</style>
-
 </head>
 
 <body>
-
-<!-- Hello Boost dashboard shell inspired by the supplied FAYU PEDIA screenshots -->
-<div class="hb-side-overlay" id="hbSideOverlay"></div>
-<aside class="hb-side-drawer" id="hbSideDrawer">
-  <div class="hb-side-title">MENU</div>
-  <a class="hb-side-item active" href="#beranda"><span class="hb-side-icon">▦</span>Dasbor</a>
-  <a class="hb-side-item" href="#layanan"><span class="hb-side-icon">🛒</span>Buat Pesanan</a>
-  <a class="hb-side-item" href="#pesanan"><span class="hb-side-icon">🛍</span>Pesanan</a>
-  <a class="hb-side-item" href="#pesanan"><span class="hb-side-icon">▾</span>Riwayat Pemesanan</a>
-  <a class="hb-side-item" href="#layanan"><span class="hb-side-icon">♻</span>Refill</a>
-  <a class="hb-side-item" href="#deposit"><span class="hb-side-icon">▣</span>Deposit</a>
-  <a class="hb-side-item" href="#deposit"><span class="hb-side-icon">▣</span>Riwayat Deposit</a>
-  <a class="hb-side-item" href="#admin"><span class="hb-side-icon">•••</span>Tiket</a>
-  <a class="hb-side-item" href="#layanan"><span class="hb-side-icon">☷</span>Layanan</a>
-  <a class="hb-side-item" href="#layanan"><span class="hb-side-icon">≡</span>Pembaruan Layanan</a>
-  <a class="hb-side-item" href="#layanan"><span class="hb-side-icon">▣</span>Monitoring Layanan</a>
-  <a class="hb-side-item" href="#berita"><span class="hb-side-icon">▤</span>Berita</a>
-  <a class="hb-side-item" href="#api"><span class="hb-side-icon">API</span>Dokumentasi API</a>
-</aside>
-
 
 <!-- =======================================================
      HEADER
@@ -3137,63 +2906,6 @@ main,.container{
   </div>
 
 </header>
-
-
-
-<section class="hb-fayu-section center" id="keunggulan">
-    <h2>Keunggulan Hello Boost</h2>
-    <p>Informasi layanan dibuat lebih mudah dipahami customer, tanpa menghilangkan perbedaan antar paket.</p>
-    <div class="hb-fayu-features">
-      <div class="hb-fayu-feature"><div class="icon">✓</div><h3>Banyak Pilihan</h3><p>Berbagai layanan dan paket untuk platform sosial media populer.</p></div>
-      <div class="hb-fayu-feature"><div class="icon">Rp</div><h3>Harga Jelas</h3><p>Harga ditampilkan langsung berdasarkan jumlah order yang dipilih.</p></div>
-      <div class="hb-fayu-feature"><div class="icon">24</div><h3>Proses Online</h3><p>Pesanan dibuat langsung dari panel tanpa perlu berpindah ke WhatsApp.</p></div>
-    </div>
-  </section>
-
-  <section class="hb-fayu-section center" id="testimoni">
-    <h2>Apa Kata Customer?</h2>
-    <p>Tempat untuk menampilkan pengalaman customer Hello Boost.</p>
-    <div class="hb-fayu-reviews">
-      <div class="hb-fayu-review"><p>“Pelayanan cepat dan proses order mudah.”</p><strong>Customer Hello Boost</strong><br><small>Member</small></div>
-      <div class="hb-fayu-review"><p>“Pilihan paketnya jelas dan mudah dipahami.”</p><strong>Customer Hello Boost</strong><br><small>Member</small></div>
-      <div class="hb-fayu-review"><p>“Order langsung dari website lebih praktis.”</p><strong>Customer Hello Boost</strong><br><small>Member</small></div>
-    </div>
-  </section>
-
-  <section class="hb-fayu-section" id="faq">
-    <div class="hb-fayu-section center" style="padding-top:0">
-      <h2>Pertanyaan Umum</h2>
-      <p>Beberapa pertanyaan yang sering ditanyakan customer.</p>
-    </div>
-    <div class="hb-fayu-faq">
-      <details class="hb-fayu-faq-item"><summary>Apa itu Hello Boost?</summary><div>Hello Boost adalah panel layanan social media untuk memesan followers, likes, views, komentar, dan layanan lainnya.</div></details>
-      <details class="hb-fayu-faq-item"><summary>Layanan apa saja yang tersedia?</summary><div>Layanan tersedia untuk berbagai platform. Daftar layanan ditampilkan langsung pada bagian layanan dan dapat berubah mengikuti sinkronisasi provider.</div></details>
-      <details class="hb-fayu-faq-item"><summary>Bagaimana cara order?</summary><div>Login, pilih platform dan paket, masukkan target serta jumlah, lalu buat pesanan menggunakan saldo akun.</div></details>
-    </div>
-  </section>
-
-  <section class="hb-fayu-section center" id="pembayaran">
-    <h2>Metode Pembayaran</h2>
-    <p>Saldo akun digunakan untuk melakukan order. Metode deposit dapat ditambahkan sesuai sistem pembayaran Hello Boost.</p>
-    <div class="hb-fayu-payments"><span class="hb-fayu-pay">QRIS</span><span class="hb-fayu-pay">Saldo Hello Boost</span></div>
-  </section>
-</section>
-
-
-<section class="hb-fayu-top" id="beranda">
-  <div class="hb-greeting">
-    <span style="font-size:24px">●</span>
-    <div><strong>Gotcha!</strong> Halo, semoga harimu menyenangkan.</div>
-    <span class="hb-close" onclick="this.parentElement.remove()">×</span>
-  </div>
-
-  <div class="hb-recommended">
-    <div class="hb-panel-head">
-      <span>♥</span> Layanan Rekomendasi <span class="chev">⌃</span>
-    </div>
-    <div id="hbRecommendedList"></div>
-  </div>
-</section>
 
 <main class="container">
 
@@ -3275,6 +2987,11 @@ main,.container{
 
   <div class="tabs" id="tabs"></div>
 
+</div>
+
+<!-- FILTER JENIS LAYANAN -->
+<div class="service-type-filter-wrap">
+  <div class="service-type-filter" id="serviceTypeFilter"></div>
 </div>
 
 <!-- =======================================================
@@ -4814,6 +4531,7 @@ const DEFAULT_PROCESS_MINUTES = 1440;
 ========================================================= */
 
 let activePlatform = "Instagram";
+let activeServiceType = "all";
 
 let cart = [];
 
@@ -4827,6 +4545,9 @@ let selectedPayment = "";
 
 const tabsEl =
   document.getElementById("tabs");
+
+const serviceTypeFilter =
+  document.getElementById("serviceTypeFilter");
 
 const serviceGrid =
   document.getElementById("serviceGrid");
@@ -5084,40 +4805,54 @@ function platformIcon(platform){
 ========================================================= */
 
 function renderTabs(){
-
   tabsEl.innerHTML = "";
 
   const platforms = Object.keys(products);
+  if(!platforms.length) return;
 
-  if(!platforms.length){
-    return;
-  }
-
-  if(!platforms.includes(activePlatform)){
-    activePlatform = platforms[0];
-  }
+  if(!platforms.includes(activePlatform)) activePlatform = platforms[0];
 
   platforms.forEach(platform=>{
-
     const button = document.createElement("button");
-
     button.type = "button";
     button.className = "tab" + (platform === activePlatform ? " active" : "");
-
-    button.innerHTML =
-      platformIcon(platform) +
-      `<span>${escapeHTML(platform)}</span>`;
-
+    button.innerHTML = platformIcon(platform) + `<span>${escapeHTML(platform)}</span>`;
     button.addEventListener("click", ()=>{
       activePlatform = platform;
+      activeServiceType = "all";
       renderTabs();
+      renderServiceTypeFilter();
       renderServices(searchInput.value);
     });
-
     tabsEl.appendChild(button);
-
   });
 
+  renderServiceTypeFilter();
+}
+
+function renderServiceTypeFilter(){
+  if(!serviceTypeFilter) return;
+  serviceTypeFilter.innerHTML = "";
+
+  const items = products[activePlatform] || [];
+  const types = ["all","followers","like","view"];
+  const labels = {all:"Semua",followers:"Followers",like:"Like",view:"View"};
+
+  types.forEach(type=>{
+    const count = type === "all" ? items.length : items.filter(s=>getServiceType(s)===type).length;
+    if(type !== "all" && count === 0) return;
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "service-type-btn" + (activeServiceType === type ? " active" : "");
+    button.innerHTML = `${labels[type]} <span>${count}</span>`;
+    button.addEventListener("click", ()=>{
+      activeServiceType = type;
+      renderServiceTypeFilter();
+      renderServices(searchInput.value);
+    });
+    serviceTypeFilter.appendChild(button);
+  });
 }
 
 function detectPlatform(service){
@@ -5155,105 +4890,56 @@ function detectPlatform(service){
   return service.platform || "Lainnya";
 }
 
+function getServiceType(service){
+  const text = `${service.name || ""} ${service.category || ""}`.toLowerCase();
+  if(/follower|followers|pengikut/.test(text)) return "followers";
+  if(/like|likes|suka/.test(text)) return "like";
+  if(/view|views|tayangan|watch/.test(text)) return "view";
+  if(/comment|komentar|komen/.test(text)) return "comment";
+  return "other";
+}
+
+function getServiceTypeLabel(type){
+  return ({followers:"Followers",like:"Like",view:"View",comment:"Komentar",other:"Lainnya"})[type] || "Lainnya";
+}
+
+function getPackageVariant(service){
+  const raw = String(service.name || "").trim();
+  const text = raw.toLowerCase();
+  const parts = [];
+
+  if(/\bindo(?:nesia)?\b|\blokal\b/.test(text)) parts.push("Indonesia");
+  else if(/\bluar\b|\bworldwide\b|\bglobal\b|\binternational\b/.test(text)) parts.push("Luar");
+
+  const fp = raw.match(/\bfp\s*[-_#]?\s*(\d+)\b/i);
+  if(fp) parts.push(`FP ${fp[1]}`);
+
+  if(/high\s*quality|\bhq\b|premium/.test(text)) parts.push("High Quality");
+  if(/instant|very\s*fast|super\s*fast|cepat/.test(text)) parts.push("Cepat");
+  if(/refill/.test(text)){
+    const days = raw.match(/refill[^\d]*(\d+)\s*(?:day|days|hari)?/i);
+    parts.push(days ? `Refill ${days[1]} Hari` : "Refill");
+  } else if(/no\s*refill|tanpa\s*refill|non[-\s]?refill/.test(text)) parts.push("Tanpa Refill");
+  if(/guarantee|garansi/.test(text)) parts.push("Garansi");
+
+  return [...new Set(parts)].slice(0,3).join(" • ");
+}
+
 function friendlyName(service){
-
-  const raw = String(service.name || "Layanan Social Media").trim();
   const platform = detectPlatform(service);
-  const text = `${raw} ${service.category || ""}`.toLowerCase();
+  const type = getServiceType(service);
+  const label = getServiceTypeLabel(type);
 
-  let action = "Layanan Social Media";
-
-  if(/follower|pengikut/.test(text)) action = `Suntik Followers ${platform}`;
-  else if(/like|suka/.test(text)) action = `Suntik Like ${platform}`;
-  else if(/comment|komentar|komen/.test(text)) action = `Suntik Komentar ${platform}`;
-  else if(/view|views|tayangan/.test(text)) action = `Suntik Views ${platform}`;
-  else if(/subscriber|subscribe/.test(text)) action = `Suntik Subscriber ${platform}`;
-  else if(/member|anggota/.test(text)) action = `Suntik Member ${platform}`;
-  else if(/reaction|reaksi/.test(text)) action = `Suntik Reaksi ${platform}`;
-  else if(/story/.test(text)) action = `Suntik Views Story ${platform}`;
-  else if(/live|penonton/.test(text)) action = `Suntik Penonton Live ${platform}`;
-
-  /*
-    Jangan membuat semua paket menjadi nama yang sama.
-    Ambil karakteristik yang memang tertulis pada nama layanan FAYU,
-    lalu ubah menjadi label yang lebih mudah dipahami customer.
-    Contoh:
-    "TikTok Likes 1 | Super | Special | 50K"
-    -> "Suntik Like TikTok — Paket 1 • Super • Special • Maks. 50K"
-  */
-  let source = raw
-    .replace(/https?:\/\/\S+/gi, " ")
-    .replace(/[_]+/g, " ")
-    .replace(/[|]+/g, " | ")
-    .replace(/\s+/g, " ")
-    .trim();
-
-  const descriptors = [];
-
-  const addDescriptor = value => {
-    const v = String(value || "").trim();
-    if(!v) return;
-    if(!descriptors.some(x => x.toLowerCase() === v.toLowerCase())) {
-      descriptors.push(v);
-    }
-  };
-
-  // Lokasi/target pasar
-  if(/\b(indonesia|indo|id)\b/i.test(source)) addDescriptor("Indonesia");
-  if(/\b(luar|luar negeri|worldwide|global|international|internasional)\b/i.test(source)) addDescriptor("Luar Indonesia");
-
-  // Karakteristik paket yang umum muncul dari provider.
-  const qualityWords = [
-    "super", "special", "premium", "vip", "hq", "high quality", "fast",
-    "slow", "stable", "real", "aktif", "bot", "non drop", "no drop",
-    "refill", "no refill", "instant", "cepat", "murah"
-  ];
-
-  for(const word of qualityWords){
-    const re = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&")}\\b`, "i");
-    if(re.test(source)) addDescriptor(word.replace(/\\b\\w/g, m => m.toUpperCase()));
-  }
-
-  // Nomor paket, misalnya "Likes 1", "Likes 2", dst.
-  const packageMatch = source.match(/(?:likes?|followers?|views?|comments?|komen|paket|service|layanan)\\s*[-#:]?\\s*(\\d{1,4})\\b/i);
-  if(packageMatch) addDescriptor(`Paket ${packageMatch[1]}`);
-
-  // Batas seperti 50K / 100K pada nama provider dibuat lebih jelas.
-  const maxMatch = source.match(/(?:^|[|\\s])((?:\\d{1,3}(?:[.,]\\d{3})+|\\d+(?:[.,]\\d+)?)\\s*[kKmM])\\b/);
-  if(maxMatch) addDescriptor(`Maks. ${maxMatch[1].replace(/\\s+/g, "").toUpperCase()}`);
-
-  // Jika nama provider punya label setelah tanda | yang belum tertangkap,
-  // simpan label tersebut agar paket tidak terlihat identik.
-  const pipeParts = raw.split("|").map(x => x.trim()).filter(Boolean);
-  if(pipeParts.length > 1){
-    for(const part of pipeParts.slice(1)){
-      const clean = part
-        .replace(/\\b(?:instagram|tiktok|facebook|youtube|whatsapp|telegram|shopee|tokopedia)\\b/gi, "")
-        .replace(/\\s+/g, " ")
-        .trim();
-      if(clean && !/^\\d+$/.test(clean)) addDescriptor(clean);
-    }
-  }
-
-  // Hindari judul yang terlalu panjang dan duplikat.
-  const unique = [];
-  for(const d of descriptors){
-    if(!unique.some(x => x.toLowerCase() === d.toLowerCase())) unique.push(d);
-  }
-
-  const detail = unique.slice(0, 4);
-
-  if(detail.length){
-    return `${action} — ${detail.join(" • ")}`;
-  }
-
-  // Jika provider benar-benar tidak memberikan pembeda yang jelas,
-  // gunakan ID provider sebagai pembeda teknis yang tetap unik.
-  if(service.provider_service_id){
-    return `${action} — Paket #${service.provider_service_id}`;
-  }
-
-  return action;
+  if(type === "followers") return `Suntik Followers ${platform}`;
+  if(type === "like") return `Suntik Like ${platform}`;
+  if(type === "view") return `Suntik View ${platform}`;
+  if(type === "comment") return `Suntik Komentar ${platform}`;
+  if(/subscriber|subscribe/i.test(`${service.name || ""} ${service.category || ""}`)) return `Suntik Subscriber ${platform}`;
+  if(/member|anggota/i.test(`${service.name || ""} ${service.category || ""}`)) return `Suntik Member ${platform}`;
+  if(/reaction|reaksi/i.test(`${service.name || ""} ${service.category || ""}`)) return `Suntik Reaksi ${platform}`;
+  if(/story/i.test(`${service.name || ""} ${service.category || ""}`)) return `Suntik View Story ${platform}`;
+  if(/live|penonton/i.test(`${service.name || ""} ${service.category || ""}`)) return `Suntik Penonton Live ${platform}`;
+  return `Suntik ${label} ${platform}`;
 }
 
 function friendlyDescription(service, platform, name){
@@ -5338,6 +5024,8 @@ async function loadFayuServices(){
         customer_name:name,
         display_name:name,
         description:friendlyDescription(service, platform, name),
+        service_type:getServiceType(service),
+        package_variant:getPackageVariant(service),
         price,
         min_order:minOrder,
         max_order:Number(service.max_order) || 1000000,
@@ -5440,17 +5128,9 @@ function renderServices(searchTerm=""){
   const term = String(searchTerm).trim().toLowerCase();
   let visibleCount = 0;
 
-  // Urutkan layanan dari harga paling murah ke paling mahal.
-  // Filter/search tetap menggunakan daftar yang sama.
-  const items = [...(products[activePlatform] || [])].sort((a, b) => {
-    const priceA = Number(a.price ?? a.price_per_1000) || 0;
-    const priceB = Number(b.price ?? b.price_per_1000) || 0;
-    if(priceA !== priceB) return priceA - priceB;
-    return String(a.display_name || a.name || "").localeCompare(
-      String(b.display_name || b.name || ""),
-      "id"
-    );
-  });
+  const items = (products[activePlatform] || [])
+    .slice()
+    .sort((a,b)=>Number(a.price || a.price_per_1000 || 0) - Number(b.price || b.price_per_1000 || 0));
 
   items.forEach(service=>{
 
@@ -5461,6 +5141,7 @@ function renderServices(searchTerm=""){
 
     const searchable = `${activePlatform} ${name} ${description} ${service.name || ""} ${service.category || ""}`.toLowerCase();
 
+    if(activeServiceType !== "all" && getServiceType(service) !== activeServiceType) return;
     if(term && !searchable.includes(term)) return;
 
     visibleCount++;
@@ -5476,6 +5157,7 @@ function renderServices(searchTerm=""){
       <div class="service-top">
         <div class="service-info">
           <div class="service-name">${escapeHTML(name)}</div>
+          ${service.package_variant ? `<div class="service-variant">${escapeHTML(service.package_variant)}</div>` : ""}
           <div class="service-description">${escapeHTML(description)}</div>
         </div>
         <div class="service-badge">
@@ -5539,7 +5221,7 @@ function renderServices(searchTerm=""){
         ${isReaction ? reactionHTML() : ""}
       </div>
 
-      <button type="button" class="add-btn">Tambahkan ke Pesanan</button>
+      <button type="button" class="add-btn">Suntik</button>
     `;
 
     const quantityInput = card.querySelector(".quantity-input");
@@ -6555,81 +6237,6 @@ setInterval(()=>{
   loadFayuServices();
 }, 10 * 60 * 1000);
 
-</script>
-
-
-<script>
-(function(){
-  function normalizeText(v){return String(v||'').replace(/\s+/g,' ').trim();}
-  function humanName(raw){
-    let s=normalizeText(raw);
-    s=s.replace(/\b(Tiktok|TikTok)\b/g,'TikTok');
-    s=s.replace(/\b(Instagram|instagram)\b/g,'Instagram');
-    s=s.replace(/\b(Facebook|facebook)\b/g,'Facebook');
-    s=s.replace(/\b(Youtube|youtube|YouTube)\b/g,'YouTube');
-    s=s.replace(/\bfollowers?\b/ig,'Followers');
-    s=s.replace(/\blikes?\b/ig,'Likes');
-    s=s.replace(/\bviews?\b/ig,'Views');
-    s=s.replace(/\bcomments?\b/ig,'Komentar');
-    s=s.replace(/\bsubscribers?\b/ig,'Subscriber');
-    return 'Suntik ' + s;
-  }
-  function getServices(){
-    const candidates=[
-      window.services, window.allServices, window.serviceData,
-      window.SERVICES, window.allServiceData
-    ];
-    for(const c of candidates) if(Array.isArray(c)) return c;
-    return [];
-  }
-  function render(){
-    const box=document.getElementById('hbRecommendedList');
-    if(!box) return;
-    const services=getServices().slice().sort((a,b)=>Number(a.price_per_1000||a.price||0)-Number(b.price_per_1000||b.price||0)).slice(0,10);
-    if(!services.length){
-      box.innerHTML='<div class="hb-service-row"><div class="hb-rank">#1</div><div class="hb-service-copy">Layanan akan tampil setelah data layanan selesai dimuat.</div><button class="hb-buy" type="button">🛒</button></div>';
-      return;
-    }
-    box.innerHTML=services.map((s,i)=>{
-      const raw=s.name||s.service_name||'Layanan Social Media';
-      const name=humanName(raw);
-      const detail=normalizeText(raw).replace(/^(Suntik\s+)/i,'');
-      return '<div class="hb-service-row">'+
-        '<div class="hb-rank">#'+(i+1)+'</div>'+
-        '<div class="hb-service-copy"><strong>'+name+'</strong><br><span>'+detail+'</span></div>'+
-        '<button class="hb-buy" type="button" title="Pesan">🛒</button>'+
-      '</div>';
-    }).join('');
-  }
-  document.addEventListener('click',function(e){
-    const btn=e.target.closest('[data-hb-menu]');
-    if(!btn) return;
-    document.getElementById('hbSideDrawer')?.classList.toggle('open');
-    document.getElementById('hbSideOverlay')?.classList.toggle('open');
-  });
-  document.getElementById('hbSideOverlay')?.addEventListener('click',function(){
-    document.getElementById('hbSideDrawer')?.classList.remove('open');
-    this.classList.remove('open');
-  });
-  setTimeout(render,800);
-  setTimeout(render,1800);
-})();
-</script>
-
-
-<script>
-document.addEventListener('DOMContentLoaded',()=>{
-  const buttons=[...document.querySelectorAll('button,.header-btn')];
-  const menu=buttons.find(b=>/menu|☰|≡/i.test((b.textContent||'').trim()) || b.getAttribute('aria-label')?.toLowerCase().includes('menu'));
-  if(menu){
-    menu.setAttribute('data-hb-menu','1');
-    menu.onclick=(e)=>{
-      e.preventDefault();
-      document.getElementById('hbSideDrawer')?.classList.toggle('open');
-      document.getElementById('hbSideOverlay')?.classList.toggle('open');
-    };
-  }
-});
 </script>
 
 </body>
