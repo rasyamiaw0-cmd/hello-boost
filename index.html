@@ -6052,6 +6052,44 @@ function setSession(session){
   if(session) localStorage.setItem(AUTH_STORAGE_KEY,JSON.stringify(session));
   else localStorage.removeItem(AUTH_STORAGE_KEY);
 }
+
+// Perpanjang sesi customer otomatis menggunakan refresh_token Supabase.
+// Jadi menutup tab/browser lalu membuka website kembali tidak meminta login ulang.
+let refreshSessionPromise = null;
+async function refreshUserSession(){
+  const current=getSession();
+  if(!current?.refresh_token) return false;
+  if(refreshSessionPromise) return refreshSessionPromise;
+
+  refreshSessionPromise=(async()=>{
+    try{
+      const response=await fetch(SUPABASE_URL+"/auth/v1/token?grant_type=refresh_token",{
+        method:"POST",
+        headers:{
+          "apikey":SUPABASE_ANON_KEY,
+          "Authorization":"Bearer "+SUPABASE_ANON_KEY,
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({refresh_token:current.refresh_token})
+      });
+      const data=await response.json().catch(()=>({}));
+      if(!response.ok || !data.access_token) return false;
+      setSession({
+        access_token:data.access_token,
+        refresh_token:data.refresh_token || current.refresh_token,
+        user:data.user || current.user
+      });
+      return true;
+    }catch(_){
+      return false;
+    }finally{
+      refreshSessionPromise=null;
+    }
+  })();
+
+  return refreshSessionPromise;
+}
+
 function showAuthMessage(msg,ok=false){
   if(authMessage){authMessage.textContent=msg||"";authMessage.style.color=ok?"#61d7a0":"#ff7b91";}
 }
@@ -6106,11 +6144,15 @@ async function registerUser(){
   }catch(e){showAuthMessage(e.message||"Pendaftaran gagal.");}
   finally{authSubmit.disabled=false;}
 }
-async function loadProfileBalance(openOnError=true){
+async function loadProfileBalance(openOnError=true, retry=true){
   const session=getSession();
   if(!session?.access_token){return null;}
   try{
     const response=await fetch(SUPABASE_URL+"/rest/v1/profiles?select=id,balance&id=eq."+encodeURIComponent(session.user.id)+"&limit=1",{headers:{"apikey":SUPABASE_ANON_KEY,"Authorization":"Bearer "+session.access_token,"Accept":"application/json"}});
+    if(response.status===401 && retry && session.refresh_token){
+      const refreshed=await refreshUserSession();
+      if(refreshed) return loadProfileBalance(openOnError,false);
+    }
     if(response.status===401){setSession(null);updateAuthUI();if(openOnError)openAuth();throw new Error("Sesi login sudah berakhir.");}
     if(!response.ok) throw new Error("Gagal mengambil saldo.");
     const rows=await response.json();
@@ -6142,6 +6184,12 @@ async function createProviderOrder(item){
     body:JSON.stringify({service_id:serviceDbId,target,quantity})
   });
   const data=await response.json().catch(()=>({}));
+  if(response.status===401 && session.refresh_token){
+    const refreshed=await refreshUserSession();
+    if(refreshed){
+      return createProviderOrder(item);
+    }
+  }
   if(response.status===401){setSession(null);updateAuthUI();throw new Error("Sesi login sudah berakhir. Silakan login kembali.");}
   if(!response.ok||!data.status) throw new Error(data.msg||"Pesanan gagal dibuat.");
   return data;
@@ -6366,7 +6414,23 @@ loadCart();
 renderCart();
 
 setAuthMode("login");
-updateAuthUI();
+
+// Pulihkan login customer saat website dibuka kembali.
+(async()=>{
+  const existing=getSession();
+  if(existing?.refresh_token){
+    await refreshUserSession();
+  }
+  updateAuthUI();
+})();
+
+// Jika tab kembali aktif setelah lama dibuka, perbarui sesi bila diperlukan.
+document.addEventListener("visibilitychange",async()=>{
+  if(document.visibilityState==="visible" && getSession()?.refresh_token){
+    await refreshUserSession();
+    updateAuthUI();
+  }
+});
 
 /* Muat seluruh produk dari Supabase */
 loadFayuServices();
