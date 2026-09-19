@@ -6,7 +6,7 @@
 
 <title>hello_boost — Jasa Social Media</title>
 <meta name="description" content="hello_boost - Jasa followers, like, view, komentar dan kebutuhan social media lainnya.">
-<meta name="theme-color" content="#09090c">
+<meta name="theme-color" content="#070d18">
 
 <style>
 :root{
@@ -2526,6 +2526,289 @@ footer{
   font-size:11px;
   font-weight:850;
 }
+
+
+/* =========================================================
+   JB ALWI KOBRA — MULTI COLOR THEME
+   Reference palette taken from the supplied screenshots.
+   Keeps hello_boost content/functionality; changes visual palette.
+========================================================= */
+:root{
+  --bg:#19161a !important;
+  --bg2:#211d22 !important;
+  --card:#252024 !important;
+  --card2:#2b242b !important;
+  --white:#ffffff !important;
+  --text:#f2e9e5 !important;
+  --muted:#aa9d9a !important;
+  --muted2:#756b70 !important;
+
+  /* JB Alwi Kobra-like accents */
+  --pink:#df5b91 !important;
+  --pink2:#ee6fa5 !important;
+  --pink3:#ff94bf !important;
+  --pinkDark:#b43f72 !important;
+  --purple:#7434d1 !important;
+  --purple2:#9b4de3 !important;
+  --cyan:#19a9c9 !important;
+  --blue:#3f83df !important;
+  --red:#ff3348 !important;
+  --orange:#e5a52c !important;
+  --yellow:#e0aa32 !important;
+  --green:#16a77e !important;
+
+  --border:rgba(255,255,255,.075) !important;
+  --pinkBorder:rgba(223,91,145,.42) !important;
+}
+
+html,body{
+  background:#19161a !important;
+}
+
+body{
+  background:
+    radial-gradient(circle at 8% 0%,rgba(223,91,145,.055),transparent 28%),
+    radial-gradient(circle at 92% 18%,rgba(116,52,209,.075),transparent 32%),
+    linear-gradient(180deg,#19161a 0%,#171419 52%,#19161a 100%) !important;
+  color:var(--text) !important;
+}
+
+body::before{
+  background:
+    radial-gradient(circle at 50% -20%,rgba(223,91,145,.045),transparent 42%) !important;
+}
+
+/* Header */
+.top-header{
+  background:rgba(25,22,26,.94) !important;
+  border-bottom-color:rgba(255,255,255,.07) !important;
+  box-shadow:0 8px 30px rgba(0,0,0,.30) !important;
+}
+
+.brand-logo,
+.logo-box,
+.logo,
+.brand-mark{
+  background:linear-gradient(135deg,#ee6fa5,#c94b7e) !important;
+  box-shadow:0 8px 22px rgba(223,91,145,.18) !important;
+}
+
+.brand-name span{
+  color:#ee6fa5 !important;
+}
+
+/* Hero / banner */
+.hero{
+  background:
+    radial-gradient(circle at 78% 25%,rgba(223,91,145,.20),transparent 32%),
+    linear-gradient(135deg,#33272e 0%,#2a2229 52%,#30252d 100%) !important;
+  border-color:rgba(223,91,145,.16) !important;
+}
+.hero::after{
+  background:radial-gradient(circle,rgba(223,91,145,.16),transparent 68%) !important;
+}
+.hero-label{
+  background:rgba(223,91,145,.10) !important;
+  border-color:rgba(223,91,145,.24) !important;
+  color:#e36a9b !important;
+}
+.hero-label-dot{background:#e36a9b !important}
+.hero h1 span{color:#ee6fa5 !important}
+
+/* Private warning */
+.private-warning{
+  background:
+    linear-gradient(135deg,rgba(229,165,44,.12),rgba(223,91,145,.055)) !important;
+  border-color:rgba(229,165,44,.30) !important;
+}
+.private-warning-title,
+.private-warning-title span,
+.private-warning .warning-title,
+.private-warning strong{
+  color:#e5a52c !important;
+}
+
+/* Search: purple like the reference search area */
+.search-box{
+  background:linear-gradient(135deg,rgba(112,51,150,.72),rgba(79,38,120,.80)) !important;
+  border-color:rgba(223,91,145,.55) !important;
+  box-shadow:0 8px 25px rgba(80,30,110,.18) !important;
+}
+.search-box input,
+.search-input{
+  background:transparent !important;
+  color:#fff !important;
+}
+.search-box input::placeholder{color:#c4aeb9 !important}
+.search-box:focus-within{
+  border-color:#ee6fa5 !important;
+  box-shadow:0 0 0 3px rgba(223,91,145,.10),0 8px 25px rgba(80,30,110,.20) !important;
+}
+
+/* Tabs/chips */
+.tab,
+.platform-tab,
+.category-btn,
+.chip,
+.filter-btn{
+  background:#292327 !important;
+  color:#a99ca0 !important;
+  border-color:rgba(255,255,255,.055) !important;
+}
+.tab:hover,
+.platform-tab:hover,
+.category-btn:hover,
+.chip:hover,
+.filter-btn:hover{
+  border-color:rgba(223,91,145,.25) !important;
+  color:#e8dfe2 !important;
+}
+.tab.active,
+.platform-tab.active,
+.category-btn.active,
+.chip.active,
+.filter-btn.active{
+  background:linear-gradient(135deg,#7540cc,#5d28ad) !important;
+  color:#fff !important;
+  border-color:#8d4fe0 !important;
+  box-shadow:0 7px 20px rgba(99,39,170,.22) !important;
+}
+
+/* Cards: warm dark gray, not blue */
+.card,
+.service-card,
+.product-card,
+.info-card,
+.payment-card,
+.status-card,
+.order-card,
+.checkout-card,
+.testimonial-card,
+.faq-item,
+.cart-card{
+  background:linear-gradient(145deg,#252024 0%,#211d21 100%) !important;
+  border-color:rgba(255,255,255,.065) !important;
+  box-shadow:0 12px 34px rgba(0,0,0,.22) !important;
+}
+.card:hover,
+.service-card:hover,
+.product-card:hover,
+.info-card:hover{
+  border-color:rgba(223,91,145,.26) !important;
+  box-shadow:0 14px 38px rgba(0,0,0,.28),0 0 0 1px rgba(223,91,145,.045) !important;
+}
+
+/* Product/service prices */
+.price,
+.main-price,
+.price-main,
+.highlight,
+.service-price,
+.total-price{
+  color:#ee6fa5 !important;
+}
+.price-unit{color:#9e8f95 !important}
+
+/* Give info icons the same multi-accent treatment as reference */
+.info-card:nth-child(1) .info-icon{color:#e5a52c !important;background:rgba(229,165,44,.13) !important}
+.info-card:nth-child(2) .info-icon{color:#df5b91 !important;background:rgba(223,91,145,.13) !important}
+.info-card:nth-child(3) .info-icon{color:#16a77e !important;background:rgba(22,167,126,.13) !important}
+.info-card:nth-child(4) .info-icon{color:#ff3348 !important;background:rgba(255,51,72,.12) !important}
+
+/* Buttons: primary pink, secondary dark; don't turn everything yellow */
+.add-btn,
+.checkout-btn,
+button.primary,
+.btn-primary,
+.order-btn{
+  background:linear-gradient(135deg,#e35d94,#c94779) !important;
+  color:#fff !important;
+  border-color:#ed70a5 !important;
+  box-shadow:0 8px 24px rgba(223,91,145,.20) !important;
+}
+.add-btn:hover,
+.checkout-btn:hover,
+button.primary:hover,
+.btn-primary:hover,
+.order-btn:hover{
+  background:linear-gradient(135deg,#ef70a8,#d34d82) !important;
+}
+
+.btn-secondary,
+.ghost-btn,
+.header-btn,
+.outline-btn{
+  background:#292327 !important;
+  color:#e8dfe2 !important;
+  border-color:rgba(255,255,255,.08) !important;
+}
+.btn-secondary:hover,
+.ghost-btn:hover,
+.header-btn:hover,
+.outline-btn:hover{
+  border-color:rgba(223,91,145,.40) !important;
+  color:#ee6fa5 !important;
+}
+
+/* Inputs */
+input,select,textarea,
+.qty-input,.target-input{
+  background:#211d21 !important;
+  color:#f2e9e5 !important;
+  border-color:rgba(255,255,255,.08) !important;
+}
+input:focus,select:focus,textarea:focus{
+  border-color:rgba(223,91,145,.55) !important;
+  box-shadow:0 0 0 3px rgba(223,91,145,.09) !important;
+}
+
+/* Payment/status */
+.payment-box,
+.status-box,
+.security-notice{
+  background:linear-gradient(145deg,#252024,#211d21) !important;
+  border-color:rgba(255,255,255,.065) !important;
+}
+.status-success,.success,.success-text{color:#16a77e !important}
+.status-error,.error,.error-text{color:#ff5365 !important}
+
+/* Reaction buttons stay original emoji, but containers match palette */
+.reaction-box{background:rgba(37,32,36,.72) !important;border-color:rgba(223,91,145,.12) !important}
+.reaction-btn{
+  background:#2c252a !important;
+  border-color:rgba(255,255,255,.07) !important;
+}
+.reaction-btn:hover,
+.reaction-btn.active{
+  border-color:#df5b91 !important;
+  background:rgba(223,91,145,.12) !important;
+}
+
+/* Warning/error elements use red like the reference RekBer card */
+.quantity-warning,
+.error-box,
+.alert-error{
+  color:#ff5365 !important;
+}
+
+/* Useful semantic accents */
+.badge-hot,.hot-badge{background:#ff3348 !important;color:#fff !important}
+.badge-premium,.premium-badge{background:rgba(229,165,44,.13) !important;color:#e5a52c !important;border-color:rgba(229,165,44,.28) !important}
+.badge-rental,.rental-badge{background:rgba(155,77,227,.14) !important;color:#b77bea !important;border-color:rgba(155,77,227,.30) !important}
+
+/* Floating/contact controls */
+.floating-btn,
+.whatsapp-float,
+.chat-float{
+  background:#df5b91 !important;
+  box-shadow:0 12px 28px rgba(223,91,145,.24) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:8px;height:8px}
+::-webkit-scrollbar-track{background:#19161a}
+::-webkit-scrollbar-thumb{background:#44363f;border-radius:999px}
+::-webkit-scrollbar-thumb:hover{background:#5b4653}
 </style>
 </head>
 
@@ -4112,96 +4395,22 @@ footer{
    PRODUK
 ========================================================= */
 
-const products = {
+const products = {};
 
-  Instagram:[
-    ["Followers Indonesia",50000,"Followers Instagram",100],
-    ["Followers Luar",10000,"Followers Instagram Luar",10],
-    ["Like Indonesia",20000,"Like Instagram",100],
-    ["Like Luar",2000,"Like Instagram Luar",10],
-    ["View",2000,"View Instagram",100],
-    ["Komen",350000,"Komentar Instagram",20],
-    ["Komentar Luar (Custom)",20000,"Komentar Instagram Luar (Custom)",20],
-    ["View Story",1000,"View Story Instagram",100],
-    ["Like Story",25000,"Like Story Instagram",100],
-    ["Live",20000,"View Live Instagram",100],
-    ["Repost",8000,"Repost Instagram",100]
-  ],
+/* Data layanan dari Supabase */
+let fayuServices = [];
 
-  TikTok:[
-    ["Followers Indonesia",100000,"Followers TikTok",50],
-    ["Followers Luar",45000,"Followers TikTok Luar",10],
-    ["Like Indonesia",30000,"Like TikTok",100],
-    ["Like Luar",8500,"Like TikTok Luar",50],
-    ["View",2000,"View TikTok",100],
-    ["Komentar",100000,"Komentar TikTok",20]
-  ],
+/*
+  Supabase public URL.
+  GANTI SUPABASE_ANON_KEY dengan Publishable/anon key project kamu.
+  Jangan gunakan service_role key di HTML.
+*/
+const SUPABASE_URL = "https://eaoqjbflfdinuqvqdvjc.supabase.co";
+const SUPABASE_ANON_KEY = "GANTI_DENGAN_ANON_KEY_SUPABASE";
 
-  WhatsApp:[
-    ["Followers Saluran",15000,"Followers Channel WhatsApp",100],
-    ["Reaksi Postingan",1000,"Reaksi Postingan WhatsApp",10]
-  ],
-
-  Facebook:[
-    ["View",3000,"View Facebook",100],
-    ["Member Grup",5000,"Member Grup Facebook",100],
-    ["Followers Indonesia",130000,"Followers Facebook",100],
-    ["Like Indonesia",110000,"Like Facebook",100],
-    ["Komen",300000,"Komentar Facebook",20]
-  ],
-
-  Shopee:[
-    ["Followers",10000,"Followers Shopee",100],
-    ["Like Indonesia",10000,"Like Shopee",100],
-    ["Live",70000,"Penonton Live Shopee",100]
-  ],
-
-  Telegram:[
-    ["Followers",5000,"Followers Telegram",100],
-    ["View Story",5000,"View Story Telegram",100]
-  ],
-
-  Threads:[
-    ["Followers",100000,"Followers Threads",100],
-    ["Like",25000,"Like Threads",100]
-  ],
-
-  Spotify:[
-    ["Followers",150000,"Followers Spotify",100]
-  ],
-
-  X:[
-    ["Followers",200000,"Followers X",100],
-    ["Like",60000,"Like X",100],
-    ["View",500,"View X",100]
-  ],
-
-  Roblox:[
-    ["Followers Indonesia",130000,"Followers Roblox",100],
-    ["Friends Indonesia",50000,"Friends Roblox",100]
-  ],
-
-  Tokopedia:[
-    ["Followers",130000,"Followers Tokopedia",100]
-  ],
-
-  Twitch:[
-    ["Followers",40000,"Followers Twitch",100]
-  ],
-
-  LinkedIn:[
-    ["Followers",2200000,"Followers LinkedIn",100],
-    ["Like",650000,"Like LinkedIn",100]
-  ],
-
-  YouTube:[
-    ["Subscriber",650000,"Subscriber YouTube",100],
-    ["Like",30000,"Like YouTube",100],
-    ["View",35000,"View YouTube",100],
-    ["Live",5000,"View Live YouTube",100]
-  ]
-
-};
+const SERVICES_API_URL =
+  SUPABASE_URL +
+  "/rest/v1/services?active=eq.true&select=provider_service_id,name,customer_name,category,platform,price_per_1000,min_order,max_order,refill,active&order=provider_service_id.asc&limit=1000";
 
 /* =========================================================
    CONFIG
@@ -4342,7 +4551,11 @@ function pricePerK(price,quantity){
 
 function getMinOrder(item){
 
-  return Number(item[3]) || 100;
+  if(item && typeof item === "object" && !Array.isArray(item)){
+    return Number(item.min_order) || 1;
+  }
+
+  return Number(item?.[3]) || 100;
 
 }
 
@@ -4509,48 +4722,187 @@ function renderTabs(){
 
   tabsEl.innerHTML = "";
 
-  Object.keys(products)
-    .forEach(platform=>{
+  const platforms = Object.keys(products);
 
-      const button =
-        document.createElement("button");
+  if(!platforms.length){
+    return;
+  }
 
-      button.type = "button";
+  if(!platforms.includes(activePlatform)){
+    activePlatform = platforms[0];
+  }
 
-      button.className =
-        "tab" +
-        (
-          platform === activePlatform
-          ? " active"
-          : ""
-        );
+  platforms.forEach(platform=>{
 
-      button.innerHTML =
-        platformIcon(platform) +
-        `<span>${escapeHTML(platform)}</span>`;
+    const button = document.createElement("button");
 
-      button.addEventListener(
-        "click",
-        ()=>{
+    button.type = "button";
+    button.className = "tab" + (platform === activePlatform ? " active" : "");
 
-          activePlatform =
-            platform;
+    button.innerHTML =
+      platformIcon(platform) +
+      `<span>${escapeHTML(platform)}</span>`;
 
-          renderTabs();
-
-          renderServices(
-            searchInput.value
-          );
-
-        }
-      );
-
-      tabsEl.appendChild(
-        button
-      );
-
+    button.addEventListener("click", ()=>{
+      activePlatform = platform;
+      renderTabs();
+      renderServices(searchInput.value);
     });
 
+    tabsEl.appendChild(button);
+
+  });
+
+}
+
+function detectPlatform(service){
+
+  const text = `${service.platform || ""} ${service.category || ""} ${service.name || ""} ${service.customer_name || ""}`.toLowerCase();
+
+  const rules = [
+    ["Instagram", /instagram|insta/],
+    ["TikTok", /tiktok|tik tok/],
+    ["Facebook", /facebook|fb/],
+    ["WhatsApp", /whatsapp|wa |saluran whatsapp/],
+    ["Telegram", /telegram/],
+    ["YouTube", /youtube|yt /],
+    ["Shopee", /shopee/],
+    ["Tokopedia", /tokopedia/],
+    ["Threads", /threads/],
+    ["Spotify", /spotify/],
+    ["X", /(^|\s)x(\s|$)|twitter/],
+    ["Twitch", /twitch/],
+    ["LinkedIn", /linkedin/],
+    ["Roblox", /roblox/],
+  ];
+
+  for(const [platform, regex] of rules){
+    if(regex.test(text)) return platform;
+  }
+
+  return service.platform || "Lainnya";
+}
+
+function friendlyName(service){
+  if(service.customer_name && String(service.customer_name).trim()){
+    return String(service.customer_name).trim();
+  }
+
+  const raw = String(service.name || "Layanan Social Media");
+
+  return raw
+    .replace(/\[[^\]]*\]/g, "")
+    .replace(/\([^)]*\)/g, "")
+    .replace(/\b(FP|HQ|S\s*HQ|REAL|REAL USER|CHEAPEST|FASTEST|INSTANT|UPDATE|MAX|DAYS?|DAY|K|M|D)\b/gi, "")
+    .replace(/\s{2,}/g, " ")
+    .replace(/[|\-–—]+\s*$/g, "")
+    .trim();
+}
+
+function friendlyDescription(service, platform, name){
+  const raw = `${name} ${service.category || ""}`.toLowerCase();
+
+  if(raw.includes("follower") || raw.includes("pengikut")) return `Tambah followers ${platform} ke profil kamu.`;
+  if(raw.includes("like") || raw.includes("suka")) return `Tambah like pada postingan ${platform}.`;
+  if(raw.includes("view") || raw.includes("views") || raw.includes("tayangan")) return `Tambah views atau tayangan ${platform}.`;
+  if(raw.includes("comment") || raw.includes("komen")) return `Tambah komentar pada konten ${platform}.`;
+  if(raw.includes("subscriber")) return `Tambah subscriber ${platform}.`;
+  if(raw.includes("member")) return `Tambah anggota atau member ${platform}.`;
+  if(raw.includes("reaction") || raw.includes("reaksi")) return `Tambah reaksi pada postingan ${platform}.`;
+  if(raw.includes("story")) return `Tambah tayangan pada Story ${platform}.`;
+  if(raw.includes("live")) return `Tambah penonton Live ${platform}.`;
+
+  return `Layanan ${platform} untuk membantu meningkatkan interaksi akun atau konten.`;
+}
+
+async function loadFayuServices(){
+
+  if(SUPABASE_ANON_KEY === "GANTI_DENGAN_ANON_KEY_SUPABASE") {
+    showToast("Masukkan Supabase Publishable/anon key terlebih dahulu.");
+    return false;
+  }
+
+  try{
+
+    serviceGrid.innerHTML = `
+      <div style="grid-column:1/-1;padding:30px;text-align:center;color:#aaa5ad">
+        Memuat semua layanan...
+      </div>
+    `;
+
+    const response = await fetch(SERVICES_API_URL, {
+      method:"GET",
+      headers:{
+        "apikey": SUPABASE_ANON_KEY,
+        "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+        "Accept":"application/json"
+      },
+      cache:"no-store"
+    });
+
+    if(!response.ok){
+      const text = await response.text();
+      throw new Error(`Supabase ${response.status}: ${text.slice(0,180)}`);
+    }
+
+    const rows = await response.json();
+
+    if(!Array.isArray(rows) || !rows.length){
+      throw new Error("Tidak ada layanan aktif dari Supabase.");
+    }
+
+    fayuServices = rows.map(service=>{
+      const platform = detectPlatform(service);
+      const name = friendlyName(service);
+      const price = Number(service.price_per_1000) || 0;
+      const minOrder = Number(service.min_order) || 1;
+
+      return {
+        ...service,
+        platform,
+        customer_name:name,
+        display_name:name,
+        description:friendlyDescription(service, platform, name),
+        price,
+        min_order:minOrder,
+        max_order:Number(service.max_order) || 1000000,
+        provider_service_id:Number(service.provider_service_id) || 0
+      };
+    });
+
+    products.__dynamic = fayuServices;
+
+    /* Kelompokkan seluruh produk FAYU berdasarkan platform. */
+    Object.keys(products).forEach(k=>{
+      if(k !== "__dynamic") delete products[k];
+    });
+
+    for(const service of fayuServices){
+      if(!products[service.platform]) products[service.platform] = [];
+      products[service.platform].push(service);
+    }
+
+    delete products.__dynamic;
+
+    renderTabs();
+    renderServices(searchInput.value);
+
+    showToast(`${fayuServices.length} layanan berhasil dimuat.`);
+    return true;
+
+  }catch(error){
+
+    console.error(error);
+
+    serviceGrid.innerHTML = `
+      <div style="grid-column:1/-1;padding:25px;text-align:center;color:#ff7a90">
+        Gagal memuat layanan. Periksa Supabase key dan RLS tabel services.
+      </div>
+    `;
+
+    showToast("Gagal memuat layanan dari Supabase.");
+    return false;
+  }
 }
 
 /* =========================================================
@@ -4610,463 +4962,197 @@ function renderServices(searchTerm=""){
 
   serviceGrid.innerHTML = "";
 
-  const term =
-    String(searchTerm)
-      .trim()
-      .toLowerCase();
-
+  const term = String(searchTerm).trim().toLowerCase();
   let visibleCount = 0;
 
-  const items =
-    products[activePlatform] || [];
+  const items = products[activePlatform] || [];
 
-  items.forEach(item=>{
+  items.forEach(service=>{
 
-    const name = item[0];
+    const name = service.display_name || service.customer_name || friendlyName(service);
+    const price = Number(service.price) || Number(service.price_per_1000) || 0;
+    const description = service.description || friendlyDescription(service, activePlatform, name);
+    const minOrder = getMinOrder(service);
 
-    const price = item[1];
+    const searchable = `${activePlatform} ${name} ${description} ${service.name || ""} ${service.category || ""}`.toLowerCase();
 
-    const description = item[2];
-
-    const minOrder =
-      getMinOrder(item);
-
-    const searchable =
-      `${activePlatform} ${name} ${description}`
-        .toLowerCase();
-
-    if(
-      term &&
-      !searchable.includes(term)
-    ){
-      return;
-    }
+    if(term && !searchable.includes(term)) return;
 
     visibleCount++;
 
-    const card =
-      document.createElement("div");
-
-    card.className =
-      "service-card";
+    const card = document.createElement("div");
+    card.className = "service-card";
 
     const isReaction =
       activePlatform === "WhatsApp" &&
-      name
-        .toLowerCase()
-        .includes("reaksi");
+      /reaksi|reaction/i.test(`${name} ${service.name || ""}`);
 
     card.innerHTML = `
-
       <div class="service-top">
-
         <div class="service-info">
-
-          <div class="service-name">
-            ${escapeHTML(name)}
-          </div>
-
-          <div class="service-description">
-            ${escapeHTML(description)}
-          </div>
-
+          <div class="service-name">${escapeHTML(name)}</div>
+          <div class="service-description">${escapeHTML(description)}</div>
         </div>
-
         <div class="service-badge">
           ${platformIcon(activePlatform)}
           <span>${escapeHTML(activePlatform)}</span>
         </div>
-
       </div>
 
       <div class="service-price">
-
         <div>
-
-          <span class="price-main">
-            ${rupiah(price)}
-          </span>
-
-          <span class="price-unit">
-            / 1.000
-          </span>
-
+          <span class="price-main">${rupiah(price)}</span>
+          <span class="price-unit">/ 1.000</span>
         </div>
-
       </div>
 
       <div class="service-meta">
-
         <div class="meta-chip">
-
           <span class="ui-icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M5 4h14v16H5z"/>
-              <path d="M8 8h8M8 12h8M8 16h5"/>
-            </svg>
+            <svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
           </span>
-
           Minimal ${minOrder.toLocaleString("id-ID")}
-
         </div>
 
         <div class="meta-chip">
-
           <span class="ui-icon">
-            <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="8"/>
-              <path d="M12 8v8M9 10h4a2 2 0 1 1 0 4H9"/>
-            </svg>
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M9 10h4a2 2 0 1 1 0 4H9"/></svg>
           </span>
-
           Harga / 1.000
-
         </div>
 
+        ${service.refill ? `<div class="meta-chip"><span class="ui-icon">↻</span> Refill</div>` : ""}
       </div>
 
       <div class="estimate-box">
-
         <div class="estimate-title">
-
-          <span class="ui-icon sm">
-            <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="8"/>
-              <path d="M12 7v5l3 2"/>
-            </svg>
-          </span>
-
+          <span class="ui-icon sm"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span>
           ESTIMASI PROSES
-
         </div>
-
-        <div class="estimate-time">
-          ${getEstimate().start}
-          -
-          ${getEstimate().end}
-        </div>
-
-        <div class="estimate-note">
-          Estimasi dapat berubah tergantung layanan dan jumlah.
-        </div>
-
+        <div class="estimate-time">${getEstimate().start} - ${getEstimate().end}</div>
+        <div class="estimate-note">Estimasi dapat berubah tergantung layanan dan jumlah.</div>
       </div>
 
       <div class="order-fields">
-
         <div>
-
-          <label class="field-label">
-            ${getTargetLabel(name)}
-          </label>
-
-          <input
-            type="text"
-            class="field-input target-input"
-            placeholder="${getTargetPlaceholder(name)}"
-            autocomplete="off"
-          >
-
+          <label class="field-label">${getTargetLabel(name)}</label>
+          <input type="text" class="field-input target-input" placeholder="${getTargetPlaceholder(name)}" autocomplete="off">
         </div>
 
         <div class="quantity-row">
-
           <div>
-
-            <label class="field-label">
-              Jumlah
-            </label>
-
-            <input
-              type="number"
-              class="field-input quantity-input"
-              min="${minOrder}"
-              step="1"
-              value=""
-              inputmode="numeric"
-            >
-
-            <div class="quantity-warning">
-              Minimal order
-              ${minOrder.toLocaleString("id-ID")}.
-            </div>
-
+            <label class="field-label">Jumlah</label>
+            <input type="number" class="field-input quantity-input" min="${minOrder}" max="${Number(service.max_order)||1000000}" step="1" value="" inputmode="numeric">
+            <div class="quantity-warning">Minimal order ${minOrder.toLocaleString("id-ID")}.</div>
           </div>
-
           <div>
-
-            <label class="field-label">
-              Harga
-            </label>
-
-            <input
-              type="text"
-              class="field-input price-preview"
-              value=""
-              placeholder="Rp.0"
-              readonly
-            >
-
+            <label class="field-label">Harga</label>
+            <input type="text" class="field-input price-preview" value="" placeholder="Rp0" readonly>
           </div>
-
         </div>
 
-        ${
-          isReaction
-          ? reactionHTML()
-          : ""
-        }
-
+        ${isReaction ? reactionHTML() : ""}
       </div>
 
-      <button
-        type="button"
-        class="add-btn"
-      >
-
-        Tambahkan ke Pesanan
-
-      </button>
-
+      <button type="button" class="add-btn">Tambahkan ke Pesanan</button>
     `;
 
-    const quantityInput =
-      card.querySelector(
-        ".quantity-input"
-      );
-
-    const pricePreview =
-      card.querySelector(
-        ".price-preview"
-      );
-
-    const quantityWarning =
-      card.querySelector(
-        ".quantity-warning"
-      );
+    const quantityInput = card.querySelector(".quantity-input");
+    const pricePreview = card.querySelector(".price-preview");
+    const quantityWarning = card.querySelector(".quantity-warning");
 
     function updateQuantityWarning(){
-
-      const raw =
-        quantityInput.value;
+      const raw = quantityInput.value;
 
       if(raw === ""){
-
-        quantityWarning
-          .classList
-          .remove("show");
-
-        quantityInput
-          .classList
-          .remove("invalid");
-
-        pricePreview.value =
-          "Rp0";
-
+        quantityWarning.classList.remove("show");
+        quantityInput.classList.remove("invalid");
+        pricePreview.value = "Rp0";
         return;
-
       }
 
-      let qty =
-        Number(raw);
+      const qty = Number(raw);
+      const maxOrder = Number(service.max_order) || 1000000;
 
       if(!Number.isFinite(qty)){
+        pricePreview.value = "Rp0";
         return;
       }
 
       if(qty < minOrder){
-
-        quantityWarning.textContent =
-          `Minimal order ${minOrder.toLocaleString("id-ID")}. Kamu memasukkan ${qty.toLocaleString("id-ID")}.`;
-
-        quantityWarning
-          .classList
-          .add("show");
-
-        quantityInput
-          .classList
-          .add("invalid");
-
+        quantityWarning.textContent = `Minimal order ${minOrder.toLocaleString("id-ID")}. Kamu memasukkan ${qty.toLocaleString("id-ID")}.`;
+        quantityWarning.classList.add("show");
+        quantityInput.classList.add("invalid");
+      }else if(qty > maxOrder){
+        quantityWarning.textContent = `Maksimal order ${maxOrder.toLocaleString("id-ID")}.`;
+        quantityWarning.classList.add("show");
+        quantityInput.classList.add("invalid");
       }else{
-
-        quantityWarning
-          .classList
-          .remove("show");
-
-        quantityInput
-          .classList
-          .remove("invalid");
-
+        quantityWarning.classList.remove("show");
+        quantityInput.classList.remove("invalid");
       }
 
-      pricePreview.value =
-        rupiah(
-          pricePerK(
-            price,
-            qty
-          )
-        );
-
+      pricePreview.value = rupiah(pricePerK(price, qty));
     }
 
-    quantityInput.addEventListener(
-      "input",
-      updateQuantityWarning
-    );
+    quantityInput.addEventListener("input", updateQuantityWarning);
+    quantityInput.addEventListener("blur", updateQuantityWarning);
 
-    quantityInput.addEventListener(
-      "blur",
-      ()=>{
-        const raw = quantityInput.value;
+    card.querySelectorAll(".reaction-btn").forEach(button=>{
+      button.addEventListener("click", ()=>{
+        card.querySelectorAll(".reaction-btn").forEach(btn=>btn.classList.remove("active"));
+        button.classList.add("active");
+      });
+    });
 
-        if(raw === ""){
-          quantityWarning.classList.remove("show");
-          quantityInput.classList.remove("invalid");
-          pricePreview.value = "Rp0";
-          return;
-        }
+    card.querySelector(".add-btn").addEventListener("click", ()=>{
+      const qty = Number(quantityInput.value);
+      const maxOrder = Number(service.max_order) || 1000000;
 
-        const qty = Number(raw);
-        if(!Number.isFinite(qty)){
-          pricePreview.value = "Rp0";
-          return;
-        }
-
-        updateQuantityWarning();
+      if(!Number.isFinite(qty) || qty < minOrder || qty > maxOrder){
+        quantityInput.classList.add("invalid");
+        quantityWarning.textContent = qty > maxOrder
+          ? `Maksimal order ${maxOrder.toLocaleString("id-ID")}.`
+          : `Minimal order ${minOrder.toLocaleString("id-ID")}. Silakan masukkan jumlah yang sesuai.`;
+        quantityWarning.classList.add("show");
+        showToast(qty > maxOrder ? `Maksimal order ${maxOrder.toLocaleString("id-ID")}.` : `Minimal order ${minOrder.toLocaleString("id-ID")}.`);
+        return;
       }
-    );
-    const reactionButtons =
-      card.querySelectorAll(
-        ".reaction-btn"
-      );
 
-    reactionButtons.forEach(
-      button=>{
-
-        button.addEventListener(
-          "click",
-          ()=>{
-
-            reactionButtons.forEach(
-              btn=>{
-                btn.classList.remove(
-                  "active"
-                );
-              }
-            );
-
-            button.classList.add(
-              "active"
-            );
-
-          }
-        );
-
+      if(isReaction && !card.querySelector(".reaction-btn.active")){
+        showToast("Pilih salah satu reaksi terlebih dahulu.");
+        return;
       }
-    );
 
-    card
-      .querySelector(".add-btn")
-      .addEventListener(
-        "click",
-        ()=>{
+      const target = card.querySelector(".target-input").value.trim();
 
-          let qty =
-            Number(
-              quantityInput.value
-            );
+      if(!target){
+        showToast("Masukkan link atau username terlebih dahulu.");
+        card.querySelector(".target-input").focus();
+        return;
+      }
 
-          if(
-            !Number.isFinite(qty) ||
-            qty < minOrder
-          ){
+      addToCart({
+        platform:activePlatform,
+        name,
+        description,
+        price,
+        minOrder,
+        maxOrder,
+        providerServiceId:Number(service.provider_service_id)||0,
+        target,
+        quantity:qty,
+        reaction:getSelectedReaction(card),
+        estimate:getEstimate()
+      });
 
-            quantityInput
-              .classList
-              .add("invalid");
+    });
 
-            quantityWarning.textContent =
-              `Minimal order ${minOrder.toLocaleString("id-ID")}. Silakan masukkan jumlah minimal ${minOrder.toLocaleString("id-ID")}.`;
-
-            quantityWarning
-              .classList
-              .add("show");
-
-            showToast(
-              `Minimal order ${minOrder.toLocaleString("id-ID")}.`
-            );
-
-            return;
-
-          }
-
-          if(isReaction && !card.querySelector(".reaction-btn.active")){
-            showToast("Pilih salah satu reaksi terlebih dahulu.");
-            return;
-          }
-
-          const target =
-            card
-              .querySelector(
-                ".target-input"
-              )
-              .value
-              .trim();
-
-          if(!target){
-
-            showToast(
-              "Masukkan link atau username terlebih dahulu."
-            );
-
-            card
-              .querySelector(
-                ".target-input"
-              )
-              .focus();
-
-            return;
-
-          }
-
-          addToCart({
-
-            platform:
-              activePlatform,
-
-            name,
-
-            description,
-
-            price,
-
-            minOrder,
-
-            target,
-
-            quantity:
-              qty,
-
-            reaction: getSelectedReaction(card),
-
-            estimate:
-              getEstimate()
-
-          });
-
-        }
-      );
-
-    serviceGrid.appendChild(
-      card
-    );
+    serviceGrid.appendChild(card);
 
   });
 
-  noResult.style.display =
-    visibleCount === 0
-      ? "block"
-      : "none";
+  noResult.style.display = visibleCount === 0 ? "block" : "none";
 
 }
 
@@ -5929,11 +6015,16 @@ orderPopupOverlay.addEventListener(
 
 loadCart();
 
-renderTabs();
-
-renderServices();
-
 renderCart();
+
+/* Muat seluruh produk dari Supabase */
+loadFayuServices();
+
+/* Refresh data layanan secara berkala agar harga/perubahan terbaru ikut tampil.
+   Perubahan di database tetap harus dipicu oleh sync-fayu. */
+setInterval(()=>{
+  loadFayuServices();
+}, 10 * 60 * 1000);
 
 </script>
 
