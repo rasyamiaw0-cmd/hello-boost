@@ -2809,6 +2809,23 @@ input:focus,select:focus,textarea:focus{
 ::-webkit-scrollbar-track{background:#19161a}
 ::-webkit-scrollbar-thumb{background:#44363f;border-radius:999px}
 ::-webkit-scrollbar-thumb:hover{background:#5b4653}
+
+/* =========================================================
+   AUTH / ACCOUNT
+========================================================= */
+.auth-popup{max-width:430px;width:100%;}
+.auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0;}
+.auth-tab{height:42px;border-radius:11px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:#aaa5ad;font-weight:800;}
+.auth-tab.active{background:rgba(233,91,145,.13);border-color:var(--pink);color:#fff;}
+.auth-submit{width:100%;margin-top:14px;}
+.auth-message{min-height:20px;margin-top:10px;text-align:center;color:#ff7b91;font-size:11px;line-height:1.5;}
+.balance-card{padding:18px;border-radius:16px;background:rgba(233,91,145,.09);border:1px solid rgba(233,91,145,.22);margin:14px 0;}
+.balance-card span{display:block;color:var(--muted);font-size:11px;}
+.balance-card strong{display:block;margin-top:5px;color:#fff;font-size:25px;}
+.account-email{padding:11px 12px;border:1px solid var(--border);border-radius:11px;color:#cfc8ce;font-size:12px;margin-bottom:10px;word-break:break-all;}
+#authLoggedIn .popup-btn{width:100%;margin-top:8px;}
+.account-balance-mini{display:none;padding:8px 10px;border-radius:11px;background:rgba(233,91,145,.09);border:1px solid rgba(233,91,145,.2);color:#fff;font-size:11px;font-weight:800;}
+@media(max-width:620px){.header-actions{gap:5px}.header-btn{padding:9px 10px}.header-btn .ui-icon{display:none}.account-balance-mini{display:block}}
 </style>
 </head>
 
@@ -2835,6 +2852,7 @@ input:focus,select:focus,textarea:focus{
     </a>
 
     <div class="header-actions">
+      <div class="account-balance-mini" id="miniBalance">Rp0</div>
 
       <a
         class="header-btn"
@@ -2850,6 +2868,13 @@ input:focus,select:focus,textarea:focus{
         </span>
         WhatsApp
       </a>
+
+      <button class="header-btn" id="accountBtn" type="button">
+        <span class="ui-icon sm">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 20c.7-3.2 3.2-5 7-5s6.3 1.8 7 5"/></svg>
+        </span>
+        <span id="accountLabel">Masuk</span>
+      </button>
 
       <a
         class="header-btn primary"
@@ -3484,7 +3509,7 @@ input:focus,select:focus,textarea:focus{
         </svg>
       </span>
 
-      Konfirmasi Pembayaran via WhatsApp
+      Buat Pesanan Sekarang via WhatsApp
 
     </button>
 
@@ -4383,6 +4408,46 @@ input:focus,select:focus,textarea:focus{
 
 </div>
 
+<!-- =======================================================
+     LOGIN / REGISTER
+======================================================= -->
+<div class="popup-overlay" id="authOverlay">
+  <div class="popup auth-popup">
+    <div class="popup-top">
+      <div>
+        <h3><span class="ui-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 20c.7-3.2 3.2-5 7-5s6.3 1.8 7 5"/></svg></span> Akun Hello Boost</h3>
+        <p>Login untuk melihat saldo dan melakukan pesanan langsung dari website.</p>
+      </div>
+      <button class="popup-close" id="authClose" type="button">×</button>
+    </div>
+
+    <div id="authLoggedOut">
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="loginTab" type="button">Login</button>
+        <button class="auth-tab" id="registerTab" type="button">Daftar</button>
+      </div>
+      <label class="field-label">Email</label>
+      <input class="field-input" id="authEmail" type="email" autocomplete="email" placeholder="Masukkan email">
+      <label class="field-label auth-password-label">Password</label>
+      <input class="field-input" id="authPassword" type="password" autocomplete="current-password" placeholder="Minimal 6 karakter">
+      <label class="field-label auth-name-label" style="display:none;margin-top:10px">Nama</label>
+      <input class="field-input auth-name-input" id="authName" type="text" autocomplete="name" placeholder="Nama kamu" style="display:none">
+      <button class="popup-btn primary auth-submit" id="authSubmit" type="button">Login</button>
+      <div class="auth-message" id="authMessage"></div>
+    </div>
+
+    <div id="authLoggedIn" style="display:none">
+      <div class="balance-card">
+        <span>Saldo kamu</span>
+        <strong id="accountBalance">Rp0</strong>
+      </div>
+      <div class="account-email" id="accountEmail"></div>
+      <button class="popup-btn secondary" id="refreshBalance" type="button">Refresh Saldo</button>
+      <button class="popup-btn primary" id="logoutBtn" type="button">Keluar</button>
+    </div>
+  </div>
+</div>
+
 <div
   class="toast"
   id="toast"
@@ -4406,11 +4471,11 @@ let fayuServices = [];
   Jangan gunakan service_role key di HTML.
 */
 const SUPABASE_URL = "https://eaoqjbflfdinuqvqdvjc.supabase.co";
-const SUPABASE_ANON_KEY = "GANTI_DENGAN_ANON_KEY_SUPABASE";
+const SUPABASE_ANON_KEY = "sb_publishable_QmQJdU0kPM0aKMTfwmJvVQ_HqntVG6R";
 
 const SERVICES_API_URL =
   SUPABASE_URL +
-  "/rest/v1/services?active=eq.true&select=provider_service_id,name,customer_name,category,platform,price_per_1000,min_order,max_order,refill,active&order=provider_service_id.asc&limit=1000";
+  "/rest/v1/services?active=eq.true&select=provider_service_id,name,category,platform,price_per_1000,min_order,max_order,refill,active&order=provider_service_id.asc&limit=1000";
 
 /* =========================================================
    CONFIG
@@ -5140,6 +5205,7 @@ function renderServices(searchTerm=""){
         minOrder,
         maxOrder,
         providerServiceId:Number(service.provider_service_id)||0,
+        serviceId:Number(service.id)||0,
         target,
         quantity:qty,
         reaction:getSelectedReaction(card),
@@ -5397,119 +5463,109 @@ function loadCart(){
    CHECKOUT
 ========================================================= */
 
-checkoutBtn.addEventListener(
-  "click",
-  ()=>{
+async function placeCartOrders(){
 
-    if(!cart.length){
+  if(!cart.length){
+    showToast("Pesanan masih kosong.");
+    return;
+  }
 
-      showToast(
-        "Pesanan masih kosong."
-      );
+  const session = getSession();
+  if(!session?.access_token){
+    openAuth();
+    showAuthMessage("Silakan login terlebih dahulu untuk melanjutkan pesanan.");
+    return;
+  }
 
-      return;
+  const total = cartTotalValue();
+  const balance = await loadProfileBalance(false);
+  if(balance === null) return;
 
+  if(balance < total){
+    showToast(`Saldo tidak mencukupi. Saldo ${rupiah(balance)}, total ${rupiah(total)}.`);
+    openAuth();
+    return;
+  }
+
+  const originalCart = [...cart];
+  confirmPayment.disabled = true;
+  confirmPayment.textContent = "Memproses pesanan...";
+  statusBox.classList.add("show");
+  statusOrderId.textContent = "Pesanan sedang dikirim ke provider...";
+
+  const results = [];
+  try{
+    for(const item of originalCart){
+      const result = await createProviderOrder(item);
+      results.push({item,result});
+      if(!result?.status){
+        throw new Error(result?.msg || `Gagal memproses ${item.name}.`);
+      }
     }
 
-    currentOrderId =
-      generateOrderId();
+    cart = [];
+    saveCart();
+    renderCart();
+    paymentBox.classList.remove("show");
+    statusOrderId.textContent = `Berhasil: ${results.length} pesanan telah dibuat.`;
+    showToast("Semua pesanan berhasil dibuat.");
+    await loadProfileBalance(false);
 
-    selectedPayment = "";
-
-    orderIdEl.textContent =
-      currentOrderId;
-
-    statusOrderId.textContent =
-      "ID Pesanan: " +
-      currentOrderId;
-
-    previewContent.innerHTML =
-      cart.map(
-        item=>`
-
-          <div class="preview-row">
-
-            <span>
-              ${escapeHTML(item.name)}
-              ×
-              ${item.quantity.toLocaleString("id-ID")}
-            </span>
-
-            <span>
-              ${rupiah(
-                pricePerK(
-                  item.price,
-                  item.quantity
-                )
-              )}
-            </span>
-
-          </div>
-
-        `
-      ).join("") +
-
-      `
-
-        <div
-          class="preview-row"
-          style="
-            border-top:1px solid rgba(255,255,255,.08);
-            margin-top:6px;
-            padding-top:10px;
-          "
-        >
-
-          <span>
-            Total
-          </span>
-
-          <span>
-            <strong>
-              ${rupiah(
-                cartTotalValue()
-              )}
-            </strong>
-          </span>
-
-        </div>
-
-      `;
-
-    paymentBox.classList.add(
-      "show"
-    );
-
-    statusBox.classList.remove(
-      "show"
-    );
-
-    paymentNumber.classList.remove(
-      "show"
-    );
-
-    qrisWrapper.classList.remove(
-      "show"
-    );
-
-    document
-      .querySelectorAll(
-        ".payment-method"
-      )
-      .forEach(
-        btn =>
-          btn.classList.remove(
-            "active"
-          )
-      );
-
-    paymentBox.scrollIntoView({
-      behavior:"smooth",
-      block:"start"
-    });
-
+  }catch(error){
+    const done = results.length;
+    statusOrderId.textContent = done
+      ? `${done} pesanan berhasil dibuat. Pesanan berikutnya gagal: ${error.message}`
+      : `Pesanan gagal: ${error.message}`;
+    showToast(error.message || "Pesanan gagal diproses.");
+    await loadProfileBalance(false);
+  }finally{
+    confirmPayment.disabled = false;
+    confirmPayment.textContent = "Buat Pesanan Sekarang";
   }
-);
+}
+
+checkoutBtn.addEventListener("click", async ()=>{
+  if(!cart.length){
+    showToast("Pesanan masih kosong.");
+    return;
+  }
+
+  const session = getSession();
+  if(!session?.access_token){
+    openAuth();
+    showAuthMessage("Login terlebih dahulu untuk melihat saldo dan melanjutkan pembayaran.");
+    return;
+  }
+
+  currentOrderId = generateOrderId();
+  orderIdEl.textContent = currentOrderId;
+  statusOrderId.textContent = "Siap diproses dari saldo akun.";
+
+  previewContent.innerHTML = cart.map(item=>`
+    <div class="preview-row">
+      <span>${escapeHTML(item.name)} × ${item.quantity.toLocaleString("id-ID")}</span>
+      <span>${rupiah(pricePerK(item.price,item.quantity))}</span>
+    </div>
+  `).join("") + `
+    <div class="preview-row" style="border-top:1px solid rgba(255,255,255,.08);margin-top:6px;padding-top:10px">
+      <span>Total</span><span><strong>${rupiah(cartTotalValue())}</strong></span>
+    </div>
+    <div class="preview-row"><span>Saldo akun</span><span id="checkoutBalance">Memuat...</span></div>
+  `;
+
+  paymentBox.classList.add("show");
+  statusBox.classList.remove("show");
+  document.querySelectorAll(".payment-method").forEach(btn=>btn.classList.remove("active"));
+  paymentNumber.classList.remove("show");
+  qrisWrapper.classList.remove("show");
+  selectedPayment = "SALDO";
+
+  const balance = await loadProfileBalance(false);
+  const balanceEl = document.getElementById("checkoutBalance");
+  if(balanceEl) balanceEl.textContent = balance === null ? "-" : rupiah(balance);
+
+  paymentBox.scrollIntoView({behavior:"smooth",block:"start"});
+});
 
 /* =========================================================
    PAYMENT METHOD
@@ -5629,88 +5685,7 @@ document
    CONFIRM PAYMENT
 ========================================================= */
 
-confirmPayment.addEventListener(
-  "click",
-  ()=>{
-
-    if(!cart.length){
-
-      showToast(
-        "Pesanan masih kosong."
-      );
-
-      return;
-
-    }
-
-    if(!selectedPayment){
-
-      showToast(
-        "Pilih metode pembayaran terlebih dahulu."
-      );
-
-      return;
-
-    }
-
-    const lines = cart.map(
-      (item,index)=>{
-
-        return (
-
-          `${index+1}. ${item.name}` +
-          `\nPlatform: ${item.platform}` +
-          `\nTarget: ${item.target}` +
-          `\nJumlah: ${item.quantity}` +
-          (
-            item.reaction
-              ? `\nReaksi: ${item.reaction}`
-              : ""
-          ) +
-          `\nHarga: ${rupiah(
-            pricePerK(
-              item.price,
-              item.quantity
-            )
-          )}`
-
-        );
-
-      }
-    );
-
-    const message =
-
-      `Halo hello_boost, saya ingin konfirmasi pembayaran.` +
-      `\n\nID Pesanan: ${currentOrderId}` +
-      `\nMetode Pembayaran: ${selectedPayment}` +
-      `\n\nDETAIL PESANAN\n` +
-      lines.join("\n\n") +
-      `\n\nTotal: ${rupiah(
-        cartTotalValue()
-      )}` +
-      `\n\nMohon diproses. Terima kasih.`;
-
-    const url =
-      "https://wa.me/" +
-      WHATSAPP_NUMBER +
-      "?text=" +
-      encodeURIComponent(
-        message
-      );
-
-    statusBox.classList.add(
-      "show"
-    );
-
-    window.open(
-      url,
-      "_blank",
-      "noopener,noreferrer"
-    );
-
-  }
-);
+confirmPayment.addEventListener("click", placeCartOrders);
 
 /* =========================================================
    SEARCH
@@ -6010,12 +5985,146 @@ orderPopupOverlay.addEventListener(
 );
 
 /* =========================================================
+   SUPABASE AUTH + BALANCE
+========================================================= */
+const AUTH_STORAGE_KEY = "hello_boost_session";
+let authMode = "login";
+
+const authOverlay = document.getElementById("authOverlay");
+const authClose = document.getElementById("authClose");
+const accountBtn = document.getElementById("accountBtn");
+const accountLabel = document.getElementById("accountLabel");
+const miniBalance = document.getElementById("miniBalance");
+const authLoggedOut = document.getElementById("authLoggedOut");
+const authLoggedIn = document.getElementById("authLoggedIn");
+const loginTab = document.getElementById("loginTab");
+const registerTab = document.getElementById("registerTab");
+const authSubmit = document.getElementById("authSubmit");
+const authEmail = document.getElementById("authEmail");
+const authPassword = document.getElementById("authPassword");
+const authName = document.getElementById("authName");
+const authNameLabel = document.querySelector(".auth-name-label");
+const accountEmail = document.getElementById("accountEmail");
+const accountBalance = document.getElementById("accountBalance");
+const refreshBalance = document.getElementById("refreshBalance");
+const logoutBtn = document.getElementById("logoutBtn");
+const authMessage = document.getElementById("authMessage");
+
+function getSession(){
+  try{return JSON.parse(localStorage.getItem(AUTH_STORAGE_KEY)||"null");}catch{return null;}
+}
+function setSession(session){
+  if(session) localStorage.setItem(AUTH_STORAGE_KEY,JSON.stringify(session));
+  else localStorage.removeItem(AUTH_STORAGE_KEY);
+}
+function showAuthMessage(msg,ok=false){
+  if(authMessage){authMessage.textContent=msg||"";authMessage.style.color=ok?"#61d7a0":"#ff7b91";}
+}
+function openAuth(){authOverlay.classList.add("show"); updateAuthUI();}
+function closeAuth(){authOverlay.classList.remove("show");}
+function setAuthMode(mode){
+  authMode=mode;
+  loginTab.classList.toggle("active",mode==="login");
+  registerTab.classList.toggle("active",mode==="register");
+  authSubmit.textContent=mode==="login"?"Login":"Daftar";
+  authName.style.display=mode==="register"?"block":"none";
+  authNameLabel.style.display=mode==="register"?"block":"none";
+  authPassword.autocomplete=mode==="login"?"current-password":"new-password";
+  showAuthMessage("");
+}
+function updateAuthUI(){
+  const session=getSession();
+  const logged=!!session?.access_token;
+  authLoggedOut.style.display=logged?"none":"block";
+  authLoggedIn.style.display=logged?"block":"none";
+  accountLabel.textContent=logged?(session.user?.email?.split("@")[0]||"Akun"):"Masuk";
+  if(logged){accountEmail.textContent=session.user?.email||"";loadProfileBalance(false);}
+}
+async function authFetch(path,options={}){
+  if(SUPABASE_ANON_KEY==="GANTI_DENGAN_ANON_KEY_SUPABASE") throw new Error("Supabase Publishable/anon key belum dipasang di HTML.");
+  const response=await fetch(SUPABASE_URL+path,{...options,headers:{"apikey":SUPABASE_ANON_KEY,"Content-Type":"application/json",...(options.headers||{})}});
+  const text=await response.text();
+  let data={};try{data=JSON.parse(text)}catch{}
+  if(!response.ok) throw new Error(data.msg||data.error_description||data.message||"Permintaan Supabase gagal.");
+  return data;
+}
+async function loginUser(){
+  const email=authEmail.value.trim(); const password=authPassword.value;
+  if(!email||!password){showAuthMessage("Email dan password wajib diisi.");return;}
+  authSubmit.disabled=true;showAuthMessage("Memproses...");
+  try{
+    const data=await authFetch("/auth/v1/token?grant_type=password",{method:"POST",body:JSON.stringify({email,password})});
+    setSession({access_token:data.access_token,refresh_token:data.refresh_token,user:data.user});
+    showAuthMessage("Login berhasil.",true);updateAuthUI();await loadProfileBalance(false);setTimeout(closeAuth,350);showToast("Berhasil login.");
+  }catch(e){showAuthMessage(e.message||"Login gagal.");}
+  finally{authSubmit.disabled=false;}
+}
+async function registerUser(){
+  const email=authEmail.value.trim(); const password=authPassword.value; const name=authName.value.trim();
+  if(!email||!password){showAuthMessage("Email dan password wajib diisi.");return;}
+  if(password.length<6){showAuthMessage("Password minimal 6 karakter.");return;}
+  authSubmit.disabled=true;showAuthMessage("Membuat akun...");
+  try{
+    const data=await authFetch("/auth/v1/signup",{method:"POST",body:JSON.stringify({email,password,data:{name}})});
+    if(data.access_token){setSession({access_token:data.access_token,refresh_token:data.refresh_token,user:data.user});updateAuthUI();await loadProfileBalance(false);showAuthMessage("Akun berhasil dibuat.",true);setTimeout(closeAuth,500);showToast("Akun berhasil dibuat.");}
+    else showAuthMessage("Akun berhasil dibuat. Silakan cek email untuk verifikasi, lalu login.",true);
+  }catch(e){showAuthMessage(e.message||"Pendaftaran gagal.");}
+  finally{authSubmit.disabled=false;}
+}
+async function loadProfileBalance(openOnError=true){
+  const session=getSession();
+  if(!session?.access_token){return null;}
+  try{
+    const response=await fetch(SUPABASE_URL+"/rest/v1/profiles?select=id,balance&id=eq."+encodeURIComponent(session.user.id)+"&limit=1",{headers:{"apikey":SUPABASE_ANON_KEY,"Authorization":"Bearer "+session.access_token,"Accept":"application/json"}});
+    if(response.status===401){setSession(null);updateAuthUI();if(openOnError)openAuth();throw new Error("Sesi login sudah berakhir.");}
+    if(!response.ok) throw new Error("Gagal mengambil saldo.");
+    const rows=await response.json();
+    const balance=Number(rows?.[0]?.balance)||0;
+    accountBalance.textContent=rupiah(balance);miniBalance.textContent=rupiah(balance);
+    return balance;
+  }catch(e){
+    if(openOnError) showToast(e.message||"Gagal mengambil saldo.");
+    return null;
+  }
+}
+async function createProviderOrder(item){
+  const session=getSession();
+  if(!session?.access_token) throw new Error("Sesi login tidak ditemukan.");
+  if(!item.providerServiceId) throw new Error(`ID provider untuk ${item.name} tidak tersedia.`);
+  const response=await fetch(SUPABASE_URL+"/functions/v1/create-order",{
+    method:"POST",
+    headers:{"Content-Type":"application/json","apikey":SUPABASE_ANON_KEY,"Authorization":"Bearer "+session.access_token},
+    body:JSON.stringify({service_id:item.serviceId||findServiceDbId(item),target:item.target,quantity:item.quantity})
+  });
+  const data=await response.json().catch(()=>({}));
+  if(response.status===401){setSession(null);updateAuthUI();throw new Error("Sesi login sudah berakhir. Silakan login kembali.");}
+  if(!response.ok||!data.status) throw new Error(data.msg||"Pesanan gagal dibuat.");
+  return data;
+}
+function findServiceDbId(item){
+  const match=fayuServices.find(s=>Number(s.provider_service_id)===Number(item.providerServiceId));
+  return match?.id||null;
+}
+
+accountBtn.addEventListener("click",openAuth);
+authClose.addEventListener("click",closeAuth);
+authOverlay.addEventListener("click",e=>{if(e.target===authOverlay)closeAuth();});
+loginTab.addEventListener("click",()=>setAuthMode("login"));
+registerTab.addEventListener("click",()=>setAuthMode("register"));
+authSubmit.addEventListener("click",()=>authMode==="login"?loginUser():registerUser());
+refreshBalance.addEventListener("click",()=>loadProfileBalance(true));
+logoutBtn.addEventListener("click",()=>{setSession(null);updateAuthUI();setAuthMode("login");showToast("Kamu sudah logout.");});
+
+/* =========================================================
    INIT
 ========================================================= */
 
 loadCart();
 
 renderCart();
+
+setAuthMode("login");
+updateAuthUI();
 
 /* Muat seluruh produk dari Supabase */
 loadFayuServices();
