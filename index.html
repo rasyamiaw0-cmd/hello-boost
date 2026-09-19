@@ -4861,7 +4861,6 @@ function friendlyName(service){
   const platform = detectPlatform(service);
   const text = `${raw} ${service.category || ""}`.toLowerCase();
 
-  // Ubah istilah provider menjadi nama yang mudah dipahami customer awam.
   let action = "Layanan Social Media";
 
   if(/follower|pengikut/.test(text)) action = `Tambah Followers ${platform}`;
@@ -4873,6 +4872,86 @@ function friendlyName(service){
   else if(/reaction|reaksi/.test(text)) action = `Tambah Reaksi ${platform}`;
   else if(/story/.test(text)) action = `Tambah Views Story ${platform}`;
   else if(/live|penonton/.test(text)) action = `Tambah Penonton Live ${platform}`;
+
+  /*
+    Jangan membuat semua paket menjadi nama yang sama.
+    Ambil karakteristik yang memang tertulis pada nama layanan FAYU,
+    lalu ubah menjadi label yang lebih mudah dipahami customer.
+    Contoh:
+    "TikTok Likes 1 | Super | Special | 50K"
+    -> "Suntik Like TikTok — Paket 1 • Super • Special • Maks. 50K"
+  */
+  let source = raw
+    .replace(/https?:\/\/\S+/gi, " ")
+    .replace(/[_]+/g, " ")
+    .replace(/[|]+/g, " | ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  const descriptors = [];
+
+  const addDescriptor = value => {
+    const v = String(value || "").trim();
+    if(!v) return;
+    if(!descriptors.some(x => x.toLowerCase() === v.toLowerCase())) {
+      descriptors.push(v);
+    }
+  };
+
+  // Lokasi/target pasar
+  if(/\b(indonesia|indo|id)\b/i.test(source)) addDescriptor("Indonesia");
+  if(/\b(luar|luar negeri|worldwide|global|international|internasional)\b/i.test(source)) addDescriptor("Luar Indonesia");
+
+  // Karakteristik paket yang umum muncul dari provider.
+  const qualityWords = [
+    "super", "special", "premium", "vip", "hq", "high quality", "fast",
+    "slow", "stable", "real", "aktif", "bot", "non drop", "no drop",
+    "refill", "no refill", "instant", "cepat", "murah"
+  ];
+
+  for(const word of qualityWords){
+    const re = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&")}\\b`, "i");
+    if(re.test(source)) addDescriptor(word.replace(/\\b\\w/g, m => m.toUpperCase()));
+  }
+
+  // Nomor paket, misalnya "Likes 1", "Likes 2", dst.
+  const packageMatch = source.match(/(?:likes?|followers?|views?|comments?|komen|paket|service|layanan)\\s*[-#:]?\\s*(\\d{1,4})\\b/i);
+  if(packageMatch) addDescriptor(`Paket ${packageMatch[1]}`);
+
+  // Batas seperti 50K / 100K pada nama provider dibuat lebih jelas.
+  const maxMatch = source.match(/(?:^|[|\\s])((?:\\d{1,3}(?:[.,]\\d{3})+|\\d+(?:[.,]\\d+)?)\\s*[kKmM])\\b/);
+  if(maxMatch) addDescriptor(`Maks. ${maxMatch[1].replace(/\\s+/g, "").toUpperCase()}`);
+
+  // Jika nama provider punya label setelah tanda | yang belum tertangkap,
+  // simpan label tersebut agar paket tidak terlihat identik.
+  const pipeParts = raw.split("|").map(x => x.trim()).filter(Boolean);
+  if(pipeParts.length > 1){
+    for(const part of pipeParts.slice(1)){
+      const clean = part
+        .replace(/\\b(?:instagram|tiktok|facebook|youtube|whatsapp|telegram|shopee|tokopedia)\\b/gi, "")
+        .replace(/\\s+/g, " ")
+        .trim();
+      if(clean && !/^\\d+$/.test(clean)) addDescriptor(clean);
+    }
+  }
+
+  // Hindari judul yang terlalu panjang dan duplikat.
+  const unique = [];
+  for(const d of descriptors){
+    if(!unique.some(x => x.toLowerCase() === d.toLowerCase())) unique.push(d);
+  }
+
+  const detail = unique.slice(0, 4);
+
+  if(detail.length){
+    return `${action} — ${detail.join(" • ")}`;
+  }
+
+  // Jika provider benar-benar tidak memberikan pembeda yang jelas,
+  // gunakan ID provider sebagai pembeda teknis yang tetap unik.
+  if(service.provider_service_id){
+    return `${action} — Paket #${service.provider_service_id}`;
+  }
 
   return action;
 }
@@ -5061,7 +5140,17 @@ function renderServices(searchTerm=""){
   const term = String(searchTerm).trim().toLowerCase();
   let visibleCount = 0;
 
-  const items = products[activePlatform] || [];
+  // Urutkan layanan dari harga paling murah ke paling mahal.
+  // Filter/search tetap menggunakan daftar yang sama.
+  const items = [...(products[activePlatform] || [])].sort((a, b) => {
+    const priceA = Number(a.price ?? a.price_per_1000) || 0;
+    const priceB = Number(b.price ?? b.price_per_1000) || 0;
+    if(priceA !== priceB) return priceA - priceB;
+    return String(a.display_name || a.name || "").localeCompare(
+      String(b.display_name || b.name || ""),
+      "id"
+    );
+  });
 
   items.forEach(service=>{
 
