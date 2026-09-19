@@ -2856,6 +2856,25 @@ input:focus,select:focus,textarea:focus{
 .deposit-submit{margin-top:12px;width:100%}
 </style>
 
+
+<style id="hello-boost-final-ui">
+.account-balance-mini{display:flex!important;align-items:center;gap:5px;padding:9px 11px;border-radius:11px;background:rgba(233,91,145,.09);border:1px solid rgba(233,91,145,.2);color:#fff;font-size:11px;font-weight:850;white-space:nowrap;}
+.deposit-header-btn{background:rgba(233,91,145,.10)!important;border-color:rgba(233,91,145,.28)!important;color:#fff!important;}
+.balance-checkout-note{margin-top:15px;padding:14px;border-radius:15px;background:rgba(233,91,145,.055);border:1px solid rgba(233,91,145,.16);}
+.balance-checkout-row{display:flex;justify-content:space-between;gap:15px;padding:7px 0;font-size:12px;}
+.balance-checkout-row span{color:var(--muted);}
+.balance-checkout-row strong{color:#fff;}
+.balance-checkout-note p{margin-top:9px;color:var(--muted2);font-size:10px;line-height:1.6;}
+.service-detail{margin-top:12px;padding:12px;border-radius:13px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);}
+.service-detail-title{font-size:11px;font-weight:900;color:#fff;margin-bottom:7px;}
+.service-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;}
+.service-detail-row{font-size:10px;line-height:1.45;}
+.service-detail-row span{color:var(--muted2);display:block;}
+.service-detail-row strong{color:#ddd7dc;font-weight:750;}
+.service-price-note{margin-top:7px;color:var(--muted2);font-size:10px;line-height:1.55;}
+@media(max-width:620px){.account-balance-mini{font-size:10px;padding:8px 9px}.deposit-header-btn{padding:8px 9px}.service-detail-grid{grid-template-columns:1fr;}}
+@media(max-width:380px){.account-balance-mini{display:none!important;}.deposit-header-btn{display:flex!important;}}
+</style>
 </head>
 
 <body>
@@ -2881,7 +2900,14 @@ input:focus,select:focus,textarea:focus{
     </a>
 
     <div class="header-actions">
-      <div class="account-balance-mini" id="miniBalance">Rp0</div>
+      <div class="account-balance-mini" id="miniBalance">Saldo: Rp0</div>
+
+      <button class="header-btn deposit-header-btn" id="headerDepositBtn" type="button">
+        <span class="ui-icon sm">
+          <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        </span>
+        Deposit
+      </button>
 
       <a
         class="header-btn"
@@ -3125,7 +3151,7 @@ input:focus,select:focus,textarea:focus{
       <h3>Pembayaran</h3>
 
       <p>
-        Pilih metode pembayaran yang tersedia.
+        Pastikan saldo akun mencukupi untuk total pesanan.
       </p>
 
     </div>
@@ -3139,7 +3165,7 @@ input:focus,select:focus,textarea:focus{
       <h3>Konfirmasi</h3>
 
       <p>
-        Kirim detail order melalui WhatsApp untuk diproses.
+        Klik buat pesanan. Sistem akan mengirim order ke provider secara otomatis.
       </p>
 
     </div>
@@ -3238,8 +3264,7 @@ input:focus,select:focus,textarea:focus{
       <h3>Support</h3>
 
       <p>
-        Konfirmasi pembayaran dan pesanan dilakukan
-        melalui WhatsApp.
+        Pesanan diproses langsung dari website menggunakan saldo akun.
       </p>
 
     </div>
@@ -3274,7 +3299,7 @@ input:focus,select:focus,textarea:focus{
       </div>
 
       <div class="section-subtitle">
-        Periksa pesanan sebelum melanjutkan pembayaran
+        Periksa pesanan sebelum diproses dari saldo akun
       </div>
 
     </div>
@@ -3312,7 +3337,7 @@ input:focus,select:focus,textarea:focus{
         </svg>
       </span>
 
-      Lanjut ke Pembayaran
+      Lanjut ke Konfirmasi Pesanan
 
     </button>
 
@@ -3337,12 +3362,12 @@ input:focus,select:focus,textarea:focus{
         </svg>
       </span>
 
-      Pembayaran
+      Konfirmasi Pesanan
 
     </div>
 
     <div class="payment-subtitle">
-      Periksa detail pesanan kemudian pilih metode pembayaran.
+      Periksa detail pesanan dan saldo sebelum order dikirim ke provider.
     </div>
 
     <div class="order-id">
@@ -3374,161 +3399,16 @@ input:focus,select:focus,textarea:focus{
 
     </div>
 
-    <div class="payment-methods">
-
-      <button
-        class="payment-method"
-        type="button"
-        data-method="DANA"
-      >
-
-        <span class="payment-icon">
-          <span class="ui-icon sm">
-            <svg viewBox="0 0 24 24">
-              <rect x="3" y="5" width="18" height="14" rx="3"/>
-              <path d="M7 12h10"/>
-            </svg>
-          </span>
-        </span>
-
-        <span>
-          <strong>DANA</strong>
-          <small>Pembayaran e-wallet</small>
-        </span>
-
-      </button>
-
-      <button
-        class="payment-method"
-        type="button"
-        data-method="ShopeePay"
-      >
-
-        <span class="payment-icon">
-          <span class="ui-icon sm">
-            <svg viewBox="0 0 24 24">
-              <path d="M5 8h14l1 12H4z"/>
-              <path d="M8 8a4 4 0 0 1 8 0"/>
-            </svg>
-          </span>
-        </span>
-
-        <span>
-          <strong>ShopeePay</strong>
-          <small>Pembayaran e-wallet</small>
-        </span>
-
-      </button>
-
-      <button
-        class="payment-method"
-        type="button"
-        data-method="GoPay"
-      >
-
-        <span class="payment-icon">
-          <span class="ui-icon sm">
-            <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="8"/>
-              <path d="M9 12h6M12 9v6"/>
-            </svg>
-          </span>
-        </span>
-
-        <span>
-          <strong>GoPay</strong>
-          <small>Pembayaran e-wallet</small>
-        </span>
-
-      </button>
-
-      <button
-        class="payment-method"
-        type="button"
-        data-method="SeaBank"
-      >
-
-        <span class="payment-icon">
-          <span class="ui-icon sm">
-            <svg viewBox="0 0 24 24">
-              <path d="M3 20h18"/>
-              <path d="M5 20V9l7-5 7 5v11"/>
-              <path d="M8 12v5M12 12v5M16 12v5"/>
-            </svg>
-          </span>
-        </span>
-
-        <span>
-          <strong>SeaBank</strong>
-          <small>Transfer bank</small>
-        </span>
-
-      </button>
-
-      <button
-        class="payment-method"
-        type="button"
-        data-method="QRIS"
-      >
-
-        <span class="payment-icon">
-          <span class="ui-icon sm">
-            <svg viewBox="0 0 24 24">
-              <path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/>
-              <path d="M14 14h3v3h-3zM17 17h3v3h-3z"/>
-              <path d="M14 20h2M20 14h-2"/>
-            </svg>
-          </span>
-        </span>
-
-        <span>
-          <strong>QRIS</strong>
-          <small>Scan semua e-wallet</small>
-        </span>
-
-      </button>
-
-    </div>
-
-    <div
-      class="payment-number"
-      id="paymentNumber"
-    >
-
-      <div class="payment-number-row">
-
-        <strong id="paymentAccount">
-          -
-        </strong>
-
-        <button
-          class="copy-btn"
-          id="copyPayment"
-          type="button"
-        >
-          Salin
-        </button>
-
+    <div class="balance-checkout-note">
+      <div class="balance-checkout-row">
+        <span>Saldo akun</span>
+        <strong id="checkoutBalance">Memuat...</strong>
       </div>
-
-    </div>
-
-    <div
-      class="qris-wrapper"
-      id="qrisWrapper"
-    >
-
-      <img
-        src="qris.jpg"
-        alt="QRIS hello_boost"
-        onerror="this.style.display='none';"
-      >
-
-      <div class="qris-note">
-        Jika QRIS tidak muncul, pastikan file
-        <b>qris.jpg</b> berada satu folder dengan index.html.
+      <div class="balance-checkout-row">
+        <span>Total pesanan</span>
+        <strong id="checkoutTotal">Rp0</strong>
       </div>
-
+      <p>Pesanan akan langsung dikirim ke provider setelah kamu menekan tombol di bawah. Tidak perlu konfirmasi melalui WhatsApp.</p>
     </div>
 
     <button
@@ -3536,15 +3416,12 @@ input:focus,select:focus,textarea:focus{
       id="confirmPayment"
       type="button"
     >
-
       <span class="ui-icon sm">
         <svg viewBox="0 0 24 24">
-          <path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 8.5 8.5 0 0 1-4.1-1.05L4 20l1.2-4.1A8.4 8.4 0 1 1 21 11.5Z"/>
+          <path d="m5 12 4 4L19 6"/>
         </svg>
       </span>
-
-      Buat Pesanan Sekarang via WhatsApp
-
+      Buat Pesanan dari Saldo
     </button>
 
   </div>
@@ -3568,8 +3445,7 @@ input:focus,select:focus,textarea:focus{
     </div>
 
     <div class="status-desc">
-      Detail pesanan sudah disiapkan.
-      Silakan lanjutkan konfirmasi melalui WhatsApp.
+      Pesanan telah dikirim ke provider dan statusnya dapat dipantau dari sistem.
     </div>
 
     <div
@@ -4500,6 +4376,7 @@ input:focus,select:focus,textarea:focus{
       2. Transfer sesuai nominal yang kamu masukkan.<br>
       3. Isi nomor referensi/catatan pembayaran jika ada.<br>
       4. Kirim permintaan. Admin akan memeriksa dan menyetujui deposit secara manual.
+      <br>5. Setelah disetujui, saldo otomatis dapat digunakan untuk order di website.
     </div>
 
     <label class="field-label">Nominal Deposit</label>
@@ -4909,8 +4786,10 @@ function renderServiceTypeFilter(){
   serviceTypeFilter.innerHTML = "";
 
   const items = products[activePlatform] || [];
-  const types = ["all","followers","like","view"];
-  const labels = {all:"Semua",followers:"Followers",like:"Like",view:"View"};
+  const preferred = ["followers","like","view","comment","reaction","member","subscriber","story","live","other"];
+  const labels = {all:"Semua",followers:"Followers",like:"Like",view:"View",comment:"Komentar",reaction:"Reaksi",member:"Member",subscriber:"Subscriber",story:"Story",live:"Live",other:"Lainnya"};
+  const present = preferred.filter(type=>items.some(s=>getServiceType(s)===type));
+  const types = ["all",...present];
 
   types.forEach(type=>{
     const count = type === "all" ? items.length : items.filter(s=>getServiceType(s)===type).length;
@@ -4966,6 +4845,11 @@ function detectPlatform(service){
 
 function getServiceType(service){
   const text = `${service.name || ""} ${service.category || ""}`.toLowerCase();
+  if(/reaction|reaksi/.test(text)) return "reaction";
+  if(/member|anggota/.test(text)) return "member";
+  if(/subscriber|subscribe|subscribers/.test(text)) return "subscriber";
+  if(/story|stories/.test(text)) return "story";
+  if(/live|penonton live|live viewers/.test(text)) return "live";
   if(/follower|followers|pengikut/.test(text)) return "followers";
   if(/like|likes|suka/.test(text)) return "like";
   if(/view|views|tayangan|watch/.test(text)) return "view";
@@ -4974,8 +4858,24 @@ function getServiceType(service){
 }
 
 function getServiceTypeLabel(type){
-  return ({followers:"Followers",like:"Like",view:"View",comment:"Komentar",other:"Lainnya"})[type] || "Lainnya";
+  return ({followers:"Followers",like:"Like",view:"View",comment:"Komentar",reaction:"Reaksi",member:"Member",subscriber:"Subscriber",story:"Story",live:"Live",other:"Lainnya"})[type] || "Lainnya";
 }
+
+function getPriceDifferenceReason(service){
+  const raw = String(service.name || "");
+  const text = `${raw} ${service.category || ""}`.toLowerCase();
+  const reasons = [];
+  if(/fp\s*[-_#]?\s*\d+/i.test(raw)) reasons.push(raw.match(/fp\s*[-_#]?\s*(\d+)/i)?.[0]?.replace(/fp\s*[-_#]?\s*/i,"Paket ") || "Paket berbeda");
+  if(/indo(?:nesia)?|\blokal\b/.test(text)) reasons.push("Indonesia");
+  if(/\bluar\b|worldwide|global|international/.test(text)) reasons.push("Luar");
+  if(/high\s*quality|\bhq\b|premium/.test(text)) reasons.push("Kualitas");
+  if(/instant|very\s*fast|super\s*fast|cepat/.test(text)) reasons.push("Kecepatan");
+  if(/refill/.test(text)) reasons.push("Refill");
+  if(/guarantee|garansi/.test(text)) reasons.push("Garansi");
+  if(/no\s*refill|tanpa\s*refill|non[-\s]?refill/.test(text)) reasons.push("Tanpa Refill");
+  return reasons.length ? [...new Set(reasons)].join(" • ") : "Varian layanan provider";
+}
+
 
 function getPackageVariant(service){
   const raw = String(service.name || "").trim();
@@ -5223,9 +5123,11 @@ function renderServices(searchTerm=""){
     const card = document.createElement("div");
     card.className = "service-card";
 
-    const isReaction =
-      activePlatform === "WhatsApp" &&
-      /reaksi|reaction/i.test(`${name} ${service.name || ""}`);
+    const isReaction = /reaksi|reaction/i.test(`${name} ${service.name || ""} ${service.category || ""}`);
+    const serviceTypeLabel = getServiceTypeLabel(getServiceType(service));
+    const packageVariant = service.package_variant || getPackageVariant(service);
+    const rawProviderName = String(service.name || "").trim();
+    const priceReason = getPriceDifferenceReason(service);
 
     card.innerHTML = `
       <div class="service-top">
@@ -5263,6 +5165,19 @@ function renderServices(searchTerm=""){
         </div>
 
         ${service.refill ? `<div class="meta-chip"><span class="ui-icon">↻</span> Refill</div>` : ""}
+      </div>
+
+      <div class="service-detail">
+        <div class="service-detail-title">Detail layanan</div>
+        <div class="service-detail-grid">
+          <div class="service-detail-row"><span>Jenis</span><strong>${escapeHTML(serviceTypeLabel)}</strong></div>
+          <div class="service-detail-row"><span>Varian</span><strong>${escapeHTML(packageVariant || "Tidak disebutkan")}</strong></div>
+          <div class="service-detail-row"><span>Minimal</span><strong>${minOrder.toLocaleString("id-ID")}</strong></div>
+          <div class="service-detail-row"><span>Maksimal</span><strong>${(Number(service.max_order)||1000000).toLocaleString("id-ID")}</strong></div>
+          <div class="service-detail-row"><span>Refill</span><strong>${service.refill ? "Tersedia" : "Tidak tercantum"}</strong></div>
+          <div class="service-detail-row"><span>ID Provider</span><strong>#${Number(service.provider_service_id)||0}</strong></div>
+        </div>
+        <div class="service-price-note"><b>Kenapa harga bisa berbeda?</b> ${escapeHTML(priceReason)}. Detail pembeda mengikuti informasi yang tercantum pada layanan provider.</div>
       </div>
 
       <div class="estimate-box">
@@ -5659,7 +5574,12 @@ async function placeCartOrders(){
 
   if(balance < total){
     showToast(`Saldo tidak mencukupi. Saldo ${rupiah(balance)}, total ${rupiah(total)}.`);
-    openAuth();
+    if(depositOverlay){
+      depositMessage.textContent = `Saldo kamu ${rupiah(balance)}. Tambahkan saldo minimal ${rupiah(total-balance)} untuk melanjutkan.`;
+      depositOverlay.classList.add("show");
+      updateDepositDestination();
+      loadDepositHistory();
+    }
     return;
   }
 
@@ -5696,7 +5616,7 @@ async function placeCartOrders(){
     await loadProfileBalance(false);
   }finally{
     confirmPayment.disabled = false;
-    confirmPayment.textContent = "Buat Pesanan Sekarang";
+    confirmPayment.textContent = "Buat Pesanan dari Saldo";
   }
 }
 
@@ -5726,136 +5646,20 @@ checkoutBtn.addEventListener("click", async ()=>{
     <div class="preview-row" style="border-top:1px solid rgba(255,255,255,.08);margin-top:6px;padding-top:10px">
       <span>Total</span><span><strong>${rupiah(cartTotalValue())}</strong></span>
     </div>
-    <div class="preview-row"><span>Saldo akun</span><span id="checkoutBalance">Memuat...</span></div>
   `;
 
   paymentBox.classList.add("show");
   statusBox.classList.remove("show");
-  document.querySelectorAll(".payment-method").forEach(btn=>btn.classList.remove("active"));
-  paymentNumber.classList.remove("show");
-  qrisWrapper.classList.remove("show");
   selectedPayment = "SALDO";
 
   const balance = await loadProfileBalance(false);
   const balanceEl = document.getElementById("checkoutBalance");
+  const totalEl = document.getElementById("checkoutTotal");
   if(balanceEl) balanceEl.textContent = balance === null ? "-" : rupiah(balance);
+  if(totalEl) totalEl.textContent = rupiah(cartTotalValue());
 
   paymentBox.scrollIntoView({behavior:"smooth",block:"start"});
 });
-
-/* =========================================================
-   PAYMENT METHOD
-========================================================= */
-
-document
-  .querySelectorAll(
-    ".payment-method"
-  )
-  .forEach(button=>{
-
-    button.addEventListener(
-      "click",
-      ()=>{
-
-        const method =
-          button.dataset.method;
-
-        selectedPayment =
-          method;
-
-        document
-          .querySelectorAll(
-            ".payment-method"
-          )
-          .forEach(
-            btn =>
-              btn.classList.remove(
-                "active"
-              )
-          );
-
-        button.classList.add(
-          "active"
-        );
-
-        if(method === "QRIS"){
-
-          paymentNumber
-            .classList
-            .remove("show");
-
-          qrisWrapper
-            .classList
-            .add("show");
-
-        }else{
-
-          qrisWrapper
-            .classList
-            .remove("show");
-
-          paymentNumber
-            .classList
-            .add("show");
-
-          paymentAccount.textContent =
-            paymentData[
-              method
-            ]?.account || "-";
-
-        }
-
-      }
-    );
-
-  });
-
-/* =========================================================
-   COPY PAYMENT
-========================================================= */
-
-document
-  .getElementById("copyPayment")
-  .addEventListener(
-    "click",
-    async()=>{
-
-      const text =
-        paymentAccount.textContent;
-
-      if(
-        !text ||
-        text === "-"
-      ){
-
-        showToast(
-          "Nomor pembayaran belum tersedia."
-        );
-
-        return;
-
-      }
-
-      try{
-
-        await navigator.clipboard.writeText(
-          text
-        );
-
-        showToast(
-          "Nomor pembayaran berhasil disalin."
-        );
-
-      }catch(error){
-
-        showToast(
-          "Gagal menyalin nomor pembayaran."
-        );
-
-      }
-
-    }
-  );
 
 /* =========================================================
    CONFIRM PAYMENT
@@ -6256,7 +6060,7 @@ async function loadProfileBalance(openOnError=true){
     if(!response.ok) throw new Error("Gagal mengambil saldo.");
     const rows=await response.json();
     const balance=Number(rows?.[0]?.balance)||0;
-    accountBalance.textContent=rupiah(balance);miniBalance.textContent=rupiah(balance);
+    accountBalance.textContent=rupiah(balance);miniBalance.textContent="Saldo: "+rupiah(balance);
     return balance;
   }catch(e){
     if(openOnError) showToast(e.message||"Gagal mengambil saldo.");
@@ -6282,7 +6086,23 @@ function findServiceDbId(item){
   return match?.id||null;
 }
 
+const headerDepositBtn = document.getElementById("headerDepositBtn");
+
+function openDeposit(){
+  const session=getSession();
+  if(!session?.access_token){
+    openAuth();
+    showAuthMessage("Login terlebih dahulu untuk melakukan deposit.");
+    return;
+  }
+  depositMessage.textContent="";
+  depositOverlay.classList.add("show");
+  updateDepositDestination();
+  loadDepositHistory();
+}
+
 accountBtn.addEventListener("click",openAuth);
+headerDepositBtn?.addEventListener("click",openDeposit);
 authClose.addEventListener("click",closeAuth);
 authOverlay.addEventListener("click",e=>{if(e.target===authOverlay)closeAuth();});
 loginTab.addEventListener("click",()=>setAuthMode("login"));
@@ -6356,14 +6176,7 @@ async function submitDeposit(){
   finally{depositSubmit.disabled=false;}
 }
 
-depositBtn?.addEventListener("click",()=>{
-  const session=getSession();
-  if(!session?.access_token){openAuth();showAuthMessage("Login terlebih dahulu untuk melakukan deposit.");return;}
-  depositMessage.textContent="";
-  depositOverlay.classList.add("show");
-  updateDepositDestination();
-  loadDepositHistory();
-});
+depositBtn?.addEventListener("click",openDeposit);
 depositClose?.addEventListener("click",()=>depositOverlay.classList.remove("show"));
 depositOverlay?.addEventListener("click",e=>{if(e.target===depositOverlay)depositOverlay.classList.remove("show")});
 depositMethod?.addEventListener("change",updateDepositDestination);
