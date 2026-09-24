@@ -31,9 +31,7 @@ body{
   font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
 }
 
-button,input,select,textarea{
-  font:inherit;
-}
+button,input,select,textarea{font:inherit}
 
 .wrap{
   width:min(1180px,calc(100% - 28px));
@@ -170,31 +168,33 @@ main{
 }
 
 .section{
-  margin-top:18px;
-  padding:20px;
-  border:1px solid var(--border);
-  border-radius:20px;
-  background:rgba(23,22,27,.9);
-}
-
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  margin-bottom:15px;
+  margin-top:24px;
 }
 
 .section-title{
-  font-size:17px;
-  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:12px;
 }
 
-.section-desc{
+.section-title h2{
+  margin:0;
+  font-size:18px;
+}
+
+.section-title p{
+  margin:0;
   color:var(--muted);
   font-size:12px;
-  margin-top:4px;
-  line-height:1.5;
+}
+
+.card{
+  padding:18px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:rgba(23,22,27,.9);
 }
 
 .toolbar{
@@ -224,149 +224,6 @@ main{
   background:#111116;
   color:#fff;
   padding:0 10px;
-}
-
-.field{
-  width:100%;
-  height:45px;
-  margin:8px 0 12px;
-  border:1px solid var(--border);
-  background:#0e0e12;
-  color:#fff;
-  border-radius:11px;
-  padding:0 12px;
-  outline:none;
-}
-
-textarea.field{
-  height:90px;
-  padding:12px;
-  resize:vertical;
-}
-
-.field:focus,
-.search:focus,
-.select:focus{
-  border-color:rgba(233,91,145,.6);
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
-
-.form-group label{
-  display:block;
-  color:var(--muted);
-  font-size:11px;
-  font-weight:800;
-  margin-bottom:5px;
-}
-
-.customer-results{
-  margin-top:5px;
-  border:1px solid var(--border);
-  border-radius:13px;
-  overflow:hidden;
-  background:#111116;
-  max-height:250px;
-  overflow-y:auto;
-}
-
-.customer-item{
-  padding:12px;
-  border-bottom:1px solid rgba(255,255,255,.06);
-  cursor:pointer;
-  transition:.15s;
-}
-
-.customer-item:last-child{
-  border-bottom:0;
-}
-
-.customer-item:hover{
-  background:rgba(233,91,145,.09);
-}
-
-.customer-name{
-  font-weight:900;
-  font-size:13px;
-}
-
-.customer-meta{
-  color:var(--muted);
-  font-size:11px;
-  margin-top:4px;
-  word-break:break-all;
-}
-
-.selected-customer{
-  display:none;
-  padding:13px;
-  margin-top:8px;
-  border:1px solid rgba(97,215,160,.25);
-  border-radius:13px;
-  background:rgba(97,215,160,.06);
-}
-
-.selected-customer.show{
-  display:block;
-}
-
-.selected-name{
-  font-weight:900;
-}
-
-.selected-meta{
-  color:var(--muted);
-  font-size:11px;
-  margin-top:4px;
-}
-
-.balance-preview{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:10px;
-  margin:12px 0;
-}
-
-.balance-box{
-  padding:13px;
-  border-radius:13px;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.025);
-}
-
-.balance-box small{
-  display:block;
-  color:var(--muted);
-  font-size:10px;
-}
-
-.balance-box strong{
-  display:block;
-  margin-top:5px;
-  font-size:16px;
-}
-
-.balance-after{
-  color:var(--green);
-}
-
-.balance-minus{
-  color:var(--red);
-}
-
-.balance-plus{
-  color:var(--green);
-}
-
-.adjust-actions{
-  display:flex;
-  justify-content:flex-end;
-  gap:8px;
-  margin-top:5px;
 }
 
 .table-wrap{
@@ -490,6 +347,24 @@ tr:last-child td{
   line-height:1.6;
 }
 
+.field{
+  width:100%;
+  height:45px;
+  margin:8px 0 12px;
+  border:1px solid var(--border);
+  background:#0e0e12;
+  color:#fff;
+  border-radius:11px;
+  padding:0 12px;
+  outline:none;
+}
+
+textarea.field{
+  height:90px;
+  padding:12px;
+  resize:vertical;
+}
+
 .hidden{
   display:none!important;
 }
@@ -510,7 +385,7 @@ tr:last-child td{
 }
 
 .modalbox{
-  width:min(440px,100%);
+  width:min(480px,100%);
   background:#19181e;
   border:1px solid var(--border);
   border-radius:18px;
@@ -534,27 +409,83 @@ tr:last-child td{
   margin-top:15px;
 }
 
-.notice{
-  padding:11px 12px;
-  border-radius:11px;
-  background:rgba(233,91,145,.07);
-  border:1px solid rgba(233,91,145,.18);
-  color:#ddd;
-  font-size:11px;
-  line-height:1.5;
-  margin-top:10px;
+.balance-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
 }
 
-@media(max-width:700px){
+.balance-info{
+  padding:15px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:rgba(255,255,255,.025);
+}
+
+.balance-info small{
+  color:var(--muted);
+  display:block;
+}
+
+.balance-info strong{
+  display:block;
+  font-size:20px;
+  margin-top:5px;
+}
+
+.customer-search{
+  position:relative;
+}
+
+.customer-results{
+  position:absolute;
+  left:0;
+  right:0;
+  top:100%;
+  margin-top:5px;
+  background:#17161b;
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+  z-index:20;
+  max-height:260px;
+  overflow-y:auto;
+}
+
+.customer-result{
+  padding:12px;
+  cursor:pointer;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.customer-result:hover{
+  background:rgba(233,91,145,.08);
+}
+
+.customer-result:last-child{
+  border-bottom:0;
+}
+
+.adjust-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.label{
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+  margin-bottom:6px;
+}
+
+@media(max-width:650px){
   .stats{
     grid-template-columns:1fr;
   }
 
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .balance-preview{
+  .balance-box,
+  .adjust-grid{
     grid-template-columns:1fr;
   }
 
@@ -565,10 +496,6 @@ tr:last-child td{
 
   .hero h1{
     font-size:22px;
-  }
-
-  .section{
-    padding:15px;
   }
 }
 </style>
@@ -586,7 +513,7 @@ tr:last-child td{
 
   <p>
     Login menggunakan akun admin yang sudah didaftarkan.
-    Akses admin diverifikasi oleh Edge Function.
+    Akses admin tetap diverifikasi oleh Edge Function.
   </p>
 
   <input
@@ -662,18 +589,20 @@ tr:last-child td{
 
 <main class="wrap">
 
+
 <!-- =========================================================
-     HERO
+     DASHBOARD
 ========================================================= -->
 
 <section class="hero">
 
   <h1>
-    Dashboard Admin
+    Dashboard Deposit
   </h1>
 
   <p>
-    Kelola deposit customer dan koreksi saldo dengan aman.
+    Periksa pembayaran customer, approve atau tolak permintaan,
+    dan lakukan koreksi saldo melalui sistem admin.
   </p>
 
   <div class="stats">
@@ -704,105 +633,92 @@ tr:last-child td{
 
 <section class="section">
 
-  <div class="section-head">
+  <div class="section-title">
 
     <div>
+      <h2>Koreksi Saldo Customer</h2>
 
-      <div class="section-title">
-        Koreksi Saldo Customer
-      </div>
-
-      <div class="section-desc">
-        Tambah atau kurangi saldo customer.
-        Semua perubahan dicatat sebagai transaksi
-        <b>adjustment</b>.
-      </div>
-
+      <p>
+        Tambah atau kurangi saldo customer secara manual.
+      </p>
     </div>
 
   </div>
 
 
-  <!-- CUSTOMER SEARCH -->
+  <div class="card">
 
-  <div class="form-group">
+    <div class="adjust-grid">
 
-    <label>
-      Cari Customer
-    </label>
+      <!-- CUSTOMER -->
 
-    <input
-      id="customerSearch"
-      class="field"
-      placeholder="Cari nama, WhatsApp, atau User ID..."
-      autocomplete="off"
-    >
+      <div>
 
-  </div>
+        <label class="label">
+          Customer
+        </label>
+
+        <div
+          class="customer-search"
+          id="customerSearchBox"
+        >
+
+          <input
+            id="customerSearch"
+            class="field"
+            style="margin:0"
+            placeholder="Cari nama / WhatsApp..."
+            autocomplete="off"
+          >
+
+          <div
+            id="customerResults"
+            class="customer-results hidden"
+          ></div>
+
+        </div>
+
+        <div
+          id="selectedCustomer"
+          class="muted"
+          style="margin-top:8px"
+        >
+          Belum memilih customer.
+        </div>
+
+      </div>
 
 
-  <div
-    id="customerResults"
-    class="customer-results hidden"
-  ></div>
+      <!-- ARAH -->
 
+      <div>
 
-  <!-- SELECTED CUSTOMER -->
-
-  <div
-    id="selectedCustomer"
-    class="selected-customer"
-  >
-
-    <div
-      id="selectedCustomerName"
-      class="selected-name"
-    ></div>
-
-    <div
-      id="selectedCustomerMeta"
-      class="selected-meta"
-    ></div>
-
-  </div>
-
-
-  <!-- FORM -->
-
-  <div
-    id="adjustForm"
-    class="hidden"
-    style="margin-top:15px"
-  >
-
-    <div class="form-grid">
-
-      <div class="form-group">
-
-        <label>
-          Aksi
+        <label class="label">
+          Jenis koreksi
         </label>
 
         <select
           id="adjustDirection"
           class="select"
-          style="width:100%"
+          style="width:100%;height:45px"
         >
           <option value="add">
-            Tambah Saldo
+            Tambah saldo
           </option>
 
           <option value="subtract">
-            Kurangi Saldo
+            Kurangi saldo
           </option>
         </select>
 
       </div>
 
 
-      <div class="form-group">
+      <!-- NOMINAL -->
 
-        <label>
+      <div>
+
+        <label class="label">
           Nominal
         </label>
 
@@ -811,8 +727,29 @@ tr:last-child td{
           class="field"
           type="number"
           min="1"
-          step="0.01"
+          step="1"
           placeholder="Contoh: 10000"
+          style="margin:0"
+        >
+
+      </div>
+
+
+      <!-- ALASAN -->
+
+      <div>
+
+        <label class="label">
+          Alasan / keterangan
+        </label>
+
+        <input
+          id="adjustReason"
+          class="field"
+          type="text"
+          maxlength="500"
+          placeholder="Contoh: Koreksi saldo manual"
+          style="margin:0"
         >
 
       </div>
@@ -820,61 +757,35 @@ tr:last-child td{
     </div>
 
 
-    <div class="form-group">
+    <div
+      id="selectedBalance"
+      class="balance-box"
+      style="margin-top:15px"
+    >
 
-      <label>
-        Alasan / Keterangan
-      </label>
-
-      <textarea
-        id="adjustReason"
-        class="field"
-        maxlength="500"
-        placeholder="Contoh: Koreksi saldo karena pembayaran manual customer."
-      ></textarea>
-
-    </div>
-
-
-    <div class="balance-preview">
-
-      <div class="balance-box">
+      <div class="balance-info">
 
         <small>
-          Saldo sebelum
+          Saldo sekarang
         </small>
 
-        <strong id="balanceBefore">
+        <strong id="currentBalance">
           Rp0
         </strong>
 
       </div>
 
-
-      <div class="balance-box">
-
-        <small>
-          Perubahan
-        </small>
-
-        <strong id="balanceChange">
-          Rp0
-        </strong>
-
-      </div>
-
-
-      <div class="balance-box">
+      <div class="balance-info">
 
         <small>
-          Saldo sesudah
+          Status
         </small>
 
         <strong
-          id="balanceAfter"
-          class="balance-after"
+          id="customerStatus"
+          style="font-size:14px"
         >
-          Rp0
+          Belum memilih customer
         </strong>
 
       </div>
@@ -882,25 +793,18 @@ tr:last-child td{
     </div>
 
 
-    <div class="notice">
-      Saldo tidak diubah langsung dari halaman ini.
-      Permintaan dikirim ke Edge Function dan diproses
-      oleh RPC database secara atomic dengan row lock.
-    </div>
-
-
-    <div class="adjust-actions">
-
-      <button
-        id="clearCustomerBtn"
-        class="btn"
-      >
-        Batal
-      </button>
+    <div
+      style="
+        display:flex;
+        justify-content:flex-end;
+        margin-top:15px;
+      "
+    >
 
       <button
         id="adjustBtn"
-        class="btn primary"
+        class="btn yellow"
+        disabled
       >
         Simpan Koreksi Saldo
       </button>
@@ -918,18 +822,14 @@ tr:last-child td{
 
 <section class="section">
 
-  <div class="section-head">
+  <div class="section-title">
 
     <div>
+      <h2>Riwayat Deposit</h2>
 
-      <div class="section-title">
-        Riwayat Deposit
-      </div>
-
-      <div class="section-desc">
-        Approve atau tolak permintaan deposit customer.
-      </div>
-
+      <p>
+        Approve atau tolak deposit customer.
+      </p>
     </div>
 
   </div>
@@ -947,7 +847,6 @@ tr:last-child td{
       id="statusFilter"
       class="select"
     >
-
       <option value="all">
         Semua status
       </option>
@@ -963,9 +862,7 @@ tr:last-child td{
       <option value="rejected">
         Ditolak
       </option>
-
     </select>
-
 
     <button
       id="refreshBtn"
@@ -1009,6 +906,7 @@ tr:last-child td{
   </div>
 
 </section>
+
 
 </main>
 
@@ -1062,8 +960,44 @@ tr:last-child td{
 
 
 <!-- =========================================================
-     TOAST
+     ADJUSTMENT CONFIRM MODAL
 ========================================================= -->
+
+<div
+  id="adjustModal"
+  class="modal"
+>
+
+  <div class="modalbox">
+
+    <h3>
+      Konfirmasi Koreksi Saldo
+    </h3>
+
+    <p id="adjustModalText"></p>
+
+    <div class="modal-actions">
+
+      <button
+        id="adjustCancel"
+        class="btn"
+      >
+        Batal
+      </button>
+
+      <button
+        id="adjustConfirm"
+        class="btn yellow"
+      >
+        Ya, Simpan
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
 
 <div
   id="toast"
@@ -1096,18 +1030,20 @@ const KEY =
 
 let deposits = [];
 
-let pendingAction = null;
-
 let customers = [];
 
 let selectedCustomer = null;
 
+let pendingAction = null;
+
+let pendingAdjustment = null;
+
 
 /* =========================================================
-   HELPERS
+   HELPER
 ========================================================= */
 
-const $ = (id) =>
+const $ = id =>
   document.getElementById(id);
 
 
@@ -1173,21 +1109,18 @@ function esc(v){
 }
 
 
-function toast(message){
+function toast(m){
 
-  $("toast").textContent =
-    message;
+  $("toast").textContent = m;
 
-  $("toast")
-    .classList
-    .add("show");
+  $("toast").classList.add("show");
 
   setTimeout(
     () =>
       $("toast")
         .classList
         .remove("show"),
-    3500
+    3000
   );
 
 }
@@ -1195,28 +1128,14 @@ function toast(message){
 
 function date(v){
 
-  if(!v) return "-";
-
-  const d =
-    new Date(v);
-
-  if(
-    Number.isNaN(
-      d.getTime()
-    )
-  ){
-
-    return "-";
-
-  }
-
-  return d.toLocaleString(
-    "id-ID",
-    {
-      dateStyle:"short",
-      timeStyle:"short"
-    }
-  );
+  return new Date(v)
+    .toLocaleString(
+      "id-ID",
+      {
+        dateStyle:"short",
+        timeStyle:"short"
+      }
+    );
 
 }
 
@@ -1230,12 +1149,9 @@ async function api(
   options = {}
 ){
 
-  const s =
-    session();
+  const s = session();
 
-  if(
-    !s?.access_token
-  ){
+  if(!s?.access_token){
 
     throw new Error(
       "Sesi login tidak ditemukan."
@@ -1274,14 +1190,9 @@ async function api(
 
   try{
 
-    d =
-      JSON.parse(text);
+    d = JSON.parse(text);
 
-  }catch{
-
-    d = {};
-
-  }
+  }catch{}
 
 
   if(!r.ok){
@@ -1293,9 +1204,7 @@ async function api(
       text ||
       ("HTTP " + r.status);
 
-    throw new Error(
-      detail
-    );
+    throw new Error(detail);
 
   }
 
@@ -1321,10 +1230,7 @@ async function login(){
       .value;
 
 
-  if(
-    !email ||
-    !password
-  ){
+  if(!email || !password){
 
     $("loginMsg")
       .textContent =
@@ -1335,8 +1241,7 @@ async function login(){
   }
 
 
-  $("loginBtn")
-    .disabled = true;
+  $("loginBtn").disabled = true;
 
   $("loginMsg")
     .textContent =
@@ -1417,7 +1322,7 @@ async function login(){
 
 
 /* =========================================================
-   LOAD DEPOSITS
+   LOAD DATA
 ========================================================= */
 
 async function load(
@@ -1431,9 +1336,7 @@ async function load(
 
 
     deposits =
-      Array.isArray(
-        d.deposits
-      )
+      Array.isArray(d.deposits)
         ? d.deposits
         : [];
 
@@ -1459,6 +1362,14 @@ async function load(
 
 
     render();
+
+
+    /*
+      Customer untuk koreksi saldo
+      diambil melalui endpoint admin.
+    */
+
+    await loadCustomers();
 
 
   }catch(e){
@@ -1503,7 +1414,59 @@ async function load(
 
 
 /* =========================================================
-   DEPOSIT RENDER
+   LOAD CUSTOMER
+========================================================= */
+
+async function loadCustomers(){
+
+  try{
+
+    const d =
+      await api(
+        "?resource=customers"
+      );
+
+
+    if(
+      Array.isArray(
+        d.customers
+      )
+    ){
+
+      customers =
+        d.customers;
+
+      return;
+
+    }
+
+
+    /*
+      Fallback:
+      kalau Edge Function belum
+      mengembalikan customers,
+      jangan membuat data palsu.
+    */
+
+    customers = [];
+
+
+  }catch(e){
+
+    console.error(
+      "loadCustomers:",
+      e
+    );
+
+    customers = [];
+
+  }
+
+}
+
+
+/* =========================================================
+   RENDER DEPOSIT
 ========================================================= */
 
 function render(){
@@ -1527,7 +1490,6 @@ function render(){
         x.id,
         x.user_email,
         x.user_name,
-        x.user_whatsapp,
         x.payment_method,
         x.payment_reference,
         x.note
@@ -1538,10 +1500,10 @@ function render(){
 
       return (
         (f === "all" ||
-         x.status === f)
+          x.status === f)
         &&
         (!q ||
-         text.includes(q))
+          text.includes(q))
       );
 
     });
@@ -1549,18 +1511,14 @@ function render(){
 
   const pending =
     deposits.filter(
-      x =>
-        x.status ===
-        "pending"
+      x => x.status === "pending"
     ).length;
 
 
   const approved =
     deposits
       .filter(
-        x =>
-          x.status ===
-          "approved"
+        x => x.status === "approved"
       )
       .reduce(
         (a,x) =>
@@ -1576,13 +1534,9 @@ function render(){
     .textContent =
     pending;
 
-
   $("approvedTotal")
     .textContent =
-    rupiah(
-      approved
-    );
-
+    rupiah(approved);
 
   $("historyCount")
     .textContent =
@@ -1595,10 +1549,7 @@ function render(){
       .innerHTML =
       `
       <tr>
-        <td
-          colspan="7"
-          class="empty"
-        >
+        <td colspan="7" class="empty">
           Tidak ada data deposit.
         </td>
       </tr>
@@ -1653,20 +1604,13 @@ function render(){
             `;
 
 
-        const statusText =
-          st === "pending"
-            ? "Menunggu"
-            : st === "approved"
-              ? "Disetujui"
-              : "Ditolak";
-
-
         return `
         <tr>
 
           <td>
             #${esc(x.id)}
           </td>
+
 
           <td>
 
@@ -1699,32 +1643,8 @@ function render(){
           <td>
 
             <div class="amount">
-              ${rupiah(
-                x.amount
-              )}
+              ${rupiah(x.amount)}
             </div>
-
-            ${
-              Number(
-                x.bonus_amount ||
-                0
-              ) > 0
-
-                ?
-
-                `
-                <div class="muted">
-                  Bonus:
-                  ${rupiah(
-                    x.bonus_amount
-                  )}
-                </div>
-                `
-
-                :
-
-                ""
-            }
 
           </td>
 
@@ -1751,14 +1671,19 @@ function render(){
             <span
               class="badge ${esc(st)}"
             >
-              ${statusText}
+
+              ${
+                st === "pending"
+                  ? "Menunggu"
+                  : st === "approved"
+                    ? "Disetujui"
+                    : "Ditolak"
+              }
+
             </span>
 
             <div class="muted">
-              ${esc(
-                x.note ||
-                ""
-              )}
+              ${esc(x.note || "")}
             </div>
 
           </td>
@@ -1766,26 +1691,18 @@ function render(){
 
           <td>
 
-            ${date(
-              x.created_at
-            )}
+            ${date(x.created_at)}
 
             ${
               x.approved_at
-
                 ?
-
                 `
                 <div class="muted">
                   Diproses:
-                  ${date(
-                    x.approved_at
-                  )}
+                  ${date(x.approved_at)}
                 </div>
                 `
-
                 :
-
                 ""
             }
 
@@ -1806,14 +1723,11 @@ function render(){
 
 
 /* =========================================================
-   DEPOSIT ACTION MODAL
+   DEPOSIT ACTION
 ========================================================= */
 
 window.openAction =
-  (
-    id,
-    action
-  ) => {
+  (id, action) => {
 
     const x =
       deposits.find(
@@ -1850,7 +1764,7 @@ window.openAction =
         )} untuk ${
           x.user_email ||
           "customer"
-        }? Saldo akan bertambah sesuai aturan deposit.`
+        }? Saldo akan bertambah otomatis.`
 
         :
 
@@ -1868,8 +1782,8 @@ window.openAction =
   };
 
 
-$("modalCancel")
-  .onclick = () => {
+$("modalCancel").onclick =
+  () => {
 
     $("modal")
       .classList
@@ -1880,8 +1794,7 @@ $("modalCancel")
   };
 
 
-$("modalConfirm")
-  .onclick =
+$("modalConfirm").onclick =
   async () => {
 
     if(!pendingAction)
@@ -1909,11 +1822,9 @@ $("modalConfirm")
 
             body:
               JSON.stringify({
-                deposit_id:
-                  idNow,
+                deposit_id:idNow,
 
-                action:
-                  actionNow,
+                action:actionNow,
 
                 note:
                   $("modalNote")
@@ -1964,236 +1875,123 @@ $("modalConfirm")
    CUSTOMER SEARCH
 ========================================================= */
 
-let customerSearchTimer =
-  null;
-
-
 $("customerSearch")
   .addEventListener(
     "input",
-    () => {
-
-      clearTimeout(
-        customerSearchTimer
-      );
-
+    function(){
 
       const q =
-        $("customerSearch")
-          .value
-          .trim();
+        this.value
+          .trim()
+          .toLowerCase();
 
 
-      if(q.length < 2){
+      const box =
+        $("customerResults");
 
-        $("customerResults")
+
+      if(!q){
+
+        box
           .classList
           .add("hidden");
-
-        $("customerResults")
-          .innerHTML = "";
 
         return;
 
       }
 
 
-      customerSearchTimer =
-        setTimeout(
-          () =>
-            searchCustomers(q),
-          350
-        );
+      if(!customers.length){
 
-    }
-  );
+        box.innerHTML =
+          `
+          <div class="customer-result">
+            Data customer belum tersedia.
+          </div>
+          `;
 
+        box
+          .classList
+          .remove("hidden");
 
-/*
-  Mencari customer dari data deposit
-  yang sudah dikirim oleh Edge Function.
-
-  Ini sengaja tidak membuat query langsung
-  ke profiles dari browser.
-
-  Dengan demikian frontend tidak membutuhkan
-  service_role key.
-*/
-
-function searchCustomers(q){
-
-  const query =
-    q.toLowerCase();
-
-
-  const map =
-    new Map();
-
-
-  /*
-    Customer yang muncul pada deposit
-    otomatis bisa dipilih untuk koreksi saldo.
-  */
-
-  for(
-    const d of deposits
-  ){
-
-    if(!d.user_id)
-      continue;
-
-
-    const text = [
-      d.user_id,
-      d.user_email,
-      d.user_name,
-      d.user_whatsapp
-    ]
-      .join(" ")
-      .toLowerCase();
-
-
-    if(
-      text.includes(query)
-    ){
-
-      if(
-        !map.has(
-          d.user_id
-        )
-      ){
-
-        map.set(
-          d.user_id,
-          {
-            id:
-              d.user_id,
-
-            email:
-              d.user_email ||
-              "",
-
-            name:
-              d.user_name ||
-              "",
-
-            whatsapp:
-              d.user_whatsapp ||
-              "",
-
-            /*
-              Deposit tidak menyimpan
-              saldo customer saat ini.
-
-              Nilai ini hanya placeholder.
-              Saldo final akan diverifikasi
-              server/RPC saat koreksi.
-            */
-
-            balance:
-              null
-          }
-        );
+        return;
 
       }
 
-    }
 
-  }
+      const results =
+        customers
+          .filter(c => {
 
+            const text = [
+              c.name,
+              c.whatsapp,
+              c.id
+            ]
+              .join(" ")
+              .toLowerCase();
 
-  customers =
-    [...map.values()];
+            return text.includes(q);
 
-
-  renderCustomerResults();
-
-}
-
-
-function renderCustomerResults(){
-
-  const box =
-    $("customerResults");
-
-
-  if(
-    !customers.length
-  ){
-
-    box.innerHTML =
-      `
-      <div class="customer-item">
-        <div class="customer-name">
-          Customer tidak ditemukan
-        </div>
-
-        <div class="customer-meta">
-          Customer harus memiliki data deposit
-          agar dapat dicari dari dashboard ini.
-        </div>
-      </div>
-      `;
-
-    box.classList
-      .remove("hidden");
-
-    return;
-
-  }
+          })
+          .slice(0,20);
 
 
-  box.innerHTML =
-    customers
-      .slice(0,30)
-      .map(
-        c =>
+      if(!results.length){
+
+        box.innerHTML =
           `
-          <div
-            class="customer-item"
-            onclick="selectCustomer('${esc(c.id)}')"
-          >
-
-            <div class="customer-name">
-              ${esc(
-                c.name ||
-                c.email ||
-                "Customer"
-              )}
-            </div>
-
-            <div class="customer-meta">
-
-              ${esc(
-                c.email ||
-                "-"
-              )}
-
-              ${
-                c.whatsapp
-                  ? " • " +
-                    esc(
-                      c.whatsapp
-                    )
-                  : ""
-              }
-
-              <br>
-
-              ${esc(c.id)}
-
-            </div>
-
+          <div class="customer-result">
+            Customer tidak ditemukan.
           </div>
-          `
-      )
-      .join("");
+          `;
+
+      }else{
+
+        box.innerHTML =
+          results
+            .map(c => {
+
+              return `
+              <div
+                class="customer-result"
+                onclick="selectCustomer('${esc(c.id)}')"
+              >
+
+                <div class="user">
+                  ${esc(
+                    c.name ||
+                    "Tanpa nama"
+                  )}
+                </div>
+
+                <div class="muted">
+                  ${esc(
+                    c.whatsapp ||
+                    "-"
+                  )}
+                </div>
+
+                <div class="muted">
+                  Saldo:
+                  ${rupiah(c.balance)}
+                </div>
+
+              </div>
+              `;
+
+            })
+            .join("");
+
+      }
 
 
-  box.classList
-    .remove("hidden");
+      box
+        .classList
+        .remove("hidden");
 
-}
+    }
+  );
 
 
 /* =========================================================
@@ -2201,7 +1999,7 @@ function renderCustomerResults(){
 ========================================================= */
 
 window.selectCustomer =
-  (id) => {
+  id => {
 
     const customer =
       customers.find(
@@ -2219,188 +2017,11 @@ window.selectCustomer =
       customer;
 
 
-    $("customerResults")
-      .classList
-      .add("hidden");
-
-
     $("customerSearch")
       .value =
       customer.name ||
-      customer.email ||
-      customer.id;
-
-
-    $("selectedCustomer")
-      .classList
-      .add("show");
-
-
-    $("selectedCustomerName")
-      .textContent =
-      customer.name ||
-      customer.email ||
-      "Customer";
-
-
-    $("selectedCustomerMeta")
-      .textContent =
-      [
-        customer.email,
-        customer.whatsapp,
-        customer.id
-      ]
-        .filter(Boolean)
-        .join(" • ");
-
-
-    $("adjustForm")
-      .classList
-      .remove("hidden");
-
-
-    updateBalancePreview();
-
-  };
-
-
-/* =========================================================
-   BALANCE PREVIEW
-========================================================= */
-
-function getSelectedBalance(){
-
-  /*
-    Saldo customer belum diambil
-    dari browser.
-
-    Untuk preview awal kita gunakan
-    0 sampai saldo aktual tersedia.
-
-    RPC tetap menjadi sumber kebenaran
-    saldo yang sebenarnya.
-  */
-
-  return Number(
-    selectedCustomer?.balance ||
-    0
-  );
-
-}
-
-
-function updateBalancePreview(){
-
-  if(
-    !selectedCustomer
-  ){
-
-    return;
-
-  }
-
-
-  const before =
-    getSelectedBalance();
-
-
-  const amount =
-    Number(
-      $("adjustAmount")
-        .value || 0
-    );
-
-
-  const direction =
-    $("adjustDirection")
-      .value;
-
-
-  let change = 0;
-
-
-  if(
-    Number.isFinite(amount)
-  ){
-
-    change =
-      direction === "add"
-        ? amount
-        : -amount;
-
-  }
-
-
-  const after =
-    before +
-    change;
-
-
-  $("balanceBefore")
-    .textContent =
-    rupiah(before);
-
-
-  $("balanceChange")
-    .textContent =
-    (change >= 0 ? "+" : "") +
-    rupiah(change);
-
-
-  $("balanceChange")
-    .className =
-    change >= 0
-      ? "balance-plus"
-      : "balance-minus";
-
-
-  $("balanceAfter")
-    .textContent =
-    rupiah(after);
-
-
-  $("balanceAfter")
-    .className =
-    after >= 0
-      ? "balance-after"
-      : "balance-minus";
-
-}
-
-
-$("adjustAmount")
-  .addEventListener(
-    "input",
-    updateBalancePreview
-  );
-
-
-$("adjustDirection")
-  .addEventListener(
-    "change",
-    updateBalancePreview
-  );
-
-
-/* =========================================================
-   CLEAR CUSTOMER
-========================================================= */
-
-$("clearCustomerBtn")
-  .onclick = () => {
-
-    selectedCustomer =
-      null;
-
-    customers = [];
-
-
-    $("customerSearch")
-      .value = "";
-
-
-    $("customerResults")
-      .innerHTML = "";
+      customer.whatsapp ||
+      "";
 
 
     $("customerResults")
@@ -2409,55 +2030,45 @@ $("clearCustomerBtn")
 
 
     $("selectedCustomer")
-      .classList
-      .remove("show");
-
-
-    $("adjustForm")
-      .classList
-      .add("hidden");
-
-
-    $("adjustAmount")
-      .value = "";
-
-
-    $("adjustReason")
-      .value = "";
-
-
-    $("adjustDirection")
-      .value = "add";
-
-
-    $("balanceBefore")
       .textContent =
-      "Rp0";
+      (
+        customer.name ||
+        "Customer"
+      ) +
+      " • " +
+      (
+        customer.whatsapp ||
+        "-"
+      );
 
 
-    $("balanceChange")
+    $("currentBalance")
       .textContent =
-      "Rp0";
+      rupiah(
+        customer.balance
+      );
 
 
-    $("balanceAfter")
+    $("customerStatus")
       .textContent =
-      "Rp0";
+      "Customer dipilih";
+
+
+    $("adjustBtn")
+      .disabled = false;
 
   };
 
 
 /* =========================================================
-   SAVE BALANCE ADJUSTMENT
+   OPEN ADJUSTMENT CONFIRM
 ========================================================= */
 
 $("adjustBtn")
   .onclick =
-  async () => {
+  () => {
 
-    if(
-      !selectedCustomer
-    ){
+    if(!selectedCustomer){
 
       toast(
         "Pilih customer terlebih dahulu."
@@ -2487,9 +2098,7 @@ $("adjustBtn")
 
 
     if(
-      !Number.isFinite(
-        amount
-      ) ||
+      !Number.isFinite(amount) ||
       amount <= 0
     ){
 
@@ -2502,9 +2111,7 @@ $("adjustBtn")
     }
 
 
-    if(
-      reason.length === 0
-    ){
+    if(!reason){
 
       toast(
         "Alasan koreksi wajib diisi."
@@ -2515,58 +2122,96 @@ $("adjustBtn")
     }
 
 
-    if(
-      reason.length > 500
-    ){
+    pendingAdjustment = {
 
-      toast(
-        "Alasan maksimal 500 karakter."
-      );
+      user_id:
+        selectedCustomer.id,
 
-      return;
+      amount,
 
-    }
+      direction,
+
+      reason,
+
+      customer:
+        selectedCustomer
+
+    };
 
 
-    const confirmation =
+    const sign =
       direction === "add"
-
-        ?
-
-        `Tambah ${rupiah(
-          amount
-        )} ke saldo customer?`
-
-        :
-
-        `Kurangi ${rupiah(
-          amount
-        )} dari saldo customer?`;
+        ? "+"
+        : "-";
 
 
-    if(
-      !confirm(
-        confirmation +
-        "\n\nAlasan:\n" +
-        reason
-      )
-    ){
+    $("adjustModalText")
+      .textContent =
+      `${sign}${rupiah(amount)} untuk ${
+        selectedCustomer.name ||
+        selectedCustomer.whatsapp ||
+        "customer"
+      }. Alasan: ${reason}`;
 
+
+    $("adjustModal")
+      .classList
+      .add("show");
+
+  };
+
+
+/* =========================================================
+   CANCEL ADJUSTMENT
+========================================================= */
+
+$("adjustCancel")
+  .onclick =
+  () => {
+
+    $("adjustModal")
+      .classList
+      .remove("show");
+
+    pendingAdjustment =
+      null;
+
+  };
+
+
+/* =========================================================
+   SAVE ADJUSTMENT
+========================================================= */
+
+$("adjustConfirm")
+  .onclick =
+  async () => {
+
+    if(!pendingAdjustment)
       return;
 
-    }
 
-
-    $("adjustBtn")
+    $("adjustConfirm")
       .disabled = true;
 
 
-    $("adjustBtn")
-      .textContent =
-      "Memproses...";
-
-
     try{
+
+      /*
+        Edge Function harus menerima:
+
+        action:
+          "adjust_balance"
+
+        user_id
+        amount
+        direction
+        reason
+
+        Proses saldo sebenarnya
+        dilakukan oleh RPC
+        admin_adjust_balance.
+      */
 
       const d =
         await api(
@@ -2581,53 +2226,40 @@ $("adjustBtn")
                   "adjust_balance",
 
                 user_id:
-                  selectedCustomer.id,
+                  pendingAdjustment.user_id,
 
                 amount:
-                  amount,
+                  pendingAdjustment.amount,
 
                 direction:
-                  direction,
+                  pendingAdjustment.direction,
 
                 reason:
-                  reason
+                  pendingAdjustment.reason
 
               })
+
           }
         );
 
 
-      const result =
-        d.result || {};
+      $("adjustModal")
+        .classList
+        .remove("show");
 
 
       toast(
         d.msg ||
-        "Saldo berhasil dikoreksi."
+        "Koreksi saldo berhasil."
       );
 
 
-      /*
-        Setelah berhasil, tampilkan saldo
-        hasil RPC jika tersedia.
-      */
-
-      if(
-        result.balance_after != null
-      ){
-
-        selectedCustomer.balance =
-          Number(
-            result.balance_after
-          );
-
-        updateBalancePreview();
-
-      }
+      pendingAdjustment =
+        null;
 
 
       /*
-        Bersihkan form setelah sukses.
+        Reset form
       */
 
       $("adjustAmount")
@@ -2638,8 +2270,31 @@ $("adjustBtn")
 
 
       /*
-        Reload deposit agar data
-        dashboard tetap terbaru.
+        Update saldo customer
+      */
+
+      if(
+        d.result &&
+        d.result.balance_after != null
+      ){
+
+        selectedCustomer.balance =
+          Number(
+            d.result.balance_after
+          );
+
+      }
+
+
+      $("currentBalance")
+        .textContent =
+        rupiah(
+          selectedCustomer.balance
+        );
+
+
+      /*
+        Refresh semua data
       */
 
       await load(false);
@@ -2649,17 +2304,13 @@ $("adjustBtn")
 
       toast(
         e.message ||
-        "Gagal mengoreksi saldo."
+        "Gagal melakukan koreksi saldo."
       );
 
     }finally{
 
-      $("adjustBtn")
+      $("adjustConfirm")
         .disabled = false;
-
-      $("adjustBtn")
-        .textContent =
-        "Simpan Koreksi Saldo";
 
     }
 
@@ -2719,11 +2370,39 @@ $("statusFilter")
   render;
 
 
+/*
+  Tutup hasil pencarian
+  ketika klik di luar.
+*/
+
+document.addEventListener(
+  "click",
+  e => {
+
+    const box =
+      $("customerSearchBox");
+
+
+    if(
+      box &&
+      !box.contains(e.target)
+    ){
+
+      $("customerResults")
+        .classList
+        .add("hidden");
+
+    }
+
+  }
+);
+
+
 /* =========================================================
-   INIT
+   INITIAL LOAD
 ========================================================= */
 
-(async () => {
+(async()=>{
 
   if(
     session()?.access_token
