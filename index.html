@@ -85,22 +85,49 @@ footer{margin-top:25px;background:linear-gradient(180deg,#ffd4e8,#ffadd0);paddin
 
 @media(max-width:950px){.links,.status{display:none}.hero-grid{grid-template-columns:1fr}.mascot{min-height:220px}.cat{font-size:125px}.platforms{grid-template-columns:repeat(4,1fr)}.catalog{grid-template-columns:1fr}.checkout{position:relative;top:0}.allgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.nav{height:65px}.brand{font-size:25px}.navright .btn{padding:10px 12px;font-size:11px}.hero{padding-top:22px}.hero h1{font-size:62px}.platforms{grid-template-columns:repeat(4,1fr);gap:7px}.platform{padding:9px 2px;font-size:9px}.picon{width:34px;height:34px;font-size:16px}.products{grid-template-columns:repeat(2,1fr)}.catalog-main{padding:13px}.catalog-head{align-items:flex-start}.cat-title h2{font-size:23px}.allgrid{grid-template-columns:1fr}.benefits{grid-template-columns:repeat(2,1fr);gap:10px}.benefit{border-right:0}.promo{padding:20px}.promo-cat{font-size:55px}.footerin{flex-direction:column;text-align:center}.checkout{padding:16px}}
+
+/* ===== HelloBoost visual upgrade ===== */
+body{background:radial-gradient(circle at 0% 8%,rgba(255,193,221,.42) 0 120px,transparent 121px),radial-gradient(circle at 100% 30%,rgba(211,198,255,.45) 0 150px,transparent 151px),linear-gradient(180deg,#fff 0%,#fff8fc 48%,#fff 100%)}
+.top{font-weight:700;letter-spacing:.1px}nav{box-shadow:0 8px 30px rgba(194,83,139,.08)}.brandmark{box-shadow:0 12px 25px rgba(255,95,162,.24)}.hero{padding-top:48px;padding-bottom:34px}.hero-copy p{font-size:15px;max-width:720px}.chip{font-size:12px;padding:8px 14px}.platform-wrap{padding:22px}.platform-wrap:before{content:"PILIH PLATFORM";display:inline-block;background:#fff0f7;color:#c05280;border:1px solid #f8d7e6;border-radius:999px;padding:6px 10px;font-size:9px;font-weight:900;letter-spacing:.8px;margin-bottom:10px}.platform{min-height:82px}.platform.active{background:linear-gradient(180deg,#fff,#fff2f8)}.catalog{margin-top:22px}.catalog-main,.checkout{box-shadow:0 18px 55px rgba(176,79,127,.11)}.catalog-main{padding:22px}.checkout{padding:22px}.checkout-kicker,.payment-step{display:inline-flex;align-items:center;gap:6px;background:#fff0f7;color:#c34f80;border:1px solid #f6d3e2;border-radius:999px;padding:6px 10px;font-size:9px;font-weight:900;letter-spacing:.7px}.important-help{font-size:11px;color:#817480;background:#fff8fb;border:1px solid #f6e0ea;border-radius:13px;padding:10px 11px;line-height:1.55;margin:0 0 15px}.field label{font-size:11px;letter-spacing:.15px}.required,.optional{font-size:8px;border-radius:999px;padding:3px 6px;margin-left:5px;vertical-align:middle}.required{background:#ffe7f1;color:#d74f88}.optional{background:#eee9ff;color:#8068c6}input,select{min-height:44px;border-radius:14px}.qty{min-height:44px}.summary{background:#fff9fc;border:1px solid #f5dce8;border-radius:17px;padding:11px;margin-top:16px}.summary .row{padding:8px 3px}.summary .total{margin:5px -3px -3px;padding:13px 3px 3px}.total b{font-size:20px;color:#ff4f98}.wa-btn{font-size:13px;letter-spacing:.15px;box-shadow:0 10px 22px rgba(40,199,117,.18);padding:15px}.smallnote{background:#faf7fb;border-radius:13px;padding:9px 10px}.product{transition:.2s;box-shadow:0 5px 18px rgba(170,87,126,.04)}.product:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(170,87,126,.1)}.choose{padding:11px}.payment-box{padding:22px}.payment-step{margin-bottom:5px}.payment-box h2{font-size:31px}.pay-sub{font-size:12px!important}.qr-wrap{max-width:370px;border:2px solid #f3d5e3;padding:12px}.pay-total{padding:13px}.pay-total b{font-size:29px}.pay-info{background:#fff8fb;border:1px solid #f5dce7;border-radius:14px;padding:11px!important;text-align:left}.pay-wa{font-size:12px;box-shadow:0 10px 22px rgba(40,199,117,.18)}@media(max-width:600px){.hero{padding-top:28px}.hero h1{font-size:56px}.platform-wrap{padding:15px}.platform{min-height:76px}.catalog-main{padding:15px}.checkout{padding:17px}.payment-modal{padding:10px}.payment-box{max-height:95vh;padding:16px}.payment-box h2{font-size:27px}}
 </style>
+<style>
+.min-order-note{margin-top:7px;padding:8px 10px;border-radius:10px;background:#fff3f8;border:1px solid #f5d7e5;color:#9b6680;font-size:10px;line-height:1.45}
+#qty{text-align:center}
+</style>
+
+<style>
+.header-actions{display:flex;align-items:center;gap:10px}
+.testimonial-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:0 18px;border-radius:999px;
+  background:#fff;border:1.5px solid #f2a8ca;color:#d94f91;
+  text-decoration:none;font-weight:800;font-size:12px;
+  box-shadow:0 7px 18px rgba(217,79,145,.10);
+  transition:.2s ease;
+}
+.testimonial-btn:hover{transform:translateY(-2px);background:#fff3f9}
+.testimonial-btn .ticon{margin-right:6px}
+@media(max-width:600px){
+  .header-actions{gap:6px}
+  .testimonial-btn{padding:0 11px;font-size:10px;min-height:40px}
+}
+</style>
+
 </head>
 <body>
-<div class="top">🎀 Welcome to HelloBoost — Small step, big growth! ✨ &nbsp; • &nbsp; Fast Process ⚡ &nbsp; • &nbsp; Support 24/7 💗</div>
+<div class="top">🎀 HELLOBOOST • PILIH LAYANAN → BAYAR QRIS → KONFIRMASI WHATSAPP ✨</div>
 <nav><div class="container nav">
   <a class="brand" href="#"><span class="brandmark">♡</span>HelloBoost</a>
   <div class="links"><a href="#beranda">⌂ Beranda</a><a href="#layanan">Layanan</a><a href="#cara">Cara Order</a><a href="#tentang">Tentang Kami</a><a href="#kontak">Kontak</a></div>
   <div class="navright"><span class="status">⚡ Fast Process &nbsp; <b>24/7</b></span><a class="btn pinkbtn" href="#order">Order Sekarang</a></div>
-</div></nav>
+</div><div class="header-actions"><a class="testimonial-btn" href="https://whatsapp.com/channel/0029VbDLT2yFi8xb1RpB4M36" target="_blank" rel="noopener noreferrer"><span class="ticon">💬</span>Testimoni</a></div></nav>
 
 <section class="hero" id="beranda"><div class="container hero-grid">
   <div class="mascot"><div class="cat">🐱</div><div class="bubble b1">Grow Your<br>Social Media! 💗</div><div class="bubble b2">♡ HelloBoost ♡</div></div>
   <div class="hero-copy">
     <span class="mini-pill">🌸 Solusi Lengkap Boosting Sosial Media Kamu!</span>
     <h1>HelloBoost<span>Boost Your Social Media ✨</span></h1>
-    <p>Followers • Likes • Views • Comments • Subscribers • dan layanan social media lainnya. Pilih layanan favoritmu, bayar, lalu lanjutkan proses melalui WhatsApp.</p>
+    <p><b>Followers • Likes • Views • Comments • Subscribers</b> dan layanan social media lainnya. Pilih layanan, tentukan jumlah & garansi, lalu <b>bayar melalui QRIS</b> dan <b>konfirmasi ke WhatsApp admin</b>.</p>
     <div class="chips"><span class="chip">💗 Aman</span><span class="chip">⚡ Proses Cepat</span><span class="chip">🛡️ Harga Terbaik</span><span class="chip">⭐ 100% Legal</span></div>
   </div>
 </div></section>
@@ -118,20 +145,20 @@ footer{margin-top:25px;background:linear-gradient(180deg,#ffd4e8,#ffadd0);paddin
   </div>
 
   <aside class="checkout" id="order">
-    <h2>🛒 Detail Pesanan</h2>
-    <div class="field"><label>Platform</label><select id="platformSelect"><option value="Instagram">Instagram</option></select></div>
-    <div class="field"><label>Layanan</label><select id="serviceSelect"><option value="0">Followers Indonesia — Rp5.000 / 100</option></select></div>
-    <div class="field"><label>Jumlah</label><div class="qty"><button onclick="changeQty(-1)">−</button><input id="qty" type="number" value="100" min="1" step="1" oninput="updateTotal()"><button onclick="changeQty(1)">+</button></div></div>
-    <div class="field"><label>🛡️ Pilihan Garansi</label>
+    <div class="checkout-kicker">STEP 1 • ATUR PESANAN</div><h2>🛒 Detail Pesanan</h2><p class="important-help">Pilih layanan, jumlah, dan garansi. <b>Total akan dihitung otomatis.</b></p>
+    <div class="field"><label>📱 PLATFORM <span class="required">WAJIB</span></label><select id="platformSelect"><option value="Instagram">Instagram</option></select></div>
+    <div class="field"><label>✨ LAYANAN <span class="required">WAJIB</span></label><select id="serviceSelect"><option value="0">Followers Indonesia — Rp5.000 / 100</option></select></div>
+    <div class="field"><label>🔢 JUMLAH <span class="required">WAJIB</span></label><div class="qty"><button onclick="changeQty(-1)">−</button><input id="qty" type="number" value="100" min="100" step="1" oninput="updateTotal()"><button onclick="changeQty(1)">+</button></div><div class="min-order-note">🔒 Minimum order: <b>100</b>. Jumlah di bawah 100 otomatis dikembalikan ke 100.</div></div>
+    <div class="field"><label>🛡️ GARANSI <span class="optional">OPSIONAL</span></label>
       <select id="guaranteeSelect" onchange="updateTotal()">
         <option value="1">Tanpa Garansi — Harga Normal</option>
         <option value="1.5">Garansi 7 Hari — +50%</option>
       </select>
     </div>
-    <div class="field"><label>Nama</label><input id="customer" placeholder="Nama kamu"></div>
-    <div class="field"><label>Link akun / postingan</label><input id="link" placeholder="https://..."></div>
+    <div class="field"><label>👤 NAMA</label><input id="customer" placeholder="Nama kamu"></div>
+    <div class="field"><label>🔗 LINK AKUN / POSTINGAN <span class="required">WAJIB</span></label><input id="link" placeholder="https://..."></div>
     <div class="summary"><div class="row"><span>Layanan</span><b id="sumService">-</b></div><div class="row"><span>Jumlah</span><b id="sumQty">100</b></div><div class="row"><span>Harga / paket</span><b id="sumPrice">Rp0</b></div><div class="row"><span>Garansi</span><b id="sumGuarantee">Tanpa Garansi</b></div><div class="row total"><span>Total Harga</span><b id="sumTotal">Rp0</b></div></div>
-    <button class="wa-btn" onclick="orderWA()">💬 Lanjut ke WhatsApp</button>
+    <button class="wa-btn" onclick="orderWA()">💳 LANJUT KE PEMBAYARAN</button>
     <div class="smallnote">🛡️ Garansi 7 Hari = harga layanan × 1,5. Garansi berlaku untuk penurunan yang memenuhi ketentuan layanan dan bukan jaminan akun tidak akan pernah turun.<br>Pesanan akan langsung diproses melalui WhatsApp setelah konfirmasi pembayaran.</div>
   </aside>
 </div></section>
@@ -153,15 +180,15 @@ footer{margin-top:25px;background:linear-gradient(180deg,#ffd4e8,#ffadd0);paddin
 <div class="payment-modal" id="paymentModal" role="dialog" aria-modal="true" aria-labelledby="paymentTitle">
   <div class="payment-box">
     <button class="payment-close" onclick="closePayment()" aria-label="Tutup">×</button>
-    <h2 id="paymentTitle">💗 Pembayaran HelloBoost</h2>
-    <p class="pay-sub">Scan QRIS di bawah untuk menyelesaikan pembayaran</p>
+    <div class="payment-step">STEP 2 • PEMBAYARAN</div><h2 id="paymentTitle">💗 Bayar Pesanan Kamu</h2>
+    <p class="pay-sub"><b>Scan QRIS di bawah</b> menggunakan aplikasi pembayaran kamu.</p>
     <div class="qr-wrap">
       <img id="qrisImage" alt="QRIS pembayaran HelloBoost" src="qris-helloboost.png">
     </div>
     <div class="pay-total"><span>Total yang harus dibayar</span><b id="payTotal">Rp0</b></div>
-    <div class="pay-info">Setelah pembayaran berhasil, simpan bukti pembayaran lalu klik tombol <b>Konfirmasi via WhatsApp</b>. Admin akan memeriksa pembayaran dan melanjutkan pesanan kamu.</div>
+    <div class="pay-info"><b>① Scan & bayar sesuai total.</b><br><b>② Simpan screenshot/bukti pembayaran.</b><br><b>③ Klik tombol konfirmasi WhatsApp</b> lalu kirim bukti pembayaran di chat.</div>
     <div class="pay-actions">
-      <button class="pay-wa" onclick="confirmPaymentWA()">💬 Konfirmasi Pembayaran via WhatsApp</button>
+      <button class="pay-wa" onclick="confirmPaymentWA()">💬 KONFIRMASI PEMBAYARAN VIA WHATSAPP</button>
       <button class="pay-cancel" onclick="closePayment()">Kembali</button>
     </div>
   </div>
@@ -170,7 +197,151 @@ footer{margin-top:25px;background:linear-gradient(180deg,#ffd4e8,#ffadd0);paddin
 <footer id="kontak"><div class="container footerin"><div><div class="brand"><span class="brandmark">♡</span>HelloBoost</div><div class="footertext">Boost Your Social Media ✨<br>Terima kasih sudah percaya dengan HelloBoost!</div></div><div class="social"><a href="#layanan">◎</a><a href="#layanan">♪</a><a href="#layanan">▶</a><a href="#layanan">✈</a><a href="#order">♡</a></div><div class="footertext">© 2026 HelloBoost. All rights reserved.</div></div></footer>
 <a class="floatwa" href="#" onclick="openWA();return false;" aria-label="WhatsApp">◔</a>
 
-<script src="app.js" defer></script>
+<script>
 
+const WHATSAPP_NUMBER="6283179090525";
+
+const DATA={
+ Instagram:{
+  icon:`<svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="igGrad" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#ffdc80"/><stop offset=".45" stop-color="#f43f8d"/><stop offset="1" stop-color="#8a3ffc"/></linearGradient></defs><rect class="grad" x="2" y="2" width="20" height="20" rx="6"/><rect x="6.5" y="6.5" width="11" height="11" rx="3"/><circle cx="12" cy="12" r="2.8"/><circle cx="17.2" cy="6.9" r="1" fill="#fff" stroke="none"/></svg>`,cls:"ig",desc:"Tingkatkan popularitas akun Instagram kamu sekarang!",
+  services:[
+   ["Followers Indonesia","Followers asli & berkualitas dari Indonesia",5000,100],
+   ["Followers Mix","Followers dari berbagai negara (Mix)",2000,100],
+   ["Likes Indonesia","Like asli dari Indonesia",2000,100],
+   ["Likes Mix","Like dari berbagai negara (Mix)",100,100],
+   ["Views","Tampilan video/reels/story",10,1000],
+   ["Comments","Komentar berkualitas",4000,100],
+   ["Story Views","Tampilan story",20,1000]
+  ]},
+ TikTok:{icon:`<svg viewBox="0 0 24 24"><path d="M14.2 3h3.2c.3 2.1 1.5 3.7 3.6 4.2v3.1c-1.3 0-2.5-.4-3.6-1v6.2c0 3.8-2.5 5.8-5.7 5.8-3 0-5.3-2-5.3-4.8 0-3.1 2.5-5.1 5.5-5.1.5 0 1 .1 1.5.2v3.2c-.5-.2-.9-.3-1.4-.3-1.1 0-2.2.7-2.2 2 0 1.1.9 1.8 2 1.8 1.3 0 2.4-.8 2.4-2.7V3z"/></svg>`,cls:"tt",desc:"Boost akun TikTok dan tingkatkan jangkauan konten.",
+  services:[["Followers Indonesia","Followers Indonesia",11000,100],["Followers Mix","Followers berbagai negara (Mix)",4000,100],["Likes","Like video TikTok",700,100],["Views","Views video TikTok",20,1000],["Comments","Komentar TikTok",14000,100]]},
+ YouTube:{icon:`<svg viewBox="0 0 24 24"><path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2C1.9 9 1.9 12 1.9 12s0 3 .5 4.8a2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2c.5-1.8.5-4.8.5-4.8s0-3-.5-4.8zM10 15.5v-7l6 3.5-6 3.5z"/></svg>`,cls:"yt",desc:"Bantu channel dan video YouTube kamu berkembang.",
+  services:[["Subscribers","Subscriber channel",62000,100],["Views","Views video YouTube",4000,1000],["Likes","Like video YouTube",3000,100]]},
+ Facebook:{icon:`<svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.7-1.6h1.8V3.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.6 1.6-4.6 4.5V10H7v3h2.7v8z"/></svg>`,cls:"fb",desc:"Layanan boosting Facebook yang praktis.",
+  services:[["Followers","Followers Facebook",500,100],["Likes","Likes Facebook",500,100],["Views","Views Facebook",200,1000]]},
+ Telegram:{icon:`<svg viewBox="0 0 24 24"><path d="M21.8 4.3 18.5 20c-.3 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L5.9 13.5.9 11.9c-1.1-.3-1.1-1.1.2-1.6L20.6 3c.9-.3 1.6.2 1.2 1.3z"/></svg>`,cls:"tg",desc:"Boost channel Telegram dengan pilihan layanan.",
+  services:[["Followers Saluran","Followers channel Telegram",500,100],["Views","Views posting Telegram",30,1000]]},
+ WhatsApp:{icon:`<svg viewBox="0 0 24 24"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.9-1.3A9.5 9.5 0 1 0 12 2.5zm0 17.1a7.6 7.6 0 0 1-3.9-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A7.5 7.5 0 1 1 12 19.6zm4.1-5.7c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.3-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.1.1-.3.2-.4 0-.1 0-.3-.1-.4-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 3.8 3.5.5.2.9.4 1.2.5.5.2 1 .2 1.3.1.4-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.2-.3-.2-.5-.3z"/></svg>`,cls:"wa",desc:"Followers untuk Saluran WhatsApp.",
+  services:[["Followers Saluran","Followers Saluran WhatsApp",1000,100]]},
+ Threads:{icon:`<svg viewBox="0 0 24 24"><path d="M12.1 4.1c-4.5 0-7.6 3.2-7.6 7.4 0 3.2 2.2 5.3 5.1 5.3 1.6 0 2.8-.6 3.7-1.7.7 1.1 1.8 1.7 3.1 1.7 2.8 0 4.7-2.4 4.7-5.9 0-4.3-3.4-6.8-7.5-6.8zm-2.2 9.9c-1.4 0-2.3-1-2.3-2.5 0-2.1 1.5-3.8 3.8-3.8 1.2 0 2.1.4 2.7 1.1l-.5 3.1c-.3 1.3-1.5 2.1-3.7 2.1zm5.9-.1c-.6 0-1-.4-1-.9 0-.3.1-.8.2-1.3l.5-2.7c.5.6.8 1.5.8 2.5 0 1.5-.1 2.4-.5 2.4z"/></svg>`,cls:"th",desc:"Tingkatkan followers dan likes Threads.",
+  services:[["Followers","Followers Threads",10000,100],["Likes","Likes Threads",3000,100]]},
+ "X / Twitter":{icon:`<svg viewBox="0 0 24 24"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.2-8.2L2.9 2h6.4l4.4 5.8zM17.8 19.6h1.7L8.4 4.3H6.6z"/></svg>`,cls:"xx",desc:"Followers, likes dan views untuk X / Twitter.",
+  services:[["Followers","Followers X / Twitter",20000,100],["Likes","Likes X / Twitter",2000,100],["Views","Views X / Twitter",100,1000]]}
+};
+
+const rupiah=n=>new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(n);
+let currentPlatform="Instagram", currentService=0;
+
+function buildPlatforms(){
+ const box=document.getElementById("platforms"), select=document.getElementById("platformSelect");
+ box.innerHTML="";select.innerHTML="";
+ Object.entries(DATA).forEach(([name,d])=>{
+  const b=document.createElement("button");b.className="platform"+(name===currentPlatform?" active":"");b.innerHTML=`<div class="picon ${d.cls}">${d.icon}</div>${name}`;
+  b.onclick=()=>selectPlatform(name);box.appendChild(b);
+  select.add(new Option(name,name));
+ });
+ select.value=currentPlatform;
+ select.onchange=()=>selectPlatform(select.value);
+}
+function selectPlatform(name){
+ currentPlatform=name;currentService=0;
+ document.querySelectorAll(".platform").forEach(x=>x.classList.remove("active"));
+ [...document.querySelectorAll(".platform")].find(x=>x.textContent.trim()===name)?.classList.add("active");
+ document.getElementById("platformSelect").value=name;
+ const d=DATA[name];document.getElementById("catName").textContent=name;document.getElementById("catDesc").textContent=d.desc;
+ const ic=document.getElementById("catIcon");ic.className="picon "+d.cls;ic.innerHTML=d.icon;
+ document.getElementById("count").textContent=d.services.length+" Layanan Tersedia";
+ const ps=document.getElementById("products");ps.innerHTML="";
+ d.services.forEach((s,i)=>{
+  const card=document.createElement("div");card.className="product";
+  card.innerHTML=`<h3>${s[0]}</h3><p>${s[1]}</p><div class="price">${rupiah(s[2])} <span class="unit">/ ${s[3].toLocaleString("id-ID")}</span></div><div style="font-size:9px;color:#9b8c98;margin-top:4px">🛡️ Garansi 7 Hari: <b style="color:#ff5fa2">${rupiah(s[2]*1.5)}</b></div><button class="choose" onclick="chooseService(${i})">Pilih</button>`;
+  ps.appendChild(card);
+ });
+ const ss=document.getElementById("serviceSelect");ss.innerHTML="";
+ d.services.forEach((s,i)=>ss.add(new Option(s[0]+" — "+rupiah(s[2])+" / "+s[3].toLocaleString("id-ID"),i)));
+ ss.value=0;ss.onchange=()=>{currentService=Number(ss.value);updateTotal()};
+ updateTotal();
+}
+function chooseService(i){currentService=i;document.getElementById("serviceSelect").value=i;document.getElementById("order").scrollIntoView({behavior:"smooth",block:"center"});updateTotal()}
+function changeQty(delta){const q=document.getElementById("qty");q.value=Math.max(1,Number(q.value||1)+delta);updateTotal()}
+function updateTotal(){
+ const s=DATA[currentPlatform].services[currentService];const q=Math.max(1,Number(document.getElementById("qty").value)||1);
+ const multiplier=Number(document.getElementById("guaranteeSelect")?.value||1);
+ const unitPrice=s[2]*multiplier;
+ const total=Math.ceil(q/s[3])*unitPrice;
+ document.getElementById("sumService").textContent=s[0];
+ document.getElementById("sumQty").textContent=q.toLocaleString("id-ID");
+ document.getElementById("sumPrice").textContent=rupiah(unitPrice)+" / "+s[3].toLocaleString("id-ID");
+ document.getElementById("sumGuarantee").textContent=multiplier===1.5?"Garansi 7 Hari":"Tanpa Garansi";
+ document.getElementById("sumTotal").textContent=rupiah(total);
+}
+function orderWA(){
+ const s=DATA[currentPlatform].services[currentService],q=Math.max(1,Number(document.getElementById("qty").value)||1);
+ const multiplier=Number(document.getElementById("guaranteeSelect")?.value||1);
+ const total=Math.ceil(q/s[3])*(s[2]*multiplier);
+ document.getElementById("payTotal").textContent=rupiah(total);
+ document.getElementById("paymentModal").classList.add("show");
+ document.body.style.overflow="hidden";
+}
+function closePayment(){
+ document.getElementById("paymentModal").classList.remove("show");
+ document.body.style.overflow="";
+}
+function confirmPaymentWA(){
+ const s=DATA[currentPlatform].services[currentService],q=Math.max(1,Number(document.getElementById("qty").value)||1);
+ const multiplier=Number(document.getElementById("guaranteeSelect")?.value||1);
+ const guarantee=multiplier===1.5?"Garansi 7 Hari":"Tanpa Garansi";
+ const name=document.getElementById("customer").value.trim()||"-",link=document.getElementById("link").value.trim()||"-";
+ const total=Math.ceil(q/s[3])*(s[2]*multiplier);
+ const msg=`Halo HelloBoost! 🎀
+
+Saya sudah melakukan pembayaran dan ingin konfirmasi pesanan:
+🌸 Platform: ${currentPlatform}
+✨ Layanan: ${s[0]}
+🛡️ Garansi: ${guarantee}
+🔢 Jumlah: ${q.toLocaleString("id-ID")}
+🔗 Link: ${link}
+👤 Nama: ${name}
+💰 Total: ${rupiah(total)}
+
+Saya akan mengirimkan bukti pembayaran di chat ini. Mohon dicek dan diproses yaa. Terima kasih 💗`;
+ window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(msg),"_blank");
+}
+function openWA(){window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent("Halo HelloBoost! Saya ingin bertanya tentang layanan 😊"),"_blank")}
+function buildAll(){
+ const box=document.getElementById("allgrid");box.innerHTML="";
+ Object.entries(DATA).forEach(([name,d])=>{
+  const c=document.createElement("div");c.className="allcard";
+  c.innerHTML=`<div class="allhead"><span class="tiny ${d.cls}">${d.icon}</span>${name}</div>`+d.services.map(s=>`<div class="allitem"><span>${s[0]}</span><b>${rupiah(s[2])}<br><small style="font-weight:500">7H ${rupiah(s[2]*1.5)}</small></b></div>`).join("");
+  box.appendChild(c);
+ });
+}
+function initHelloBoost(){
+  buildPlatforms();
+  buildAll();
+  selectPlatform("Instagram");
+  document.getElementById("paymentModal").addEventListener("click",e=>{if(e.target.id==="paymentModal")closePayment();});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")closePayment();});
+}
+document.addEventListener("DOMContentLoaded", initHelloBoost);
+
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const qty=document.getElementById('qty');
+  if(!qty)return;
+  qty.min='100';
+  qty.value=Math.max(100,parseInt(qty.value,10)||100);
+  qty.addEventListener('input',function(){
+    const n=parseInt(this.value,10);
+    if(!Number.isFinite(n)||n<100)this.value=100;
+  });
+  qty.addEventListener('blur',function(){
+    const n=parseInt(this.value,10);
+    this.value=(!Number.isFinite(n)||n<100)?100:n;
+  });
+});
+</script>
 </body>
 </html>
