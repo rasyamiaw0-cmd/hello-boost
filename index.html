@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HelloBoost — Boost Your Social Media ✨</title>
+<meta name="description" content="HelloBoost — layanan boosting social media dengan tampilan kawaii, pilihan layanan lengkap dan order via WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --pink:#ff5fa2;--pink2:#ff9ec5;--pink3:#ffe9f3;--pink4:#fff6fa;
+ --purple:#9b83ff;--blue:#76d9ff;--yellow:#ffd96b;--green:#38c978;
+ --ink:#352a3c;--muted:#847787;--white:#fff;--line:#f6d8e6;
+ --shadow:0 16px 45px rgba(183,87,139,.13);--radius:25px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:Poppins,sans-serif;background:
+ radial-gradient(circle at 4% 12%,#ffddec 0 95px,transparent 96px),
+ radial-gradient(circle at 95% 35%,#e9e2ff 0 110px,transparent 111px),
+ linear-gradient(180deg,#fff 0,#fff7fb 45%,#fff 100%);overflow-x:hidden}
+button,input,select{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+.top{height:34px;background:#fff0f6;color:#a55d7b;text-align:center;font-size:12px;padding:8px;border-bottom:1px solid #f8dce8}
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{font-family:"Baloo 2";font-size:29px;font-weight:800;color:var(--pink);display:flex;align-items:center;gap:9px}
+.brandmark{width:44px;height:44px;border-radius:15px;background:linear-gradient(135deg,#ff5fa2,#c3a9ff);display:grid;place-items:center;color:#fff;font-size:23px;box-shadow:0 9px 20px #ff8fbd55;transform:rotate(-5deg)}
+.links{display:flex;gap:4px}.links a{padding:11px 14px;border-radius:15px;font-size:13px;font-weight:600;color:#65586a}.links a:hover{background:var(--pink3);color:var(--pink)}
+.navright{display:flex;align-items:center;gap:10px}.status{font-size:11px;background:#fff2f8;border:1px solid #f7d8e7;border-radius:999px;padding:8px 12px;color:#9a5875}
+.btn{border:0;border-radius:16px;padding:13px 18px;font-weight:800;transition:.2s}.btn:hover{transform:translateY(-2px)}
+.pinkbtn{background:linear-gradient(135deg,#ff579d,#ff79b3);color:#fff;box-shadow:0 12px 25px #ff6aa633}
+.hero{padding:35px 0 25px;position:relative;background:
+ linear-gradient(135deg,#fff1f8aa,#f4efff88),
+ radial-gradient(circle at 15% 50%,#ffd7e9,transparent 35%)}
+.hero:before{content:"♡  ✦  ☆  ♡  ✧  ♡";position:absolute;top:12px;left:4%;right:4%;display:flex;justify-content:space-around;color:#ffb2cf;font-size:23px;opacity:.8}
+.hero-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:25px;align-items:center;position:relative;z-index:1}
+.mascot{min-height:310px;border-radius:38px;background:linear-gradient(145deg,#ffd7e8,#fff8fb 55%,#dcd4ff);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;box-shadow:var(--shadow);border:1px solid #f7d9e8}
+.cat{font-size:175px;filter:drop-shadow(0 15px 8px #e889ad44);animation:float 3.5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px) rotate(2deg)}}
+.bubble{position:absolute;background:#fff;border:2px solid #f4cadd;border-radius:22px;padding:11px 14px;font-family:"Baloo 2";font-weight:800;color:#9e5474;box-shadow:0 10px 25px #b96f9120}
+.b1{top:28px;right:25px}.b2{bottom:28px;left:20px}
+.hero-copy{text-align:center}.mini-pill{display:inline-block;background:#fff;border:1px solid var(--line);padding:7px 13px;border-radius:999px;color:#a25d7c;font-size:12px;font-weight:700}
+.hero h1{font-family:"Baloo 2";font-size:clamp(55px,8vw,88px);line-height:.85;margin:16px 0 12px;color:#ff5c9e;text-shadow:0 5px 0 #fff,0 8px 0 #f6c1d7}
+.hero h1 span{display:block;font-size:.32em;color:#ff73ad;text-shadow:none;letter-spacing:.2px;margin-top:16px}
+.hero-copy p{color:#685c6b;font-size:14px;line-height:1.7;max-width:650px;margin:0 auto}
+.chips{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:16px}.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:11px;font-weight:700;box-shadow:0 5px 15px #9b5a7910}
+.chip:nth-child(2){color:#e89a00}.chip:nth-child(3){color:#27a967}.chip:nth-child(4){color:#9271e8}
+.platform-wrap{margin-top:20px;background:rgba(255,255,255,.78);border:1px solid var(--line);border-radius:28px;padding:18px;box-shadow:var(--shadow)}
+.titleline{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}.titleline h2{font-family:"Baloo 2";font-size:23px;margin:0}.titleline p{margin:0;color:var(--muted);font-size:11px}
+.platforms{display:grid;grid-template-columns:repeat(8,1fr);gap:10px}
+.platform{border:1px solid var(--line);background:#fff;border-radius:18px;padding:12px 5px;text-align:center;transition:.2s;font-weight:700;font-size:11px}.platform:hover,.platform.active{border-color:#ff78b2;box-shadow:0 9px 22px #ff72aa20;transform:translateY(-3px);color:var(--pink)}
+.picon{width:40px;height:40px;margin:auto auto 7px;border-radius:13px;display:grid;place-items:center;color:#fff;font-size:20px;font-weight:900}.picon svg{width:27px;height:27px;display:block;fill:#fff}.picon.ig svg{fill:none}.picon.ig svg *{stroke:#fff}.picon.ig .grad{fill:url(#igGrad);stroke:none}
+.ig{background:linear-gradient(135deg,#7d35df,#f33685,#ff9d35)}.tt{background:#15151a}.yt{background:#ff2929}.fb{background:#277be6}.tg{background:#35aee8}.wa{background:#26c66b}.th{background:#111}.xx{background:#000}
+.catalog{display:grid;grid-template-columns:1fr 355px;gap:18px;margin-top:18px}
+.catalog-main,.checkout{background:#fff;border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow)}
+.catalog-main{padding:18px}.catalog-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}.cat-title{display:flex;gap:12px;align-items:center}.cat-title .picon{margin:0;width:48px;height:48px;border-radius:15px}.cat-title h2{margin:0;font-family:"Baloo 2";font-size:27px}.cat-title p{margin:0;color:var(--muted);font-size:11px}.count{background:#fff3f8;border:1px solid #f8d5e5;color:#a65778;border-radius:999px;padding:7px 11px;font-size:11px;font-weight:700}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.product{border:1px solid #f5dce7;border-radius:19px;padding:15px;background:linear-gradient(180deg,#fff,#fffafd);position:relative;overflow:hidden}.product:after{content:"✦";position:absolute;right:10px;top:7px;color:#ffd06d}.product h3{font-size:13px;margin:0 0 8px}.product p{font-size:10px;line-height:1.6;color:var(--muted);height:32px;margin:0 0 8px}.price{font-family:"Baloo 2";font-size:21px;color:var(--pink);font-weight:800}.unit{font:600 9px Poppins;color:var(--muted)}.choose{width:100%;padding:9px;margin-top:8px;border:0;border-radius:12px;background:#ff65a8;color:#fff;font-weight:800;font-size:11px}.choose:hover{background:#ef4e96}
+.more-note{margin-top:12px;text-align:center;color:#bd6b8e;font-family:"Baloo 2";font-size:17px}
+.checkout{padding:20px;position:sticky;top:95px;height:max-content}.checkout h2{font-family:"Baloo 2";font-size:25px;margin:0 0 15px}.field{margin:0 0 13px}.field label{display:block;font-size:11px;font-weight:800;margin-bottom:6px}input,select{width:100%;border:1px solid #ecdce4;border-radius:13px;padding:11px 12px;background:#fff;outline:none;color:var(--ink);font-size:12px}input:focus,select:focus{border-color:#ff76b2;box-shadow:0 0 0 4px #ffeaf3}
+.qty{display:flex;border:1px solid #ecdce4;border-radius:13px;overflow:hidden}.qty button{width:42px;border:0;background:#fff3f8;color:#ff5fa2;font-size:20px;font-weight:800}.qty input{border:0;text-align:center;border-radius:0}.summary{margin-top:15px;border-top:1px dashed #efd6e2;padding-top:12px}.row{display:flex;justify-content:space-between;gap:10px;padding:6px 0;font-size:11px;color:#7e727e}.row b{color:var(--ink);text-align:right}.total{font-size:17px;font-weight:800;color:var(--ink);padding-top:12px;margin-top:5px;border-top:1px dashed #efd6e2}.wa-btn{width:100%;margin-top:12px;background:#31c775;color:#fff;border:0;border-radius:15px;padding:14px;font-weight:800}.smallnote{text-align:center;color:#9b8c98;font-size:9px;line-height:1.6;margin-top:8px}
+.all-services{padding:55px 0 20px}.section-title{text-align:center}.section-title h2{font-family:"Baloo 2";font-size:38px;margin:0}.section-title p{color:var(--muted);font-size:12px;margin:4px 0 25px}.allgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.allcard{background:#fff;border:1px solid var(--line);border-radius:21px;padding:15px;box-shadow:0 10px 25px #a8617d0a}.allhead{display:flex;gap:8px;align-items:center;font-weight:800;font-size:13px;margin-bottom:10px}.tiny{width:31px;height:31px;border-radius:10px;display:grid;place-items:center;color:#fff;font-weight:900}.allitem{display:flex;justify-content:space-between;gap:5px;border-top:1px dashed #f1dfe7;padding:7px 0;font-size:9px;color:#706474}.allitem b{color:#ff5b9e}
+.promo{margin-top:20px;background:linear-gradient(135deg,#fff0f7,#f2edff);border:1px solid var(--line);border-radius:28px;padding:26px;display:flex;align-items:center;justify-content:space-between;gap:20px;overflow:hidden;position:relative}.promo h2{font-family:"Baloo 2";font-size:34px;color:#ff5e9f;margin:0}.promo p{font-size:12px;color:var(--muted);line-height:1.7}.checks{display:flex;gap:8px;flex-wrap:wrap}.check{background:#fff;border-radius:999px;padding:8px 11px;font-size:10px;font-weight:700}.promo-cat{font-size:90px;position:relative;z-index:1}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);margin:45px 0 10px;background:#fff;border:1px solid var(--line);border-radius:25px;padding:18px}.benefit{text-align:center;border-right:1px solid #f0dfe7;padding:6px}.benefit:last-child{border:0}.benefit .bi{font-size:28px}.benefit h3{font-size:12px;margin:5px 0}.benefit p{font-size:9px;color:var(--muted);margin:0}
+footer{margin-top:25px;background:linear-gradient(180deg,#ffd4e8,#ffadd0);padding:35px 0 25px;position:relative;overflow:hidden}footer:before{content:"〰〰〰〰〰〰〰〰";position:absolute;top:-15px;left:-5%;width:110%;font-size:42px;color:#fff}.footerin{display:flex;justify-content:space-between;align-items:center;gap:20px;position:relative;z-index:1}.footertext{font-size:10px;color:#8e4c6b;line-height:1.6}.social{display:flex;gap:8px}.social a{width:33px;height:33px;border-radius:11px;background:#fff;display:grid;place-items:center;color:#ff5fa2;font-weight:800}
+.floatwa{position:fixed;right:20px;bottom:20px;z-index:60;width:60px;height:60px;border-radius:50%;background:#28c76f;color:#fff;display:grid;place-items:center;font-size:29px;box-shadow:0 12px 28px #249d5b55;border:4px solid #fff;animation:pulse 2s infinite}@keyframes pulse{50%{transform:scale(1.06)}}
+.hidden{display:none!important}
+
+.payment-modal{position:fixed;inset:0;background:rgba(48,31,43,.58);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:18px}
+.payment-modal.show{display:flex}
+.payment-box{width:min(470px,100%);max-height:92vh;overflow:auto;background:#fff;border:1px solid #f2d7e4;border-radius:30px;box-shadow:0 30px 80px rgba(70,30,55,.28);padding:20px;position:relative;text-align:center}
+.payment-close{position:absolute;right:14px;top:12px;width:38px;height:38px;border:0;border-radius:50%;background:#fff1f7;color:#c65a85;font-size:22px;font-weight:800}
+.payment-box h2{font-family:"Baloo 2";font-size:28px;margin:3px 35px 3px;color:#ff5b9e}
+.payment-box .pay-sub{font-size:11px;color:#827583;margin:0 0 12px}
+.qr-wrap{background:#fff;border:1px solid #f1dce6;border-radius:20px;padding:10px;margin:0 auto 12px;max-width:350px;box-shadow:0 10px 25px rgba(180,90,135,.08)}
+.qr-wrap img{display:block;width:100%;height:auto;border-radius:10px}
+.pay-total{background:#fff4f8;border:1px solid #f6d8e6;border-radius:16px;padding:10px;margin:10px 0;font-size:11px;color:#7c6876}
+.pay-total b{display:block;color:#ff579d;font-family:"Baloo 2";font-size:24px}
+.pay-info{font-size:10px;line-height:1.6;color:#8b7d89;margin:8px 10px 13px}
+.pay-actions{display:grid;grid-template-columns:1fr;gap:8px}
+.pay-wa{border:0;border-radius:15px;background:#28c76f;color:#fff;padding:13px;font-weight:800}
+.pay-cancel{border:1px solid #f0d5e2;border-radius:15px;background:#fff7fa;color:#a55d7b;padding:11px;font-weight:700}
+
+@media(max-width:950px){.links,.status{display:none}.hero-grid{grid-template-columns:1fr}.mascot{min-height:220px}.cat{font-size:125px}.platforms{grid-template-columns:repeat(4,1fr)}.catalog{grid-template-columns:1fr}.checkout{position:relative;top:0}.allgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.nav{height:65px}.brand{font-size:25px}.navright .btn{padding:10px 12px;font-size:11px}.hero{padding-top:22px}.hero h1{font-size:62px}.platforms{grid-template-columns:repeat(4,1fr);gap:7px}.platform{padding:9px 2px;font-size:9px}.picon{width:34px;height:34px;font-size:16px}.products{grid-template-columns:repeat(2,1fr)}.catalog-main{padding:13px}.catalog-head{align-items:flex-start}.cat-title h2{font-size:23px}.allgrid{grid-template-columns:1fr}.benefits{grid-template-columns:repeat(2,1fr);gap:10px}.benefit{border-right:0}.promo{padding:20px}.promo-cat{font-size:55px}.footerin{flex-direction:column;text-align:center}.checkout{padding:16px}}
+</style>
+</head>
+<body>
+<div class="top">🎀 Welcome to HelloBoost — Small step, big growth! ✨ &nbsp; • &nbsp; Fast Process ⚡ &nbsp; • &nbsp; Support 24/7 💗</div>
+<nav><div class="container nav">
+  <a class="brand" href="#"><span class="brandmark">♡</span>HelloBoost</a>
+  <div class="links"><a href="#beranda">⌂ Beranda</a><a href="#layanan">Layanan</a><a href="#cara">Cara Order</a><a href="#tentang">Tentang Kami</a><a href="#kontak">Kontak</a></div>
+  <div class="navright"><span class="status">⚡ Fast Process &nbsp; <b>24/7</b></span><a class="btn pinkbtn" href="#order">Order Sekarang</a></div>
+</div></nav>
+
+<section class="hero" id="beranda"><div class="container hero-grid">
+  <div class="mascot"><div class="cat">🐱</div><div class="bubble b1">Grow Your<br>Social Media! 💗</div><div class="bubble b2">♡ HelloBoost ♡</div></div>
+  <div class="hero-copy">
+    <span class="mini-pill">🌸 Solusi Lengkap Boosting Sosial Media Kamu!</span>
+    <h1>HelloBoost<span>Boost Your Social Media ✨</span></h1>
+    <p>Followers • Likes • Views • Comments • Subscribers • dan layanan social media lainnya. Pilih layanan favoritmu, bayar, lalu lanjutkan proses melalui WhatsApp.</p>
+    <div class="chips"><span class="chip">💗 Aman</span><span class="chip">⚡ Proses Cepat</span><span class="chip">🛡️ Harga Terbaik</span><span class="chip">⭐ 100% Legal</span></div>
+  </div>
+</div></section>
+
+<section id="layanan"><div class="container platform-wrap">
+  <div class="titleline"><div><h2>💗 Pilih Sosial Media</h2><p>Klik salah satu platform untuk melihat layanan.</p></div><div style="font-size:22px">🎀</div></div>
+  <div class="platforms" id="platforms"></div>
+</div>
+
+<div class="container catalog">
+  <div class="catalog-main">
+    <div class="catalog-head"><div class="cat-title"><div class="picon ig" id="catIcon">◎</div><div><h2 id="catName">Instagram</h2><p id="catDesc">Tingkatkan popularitas akun Instagram kamu sekarang!</p></div></div><span class="count" id="count">7 Layanan Tersedia</span></div>
+    <div class="products" id="products"></div>
+    <div class="more-note">More likes, more opportunities ✨</div>
+  </div>
+
+  <aside class="checkout" id="order">
+    <h2>🛒 Detail Pesanan</h2>
+    <div class="field"><label>Platform</label><select id="platformSelect"><option value="Instagram">Instagram</option></select></div>
+    <div class="field"><label>Layanan</label><select id="serviceSelect"><option value="0">Followers Indonesia — Rp5.000 / 100</option></select></div>
+    <div class="field"><label>Jumlah</label><div class="qty"><button onclick="changeQty(-1)">−</button><input id="qty" type="number" value="100" min="1" step="1" oninput="updateTotal()"><button onclick="changeQty(1)">+</button></div></div>
+    <div class="field"><label>🛡️ Pilihan Garansi</label>
+      <select id="guaranteeSelect" onchange="updateTotal()">
+        <option value="1">Tanpa Garansi — Harga Normal</option>
+        <option value="1.5">Garansi 7 Hari — +50%</option>
+      </select>
+    </div>
+    <div class="field"><label>Nama</label><input id="customer" placeholder="Nama kamu"></div>
+    <div class="field"><label>Link akun / postingan</label><input id="link" placeholder="https://..."></div>
+    <div class="summary"><div class="row"><span>Layanan</span><b id="sumService">-</b></div><div class="row"><span>Jumlah</span><b id="sumQty">100</b></div><div class="row"><span>Harga / paket</span><b id="sumPrice">Rp0</b></div><div class="row"><span>Garansi</span><b id="sumGuarantee">Tanpa Garansi</b></div><div class="row total"><span>Total Harga</span><b id="sumTotal">Rp0</b></div></div>
+    <button class="wa-btn" onclick="orderWA()">💬 Lanjut ke WhatsApp</button>
+    <div class="smallnote">🛡️ Garansi 7 Hari = harga layanan × 1,5. Garansi berlaku untuk penurunan yang memenuhi ketentuan layanan dan bukan jaminan akun tidak akan pernah turun.<br>Pesanan akan langsung diproses melalui WhatsApp setelah konfirmasi pembayaran.</div>
+  </aside>
+</div></section>
+
+<section class="all-services" id="cara"><div class="container">
+  <div class="section-title"><h2>🌈 Semua Layanan Tersedia</h2><p>Pilih platform favoritmu dan temukan layanan yang kamu butuhkan.</p></div>
+  <div class="allgrid" id="allgrid"></div>
+  <div class="promo"><div><h2>Order Sekarang! 💗</h2><p>Proses cepat • Aman & nyaman • Harga transparan • Dibantu via WhatsApp</p><div class="checks"><span class="check">⚡ Proses Cepat</span><span class="check">🛡️ Aman</span><span class="check">💎 Harga Terbaik</span></div></div><div class="promo-cat">👧🏻📱</div></div>
+</div></section>
+
+<section id="tentang"><div class="container"><div class="benefits">
+  <div class="benefit"><div class="bi">⚡</div><h3>Proses Cepat</h3><p>Order diproses secepat mungkin.</p></div>
+  <div class="benefit"><div class="bi">🛡️</div><h3>Aman & Terpercaya</h3><p>Pengalaman order simpel dan nyaman.</p></div>
+  <div class="benefit"><div class="bi">⭐</div><h3>Harga Terbaik</h3><p>Pilihan harga sesuai layanan.</p></div>
+  <div class="benefit"><div class="bi">🎧</div><h3>Support 24/7</h3><p>Siap membantu saat kamu butuh.</p></div>
+</div></div></section>
+
+
+<div class="payment-modal" id="paymentModal" role="dialog" aria-modal="true" aria-labelledby="paymentTitle">
+  <div class="payment-box">
+    <button class="payment-close" onclick="closePayment()" aria-label="Tutup">×</button>
+    <h2 id="paymentTitle">💗 Pembayaran HelloBoost</h2>
+    <p class="pay-sub">Scan QRIS di bawah untuk menyelesaikan pembayaran</p>
+    <div class="qr-wrap">
+      <img id="qrisImage" alt="QRIS pembayaran HelloBoost" src="data:image/png;base64,qris-helloboost.png">
+    </div>
+    <div class="pay-total"><span>Total yang harus dibayar</span><b id="payTotal">Rp0</b></div>
+    <div class="pay-info">Setelah pembayaran berhasil, simpan bukti pembayaran lalu klik tombol <b>Konfirmasi via WhatsApp</b>. Admin akan memeriksa pembayaran dan melanjutkan pesanan kamu.</div>
+    <div class="pay-actions">
+      <button class="pay-wa" onclick="confirmPaymentWA()">💬 Konfirmasi Pembayaran via WhatsApp</button>
+      <button class="pay-cancel" onclick="closePayment()">Kembali</button>
+    </div>
+  </div>
+</div>
+
+<footer id="kontak"><div class="container footerin"><div><div class="brand"><span class="brandmark">♡</span>HelloBoost</div><div class="footertext">Boost Your Social Media ✨<br>Terima kasih sudah percaya dengan HelloBoost!</div></div><div class="social"><a href="#layanan">◎</a><a href="#layanan">♪</a><a href="#layanan">▶</a><a href="#layanan">✈</a><a href="#order">♡</a></div><div class="footertext">© 2026 HelloBoost. All rights reserved.</div></div></footer>
+<a class="floatwa" href="#" onclick="openWA();return false;" aria-label="WhatsApp">◔</a>
+
+<script src="app.js" defer></script>
+
+</body>
+</html>
